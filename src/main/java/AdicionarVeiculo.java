@@ -24,3 +24,4 @@ public class AdicionarVeiculo extends JFrame {
         new AdicionarVeiculo().setVisible(true);
     }
 }
+//ver
