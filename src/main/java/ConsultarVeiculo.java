@@ -6,6 +6,19 @@ public class ConsultarVeiculo extends JFrame{
     DefaultListModel listmodel = new DefaultListModel();
     private JList listVeiculos;
     private JPanel painelPrincipal;
+    private JLabel lblMatricula;
+    private JLabel lblMarca;
+    private JLabel lblModelo;
+    private JLabel lblNDonos;
+    private JLabel lblComb;
+    private JLabel lblCategoria;
+    private JLabel lblClasse;
+    private JLabel lblPortas;
+    private JLabel lblCilindrada;
+    private JLabel lblPotencia;
+    private JLabel lblTCaixa;
+    private JLabel lblTracao;
+    private JLabel lblDonoAnterior;
     private JTextArea textDetalhes;
 
     public ConsultarVeiculo(){
@@ -29,7 +42,10 @@ public class ConsultarVeiculo extends JFrame{
 
     public void detalhesVeiculo(){
 
-        textDetalhes.setText("Matricula: ZE-89-LK\n" +"Marca: Audi\n");
+        lblMatricula.setText("ZE-89-LK");
+        lblMarca.setText("Audi");
+        lblComb.setText("diesel");
+        lblPortas.setText("5");
     }
 
     public static void main(String[] args) {
