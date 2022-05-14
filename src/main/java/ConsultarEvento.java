@@ -8,6 +8,7 @@ public class ConsultarEvento extends JFrame {
     private JLabel lblNVeiculos;
     private JLabel lblLocal;
     private JLabel lblTempo;
+    private JLabel lblDistrito;
 
     public ConsultarEvento(){
         setContentPane(painelPrincipal);
