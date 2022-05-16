@@ -1,10 +1,10 @@
 package veiculo;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ConsultarVeiculo extends JFrame{
-    DefaultListModel listmodel = new DefaultListModel();
-    private JList listVeiculos;
     private JPanel painelPrincipal;
     private JLabel lblMatricula;
     private JLabel lblMarca;
@@ -18,8 +18,18 @@ public class ConsultarVeiculo extends JFrame{
     public ConsultarVeiculo(){
         setContentPane(painelPrincipal);
         pack();
+        btnVoltarActionPerformed();
 
+    }
 
+    private void btnVoltarActionPerformed() {
+        voltarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new PáginaInicialVeiculos().setVisible(true);
+            }
+        });
     }
 
 

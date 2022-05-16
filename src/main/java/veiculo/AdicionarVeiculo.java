@@ -5,31 +5,36 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class AdicionarVeiculo extends JFrame {
-    private JTextField textMatricula;
-    private JTextField textMarca;
-    private JButton adicionarButton;
     private JPanel painelPrincipal;
-    private JTextField textModelo;
-    private JTextField textDonoAnterior;
-    private JTextField textNDonos;
-    private JTextField textComb;
-    private JTextField textCategoria;
-    private JTextField textClasse;
-    private JTextField textNPortas;
-    private JTextField textPotencia;
-    private JTextField textCilindrada;
-    private JTextField textTipoCaixa;
-    private JTextField textTracao;
     private JButton cancelarButton;
+    private JButton adicionarButton;
+    private JTextField textField1;
+    private JTextField textField2;
+    private JTextField textField3;
+    private JTextField textField4;
+    private JTextField textField5;
+    private JTextField textField6;
+    private JTextField textField7;
+    private JTextField textField8;
+    private JTextField textField9;
+    private JTextField textField10;
+    private JTextField textField11;
+    private JTextField textField12;
+    private JTextField textField13;
 
     public AdicionarVeiculo(){
         setContentPane(painelPrincipal);
         pack();
+        btnCancelarActionPerformed();
 
-        adicionarButton.addActionListener(new ActionListener() {
+    }
+
+    private void btnCancelarActionPerformed() {
+        cancelarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-
+                setVisible(false);
+                new PáginaInicialVeiculos().setVisible(true);
             }
         });
     }

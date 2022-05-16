@@ -1,13 +1,11 @@
 package veiculo;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class TransportarVeiculo extends JFrame{
-    DefaultListModel listmodelVeiculos = new DefaultListModel();
-    DefaultListModel listmodelLugares = new DefaultListModel();
     private JPanel painelPrincipal;
-    private JList listVeiculos;
-    private JList listLugares;
     private JButton transportarButton;
     private JButton cancelarButton;
     private JComboBox comboBox1;
@@ -16,7 +14,18 @@ public class TransportarVeiculo extends JFrame{
     public TransportarVeiculo(){
         setContentPane(painelPrincipal);
         pack();
+        btnCancelarActionPerformed();
 
+    }
+
+    private void btnCancelarActionPerformed() {
+        cancelarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new PáginaInicialVeiculos().setVisible(true);
+            }
+        });
     }
 
     public static void main(String[] args) {

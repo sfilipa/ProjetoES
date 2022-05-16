@@ -1,10 +1,10 @@
 package veiculo;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class EditarVeiculo extends JFrame {
-    DefaultListModel listmodel = new DefaultListModel();
-    private JList listVeiculos;
     private JButton editarButton;
     private JPanel painelPrincipal;
     private JTextField textModelo;
@@ -26,7 +26,18 @@ public class EditarVeiculo extends JFrame {
     public EditarVeiculo(){
         setContentPane(painelPrincipal);
         pack();
+        btnCancelarActionPerformed();
 
+    }
+
+    private void btnCancelarActionPerformed() {
+        cancelarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new PáginaInicialVeiculos().setVisible(true);
+            }
+        });
     }
 
 
