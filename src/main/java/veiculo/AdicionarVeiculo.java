@@ -1,3 +1,5 @@
+package veiculo;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -18,6 +20,7 @@ public class AdicionarVeiculo extends JFrame {
     private JTextField textCilindrada;
     private JTextField textTipoCaixa;
     private JTextField textTracao;
+    private JButton cancelarButton;
 
     public AdicionarVeiculo(){
         setContentPane(painelPrincipal);

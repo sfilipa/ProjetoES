@@ -1,3 +1,5 @@
+package eventos;
+
 import javax.swing.*;
 
 public class ConsultarEvento extends JFrame {

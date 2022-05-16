@@ -1,3 +1,5 @@
+package veiculo;
+
 import javax.swing.*;
 
 public class RemoverVeiculo extends JFrame {
@@ -5,22 +7,12 @@ public class RemoverVeiculo extends JFrame {
     private JList listVeiculos;
     private JButton removerButton;
     private JPanel painelPrincipal;
+    private JButton cancelarButton;
+    private JComboBox comboBox1;
 
     public RemoverVeiculo(){
         setContentPane(painelPrincipal);
         pack();
-
-        veiculos();
-
-    }
-
-    public void veiculos(){
-        String veiculos[] = {"Audi A4", "Peugeot 206"};
-        for ( int i = 0; i < veiculos.length; i++ ){
-            listmodel.addElement( veiculos[i].toString());
-        }
-
-        listVeiculos.setModel(listmodel);
 
     }
 
