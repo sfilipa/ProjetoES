@@ -1,24 +1,28 @@
+package pecas;
+
 import javax.swing.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class AdicionarPeca extends JFrame{
-    private JTextField textNome;
-    private JList filealList;
+    private JPanel painelPrincipal;
+    private JLabel adicionarPeca;
+    private JTextField nomePecaTextField;
+    private JList localArmazenamentoList;
     private JRadioButton consumivelRadioButton;
     private JRadioButton outroRadioButton;
-    private JTextField qtMinimaPorFileal;
-    private JTextField qtMinimaPorSede;
-    private JButton adicionarButton;
-    private JPanel painelPrincipal;
+    private JTextField quantidadeMinimaSedeText;
+    private JTextField quantidadeMinimaFileal;
+    private JButton adicionarPecaButton;
+    private JButton cancelarButton;
+    private JLabel nomePeca;
 
     public AdicionarPeca(){
         setContentPane(painelPrincipal);
         pack();
 
-        }
+    }
 
     public static void main(String[] args) {
         new AdicionarPeca().setVisible(true);
     }
 }
+

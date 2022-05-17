@@ -1,20 +1,22 @@
+package pecas;
+
 import javax.swing.*;
 
 public class RemoverPeca extends JFrame{
+    private JLabel removerPeca;
+    private JList nomePecaList;
     private JButton removerPecaButton;
+    private JButton cancelarButton;
+    private JLabel nomeText;
     private JPanel painelPrincipal;
-    private JList list1;
-
 
     public RemoverPeca(){
         setContentPane(painelPrincipal);
         pack();
-
     }
 
     public static void main(String[] args) {
         new RemoverPeca().setVisible(true);
     }
 }
-
-// secalhar em vez de textBox fazer uma lista??? ver
+// como fazer para remover os detalhes??
