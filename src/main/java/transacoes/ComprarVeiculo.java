@@ -1,8 +1,10 @@
 package transacoes;
 
+import pecas.RemoverPeca;
+
 import javax.swing.*;
 
-public class ComprarVeiculo {
+public class ComprarVeiculo extends JFrame{
     private JPanel painelPrincipal;
     private JButton comprarButton;
     private JButton cancelarButton;
@@ -41,4 +43,13 @@ public class ComprarVeiculo {
     private JLabel preco;
     private JLabel cliente;
     private JLabel comprarVeiculo;
+
+    public ComprarVeiculo(){
+        setContentPane(painelPrincipal);
+        pack();
+    }
+
+    public static void main(String[] args) {
+        new ComprarVeiculo().setVisible(true);
+    }
 }
