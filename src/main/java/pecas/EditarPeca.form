@@ -79,7 +79,7 @@
               <text value="Tipo de peça:"/>
             </properties>
           </component>
-          <component id="9fe0c" class="javax.swing.JLabel">
+          <component id="9fe0c" class="javax.swing.JLabel" binding="alterarQuantidadeMinimaSede">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -87,7 +87,7 @@
               <text value="Quantidade minima por sede:"/>
             </properties>
           </component>
-          <component id="316f" class="javax.swing.JLabel">
+          <component id="316f" class="javax.swing.JLabel" binding="alterarQuantidadeMinimaFileal">
             <constraints>
               <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -132,7 +132,7 @@
               <text value="Outro"/>
             </properties>
           </component>
-          <component id="47f85" class="javax.swing.JTextField" binding="alterarQuantidadeMinimaSede">
+          <component id="47f85" class="javax.swing.JTextField" binding="alterarQuantidadeMinimaSedeText">
             <constraints>
               <grid row="4" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -140,7 +140,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="738a9" class="javax.swing.JTextField" binding="alterarQuantidadeMinimaFileal">
+          <component id="738a9" class="javax.swing.JTextField" binding="alterarQuantidadeMinimaFilealText">
             <constraints>
               <grid row="5" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>

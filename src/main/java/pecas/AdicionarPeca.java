@@ -10,10 +10,14 @@ public class AdicionarPeca extends JFrame{
     private JRadioButton consumivelRadioButton;
     private JRadioButton outroRadioButton;
     private JTextField quantidadeMinimaSedeText;
-    private JTextField quantidadeMinimaFileal;
+    private JTextField quantidadeMinimaFilealText;
     private JButton adicionarPecaButton;
     private JButton cancelarButton;
     private JLabel nomePeca;
+    private JLabel localArmazenamento;
+    private JLabel tipoPeca;
+    private JLabel quantidadeMinimaSede;
+    private JLabel quantidadeMinimaFileal;
 
     public AdicionarPeca(){
         setContentPane(painelPrincipal);

@@ -15,6 +15,7 @@ public class ConsultarPeca extends JFrame {
     private JLabel quantidadeMinimaFileal;
     private JLabel quantidadeMinimaFilealText;
     private JPanel painelPrincipal;
+    private JLabel nomePeca;
 
     public ConsultarPeca(){
         setContentPane(painelPrincipal);

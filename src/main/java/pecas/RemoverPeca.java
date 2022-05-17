@@ -7,7 +7,7 @@ public class RemoverPeca extends JFrame{
     private JList nomePecaList;
     private JButton removerPecaButton;
     private JButton cancelarButton;
-    private JLabel nomeText;
+    private JLabel nomePeca;
     private JPanel painelPrincipal;
 
     public RemoverPeca(){

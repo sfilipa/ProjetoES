@@ -13,11 +13,13 @@ public class EditarPeca extends JFrame {
     private JLabel nomePeca;
     private JRadioButton alterarConsumivelRadioButton;
     private JRadioButton alterarOutroRadioButton;
-    private JTextField alterarQuantidadeMinimaSede;
-    private JTextField alterarQuantidadeMinimaFileal;
+    private JTextField alterarQuantidadeMinimaSedeText;
+    private JTextField alterarQuantidadeMinimaFilealText;
     private JButton editarButton;
     private JButton cancelarButton;
     private JPanel painelPrincipal;
+    private JLabel alterarQuantidadeMinimaSede;
+    private JLabel alterarQuantidadeMinimaFileal;
 
     public EditarPeca(){
         setContentPane(painelPrincipal);

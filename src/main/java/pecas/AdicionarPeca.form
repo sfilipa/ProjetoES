@@ -53,7 +53,7 @@
               <text value=""/>
             </properties>
           </component>
-          <component id="781f7" class="javax.swing.JLabel">
+          <component id="781f7" class="javax.swing.JLabel" binding="localArmazenamento">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -76,7 +76,7 @@
               </model>
             </properties>
           </component>
-          <component id="fbd89" class="javax.swing.JLabel">
+          <component id="fbd89" class="javax.swing.JLabel" binding="tipoPeca">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -84,7 +84,7 @@
               <text value="Tipo de peça:"/>
             </properties>
           </component>
-          <component id="5dc41" class="javax.swing.JLabel">
+          <component id="5dc41" class="javax.swing.JLabel" binding="quantidadeMinimaSede">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -116,7 +116,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="2e3f9" class="javax.swing.JLabel">
+          <component id="2e3f9" class="javax.swing.JLabel" binding="quantidadeMinimaFileal">
             <constraints>
               <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -124,7 +124,7 @@
               <text value="Quantidade minima por fileal:"/>
             </properties>
           </component>
-          <component id="3452a" class="javax.swing.JTextField" binding="quantidadeMinimaFileal">
+          <component id="3452a" class="javax.swing.JTextField" binding="quantidadeMinimaFilealText">
             <constraints>
               <grid row="5" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>

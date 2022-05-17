@@ -9,6 +9,8 @@ public class PedirPeca extends JFrame{
     private JLabel pedirPecaText;
     private JButton cancelarButton;
     private JList list1;
+    private JLabel sedeFilealRequisita;
+    private JLabel sedeFilealEntrega;
 
     public PedirPeca(){
         setContentPane(painelPrincipal);
