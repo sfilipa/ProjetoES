@@ -6,8 +6,6 @@ public class RemoverTransacao extends JFrame{
     private JPanel painelPrincipal;
     private JLabel removerTransacao;
     private JComboBox transacaoRemoverBox;
-    private JRadioButton dinheiroRadioButton;
-    private JRadioButton multibancoRadioButton;
     private JButton removerTransacaoButton;
     private JButton cancelarButton;
     private JLabel transacaoRemover;
@@ -21,6 +19,7 @@ public class RemoverTransacao extends JFrame{
     private JLabel matriculaText;
     private JLabel dataTransacaoText;
     private JLabel horaTransacaoText;
+    private JLabel tipoTransacaoText;
 
     public RemoverTransacao(){
         setContentPane(painelPrincipal);

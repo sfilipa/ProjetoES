@@ -104,22 +104,6 @@
               <text value="Tipo de transação:"/>
             </properties>
           </component>
-          <component id="60e7b" class="javax.swing.JRadioButton" binding="dinheiroRadioButton" default-binding="true">
-            <constraints>
-              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Dinheiro"/>
-            </properties>
-          </component>
-          <component id="b2f0f" class="javax.swing.JRadioButton" binding="multibancoRadioButton" default-binding="true">
-            <constraints>
-              <grid row="6" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Multibanco"/>
-            </properties>
-          </component>
           <component id="ac325" class="javax.swing.JLabel" binding="valorText">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
@@ -150,6 +134,14 @@
             </constraints>
             <properties>
               <text value="hora da transacao"/>
+            </properties>
+          </component>
+          <component id="c21fc" class="javax.swing.JLabel" binding="tipoTransacaoText">
+            <constraints>
+              <grid row="6" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="tipo de transacao"/>
             </properties>
           </component>
         </children>
