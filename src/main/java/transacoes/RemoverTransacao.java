@@ -2,7 +2,7 @@ package transacoes;
 
 import javax.swing.*;
 
-public class RemoverTransacao {
+public class RemoverTransacao extends JFrame{
     private JPanel painelPrincipal;
     private JLabel removerTransacao;
     private JComboBox transacaoRemoverBox;
@@ -21,4 +21,13 @@ public class RemoverTransacao {
     private JLabel matriculaText;
     private JLabel dataTransacaoText;
     private JLabel horaTransacaoText;
+
+    public RemoverTransacao(){
+        setContentPane(painelPrincipal);
+        pack();
+    }
+
+    public static void main(String[] args) {
+        new RemoverTransacao().setVisible(true);
+    }
 }
