@@ -17,11 +17,9 @@ public class AdicionarPeca extends JFrame{
     private JButton adicionarPecaButton;
     private JButton cancelarButton;
     private JLabel nomePeca;
-    private JLabel localArmazenamento;
     private JLabel tipoPeca;
     private JLabel quantidadeMinimaSede;
     private JLabel quantidadeMinimaFileal;
-    private JList localArmazenamentoList;
 
     public AdicionarPeca(){
         setContentPane(painelPrincipal);
