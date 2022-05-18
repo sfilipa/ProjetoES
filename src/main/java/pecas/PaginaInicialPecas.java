@@ -15,6 +15,8 @@ public class PaginaInicialPecas extends JFrame{
     private JPanel painelPrincipal;
     private JLabel pecas;
     private JButton voltarButton;
+    private JButton adicionarStockButton;
+    private JButton removerStockButton;
 
     public PaginaInicialPecas(){
         setContentPane(painelPrincipal);
@@ -26,6 +28,8 @@ public class PaginaInicialPecas extends JFrame{
         btnPedirPecaButtonActionPerformed();
         btnRemoverPecaButtonActionPerformed();
         btnVoltarButtonActionPerformed();
+        btnAdicionarStockActionPerformed();
+        btnRemoverStockActionPerformed();
     }
 
     private void btnAdicionarPecaActionPerformed() {
@@ -84,6 +88,26 @@ public class PaginaInicialPecas extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
                 new PaginaPrincipal().setVisible(true);
+            }
+        });
+    }
+
+    private void btnAdicionarStockActionPerformed(){
+        adicionarStockButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new AdicionarStockPeca().setVisible(true);
+            }
+        });
+    }
+
+    private void btnRemoverStockActionPerformed(){
+        removerStockButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new RemoverStockPeca().setVisible(true);
             }
         });
     }
