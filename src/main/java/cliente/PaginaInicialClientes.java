@@ -28,9 +28,6 @@ public class PaginaInicialClientes extends JFrame {
 
 
 
-
-
-
     public static void main(String[] args) {
         new PaginaInicialClientes().setVisible(true);
     }
