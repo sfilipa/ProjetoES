@@ -6,7 +6,6 @@ public class AdicionarPeca extends JFrame{
     private JPanel painelPrincipal;
     private JLabel adicionarPeca;
     private JTextField nomePecaTextField;
-    private JList localArmazenamentoList;
     private JRadioButton consumivelRadioButton;
     private JRadioButton outroRadioButton;
     private JTextField quantidadeMinimaSedeText;
@@ -18,6 +17,7 @@ public class AdicionarPeca extends JFrame{
     private JLabel tipoPeca;
     private JLabel quantidadeMinimaSede;
     private JLabel quantidadeMinimaFileal;
+    private JList localArmazenamentoList;
 
     public AdicionarPeca(){
         setContentPane(painelPrincipal);
