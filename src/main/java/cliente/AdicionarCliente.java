@@ -1,8 +1,13 @@
 package cliente;
 
-import javax.swing.*;
+import veiculo.AdicionarVeiculo;
+import veiculo.PaginaInicialVeiculos;
 
-public class AdicionarCliente {
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class AdicionarCliente extends JFrame {
     private JPanel painelPrincipal;
     private JTextField textField1;
     private JTextField textField3;
@@ -10,8 +15,28 @@ public class AdicionarCliente {
     private JButton cancelarButton;
     private JButton adicionarButton;
 
-    public static class AdicionarCliente extends JFrame {
 
+    public AdicionarCliente(){
+        setContentPane(painelPrincipal);
+        pack();
+        btnCancelarActionPerformed();
 
     }
+
+    private void btnCancelarActionPerformed() {
+        cancelarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new PaginaInicialVeiculos().setVisible(true);
+            }
+        });
+    }
+
+
+    public static void main(String[] args) {
+        new AdicionarVeiculo().setVisible(true);
+    }
+
+
 }
