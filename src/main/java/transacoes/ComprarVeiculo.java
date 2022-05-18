@@ -1,8 +1,11 @@
 package transacoes;
 
+import pecas.PaginaInicialPecas;
 import pecas.RemoverPeca;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ComprarVeiculo extends JFrame{
     private JPanel painelPrincipal;
@@ -47,7 +50,20 @@ public class ComprarVeiculo extends JFrame{
     public ComprarVeiculo(){
         setContentPane(painelPrincipal);
         pack();
+
+        btnCancelarActionPerformed();
     }
+
+    private void btnCancelarActionPerformed() {
+        cancelarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new PaginaInicialTransacoes().setVisible(true);
+            }
+        });
+    }
+
 
     public static void main(String[] args) {
         new ComprarVeiculo().setVisible(true);
