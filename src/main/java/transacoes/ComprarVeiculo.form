@@ -280,12 +280,12 @@
             </constraints>
             <properties/>
           </component>
-          <component id="691e3" class="javax.swing.JRadioButton" binding="trazeiraRadioButton" default-binding="true">
+          <component id="691e3" class="javax.swing.JRadioButton" binding="traseiraRadioButton" default-binding="true">
             <constraints>
               <grid row="12" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Trazeira"/>
+              <text value="Traseira"/>
             </properties>
           </component>
         </children>

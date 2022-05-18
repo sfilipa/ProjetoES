@@ -1,5 +1,6 @@
 package veiculo;
 
+import paginaPrincipal.*;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
@@ -24,6 +25,7 @@ public class PáginaInicialVeiculos extends JFrame{
         btnRepararVeiculoActionPerformed();
         btnTransportarVeiculoActionPerformed();
         btnConsultarVeiculoActionPerformed();
+        btnVoltarActionPerformed();
 
     }
 
@@ -78,6 +80,16 @@ public class PáginaInicialVeiculos extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
                 new ConsultarVeiculo().setVisible(true);
+            }
+        });
+    }
+
+    private void btnVoltarActionPerformed() {
+        voltarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new PaginaPrincipal().setVisible(true);
             }
         });
     }

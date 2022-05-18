@@ -25,7 +25,7 @@ public class ComprarVeiculo extends JFrame{
     private JRadioButton automaticaRadioButton;
     private JRadioButton manualRadioButton;
     private JRadioButton fronteiraRadioButton;
-    private JRadioButton trazeiraRadioButton;
+    private JRadioButton traseiraRadioButton;
     private JTextField clientText;
     private JLabel matricula;
     private JLabel marca;
