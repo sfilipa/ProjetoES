@@ -2,15 +2,15 @@ import javax.swing.*;
 
 public class PedirPeca extends JFrame{
     private JPanel painelPrincipal;
-    private JList pecaList;
     private JButton requisitarButton;
     private JLabel peca;
     private JLabel pedirPecaText;
     private JButton cancelarButton;
     private JLabel sedeFilealRequisita;
     private JLabel sedeFilealEntrega;
-    private JComboBox sedeFilealRequisitaBox;
     private JComboBox sedeFilealEntregaBox;
+    private JComboBox sedeFilealRequisitaBox;
+    private JList list1;
 
     public PedirPeca(){
         setContentPane(painelPrincipal);

@@ -51,39 +51,12 @@
               <text value="Sede / Fileal que requisita:"/>
             </properties>
           </component>
-          <component id="90db0" class="javax.swing.JList" binding="pecaList">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="50"/>
-              </grid>
-            </constraints>
-            <properties>
-              <model>
-                <item value="Peça 1"/>
-                <item value="Peça 2"/>
-                <item value="Peça 3"/>
-              </model>
-            </properties>
-          </component>
           <component id="e372a" class="javax.swing.JLabel" binding="sedeFilealEntrega">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Sede / Fileal que entrega:"/>
-            </properties>
-          </component>
-          <component id="a2a8b" class="javax.swing.JComboBox" binding="sedeFilealRequisitaBox" custom-create="true">
-            <constraints>
-              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <model>
-                <item value="Sede"/>
-                <item value="Fileal 1"/>
-                <item value="Fileal 2"/>
-                <item value="Fileal 3"/>
-              </model>
             </properties>
           </component>
           <component id="272ed" class="javax.swing.JComboBox" binding="sedeFilealEntregaBox">
@@ -99,6 +72,45 @@
               </model>
             </properties>
           </component>
+          <component id="8e945" class="javax.swing.JComboBox" binding="sedeFilealRequisitaBox">
+            <constraints>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <model>
+                <item value="Sede"/>
+                <item value="Fileal 1"/>
+                <item value="Fileal 2"/>
+                <item value="Fileal 3"/>
+              </model>
+            </properties>
+          </component>
+          <scrollpane id="be520">
+            <constraints>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="41039" class="javax.swing.JList" binding="list1" default-binding="true">
+                <constraints/>
+                <properties>
+                  <model>
+                    <item value="Peça 1"/>
+                    <item value="Peça 2"/>
+                    <item value="Peça 3"/>
+                    <item value="Peça 4"/>
+                    <item value="Peça 5"/>
+                    <item value="Peça 6"/>
+                    <item value="Peça 7"/>
+                    <item value="Peça 8"/>
+                    <item value="Peça 9"/>
+                    <item value="Peça 10"/>
+                  </model>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
         </children>
       </grid>
       <grid id="b07b8" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
