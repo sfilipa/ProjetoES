@@ -38,7 +38,7 @@ public class AdicionarVeiculo extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                new PáginaInicialVeiculos().setVisible(true);
+                new PaginaInicialVeiculos().setVisible(true);
             }
         });
     }

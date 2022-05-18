@@ -5,7 +5,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PáginaInicialVeiculos extends JFrame{
+public class PaginaInicialVeiculos extends JFrame{
     private JButton adicionarVeículoButton;
     private JButton editarVeículoButton;
     private JButton removerVeículoButton;
@@ -15,7 +15,7 @@ public class PáginaInicialVeiculos extends JFrame{
     private JButton voltarButton;
     private JPanel painelPrincipal;
 
-    public PáginaInicialVeiculos(){
+    public PaginaInicialVeiculos(){
         setContentPane(painelPrincipal);
         pack();
 
@@ -95,6 +95,6 @@ public class PáginaInicialVeiculos extends JFrame{
     }
 
     public static void main(String[] args) {
-        new PáginaInicialVeiculos().setVisible(true);
+        new PaginaInicialVeiculos().setVisible(true);
     }
 }
