@@ -15,27 +15,14 @@ public class PaginaInicialClientes extends JFrame {
     private JButton consultarHistoricoButton;
     private JButton voltarButton;
     private JPanel painelPrincipal;
-
+    private JButton okButton;
 
 
     public PaginaInicialClientes(){
         setContentPane(painelPrincipal);
         pack();
-
-        btnVoltarActionPerformed();
-
     }
 
-
-    private void btnVoltarActionPerformed() {
-        voltarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new PaginaPrincipal().setVisible(true);
-            }
-        });
-    }
 
 
     public static void main(String[] args) {
