@@ -3,6 +3,8 @@ package cliente;
 import eventos.ConsultarEvento;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ConsultarCliente extends JFrame {
     private JLabel lblNome;
@@ -17,6 +19,18 @@ public class ConsultarCliente extends JFrame {
         setContentPane(painelPrincipal);
         pack();
 
+        btnCancelarActionPerformed();
+
+    }
+
+    private void btnCancelarActionPerformed() {
+        voltarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new PaginaInicialClientes().setVisible(true);
+            }
+        });
     }
 
 
@@ -24,6 +38,6 @@ public class ConsultarCliente extends JFrame {
         new ConsultarEvento().setVisible(true);
     }
 
-    public void setVisible(boolean b) {
-    }
+
+
 }

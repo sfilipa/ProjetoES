@@ -28,7 +28,7 @@ public class AdicionarCliente extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                new PaginaInicialVeiculos().setVisible(true);
+                new PaginaInicialClientes().setVisible(true);
             }
         });
     }
