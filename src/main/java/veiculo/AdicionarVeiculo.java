@@ -30,6 +30,7 @@ public class AdicionarVeiculo extends JFrame {
     private JRadioButton médioRadioButton;
     private JRadioButton mauRadioButton;
     private JRadioButton mutioMauRadioButton;
+    private JTextField textField6;
 
 
     public AdicionarVeiculo(){
