@@ -4,11 +4,11 @@ import javax.swing.*;
 
 public class RemoverPeca extends JFrame{
     private JLabel removerPeca;
-    private JList nomePecaList;
     private JButton removerPecaButton;
     private JButton cancelarButton;
     private JLabel nomePeca;
     private JPanel painelPrincipal;
+    private JList list1;
 
     public RemoverPeca(){
         setContentPane(painelPrincipal);
