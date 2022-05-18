@@ -1,6 +1,10 @@
 package eventos;
 
+import veiculo.PaginaInicialVeiculos;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ConsultarEvento extends JFrame {
     private JLabel lblNome;
@@ -14,8 +18,19 @@ public class ConsultarEvento extends JFrame {
     public ConsultarEvento(){
         setContentPane(painelPrincipal);
         pack();
+        btnVoltarActionPerformed();
 
 
+    }
+
+    private void btnVoltarActionPerformed() {
+        voltarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new PaginaInicialEventos().setVisible(true);
+            }
+        });
     }
 
 

@@ -11,6 +11,28 @@ public class AdicionarVeiculo extends JFrame {
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
+<<<<<<< HEAD
+=======
+    private JTextField textField4;
+    private JTextField textField5;
+    private JTextField textField7;
+    private JTextField textField8;
+    private JTextField textField9;
+    private JTextField textField10;
+    private JTextField textField11;
+    private JRadioButton gasolinaRadioButton;
+    private JRadioButton dieselRadioButton;
+    private JRadioButton elétricoRadioButton;
+    private JRadioButton automáticaRadioButton;
+    private JRadioButton manualRadioButton;
+    private JRadioButton fronteiraRadioButton;
+    private JRadioButton traseiraRadioButton;
+    private JRadioButton muitoBomRadioButton;
+    private JRadioButton bomRadioButton;
+    private JRadioButton médioRadioButton;
+    private JRadioButton mauRadioButton;
+    private JRadioButton mutioMauRadioButton;
+>>>>>>> 82ef867be570417126434dad749d610304bfe4b9
 
     public AdicionarVeiculo(){
         setContentPane(painelPrincipal);
