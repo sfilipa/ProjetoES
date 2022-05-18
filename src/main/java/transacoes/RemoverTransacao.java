@@ -1,6 +1,8 @@
 package transacoes;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class RemoverTransacao extends JFrame{
     private JPanel painelPrincipal;
@@ -24,7 +26,20 @@ public class RemoverTransacao extends JFrame{
     public RemoverTransacao(){
         setContentPane(painelPrincipal);
         pack();
+
+        btnCancelarActionPerformed();
     }
+
+    private void btnCancelarActionPerformed() {
+        cancelarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new PaginaInicialTransacoes().setVisible(true);
+            }
+        });
+    }
+
 
     public static void main(String[] args) {
         new RemoverTransacao().setVisible(true);
