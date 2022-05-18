@@ -11,14 +11,16 @@ public class TrocarVeiculo extends JFrame {
     private JLabel trocarVeiculo;
     private JComboBox veiculoEntregarText;
     private JComboBox veiculoReceberBox;
-    private JLabel dinheiroPagar;
-    private JLabel dinheiroReceber;
+    private JLabel valorVeiculoReceber;
+    private JLabel valorVeiculoEntregar;
     private JLabel veioculoReceber;
     private JLabel veiculoEntregar;
-    private JTextField dinheiroReceberText;
-    private JTextField dinheiroPagarText;
+    private JTextField valorVeiculoEntregarText;
+    private JTextField valorVeiculoReceberText;
     private JButton trocarButton;
     private JButton cancelarButton;
+    private JTextField valorPagarReceberText;
+    private JLabel valorPagarReceber;
 
     public TrocarVeiculo(){
         setContentPane(painelPrincipal);
