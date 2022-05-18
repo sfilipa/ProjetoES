@@ -14,6 +14,7 @@ public class PaginaInicialEventos extends JFrame{
     private JButton consultarButton;
     private JButton voltarButton;
     private JPanel painelPrincipal;
+    private JButton editarEventoButton;
 
     public PaginaInicialEventos(){
         setContentPane(painelPrincipal);
@@ -23,7 +24,7 @@ public class PaginaInicialEventos extends JFrame{
         btnVoltarActionPerformed();
         btnAdicionarEventoActionPerformed();
         btnRemoverEventoActionPerformed();
-
+        btnEditarEventoActionPerformed();
     }
 
     private void btnAdicionarEventoActionPerformed() {
@@ -42,6 +43,16 @@ public class PaginaInicialEventos extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
                 new RemoverEvento().setVisible(true);
+            }
+        });
+    }
+
+    private void btnEditarEventoActionPerformed() {
+        editarEventoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new EditarEvento().setVisible(true);
             }
         });
     }
