@@ -95,6 +95,8 @@
               <component id="76f72" class="javax.swing.JList" binding="list1" default-binding="true">
                 <constraints/>
                 <properties>
+                  <maximumSize width="1000" height="650"/>
+                  <minimumSize width="500" height="300"/>
                   <model>
                     <item value="Peça 1"/>
                     <item value="Peça 2"/>
@@ -107,6 +109,7 @@
                     <item value="Peça 9"/>
                     <item value="Peça 10"/>
                   </model>
+                  <preferredSize width="500" height="350"/>
                 </properties>
               </component>
             </children>

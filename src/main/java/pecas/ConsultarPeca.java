@@ -1,6 +1,8 @@
 package pecas;
 
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class ConsultarPeca extends JFrame {
     private JLabel consultarPeca;
@@ -21,6 +23,17 @@ public class ConsultarPeca extends JFrame {
         setContentPane(painelPrincipal);
         pack();
 
+        btnVoltarActionPerformed();
+    }
+
+    private void btnVoltarActionPerformed() {
+        voltarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new PaginaInicialPecas().setVisible(true);
+            }
+        });
     }
 
     public static void main(String[] args) {

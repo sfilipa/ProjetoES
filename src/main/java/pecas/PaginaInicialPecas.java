@@ -1,14 +1,12 @@
 package pecas;
 
 import paginaPrincipal.PaginaPrincipal;
-import transacoes.RemoverTransacao;
-import veiculo.AdicionarVeiculo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PaginaInicialVeiculos extends JFrame{
+public class PaginaInicialPecas extends JFrame{
     private JButton adicionarPecaButton;
     private JButton consultarPecaButton;
     private JButton editarPecaButton;
@@ -18,7 +16,7 @@ public class PaginaInicialVeiculos extends JFrame{
     private JLabel pecas;
     private JButton voltarButton;
 
-    public PaginaInicialVeiculos(){
+    public PaginaInicialPecas(){
         setContentPane(painelPrincipal);
         pack();
 
@@ -90,7 +88,7 @@ public class PaginaInicialVeiculos extends JFrame{
         });
     }
     public static void main(String[] args) {
-        new PaginaInicialVeiculos().setVisible(true);
+        new PaginaInicialPecas().setVisible(true);
     }
 
     private void createUIComponents() {

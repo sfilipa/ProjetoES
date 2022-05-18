@@ -46,7 +46,7 @@
               <text value="Veículos"/>
             </properties>
           </component>
-          <component id="5f744" class="javax.swing.JButton" binding="peçasButton" default-binding="true">
+          <component id="5f744" class="javax.swing.JButton" binding="pecasButton">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -54,7 +54,7 @@
               <text value="Peças"/>
             </properties>
           </component>
-          <component id="1dde" class="javax.swing.JButton" binding="transaçõesButton" default-binding="true">
+          <component id="1dde" class="javax.swing.JButton" binding="transacoesButton">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -78,7 +78,7 @@
               <text value="Clientes"/>
             </properties>
           </component>
-          <component id="deb1" class="javax.swing.JButton" binding="estatísticasButton" default-binding="true">
+          <component id="deb1" class="javax.swing.JButton" binding="estatisticasButton">
             <constraints>
               <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>

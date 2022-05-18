@@ -1,6 +1,7 @@
 package paginaPrincipal;
 
 import eventos.PaginaInicialEventos;
+import pecas.PaginaInicialPecas;
 import veiculo.*;
 
 import javax.swing.*;
@@ -9,12 +10,12 @@ import java.awt.event.ActionListener;
 
 public class PaginaPrincipal extends JFrame{
     private JButton veículosButton;
-    private JButton peçasButton;
-    private JButton transaçõesButton;
+    private JButton pecasButton;
+    private JButton transacoesButton;
     private JButton sairButton;
     private JButton eventosButton;
     private JButton clientesButton;
-    private JButton estatísticasButton;
+    private JButton estatisticasButton;
     private JPanel painelPrincipal;
 
 
@@ -24,6 +25,7 @@ public class PaginaPrincipal extends JFrame{
             btnVeiculoActionPerformed();
             btnEventoActionPerformed();
             btnSairActionPerformed();
+            btnPecasActionPerformed();
         }
 
         private void btnVeiculoActionPerformed() {
@@ -42,6 +44,16 @@ public class PaginaPrincipal extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
                 new PaginaInicialEventos().setVisible(true);
+            }
+        });
+    }
+
+    private void btnPecasActionPerformed() {
+        pecasButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new PaginaInicialPecas().setVisible(true);
             }
         });
     }
