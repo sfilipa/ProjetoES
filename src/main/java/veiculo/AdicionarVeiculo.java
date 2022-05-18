@@ -11,8 +11,6 @@ public class AdicionarVeiculo extends JFrame {
     private JTextField textField1;
     private JTextField textField2;
     private JTextField textField3;
-<<<<<<< HEAD
-=======
     private JTextField textField4;
     private JTextField textField5;
     private JTextField textField7;
@@ -32,7 +30,7 @@ public class AdicionarVeiculo extends JFrame {
     private JRadioButton médioRadioButton;
     private JRadioButton mauRadioButton;
     private JRadioButton mutioMauRadioButton;
->>>>>>> 82ef867be570417126434dad749d610304bfe4b9
+
 
     public AdicionarVeiculo(){
         setContentPane(painelPrincipal);
