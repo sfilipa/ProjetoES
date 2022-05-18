@@ -1,12 +1,15 @@
 package pecas;
 
+import veiculo.PaginaInicialVeiculos;
+
 import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 public class AdicionarPeca extends JFrame{
     private JPanel painelPrincipal;
     private JLabel adicionarPeca;
     private JTextField nomePecaTextField;
-    private JList localArmazenamentoList;
     private JRadioButton consumivelRadioButton;
     private JRadioButton outroRadioButton;
     private JTextField quantidadeMinimaSedeText;
@@ -18,11 +21,23 @@ public class AdicionarPeca extends JFrame{
     private JLabel tipoPeca;
     private JLabel quantidadeMinimaSede;
     private JLabel quantidadeMinimaFileal;
+    private JList localArmazenamentoList;
 
     public AdicionarPeca(){
         setContentPane(painelPrincipal);
         pack();
 
+        btnCancelarActionPerformed();
+    }
+
+    private void btnCancelarActionPerformed() {
+        cancelarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new PaginaInicialPecas().setVisible(true);
+            }
+        });
     }
 
     public static void main(String[] args) {

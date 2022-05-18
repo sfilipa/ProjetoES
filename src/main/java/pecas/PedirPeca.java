@@ -1,28 +1,41 @@
-import javax.swing.*;
+package pecas;
 
-public class PedirPeca extends JFrame{
-    private JPanel painelPrincipal;
-    private JList pecaList;
-    private JButton requisitarButton;
-    private JLabel peca;
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class PedirPeca extends JFrame {
     private JLabel pedirPecaText;
-    private JButton cancelarButton;
+    private JLabel peca;
     private JLabel sedeFilealRequisita;
     private JLabel sedeFilealEntrega;
-    private JComboBox sedeFilealRequisitaBox;
     private JComboBox sedeFilealEntregaBox;
+    private JComboBox sedeFilealRequisitaBox;
+    private JList list1;
+    private JButton requisitarButton;
+    private JButton cancelarButton;
+    private JPanel painelPrincipal;
 
     public PedirPeca(){
         setContentPane(painelPrincipal);
         pack();
 
+        btnCancelarActionPerformed();
     }
+
+    private void btnCancelarActionPerformed() {
+        cancelarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new PaginaInicialPecas().setVisible(true);
+            }
+        });
+    }
+
 
     public static void main(String[] args) {
         new PedirPeca().setVisible(true);
     }
 
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
-    }
 }

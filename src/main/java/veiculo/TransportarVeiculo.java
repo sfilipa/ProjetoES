@@ -10,11 +10,8 @@ public class TransportarVeiculo extends JFrame{
     private JButton cancelarButton;
     private JComboBox comboBox1;
     private JRadioButton sedeRadioButton;
-    private JRadioButton filialRadioButton;
+    private JRadioButton filialFeiraRadioButton;
     private JComboBox comboBox2;
-    private JRadioButton simRadioButton;
-    private JRadioButton nãoRadioButton;
-    private JComboBox comboBox3;
 
     public TransportarVeiculo(){
         setContentPane(painelPrincipal);

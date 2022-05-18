@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="PedirPeca">
-  <grid id="27dc6" binding="painelPrincipal" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+<form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="pecas.PedirPeca">
+  <grid id="27dc6" binding="painelPrincipal" layout-manager="GridLayoutManager" row-count="2" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="463"/>
+      <xy x="20" y="20" width="500" height="400"/>
     </constraints>
     <properties/>
     <border type="none"/>
     <children>
-      <grid id="1601" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="a9cda" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -16,7 +16,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="4db1" class="javax.swing.JLabel" binding="pedirPecaText">
+          <component id="c2700" class="javax.swing.JLabel" binding="pedirPecaText">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -27,7 +27,7 @@
           </component>
         </children>
       </grid>
-      <grid id="c29a7" layout-manager="GridLayoutManager" row-count="6" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="49aa9" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -35,7 +35,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="4ca80" class="javax.swing.JLabel" binding="peca">
+          <component id="70dcc" class="javax.swing.JLabel" binding="peca">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -43,7 +43,7 @@
               <text value="Peça:"/>
             </properties>
           </component>
-          <component id="a63b0" class="javax.swing.JLabel" binding="sedeFilealRequisita">
+          <component id="7937e" class="javax.swing.JLabel" binding="sedeFilealRequisita">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -51,21 +51,7 @@
               <text value="Sede / Fileal que requisita:"/>
             </properties>
           </component>
-          <component id="90db0" class="javax.swing.JList" binding="pecaList">
-            <constraints>
-              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="6" hsize-policy="2" anchor="0" fill="3" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="50"/>
-              </grid>
-            </constraints>
-            <properties>
-              <model>
-                <item value="Peça 1"/>
-                <item value="Peça 2"/>
-                <item value="Peça 3"/>
-              </model>
-            </properties>
-          </component>
-          <component id="e372a" class="javax.swing.JLabel" binding="sedeFilealEntrega">
+          <component id="4738a" class="javax.swing.JLabel" binding="sedeFilealEntrega">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -73,20 +59,7 @@
               <text value="Sede / Fileal que entrega:"/>
             </properties>
           </component>
-          <component id="a2a8b" class="javax.swing.JComboBox" binding="sedeFilealRequisitaBox" custom-create="true">
-            <constraints>
-              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <model>
-                <item value="Sede"/>
-                <item value="Fileal 1"/>
-                <item value="Fileal 2"/>
-                <item value="Fileal 3"/>
-              </model>
-            </properties>
-          </component>
-          <component id="272ed" class="javax.swing.JComboBox" binding="sedeFilealEntregaBox">
+          <component id="5738a" class="javax.swing.JComboBox" binding="sedeFilealEntregaBox">
             <constraints>
               <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -99,32 +72,74 @@
               </model>
             </properties>
           </component>
-        </children>
-      </grid>
-      <grid id="b07b8" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
-        <margin top="0" left="0" bottom="0" right="0"/>
-        <constraints>
-          <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
-        </constraints>
-        <properties/>
-        <border type="none"/>
-        <children>
-          <component id="c6adf" class="javax.swing.JButton" binding="requisitarButton" default-binding="true">
+          <component id="543ed" class="javax.swing.JComboBox" binding="sedeFilealRequisitaBox">
             <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Requisitar"/>
+              <model>
+                <item value="Sede"/>
+                <item value="Fileal 1"/>
+                <item value="Fileal 2"/>
+                <item value="Fileal 3"/>
+              </model>
             </properties>
           </component>
-          <component id="50c43" class="javax.swing.JButton" binding="cancelarButton" default-binding="true">
+          <scrollpane id="df2e4">
             <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties>
-              <text value="Cancelar"/>
-            </properties>
-          </component>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="76f72" class="javax.swing.JList" binding="list1" default-binding="true">
+                <constraints/>
+                <properties>
+                  <maximumSize width="1000" height="650"/>
+                  <minimumSize width="500" height="300"/>
+                  <model>
+                    <item value="Peça 1"/>
+                    <item value="Peça 2"/>
+                    <item value="Peça 3"/>
+                    <item value="Peça 4"/>
+                    <item value="Peça 5"/>
+                    <item value="Peça 6"/>
+                    <item value="Peça 7"/>
+                    <item value="Peça 8"/>
+                    <item value="Peça 9"/>
+                    <item value="Peça 10"/>
+                  </model>
+                  <preferredSize width="500" height="350"/>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
+          <grid id="d2323" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+            <margin top="0" left="0" bottom="0" right="0"/>
+            <constraints>
+              <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="97ec7" class="javax.swing.JButton" binding="requisitarButton" default-binding="true">
+                <constraints>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Requisitar"/>
+                </properties>
+              </component>
+              <component id="e10c4" class="javax.swing.JButton" binding="cancelarButton" default-binding="true">
+                <constraints>
+                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+                </constraints>
+                <properties>
+                  <text value="Cancelar"/>
+                </properties>
+              </component>
+            </children>
+          </grid>
         </children>
       </grid>
     </children>
