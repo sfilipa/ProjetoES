@@ -1,34 +1,29 @@
 package eventos;
 
-import veiculo.PaginaInicialVeiculos;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ConsultarEvento extends JFrame {
-    private JLabel lblNome;
-    private JPanel painelPrincipal;
-    private JLabel lblNVeiculos;
-    private JLabel lblLocal;
-    private JLabel lblTempo;
-    private JButton voltarButton;
-    private JComboBox comboBox3;
-    private JButton filtrarButton;
-    private JList list1;
+public class AdicionarEvento extends JFrame{
+    private JButton adicionarButton;
+    private JButton cancelarButton;
     private JTextField textField1;
+    private JComboBox comboBox1;
+    private JButton adicionarNovoLocalDeButton;
     private JTextField textField2;
+    private JTextField textField3;
+    private JPanel painelPrincipal;
 
-    public ConsultarEvento(){
+    public AdicionarEvento(){
         setContentPane(painelPrincipal);
         pack();
-        btnVoltarActionPerformed();
 
+        btnCancelarActionPerformed();
 
     }
 
-    private void btnVoltarActionPerformed() {
-        voltarButton.addActionListener(new ActionListener() {
+    private void btnCancelarActionPerformed() {
+        cancelarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);

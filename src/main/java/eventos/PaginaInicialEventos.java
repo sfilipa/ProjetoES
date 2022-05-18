@@ -21,7 +21,18 @@ public class PaginaInicialEventos extends JFrame{
 
         btnConsultarEventoActionPerformed();
         btnVoltarActionPerformed();
+        btnAdicionarEventoActionPerformed();
 
+    }
+
+    private void btnAdicionarEventoActionPerformed() {
+        adicionarEventoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new AdicionarEvento().setVisible(true);
+            }
+        });
     }
 
     private void btnConsultarEventoActionPerformed() {
