@@ -1,8 +1,8 @@
 package paginaPrincipal;
 
-import cliente.PaginaInicialClientes;
 import eventos.PaginaInicialEventos;
 import pecas.PaginaInicialPecas;
+import transacoes.PaginaInicialTransacoes;
 import veiculo.*;
 
 import javax.swing.*;
@@ -27,7 +27,7 @@ public class PaginaPrincipal extends JFrame{
             btnEventoActionPerformed();
             btnSairActionPerformed();
             btnPecasActionPerformed();
-            btnClienteActionPerfomed();
+            btnTransacoesPerformed();
         }
 
         private void btnVeiculoActionPerformed() {
@@ -60,16 +60,16 @@ public class PaginaPrincipal extends JFrame{
         });
     }
 
-
-    private void btnClienteActionPerfomed() {
-        clientesButton.addActionListener(new ActionListener() {
+    private void btnTransacoesPerformed() {
+        transacoesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                new PaginaInicialClientes().setVisible(true);
+                new PaginaInicialTransacoes().setVisible(true);
             }
         });
     }
+
 
     private void btnSairActionPerformed() {
         sairButton.addActionListener(new ActionListener() {
