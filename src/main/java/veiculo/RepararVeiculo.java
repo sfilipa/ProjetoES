@@ -7,11 +7,13 @@ import java.awt.event.ActionListener;
 public class RepararVeiculo extends JFrame {
     private JButton repararButton;
     private JPanel painelPrincipal;
-    private JTextField textField1;
     private JButton cancelarButton;
     private JComboBox comboBox1;
     private JComboBox comboBox2;
     private JList list1;
+    private JButton adicionarButton;
+    private JTextPane textPane1;
+    private JSpinner spinner1;
 
     public RepararVeiculo(){
         setContentPane(painelPrincipal);
