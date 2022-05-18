@@ -25,6 +25,11 @@ public class AdicionarVeiculo extends JFrame {
     private JRadioButton manualRadioButton;
     private JRadioButton fronteiraRadioButton;
     private JRadioButton traseiraRadioButton;
+    private JRadioButton muitoBomRadioButton;
+    private JRadioButton bomRadioButton;
+    private JRadioButton médioRadioButton;
+    private JRadioButton mauRadioButton;
+    private JRadioButton mutioMauRadioButton;
 
     public AdicionarVeiculo(){
         setContentPane(painelPrincipal);

@@ -26,6 +26,11 @@ public class EditarVeiculo extends JFrame {
     private JRadioButton fronteiraRadioButton;
     private JRadioButton manualRadioButton;
     private JRadioButton traseiraRadioButton;
+    private JRadioButton muitoBomRadioButton1;
+    private JRadioButton bomRadioButton;
+    private JRadioButton médioRadioButton;
+    private JRadioButton mauRadioButton;
+    private JRadioButton muitoMauRadioButton;
 
     public EditarVeiculo(){
         setContentPane(painelPrincipal);
