@@ -22,6 +22,7 @@ public class PaginaInicialEventos extends JFrame{
         btnConsultarEventoActionPerformed();
         btnVoltarActionPerformed();
         btnAdicionarEventoActionPerformed();
+        btnRemoverEventoActionPerformed();
 
     }
 
@@ -31,6 +32,16 @@ public class PaginaInicialEventos extends JFrame{
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
                 new AdicionarEvento().setVisible(true);
+            }
+        });
+    }
+
+    private void btnRemoverEventoActionPerformed() {
+        removerEventoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new RemoverEvento().setVisible(true);
             }
         });
     }
