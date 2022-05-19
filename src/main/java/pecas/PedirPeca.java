@@ -15,6 +15,12 @@ public class PedirPeca extends JFrame {
     private JButton requisitarButton;
     private JButton cancelarButton;
     private JPanel painelPrincipal;
+    private JButton filtrarButton;
+    private JRadioButton comsumivelRadioButton;
+    private JRadioButton outroRadioButton;
+    private JTextField palavrasFiltragemText;
+    private JLabel palavrasFiltragem;
+    private JLabel tipoPecaFiltragem;
 
     public PedirPeca(){
         setContentPane(painelPrincipal);

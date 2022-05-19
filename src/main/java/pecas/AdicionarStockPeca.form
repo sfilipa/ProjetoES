@@ -35,15 +35,15 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="a0f56" class="javax.swing.JLabel">
+          <component id="a0f56" class="javax.swing.JLabel" binding="palavrasFiltragem">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Nome:"/>
+              <text value="Filtragem por palavras:"/>
             </properties>
           </component>
-          <component id="c3dc" class="javax.swing.JLabel">
+          <component id="c3dc" class="javax.swing.JLabel" binding="tipoPecaFiltragem">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -51,7 +51,7 @@
               <text value="Tipo de peça:"/>
             </properties>
           </component>
-          <component id="623f8" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+          <component id="623f8" class="javax.swing.JTextField" binding="palavrasFiltragemText">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -93,15 +93,15 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="2eeda" class="javax.swing.JLabel">
+          <component id="2eeda" class="javax.swing.JLabel" binding="pecaAdicionar">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Nome da peça:"/>
+              <text value="Peça a adicionar:"/>
             </properties>
           </component>
-          <component id="28930" class="javax.swing.JLabel">
+          <component id="28930" class="javax.swing.JLabel" binding="quantidadeAdicionar">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -109,17 +109,7 @@
               <text value="Quantidade a adicionar:"/>
             </properties>
           </component>
-          <component id="2d3a0" class="javax.swing.JTextField" binding="textField2" default-binding="true">
-            <constraints>
-              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
-                <preferred-size width="150" height="-1"/>
-              </grid>
-            </constraints>
-            <properties>
-              <text value=""/>
-            </properties>
-          </component>
-          <component id="34884" class="javax.swing.JLabel">
+          <component id="34884" class="javax.swing.JLabel" binding="filealSedeAdicionar">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -127,7 +117,7 @@
               <text value="Fileal / Sede a adicionar:"/>
             </properties>
           </component>
-          <component id="474e" class="javax.swing.JSpinner" binding="spinner1" default-binding="true">
+          <component id="474e" class="javax.swing.JSpinner" binding="quantidadeAdicionarSpiner">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -140,7 +130,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="c9fa7" class="javax.swing.JList" binding="list1" default-binding="true">
+              <component id="c9fa7" class="javax.swing.JList" binding="filealSedeAdicionarList">
                 <constraints/>
                 <properties>
                   <model>
@@ -160,6 +150,12 @@
               </component>
             </children>
           </scrollpane>
+          <component id="9aa91" class="javax.swing.JComboBox" binding="pecaAdicionarComboBox">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+          </component>
         </children>
       </grid>
       <grid id="6cf67" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">

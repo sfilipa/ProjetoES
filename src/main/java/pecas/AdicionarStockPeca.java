@@ -6,15 +6,20 @@ import java.awt.event.ActionListener;
 
 public class AdicionarStockPeca extends JFrame {
     private JPanel painelPrincipal;
-    private JTextField textField1;
+    private JTextField palavrasFiltragemText;
     private JRadioButton consumivelRadioButton;
     private JRadioButton outroRadioButton;
     private JButton filtrarButton;
-    private JTextField textField2;
-    private JSpinner spinner1;
-    private JList list1;
+    private JSpinner quantidadeAdicionarSpiner;
+    private JList filealSedeAdicionarList;
     private JButton adicionarButton;
     private JButton cancelarButton;
+    private JComboBox pecaAdicionarComboBox;
+    private JLabel filealSedeAdicionar;
+    private JLabel quantidadeAdicionar;
+    private JLabel pecaAdicionar;
+    private JLabel palavrasFiltragem;
+    private JLabel tipoPecaFiltragem;
 
     public AdicionarStockPeca(){
         setContentPane(painelPrincipal);
