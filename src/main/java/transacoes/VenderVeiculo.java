@@ -13,6 +13,13 @@ public class VenderVeiculo extends JFrame {
     private JButton venderVeiculoButton;
     private JButton cancelarButton;
     private JPanel painelPrincipal;
+    private JComboBox comboBox1;
+    private JComboBox comboBox2;
+    private JComboBox comboBox4;
+    private JComboBox comboBox5;
+    private JComboBox comboBox3;
+    private JComboBox comboBox6;
+    private JButton filtrarButton;
 
     public VenderVeiculo(){
         setContentPane(painelPrincipal);

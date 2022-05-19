@@ -6,12 +6,6 @@ import java.awt.event.ActionListener;
 
 public class RemoverStockPeca extends JFrame {
     private JPanel painelPrincipal;
-    private JRadioButton consumivelRadioButton;
-    private JRadioButton outroRadioButton;
-    private JLabel nome;
-    private JLabel tipoPeca;
-    private JButton filtrarButton;
-    private JTextField nomePecaText;
     private JTextField nomePecaRemover;
     private JLabel nomePeca;
     private JButton removerButton;
@@ -20,6 +14,13 @@ public class RemoverStockPeca extends JFrame {
     private JLabel quantidadeRemover;
     private JList list1;
     private JComboBox comboBox1;
+    private JLabel palavrasFiltragem;
+    private JLabel tipoPecaFiltragem;
+    private JButton filtrarButton;
+    private JRadioButton comsumivelRadioButton;
+    private JRadioButton outroRadioButton;
+    private JTextField palavrasFiltragemText;
+    private JLabel filtrarPeca;
 
     public RemoverStockPeca(){
         setContentPane(painelPrincipal);

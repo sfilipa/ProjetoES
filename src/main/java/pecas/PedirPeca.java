@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 
 public class PedirPeca extends JFrame {
     private JLabel pedirPecaText;
-    private JLabel peca;
     private JLabel sedeFilealRequisita;
     private JLabel sedeFilealEntrega;
     private JComboBox sedeFilealEntregaBox;
@@ -15,12 +14,13 @@ public class PedirPeca extends JFrame {
     private JButton requisitarButton;
     private JButton cancelarButton;
     private JPanel painelPrincipal;
+    private JLabel palavrasFiltragem;
+    private JLabel tipoPecaFiltragem;
     private JButton filtrarButton;
     private JRadioButton comsumivelRadioButton;
     private JRadioButton outroRadioButton;
     private JTextField palavrasFiltragemText;
-    private JLabel palavrasFiltragem;
-    private JLabel tipoPecaFiltragem;
+    private JLabel filtrarPeca;
 
     public PedirPeca(){
         setContentPane(painelPrincipal);

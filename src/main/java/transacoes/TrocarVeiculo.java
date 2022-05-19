@@ -23,6 +23,13 @@ public class TrocarVeiculo extends JFrame {
     private JButton cancelarButton;
     private JTextField valorPagarReceberText;
     private JLabel valorPagarReceber;
+    private JComboBox comboBox1;
+    private JComboBox comboBox2;
+    private JComboBox comboBox4;
+    private JComboBox comboBox5;
+    private JComboBox comboBox3;
+    private JComboBox comboBox6;
+    private JButton filtrarButton;
 
     public TrocarVeiculo(){
         setContentPane(painelPrincipal);
