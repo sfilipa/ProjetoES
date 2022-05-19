@@ -17,11 +17,18 @@ public class RemoverTransacao extends JFrame{
     private JLabel dataTransacao;
     private JLabel horaTransacao;
     private JLabel tipoTransacao;
-    private JLabel valorText;
-    private JLabel matriculaText;
-    private JLabel dataTransacaoText;
-    private JLabel horaTransacaoText;
-    private JLabel tipoTransacaoText;
+    private JLabel palavrasFiltragem;
+    private JLabel tipoPecaFiltragem;
+    private JButton filtrarButton;
+    private JRadioButton dinheiroRadioButton;
+    private JRadioButton outroRadioButton;
+    private JTextField palavrasFiltragemText;
+    private JLabel filtrarPeca;
+    private JTextField valorText;
+    private JTextField matriculaText;
+    private JTextField dataTransacaoText;
+    private JTextField horaTransacaoText;
+    private JTextField tipoTransacaoText;
 
     public RemoverTransacao(){
         setContentPane(painelPrincipal);
