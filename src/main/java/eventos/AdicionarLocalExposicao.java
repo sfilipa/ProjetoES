@@ -1,22 +1,23 @@
-package cliente;
-
-import veiculo.AdicionarVeiculo;
-import veiculo.PaginaInicialVeiculos;
+package eventos;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class RemoverCliente extends JFrame{
-    private JPanel painelPrincipal;
-    private JList list1;
-    private JComboBox comboBox1;
-    private JButton removerButton;
-    private JButton cancelarButton;
+public class AdicionarLocalExposicao extends JFrame {
 
-    public RemoverCliente(){
+
+    private JTextField nomeExposiçaoTextField;
+    private JTextField filialAssociadaTextField;
+    private JPanel painelPrincipal;
+    private JButton cancelarButton;
+    private JButton adicionarButton;
+
+
+    public AdicionarLocalExposicao(){
         setContentPane(painelPrincipal);
         pack();
+
         btnCancelarActionPerformed();
 
     }
@@ -27,14 +28,13 @@ public class RemoverCliente extends JFrame{
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                new PaginaInicialClientes().setVisible(true);
+                new PaginaInicialEventos().setVisible(true);
             }
         });
     }
 
 
     public static void main(String[] args) {
-        new RemoverCliente().setVisible(true);
+        new AdicionarLocalExposicao().setVisible(true);
     }
-
 }

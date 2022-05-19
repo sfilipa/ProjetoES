@@ -28,6 +28,9 @@ public class PaginaInicialEventos extends JFrame{
         btnAdicionarEventoActionPerformed();
         btnRemoverEventoActionPerformed();
         btnEditarEventoActionPerformed();
+        btnAdicionarLocalExposicaoActionPerfomed();
+        btnRemoverLocalExposicaoActionPerfomed();
+        btnConsultarLocalExposicaoActionPerfomed();
     }
 
     private void btnAdicionarEventoActionPerformed() {
@@ -79,6 +82,38 @@ public class PaginaInicialEventos extends JFrame{
             }
         });
     }
+
+    private void btnAdicionarLocalExposicaoActionPerfomed(){
+        adicionarLocalDeExposiçãoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new AdicionarLocalExposicao().setVisible(true);
+            }
+        });
+    }
+
+   private void btnRemoverLocalExposicaoActionPerfomed(){
+        removerLocalDeExposiçãoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new RemoverLocalExposicao().setVisible(true);
+            }
+        });
+    }
+
+    private void btnConsultarLocalExposicaoActionPerfomed(){
+        consultarLocalDeExposiçãoButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new ConsultarLocalExposicao().setVisible(true);
+            }
+        });
+    }
+
+
 
     public static void main(String[] args) {
         new PaginaInicialEventos().setVisible(true);

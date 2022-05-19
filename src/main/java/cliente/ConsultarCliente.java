@@ -35,7 +35,7 @@ public class ConsultarCliente extends JFrame {
 
 
     public static void main(String[] args) {
-        new ConsultarEvento().setVisible(true);
+        new ConsultarCliente().setVisible(true);
     }
 
 

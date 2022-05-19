@@ -35,7 +35,7 @@ public class AdicionarCliente extends JFrame {
 
 
     public static void main(String[] args) {
-        new AdicionarVeiculo().setVisible(true);
+        new AdicionarCliente().setVisible(true);
     }
 
 

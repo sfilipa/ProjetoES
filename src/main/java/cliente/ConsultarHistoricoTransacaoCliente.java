@@ -1,29 +1,24 @@
 package cliente;
 
-import veiculo.AdicionarVeiculo;
-import veiculo.PaginaInicialVeiculos;
-
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class RemoverCliente extends JFrame{
-    private JPanel painelPrincipal;
-    private JList list1;
+public class ConsultarHistoricoTransacaoCliente extends JFrame {
     private JComboBox comboBox1;
-    private JButton removerButton;
-    private JButton cancelarButton;
+    private JButton voltarButton;
+    private JPanel painelPrincipal;
 
-    public RemoverCliente(){
+
+    public ConsultarHistoricoTransacaoCliente(){
         setContentPane(painelPrincipal);
         pack();
         btnCancelarActionPerformed();
-
     }
 
 
     private void btnCancelarActionPerformed() {
-        cancelarButton.addActionListener(new ActionListener() {
+        voltarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
@@ -34,7 +29,8 @@ public class RemoverCliente extends JFrame{
 
 
     public static void main(String[] args) {
-        new RemoverCliente().setVisible(true);
+        new ConsultarHistoricoTransacaoCliente().setVisible(true);
     }
+
 
 }

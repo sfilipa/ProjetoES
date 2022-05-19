@@ -107,7 +107,16 @@
         </constraints>
         <properties>
           <model>
-            <item value="Lista de Clientes"/>
+            <item value="Cliente1"/>
+            <item value="Cliente2"/>
+            <item value="Cliente3"/>
+            <item value="Cliente4"/>
+            <item value="Cliente5"/>
+            <item value="Cliente6"/>
+            <item value="Cliente7"/>
+            <item value="Cliente8"/>
+            <item value="Cliente9"/>
+            <item value="Cliente10"/>
           </model>
         </properties>
       </component>
