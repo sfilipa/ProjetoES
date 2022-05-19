@@ -8,7 +8,14 @@ public class RemoverVeiculo extends JFrame {
     private JButton removerButton;
     private JPanel painelPrincipal;
     private JButton cancelarButton;
+    private JList list1;
     private JComboBox comboBox1;
+    private JComboBox comboBox2;
+    private JComboBox comboBox3;
+    private JComboBox comboBox4;
+    private JComboBox comboBox5;
+    private JComboBox comboBox6;
+    private JButton filtrarButton;
 
     public RemoverVeiculo(){
         setContentPane(painelPrincipal);

@@ -22,6 +22,13 @@ public class EditarPeca extends JFrame {
     private JLabel alterarQuantidadeMinimaSede;
     private JLabel alterarQuantidadeMinimaFileal;
     private JList list1;
+    private JLabel palavrasFiltragem;
+    private JLabel tipoPecaFiltragem;
+    private JButton filtrarButton;
+    private JRadioButton comsumivelRadioButton;
+    private JRadioButton outroRadioButton;
+    private JTextField palavrasFiltragemText;
+    private JLabel filtrarPeca;
 
     public EditarPeca(){
         setContentPane(painelPrincipal);

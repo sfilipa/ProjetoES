@@ -30,7 +30,7 @@
           </component>
         </children>
       </grid>
-      <grid id="b4a1f" layout-manager="GridLayoutManager" row-count="14" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="b4a1f" layout-manager="GridLayoutManager" row-count="15" column-count="6" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -38,14 +38,6 @@
         <properties/>
         <border type="etched"/>
         <children>
-          <component id="746e6" class="javax.swing.JLabel" binding="matricula">
-            <constraints>
-              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <text value="Matrícula:"/>
-            </properties>
-          </component>
           <component id="ed50d" class="javax.swing.JTextField" binding="textField1" default-binding="true">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
@@ -176,7 +168,7 @@
           </component>
           <component id="b976a" class="javax.swing.JLabel">
             <constraints>
-              <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Cilindrada:"/>
@@ -200,7 +192,7 @@
           </component>
           <component id="afb49" class="javax.swing.JTextField" binding="textField11" default-binding="true">
             <constraints>
-              <grid row="10" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+              <grid row="11" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
@@ -208,7 +200,7 @@
           </component>
           <component id="7a3d8" class="javax.swing.JLabel">
             <constraints>
-              <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Tipo de Caixa:"/>
@@ -216,7 +208,7 @@
           </component>
           <component id="ca43c" class="javax.swing.JLabel">
             <constraints>
-              <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Tração:"/>
@@ -248,7 +240,7 @@
           </component>
           <component id="3179e" class="javax.swing.JRadioButton" binding="automáticaRadioButton" default-binding="true">
             <constraints>
-              <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="12" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Automática"/>
@@ -256,7 +248,7 @@
           </component>
           <component id="5cfd2" class="javax.swing.JRadioButton" binding="manualRadioButton" default-binding="true">
             <constraints>
-              <grid row="11" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Manual"/>
@@ -264,7 +256,7 @@
           </component>
           <component id="fb33e" class="javax.swing.JRadioButton" binding="fronteiraRadioButton" default-binding="true">
             <constraints>
-              <grid row="12" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="13" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Fronteira"/>
@@ -272,7 +264,7 @@
           </component>
           <component id="e0d0a" class="javax.swing.JRadioButton" binding="traseiraRadioButton" default-binding="true">
             <constraints>
-              <grid row="12" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="13" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Traseira"/>
@@ -280,7 +272,7 @@
           </component>
           <component id="55cb9" class="javax.swing.JLabel">
             <constraints>
-              <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Condição geral do Veículo:"/>
@@ -288,7 +280,7 @@
           </component>
           <component id="9a405" class="javax.swing.JRadioButton" binding="muitoBomRadioButton" default-binding="true">
             <constraints>
-              <grid row="13" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="14" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Muito Bom"/>
@@ -296,7 +288,7 @@
           </component>
           <component id="a148c" class="javax.swing.JRadioButton" binding="bomRadioButton" default-binding="true">
             <constraints>
-              <grid row="13" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="14" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Bom"/>
@@ -304,7 +296,7 @@
           </component>
           <component id="6b5b3" class="javax.swing.JRadioButton" binding="médioRadioButton" default-binding="true">
             <constraints>
-              <grid row="13" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="14" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Médio"/>
@@ -312,7 +304,7 @@
           </component>
           <component id="b41f5" class="javax.swing.JRadioButton" binding="mauRadioButton" default-binding="true">
             <constraints>
-              <grid row="13" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="14" column="4" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Mau"/>
@@ -320,10 +312,34 @@
           </component>
           <component id="917a" class="javax.swing.JRadioButton" binding="mutioMauRadioButton" default-binding="true">
             <constraints>
-              <grid row="13" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="14" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Mutio Mau"/>
+            </properties>
+          </component>
+          <component id="4aa98" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Quiómetros:"/>
+            </properties>
+          </component>
+          <component id="961ed" class="javax.swing.JTextField" binding="textField6" default-binding="true">
+            <constraints>
+              <grid row="10" column="1" row-span="1" col-span="5" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                <preferred-size width="150" height="-1"/>
+              </grid>
+            </constraints>
+            <properties/>
+          </component>
+          <component id="30858" class="javax.swing.JLabel">
+            <constraints>
+              <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Matrícula:"/>
             </properties>
           </component>
         </children>
@@ -356,4 +372,26 @@
       </grid>
     </children>
   </grid>
+  <buttonGroups>
+    <group name="buttonGroup1">
+      <member id="cfb0d"/>
+      <member id="1aa05"/>
+      <member id="c6ca5"/>
+    </group>
+    <group name="buttonGroup2">
+      <member id="3179e"/>
+      <member id="5cfd2"/>
+    </group>
+    <group name="buttonGroup3">
+      <member id="fb33e"/>
+      <member id="e0d0a"/>
+    </group>
+    <group name="buttonGroup4">
+      <member id="9a405"/>
+      <member id="a148c"/>
+      <member id="6b5b3"/>
+      <member id="b41f5"/>
+      <member id="917a"/>
+    </group>
+  </buttonGroups>
 </form>

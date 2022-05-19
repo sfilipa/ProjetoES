@@ -12,6 +12,13 @@ public class ConsultarVeiculo extends JFrame{
     private JLabel lblPortas;
     private JButton voltarButton;
     private JComboBox comboBox1;
+    private JComboBox comboBox2;
+    private JComboBox comboBox3;
+    private JComboBox comboBox4;
+    private JComboBox comboBox5;
+    private JComboBox comboBox6;
+    private JButton filtrarButton;
+    private JList list1;
     private JLabel lblDonoAnterior;
     private JTextArea textDetalhes;
 

@@ -12,8 +12,11 @@ public class ConsultarEvento extends JFrame {
     private JLabel lblNVeiculos;
     private JLabel lblLocal;
     private JLabel lblTempo;
-    private JComboBox comboBox1;
     private JButton voltarButton;
+    private JButton filtrarButton;
+    private JList list1;
+    private JComboBox comboBox2;
+    private JComboBox comboBox5;
 
     public ConsultarEvento(){
         setContentPane(painelPrincipal);

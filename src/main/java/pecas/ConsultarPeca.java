@@ -18,6 +18,13 @@ public class ConsultarPeca extends JFrame {
     private JLabel quantidadeMinimaFilealText;
     private JPanel painelPrincipal;
     private JLabel nomePeca;
+    private JLabel palavrasFiltragem;
+    private JLabel tipoPecaFiltragem;
+    private JButton filtrarButton;
+    private JRadioButton comsumivelRadioButton;
+    private JRadioButton outroRadioButton;
+    private JTextField palavrasFiltragemText;
+    private JLabel filtrarPeca;
 
     public ConsultarPeca(){
         setContentPane(painelPrincipal);

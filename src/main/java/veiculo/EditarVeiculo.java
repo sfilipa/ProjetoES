@@ -8,7 +8,6 @@ public class EditarVeiculo extends JFrame {
     private JButton editarButton;
     private JPanel painelPrincipal;
     private JTextField textModelo;
-    private JComboBox comboBox1;
     private JButton cancelarButton;
     private JTextField textField1;
     private JTextField textField2;
@@ -31,6 +30,15 @@ public class EditarVeiculo extends JFrame {
     private JRadioButton médioRadioButton;
     private JRadioButton mauRadioButton;
     private JRadioButton muitoMauRadioButton;
+    private JList list1;
+    private JComboBox comboBox1;
+    private JComboBox comboBox2;
+    private JComboBox comboBox3;
+    private JComboBox comboBox4;
+    private JComboBox comboBox5;
+    private JComboBox comboBox6;
+    private JButton filtrarButton;
+    private JTextField textField5;
 
     public EditarVeiculo(){
         setContentPane(painelPrincipal);
