@@ -9,7 +9,7 @@ public class TransportarVeiculo extends JFrame{
     private JButton transportarButton;
     private JButton cancelarButton;
     private JRadioButton sedeRadioButton;
-    private JRadioButton filialRadioButton;
+    private JRadioButton filialLocalDeExposiçãoRadioButton;
     private JComboBox comboBox2;
     private JRadioButton simRadioButton;
     private JRadioButton nãoRadioButton;

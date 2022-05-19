@@ -15,6 +15,9 @@ public class PaginaInicialEventos extends JFrame{
     private JButton voltarButton;
     private JPanel painelPrincipal;
     private JButton editarEventoButton;
+    private JButton adicionarLocalDeExposiçãoButton;
+    private JButton removerLocalDeExposiçãoButton;
+    private JButton consultarLocalDeExposiçãoButton;
 
     public PaginaInicialEventos(){
         setContentPane(painelPrincipal);

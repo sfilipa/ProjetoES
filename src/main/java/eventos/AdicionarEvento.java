@@ -9,10 +9,13 @@ public class AdicionarEvento extends JFrame{
     private JButton cancelarButton;
     private JTextField textField1;
     private JComboBox comboBox1;
-    private JButton adicionarNovoLocalDeButton;
-    private JTextField textField2;
-    private JTextField textField3;
+    private JButton novoLocalDeExposiçãoButton;
     private JPanel painelPrincipal;
+    private JComboBox comboBox2;
+    private JComboBox comboBox3;
+    private JComboBox comboBox4;
+    private JComboBox comboBox5;
+    private JTextField textField2;
 
     public AdicionarEvento(){
         setContentPane(painelPrincipal);

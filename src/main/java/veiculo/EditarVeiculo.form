@@ -521,7 +521,13 @@
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <model>
+                <item value="Marca 1"/>
+                <item value="Marca 2"/>
+                <item value="Marca 3"/>
+              </model>
+            </properties>
           </component>
           <component id="72629" class="javax.swing.JLabel">
             <constraints>
@@ -565,4 +571,26 @@
       </component>
     </children>
   </grid>
+  <buttonGroups>
+    <group name="buttonGroup1">
+      <member id="11a25"/>
+      <member id="352f7"/>
+      <member id="94e41"/>
+    </group>
+    <group name="buttonGroup2">
+      <member id="6369"/>
+      <member id="d1145"/>
+    </group>
+    <group name="buttonGroup3">
+      <member id="9ef2b"/>
+      <member id="3268b"/>
+    </group>
+    <group name="buttonGroup4">
+      <member id="bcb99"/>
+      <member id="d317c"/>
+      <member id="3ff52"/>
+      <member id="b08d0"/>
+      <member id="b6f87"/>
+    </group>
+  </buttonGroups>
 </form>

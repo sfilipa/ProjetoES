@@ -54,12 +54,12 @@
               <text value="Sede"/>
             </properties>
           </component>
-          <component id="6e674" class="javax.swing.JRadioButton" binding="filialRadioButton" default-binding="true">
+          <component id="6e674" class="javax.swing.JRadioButton" binding="filialLocalDeExposiçãoRadioButton" default-binding="true">
             <constraints>
               <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Filial"/>
+              <text value="Filial/Local de Exposição"/>
             </properties>
           </component>
         </children>
@@ -294,7 +294,13 @@
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
-            <properties/>
+            <properties>
+              <model>
+                <item value="Marca 1"/>
+                <item value="Marca 2"/>
+                <item value="Marca 3"/>
+              </model>
+            </properties>
           </component>
           <component id="7edb6" class="javax.swing.JLabel">
             <constraints>
