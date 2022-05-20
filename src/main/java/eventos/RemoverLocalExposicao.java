@@ -13,6 +13,8 @@ public class RemoverLocalExposicao extends JFrame {
     private JButton removerButton;
     private JButton cancelarButton;
     private JComboBox comboBox1;
+    private JButton filtrarButton;
+    private JList list1;
     private JButton adicionarButton;
 
 
