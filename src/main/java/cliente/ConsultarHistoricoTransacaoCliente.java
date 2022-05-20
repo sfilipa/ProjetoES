@@ -5,9 +5,12 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class ConsultarHistoricoTransacaoCliente extends JFrame {
-    private JComboBox comboBox1;
     private JButton voltarButton;
     private JPanel painelPrincipal;
+    private JTextField textField1;
+    private JButton filtrarButton;
+    private JList list1;
+    private JList list2;
 
 
     public ConsultarHistoricoTransacaoCliente(){

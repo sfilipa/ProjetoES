@@ -1,18 +1,19 @@
 package estatisticas;
 
-import eventos.ConsultarEvento;
-import eventos.PaginaInicialEventos;
+import paginaPrincipal.PaginaPrincipal;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ConsultarEstatisticas extends  JFrame{
-    private JComboBox comboBox1;
+public class EstatisticasPagina1 extends  JFrame{
     private JPanel painelPrincipal;
     private JButton voltarButton;
+    private JList list1;
+    private JList list2;
+    private JList list3;
 
-    public ConsultarEstatisticas(){
+    public EstatisticasPagina1(){
         setContentPane(painelPrincipal);
         pack();
 
@@ -30,7 +31,7 @@ public class ConsultarEstatisticas extends  JFrame{
     }
 
     public static void main(String[] args) {
-        new ConsultarEstatisticas().setVisible(true);
+        new EstatisticasPagina1().setVisible(true);
     }
 
 }

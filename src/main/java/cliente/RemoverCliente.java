@@ -9,10 +9,11 @@ import java.awt.event.ActionListener;
 
 public class RemoverCliente extends JFrame{
     private JPanel painelPrincipal;
-    private JList list1;
-    private JComboBox comboBox1;
     private JButton removerButton;
     private JButton cancelarButton;
+    private JTextField textField1;
+    private JButton filtrarButton;
+    private JList list1;
 
     public RemoverCliente(){
         setContentPane(painelPrincipal);

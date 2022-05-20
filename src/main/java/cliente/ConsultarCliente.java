@@ -12,8 +12,10 @@ public class ConsultarCliente extends JFrame {
     private JLabel lblNVeiculos;
     private JLabel lblLocal;
     private JLabel lblTempo;
-    private JComboBox comboBox1;
     private JButton voltarButton;
+    private JTextField textField1;
+    private JList list1;
+    private JButton filtrarButton;
 
     public ConsultarCliente(){
         setContentPane(painelPrincipal);

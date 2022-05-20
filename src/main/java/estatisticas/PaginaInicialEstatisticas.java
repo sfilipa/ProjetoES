@@ -1,6 +1,6 @@
 package estatisticas;
 
-import cliente.PaginaInicialClientes;
+import eventos.*;
 import paginaPrincipal.PaginaPrincipal;
 
 import javax.swing.*;
@@ -8,39 +8,52 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class PaginaInicialEstatisticas extends JFrame{
-    private JButton listagemDeEstatisticasButton;
     private JPanel painelPrincipal;
-    private JButton consultarEstatisticasButton;
     private JButton voltarButton;
-
+    private JButton consultarEstatisticasDeClientesButton;
+    private JButton consultarEstatisticasDeMarcasButton;
+    private JButton consultarEstatisticasDeModelosButton;
 
     public PaginaInicialEstatisticas(){
         setContentPane(painelPrincipal);
         pack();
 
-        btnListaEstatisticasActionPerfomed();
-        btnConsultarEstatisticaActionPerformed();
+
         btnVoltarActionPerformed();
+        btnEstatisticasPagina1ActionPerformed();
+        btnEstatisticasPagina2ActionPerformed();
+        btnEstatisticasPagina3ActionPerformed();
+
+
+
     }
 
-    private void btnListaEstatisticasActionPerfomed() {
-        listagemDeEstatisticasButton.addActionListener(new ActionListener() {
+    private void btnEstatisticasPagina1ActionPerformed() {
+        consultarEstatisticasDeClientesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                new ListaEstatisticas().setVisible(true);
+                new EstatisticasPagina1().setVisible(true);
             }
         });
     }
 
-
-
-    private void btnConsultarEstatisticaActionPerformed() {
-        consultarEstatisticasButton.addActionListener(new ActionListener() {
+    private void btnEstatisticasPagina2ActionPerformed() {
+        consultarEstatisticasDeMarcasButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                new ConsultarEstatisticas().setVisible(true);
+                new EstatisticasPagina2().setVisible(true);
+            }
+        });
+    }
+
+    private void btnEstatisticasPagina3ActionPerformed() {
+        consultarEstatisticasDeModelosButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+                new EstatisticasPagina3().setVisible(true);
             }
         });
     }
@@ -57,8 +70,12 @@ public class PaginaInicialEstatisticas extends JFrame{
         });
     }
 
+
+
     public static void main(String[] args) {
         new PaginaInicialEstatisticas().setVisible(true);
     }
-
 }
+
+
+

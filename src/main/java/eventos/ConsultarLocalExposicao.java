@@ -6,9 +6,9 @@ import java.awt.event.ActionListener;
 
 public class ConsultarLocalExposicao extends JFrame{
     private JPanel painelPrincipal;
-    private JList list1;
-    private JComboBox comboBox1;
+    private JButton button2;
     private JButton voltarButton;
+    private JComboBox comboBox1;
 
 
     public ConsultarLocalExposicao(){

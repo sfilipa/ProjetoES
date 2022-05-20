@@ -8,10 +8,11 @@ public class AdicionarLocalExposicao extends JFrame {
 
 
     private JTextField nomeExposiçaoTextField;
-    private JTextField filialAssociadaTextField;
     private JPanel painelPrincipal;
     private JButton cancelarButton;
     private JButton adicionarButton;
+    private JComboBox comboBox1;
+    private JComboBox comboBox2;
 
 
     public AdicionarLocalExposicao(){

@@ -1,20 +1,23 @@
 package estatisticas;
 
+import paginaPrincipal.PaginaPrincipal;
+
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ListaEstatisticas extends JFrame{
+public class EstatisticasPagina2 extends  JFrame{
     private JPanel painelPrincipal;
     private JButton voltarButton;
+    private JList list1;
+    private JList list2;
+    private JList list3;
 
-
-    public ListaEstatisticas(){
+    public EstatisticasPagina2(){
         setContentPane(painelPrincipal);
         pack();
 
         btnVoltarActionPerformed();
-
     }
 
     private void btnVoltarActionPerformed() {
@@ -28,7 +31,7 @@ public class ListaEstatisticas extends JFrame{
     }
 
     public static void main(String[] args) {
-        new ListaEstatisticas().setVisible(true);
+        new EstatisticasPagina2().setVisible(true);
     }
 
 }

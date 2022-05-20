@@ -1,6 +1,7 @@
 package paginaPrincipal;
 
 import cliente.PaginaInicialClientes;
+import estatisticas.EstatisticasPagina1;
 import estatisticas.PaginaInicialEstatisticas;
 import eventos.PaginaInicialEventos;
 import pecas.PaginaInicialPecas;

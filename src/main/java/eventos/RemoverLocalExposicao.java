@@ -10,9 +10,8 @@ public class RemoverLocalExposicao extends JFrame {
     private JTextField nomeExposiçaoTextField;
     private JTextField filialAssociadaTextField;
     private JPanel painelPrincipal;
-    private JButton cancelarButton;
     private JButton removerButton;
-    private JList list1;
+    private JButton cancelarButton;
     private JComboBox comboBox1;
     private JButton adicionarButton;
 
