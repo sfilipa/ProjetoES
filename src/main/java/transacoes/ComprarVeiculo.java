@@ -46,6 +46,7 @@ public class ComprarVeiculo extends JFrame{
     private JButton cancelarButton;
     private JButton comprarButton;
     private JLabel comprarVeiculo;
+    private JComboBox comboBox4;
     private JComboBox comboBox1;
     private JLabel nome;
     private JLabel nif;
