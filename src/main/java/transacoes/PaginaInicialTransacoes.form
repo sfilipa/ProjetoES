@@ -43,7 +43,7 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Comprar veiculo"/>
+              <text value="Comprar Veículo"/>
             </properties>
           </component>
           <component id="c2052" class="javax.swing.JButton" binding="venderVeiculoButton" default-binding="true">
@@ -51,7 +51,7 @@
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Vender veiculo"/>
+              <text value="Vender Veículo"/>
             </properties>
           </component>
           <component id="1c2d9" class="javax.swing.JButton" binding="trocarVeiculoButton" default-binding="true">
@@ -59,7 +59,7 @@
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Trocar veiculo"/>
+              <text value="Trocar Veículo"/>
             </properties>
           </component>
           <component id="83649" class="javax.swing.JButton" binding="removerTransacaoButton" default-binding="true">
@@ -67,7 +67,7 @@
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Remover transação"/>
+              <text value="Remover Transação"/>
             </properties>
           </component>
         </children>

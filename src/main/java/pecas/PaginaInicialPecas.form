@@ -24,7 +24,7 @@
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Adicionar peça"/>
+              <text value="Adicionar Peça"/>
             </properties>
           </component>
           <component id="b2165" class="javax.swing.JButton" binding="consultarPecaButton">
@@ -32,7 +32,7 @@
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Consultar peça"/>
+              <text value="Consultar Peça"/>
             </properties>
           </component>
           <component id="2132a" class="javax.swing.JButton" binding="editarPecaButton">
@@ -40,7 +40,7 @@
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Editar peça"/>
+              <text value="Editar Peça"/>
             </properties>
           </component>
           <component id="dbea9" class="javax.swing.JButton" binding="pedirPecaButton">
@@ -48,7 +48,7 @@
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Pedir peça"/>
+              <text value="Pedir Peça"/>
             </properties>
           </component>
           <component id="c1b29" class="javax.swing.JButton" binding="removerPecaButton">
@@ -56,7 +56,7 @@
               <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Remover peça"/>
+              <text value="Remover Peça"/>
             </properties>
           </component>
           <component id="87109" class="javax.swing.JButton" binding="adicionarStockButton" default-binding="true">
@@ -64,7 +64,7 @@
               <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Adicionar stock"/>
+              <text value="Adicionar Stock"/>
             </properties>
           </component>
           <component id="84840" class="javax.swing.JButton" binding="removerStockButton" default-binding="true">
@@ -72,7 +72,7 @@
               <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Remover stock"/>
+              <text value="Remover Stock"/>
             </properties>
           </component>
           <component id="85836" class="javax.swing.JButton" binding="consultarStockPeca">
@@ -80,7 +80,7 @@
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Consultar peça stock"/>
+              <text value="Consultar Peça Stock"/>
             </properties>
           </component>
         </children>

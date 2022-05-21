@@ -51,7 +51,7 @@
               <grid row="2" column="0" row-span="2" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="Fileal / Sede a remover:"/>
+              <text value="Filial / Sede a remover:"/>
             </properties>
           </component>
           <scrollpane id="cb294">
@@ -66,16 +66,16 @@
                 <properties>
                   <model>
                     <item value="Sede"/>
-                    <item value="Fileal 1"/>
-                    <item value="Fileal 2"/>
-                    <item value="Fileal 3"/>
-                    <item value="Fileal 4"/>
-                    <item value="Fileal 5"/>
-                    <item value="Fileal 6"/>
-                    <item value="Fileal 7"/>
-                    <item value="Fileal 8"/>
-                    <item value="Fileal 9"/>
-                    <item value="Fileal 10"/>
+                    <item value="Filial 1"/>
+                    <item value="Filial 2"/>
+                    <item value="Filial 3"/>
+                    <item value="Filial 4"/>
+                    <item value="Filial 5"/>
+                    <item value="Filial 6"/>
+                    <item value="Filial 7"/>
+                    <item value="Filial 8"/>
+                    <item value="Filial 9"/>
+                    <item value="Filial 10"/>
                   </model>
                 </properties>
               </component>

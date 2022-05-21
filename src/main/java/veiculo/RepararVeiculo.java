@@ -21,13 +21,10 @@ public class RepararVeiculo extends JFrame {
     private JComboBox comboBox6;
     private JComboBox comboBox7;
     private JButton fltrarButton;
-    private JLabel palavrasFiltragem;
-    private JLabel tipoPecaFiltragem;
-    private JButton filtrarButton;
-    private JRadioButton consumivelRadioButton;
+    private JTextField textField1;
+    private JRadioButton consumívelRadioButton;
     private JRadioButton outroRadioButton;
-    private JTextField palavrasFiltragemText;
-    private JLabel filtrarPeca;
+    private JButton filtrarButton;
 
     public RepararVeiculo(){
         setContentPane(painelPrincipal);
