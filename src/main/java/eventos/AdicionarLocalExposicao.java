@@ -7,7 +7,7 @@ import java.awt.event.ActionListener;
 public class AdicionarLocalExposicao extends JFrame {
 
 
-    private JTextField nomeExposiçaoTextField;
+    private JTextField nomeExposiçãoTextField;
     private JPanel painelPrincipal;
     private JButton cancelarButton;
     private JButton adicionarButton;

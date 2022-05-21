@@ -9,6 +9,8 @@ public class ConsultarLocalExposicao extends JFrame{
     private JButton button2;
     private JButton voltarButton;
     private JComboBox comboBox1;
+    private JButton filtrarButton;
+    private JList list1;
 
 
     public ConsultarLocalExposicao(){

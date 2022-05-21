@@ -7,7 +7,6 @@ import java.awt.event.ActionListener;
 public class RemoverTransacao extends JFrame{
     private JPanel painelPrincipal;
     private JLabel removerTransacao;
-    private JComboBox transacaoRemoverBox;
     private JButton removerTransacaoButton;
     private JButton cancelarButton;
     private JLabel transacaoRemover;
@@ -29,6 +28,7 @@ public class RemoverTransacao extends JFrame{
     private JTextField dataTransacaoText;
     private JTextField horaTransacaoText;
     private JTextField tipoTransacaoText;
+    private JList list1;
 
     public RemoverTransacao(){
         setContentPane(painelPrincipal);

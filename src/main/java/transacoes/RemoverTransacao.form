@@ -46,18 +46,6 @@
               <text value="Transação a remover:"/>
             </properties>
           </component>
-          <component id="17a06" class="javax.swing.JComboBox" binding="transacaoRemoverBox">
-            <constraints>
-              <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-            </constraints>
-            <properties>
-              <model>
-                <item value="Transação 1"/>
-                <item value="Transação 2"/>
-                <item value="Transação 3"/>
-              </model>
-            </properties>
-          </component>
           <component id="30cba" class="javax.swing.JLabel" binding="infoTransacao">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="3" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
@@ -147,6 +135,26 @@
             </constraints>
             <properties/>
           </component>
+          <scrollpane id="ba98b">
+            <constraints>
+              <grid row="0" column="1" row-span="1" col-span="2" vsize-policy="7" hsize-policy="7" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties/>
+            <border type="none"/>
+            <children>
+              <component id="659c9" class="javax.swing.JList" binding="list1" default-binding="true">
+                <constraints/>
+                <properties>
+                  <model>
+                    <item value="Transação 1"/>
+                    <item value="Transação 2"/>
+                    <item value="Transação 3"/>
+                    <item value="Transação 4"/>
+                  </model>
+                </properties>
+              </component>
+            </children>
+          </scrollpane>
         </children>
       </grid>
       <grid id="fdfe3" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
