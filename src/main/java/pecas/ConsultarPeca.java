@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 
 public class ConsultarPeca extends JFrame {
     private JLabel consultarPeca;
-    private JComboBox pecaBox;
     private JButton voltarButton;
     private JLabel localArmazenamento;
     private JLabel localArmazenamentoText;
@@ -25,6 +24,7 @@ public class ConsultarPeca extends JFrame {
     private JRadioButton outroRadioButton;
     private JTextField palavrasFiltragemText;
     private JLabel filtrarPeca;
+    private JList list1;
 
     public ConsultarPeca(){
         setContentPane(painelPrincipal);
