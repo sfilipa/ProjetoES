@@ -54,16 +54,16 @@
             </constraints>
             <properties>
               <model>
-                <item value="Local1"/>
-                <item value="Local2"/>
-                <item value="Local3"/>
-                <item value="Local4"/>
-                <item value="Local5"/>
-                <item value="Local6"/>
-                <item value="Local7"/>
-                <item value="Local8"/>
-                <item value="Local9"/>
-                <item value="Local10"/>
+                <item value="Filial1"/>
+                <item value="Filial2"/>
+                <item value="Filial3"/>
+                <item value="Filial4"/>
+                <item value="Filial5"/>
+                <item value="Filial6"/>
+                <item value="Filial7"/>
+                <item value="Filial8"/>
+                <item value="Filial9"/>
+                <item value="Filial10"/>
               </model>
             </properties>
           </component>
