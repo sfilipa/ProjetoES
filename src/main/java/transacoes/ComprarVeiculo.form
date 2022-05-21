@@ -11,7 +11,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="2bb9a" layout-manager="GridLayoutManager" row-count="15" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="6789c" layout-manager="GridLayoutManager" row-count="15" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -19,7 +19,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="ef7da" class="javax.swing.JLabel" binding="matricula">
+          <component id="c1fcb" class="javax.swing.JLabel" binding="matricula">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -27,7 +27,7 @@
               <text value="Matricula:"/>
             </properties>
           </component>
-          <component id="9e9df" class="javax.swing.JLabel" binding="marca">
+          <component id="3638b" class="javax.swing.JLabel" binding="marca">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -35,7 +35,7 @@
               <text value="Marca:"/>
             </properties>
           </component>
-          <component id="df23a" class="javax.swing.JLabel" binding="modelo">
+          <component id="ea0b3" class="javax.swing.JLabel" binding="modelo">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -43,7 +43,7 @@
               <text value="Modelo:"/>
             </properties>
           </component>
-          <component id="bc6" class="javax.swing.JLabel" binding="donoAnterior">
+          <component id="b0ee5" class="javax.swing.JLabel" binding="donoAnterior">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -51,7 +51,7 @@
               <text value="Dono anterior:"/>
             </properties>
           </component>
-          <component id="a956c" class="javax.swing.JLabel" binding="nDonos">
+          <component id="1eed9" class="javax.swing.JLabel" binding="nDonos">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -59,7 +59,7 @@
               <text value="Nº de Donos:"/>
             </properties>
           </component>
-          <component id="9dce0" class="javax.swing.JLabel" binding="combustivel">
+          <component id="145f0" class="javax.swing.JLabel" binding="combustivel">
             <constraints>
               <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -67,7 +67,7 @@
               <text value="Combustivel:"/>
             </properties>
           </component>
-          <component id="5d2bc" class="javax.swing.JLabel" binding="categoria">
+          <component id="863ef" class="javax.swing.JLabel" binding="categoria">
             <constraints>
               <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -75,7 +75,7 @@
               <text value="Categoria:"/>
             </properties>
           </component>
-          <component id="7ac70" class="javax.swing.JLabel" binding="classe">
+          <component id="19bea" class="javax.swing.JLabel" binding="classe">
             <constraints>
               <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -83,7 +83,7 @@
               <text value="Classe:"/>
             </properties>
           </component>
-          <component id="eaa44" class="javax.swing.JLabel" binding="nPortas">
+          <component id="e2ccf" class="javax.swing.JLabel" binding="nPortas">
             <constraints>
               <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -91,7 +91,7 @@
               <text value="Nº de Portas:"/>
             </properties>
           </component>
-          <component id="222cf" class="javax.swing.JLabel" binding="potencia">
+          <component id="695ea" class="javax.swing.JLabel" binding="potencia">
             <constraints>
               <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -99,7 +99,7 @@
               <text value="Potência:"/>
             </properties>
           </component>
-          <component id="785e5" class="javax.swing.JLabel" binding="cilindrada">
+          <component id="3fbea" class="javax.swing.JLabel" binding="cilindrada">
             <constraints>
               <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -107,7 +107,7 @@
               <text value="Cilindrada:"/>
             </properties>
           </component>
-          <component id="c43f8" class="javax.swing.JLabel" binding="tipoCaixa">
+          <component id="84e4d" class="javax.swing.JLabel" binding="tipoCaixa">
             <constraints>
               <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -115,7 +115,7 @@
               <text value="Tipo de caixa:"/>
             </properties>
           </component>
-          <component id="26d48" class="javax.swing.JLabel" binding="tracao">
+          <component id="6d43b" class="javax.swing.JLabel" binding="tracao">
             <constraints>
               <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -123,7 +123,7 @@
               <text value="Tração:"/>
             </properties>
           </component>
-          <component id="20a38" class="javax.swing.JLabel" binding="preco">
+          <component id="8ac90" class="javax.swing.JLabel" binding="preco">
             <constraints>
               <grid row="13" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -131,15 +131,17 @@
               <text value="Preço:"/>
             </properties>
           </component>
-          <component id="9ff54" class="javax.swing.JTextField" binding="matriculaText">
+          <component id="bed7b" class="javax.swing.JTextField" binding="matriculaText">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
-            <properties/>
+            <properties>
+              <text value=""/>
+            </properties>
           </component>
-          <component id="6e600" class="javax.swing.JTextField" binding="marcaText">
+          <component id="c5644" class="javax.swing.JTextField" binding="marcaText">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -147,7 +149,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="20cc5" class="javax.swing.JTextField" binding="modeloText">
+          <component id="d0eb3" class="javax.swing.JTextField" binding="modeloText">
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -155,7 +157,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="cad53" class="javax.swing.JTextField" binding="donoAnteriorText">
+          <component id="cfdad" class="javax.swing.JTextField" binding="donoAnteriorText">
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -163,7 +165,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="1b949" class="javax.swing.JTextField" binding="nDonosText">
+          <component id="a18b2" class="javax.swing.JTextField" binding="nDonosText">
             <constraints>
               <grid row="4" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -171,7 +173,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="71a97" class="javax.swing.JTextField" binding="categoriaText">
+          <component id="ccca3" class="javax.swing.JTextField" binding="categoriaText">
             <constraints>
               <grid row="6" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -179,7 +181,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="a6e39" class="javax.swing.JTextField" binding="classesText">
+          <component id="79ab7" class="javax.swing.JTextField" binding="classesText">
             <constraints>
               <grid row="7" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -187,7 +189,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="f513" class="javax.swing.JTextField" binding="nPortasText">
+          <component id="2c2cc" class="javax.swing.JTextField" binding="nPortasText">
             <constraints>
               <grid row="8" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -195,7 +197,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="fa5c7" class="javax.swing.JTextField" binding="potenciaText">
+          <component id="34b2" class="javax.swing.JTextField" binding="potenciaText">
             <constraints>
               <grid row="9" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -203,7 +205,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="2ff9e" class="javax.swing.JTextField" binding="cilindradaText">
+          <component id="698eb" class="javax.swing.JTextField" binding="cilindradaText">
             <constraints>
               <grid row="10" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -211,7 +213,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="aac46" class="javax.swing.JTextField" binding="precoText">
+          <component id="37fb3" class="javax.swing.JTextField" binding="precoText">
             <constraints>
               <grid row="13" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -219,7 +221,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="b8aa4" class="javax.swing.JRadioButton" binding="gasolinaRadioButton" default-binding="true">
+          <component id="ffbc5" class="javax.swing.JRadioButton" binding="gasolinaRadioButton" default-binding="true">
             <constraints>
               <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -227,7 +229,7 @@
               <text value="Gasolina"/>
             </properties>
           </component>
-          <component id="af3e1" class="javax.swing.JRadioButton" binding="dieselRadioButton" default-binding="true">
+          <component id="5baa6" class="javax.swing.JRadioButton" binding="dieselRadioButton" default-binding="true">
             <constraints>
               <grid row="5" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -235,7 +237,7 @@
               <text value="Diesel"/>
             </properties>
           </component>
-          <component id="1671" class="javax.swing.JRadioButton" binding="eletricoRadioButton" default-binding="true">
+          <component id="2dc6a" class="javax.swing.JRadioButton" binding="eletricoRadioButton" default-binding="true">
             <constraints>
               <grid row="5" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -243,7 +245,7 @@
               <text value="Eletrico"/>
             </properties>
           </component>
-          <component id="3a8ed" class="javax.swing.JRadioButton" binding="automaticaRadioButton" default-binding="true">
+          <component id="5344" class="javax.swing.JRadioButton" binding="automaticaRadioButton" default-binding="true">
             <constraints>
               <grid row="11" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -251,7 +253,7 @@
               <text value="Automatica"/>
             </properties>
           </component>
-          <component id="869" class="javax.swing.JRadioButton" binding="manualRadioButton" default-binding="true">
+          <component id="98cf8" class="javax.swing.JRadioButton" binding="manualRadioButton" default-binding="true">
             <constraints>
               <grid row="11" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -259,7 +261,7 @@
               <text value="Manual"/>
             </properties>
           </component>
-          <component id="4b106" class="javax.swing.JRadioButton" binding="fronteiraRadioButton" default-binding="true">
+          <component id="d951c" class="javax.swing.JRadioButton" binding="fronteiraRadioButton" default-binding="true">
             <constraints>
               <grid row="12" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -267,7 +269,7 @@
               <text value="Fronteira"/>
             </properties>
           </component>
-          <component id="a1730" class="javax.swing.JLabel" binding="cliente">
+          <component id="c96" class="javax.swing.JLabel" binding="cliente">
             <constraints>
               <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -275,7 +277,7 @@
               <text value="NIF do cliente:"/>
             </properties>
           </component>
-          <component id="efec3" class="javax.swing.JTextField" binding="clientText">
+          <component id="696e4" class="javax.swing.JTextField" binding="clientText">
             <constraints>
               <grid row="14" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -283,7 +285,7 @@
             </constraints>
             <properties/>
           </component>
-          <component id="691e3" class="javax.swing.JRadioButton" binding="traseiraRadioButton" default-binding="true">
+          <component id="32755" class="javax.swing.JRadioButton" binding="traseiraRadioButton" default-binding="true">
             <constraints>
               <grid row="12" column="2" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -293,7 +295,7 @@
           </component>
         </children>
       </grid>
-      <grid id="a6ebe" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="10a42" layout-manager="GridLayoutManager" row-count="1" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -301,7 +303,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="3b17" class="javax.swing.JButton" binding="comprarButton" default-binding="true">
+          <component id="66fc2" class="javax.swing.JButton" binding="comprarButton" default-binding="true">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -309,7 +311,7 @@
               <text value="Comprar"/>
             </properties>
           </component>
-          <component id="cbd88" class="javax.swing.JButton" binding="cancelarButton" default-binding="true">
+          <component id="d2b42" class="javax.swing.JButton" binding="cancelarButton" default-binding="true">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -319,7 +321,7 @@
           </component>
         </children>
       </grid>
-      <grid id="4f0a" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="f88f5" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -327,7 +329,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="1f4fc" class="javax.swing.JLabel" binding="comprarVeiculo">
+          <component id="b9396" class="javax.swing.JLabel" binding="comprarVeiculo">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
