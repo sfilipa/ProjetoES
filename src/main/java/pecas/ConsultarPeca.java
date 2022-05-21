@@ -7,8 +7,6 @@ import java.awt.event.ActionListener;
 public class ConsultarPeca extends JFrame {
     private JLabel consultarPeca;
     private JButton voltarButton;
-    private JLabel localArmazenamento;
-    private JLabel localArmazenamentoText;
     private JLabel tipoPeca;
     private JLabel tipoPecaText;
     private JLabel quantidadeMinimaSede;
@@ -25,6 +23,7 @@ public class ConsultarPeca extends JFrame {
     private JTextField palavrasFiltragemText;
     private JLabel filtrarPeca;
     private JList list1;
+    private JComboBox comboBox1;
 
     public ConsultarPeca(){
         setContentPane(painelPrincipal);
