@@ -16,11 +16,11 @@ public class RemoverStockPeca extends JFrame {
     private JLabel palavrasFiltragem;
     private JLabel tipoPecaFiltragem;
     private JButton filtrarButton;
-    private JRadioButton consumivelRadioButton;
     private JRadioButton outroRadioButton;
     private JTextField palavrasFiltragemText;
     private JLabel filtrarPeca;
     private JList list2;
+    private JRadioButton consumivelRadioButton;
 
     public RemoverStockPeca(){
         setContentPane(painelPrincipal);

@@ -10,12 +10,6 @@ public class RemoverTransacao extends JFrame{
     private JButton removerTransacaoButton;
     private JButton cancelarButton;
     private JLabel transacaoRemover;
-    private JLabel infoTransacao;
-    private JLabel valor;
-    private JLabel matricula;
-    private JLabel dataTransacao;
-    private JLabel horaTransacao;
-    private JLabel tipoTransacao;
     private JLabel palavrasFiltragem;
     private JLabel tipoPecaFiltragem;
     private JButton filtrarButton;
@@ -23,12 +17,8 @@ public class RemoverTransacao extends JFrame{
     private JRadioButton outroRadioButton;
     private JTextField palavrasFiltragemText;
     private JLabel filtrarPeca;
-    private JTextField valorText;
-    private JTextField matriculaText;
-    private JTextField dataTransacaoText;
-    private JTextField horaTransacaoText;
-    private JTextField tipoTransacaoText;
     private JList list1;
+    private JComboBox comboBox1;
 
     public RemoverTransacao(){
         setContentPane(painelPrincipal);

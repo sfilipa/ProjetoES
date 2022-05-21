@@ -13,7 +13,7 @@ public class RemoverPeca extends JFrame{
     private JLabel palavrasFiltragem;
     private JLabel tipoPecaFiltragem;
     private JButton filtrarButton;
-    private JRadioButton comsumivelRadioButton;
+    private JRadioButton consumivelRadioButton;
     private JRadioButton outroRadioButton;
     private JTextField palavrasFiltragemText;
     private JLabel filtrarPeca;
