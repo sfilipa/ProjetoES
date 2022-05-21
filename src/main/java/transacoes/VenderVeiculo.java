@@ -5,7 +5,6 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
 public class VenderVeiculo extends JFrame {
-    private JComboBox veiculoBox;
     private JLabel veiculo;
     private JLabel venderVeiculo;
     private JTextField precoText;
@@ -20,6 +19,14 @@ public class VenderVeiculo extends JFrame {
     private JComboBox comboBox3;
     private JComboBox comboBox6;
     private JButton filtrarButton;
+    private JList clienteList;
+    private JList list1;
+    private JLabel cliente;
+    private JLabel nome;
+    private JLabel nif;
+    private JTextField nomeText;
+    private JTextField nifText;
+    private JButton filtrarButton1;
 
     public VenderVeiculo(){
         setContentPane(painelPrincipal);

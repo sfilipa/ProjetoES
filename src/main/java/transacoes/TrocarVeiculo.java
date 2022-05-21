@@ -11,8 +11,6 @@ public class TrocarVeiculo extends JFrame {
 
     private JPanel painelPrincipal;
     private JLabel trocarVeiculo;
-    private JComboBox veiculoEntregarText;
-    private JComboBox veiculoReceberBox;
     private JLabel valorVeiculoReceber;
     private JLabel valorVeiculoEntregar;
     private JLabel veioculoReceber;
@@ -30,6 +28,16 @@ public class TrocarVeiculo extends JFrame {
     private JComboBox comboBox3;
     private JComboBox comboBox6;
     private JButton filtrarButton;
+    private JLabel cliente;
+    private JLabel nif;
+    private JLabel nome;
+    private JTextField nomeText;
+    private JTextField nifText;
+    private JButton filtrarButton1;
+    private JList clienteList;
+    private JList veiculoEntregarList;
+    private JLabel clientee;
+    private JList veiculoReceberList;
 
     public TrocarVeiculo(){
         setContentPane(painelPrincipal);
