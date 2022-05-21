@@ -6,7 +6,6 @@ import java.awt.event.ActionListener;
 
 public class EditarPeca extends JFrame {
     private JLabel editarPeca;
-    private JComboBox pecaList;
     private JLabel peca;
     private JTextField alterarNomePecaTextField;
     private JLabel tipoPeca;
@@ -29,6 +28,7 @@ public class EditarPeca extends JFrame {
     private JRadioButton outroRadioButton;
     private JTextField palavrasFiltragemText;
     private JLabel filtrarPeca;
+    private JList list2;
 
     public EditarPeca(){
         setContentPane(painelPrincipal);

@@ -10,17 +10,17 @@ public class AdicionarStockPeca extends JFrame {
     private JList filealSedeAdicionarList;
     private JButton adicionarButton;
     private JButton cancelarButton;
-    private JComboBox pecaAdicionarComboBox;
     private JLabel filealSedeAdicionar;
     private JLabel quantidadeAdicionar;
     private JLabel pecaAdicionar;
     private JLabel palavrasFiltragem;
     private JLabel tipoPecaFiltragem;
     private JButton filtrarButton;
-    private JRadioButton comsumivelRadioButton;
+    private JRadioButton consumivelRadioButton;
     private JRadioButton outroRadioButton;
     private JTextField palavrasFiltragemText;
     private JLabel filtrarPeca;
+    private JList list1;
 
     public AdicionarStockPeca(){
         setContentPane(painelPrincipal);
