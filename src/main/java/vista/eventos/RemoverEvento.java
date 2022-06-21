@@ -33,7 +33,4 @@ public class RemoverEvento extends JFrame{
     }
 
 
-    public static void main(String[] args) {
-        new ConsultarEvento().setVisible(true);
-    }
 }

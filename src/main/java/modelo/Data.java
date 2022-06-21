@@ -18,6 +18,8 @@ public class Data {
         //this.calendar = new GregorianCalendar(ano, mes-1, dia);
     }
 
+    public Calendar getCalendar(){ return this.calendar; }
+
     public static Data parseData(String data){
 
         /*String[] dataSplit = data.split("/");

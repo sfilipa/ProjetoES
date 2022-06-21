@@ -23,15 +23,12 @@ public class PaginaInicialVeiculos extends JFrame{
         setVisible(true);
 
         adicionarVeículoButton.addActionListener(this::btnAdicionarVeiculoActionPerformed);
-
-        /*btnAdicionarVeiculoActionPerformed();
-        btnRemoverVeiculoActionPerformed();
-        btnEditarVeiculoActionPerformed();
-        btnRepararVeiculoActionPerformed();
-        btnTransportarVeiculoActionPerformed();
-        btnConsultarVeiculoActionPerformed();
-        btnVoltarActionPerformed();*/
-
+        voltarButton.addActionListener(this::btnVoltarActionPerformed);
+        removerVeículoButton.addActionListener(this::btnRemoverVeiculoActionPerformed);
+        editarVeículoButton.addActionListener(this::btnEditarVeiculoActionPerformed);
+        transportarVeículoButton.addActionListener(this::btnTransportarVeiculoActionPerformed);
+        repararVeículoButton.addActionListener(this::btnRepararVeiculoActionPerformed);
+        consultarVeículoButton.addActionListener(this::btnConsultarVeiculoActionPerformed);
     }
 
     private void btnAdicionarVeiculoActionPerformed(ActionEvent evt) {
@@ -40,7 +37,7 @@ public class PaginaInicialVeiculos extends JFrame{
         DadosAplicacao dados = DadosAplicacao.INSTANCE;
         dados.adicionarVeiculo(veiculo);
     }
-    private void btnRemoverVeiculoActionPerformed() {
+    private void btnRemoverVeiculoActionPerformed(ActionEvent e) {
         removerVeículoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -49,7 +46,7 @@ public class PaginaInicialVeiculos extends JFrame{
             }
         });
     }
-    private void btnEditarVeiculoActionPerformed() {
+    private void btnEditarVeiculoActionPerformed(ActionEvent e) {
         editarVeículoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -58,7 +55,7 @@ public class PaginaInicialVeiculos extends JFrame{
             }
         });
     }
-    private void btnTransportarVeiculoActionPerformed() {
+    private void btnTransportarVeiculoActionPerformed(ActionEvent e) {
         transportarVeículoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -67,7 +64,7 @@ public class PaginaInicialVeiculos extends JFrame{
             }
         });
     }
-    private void btnRepararVeiculoActionPerformed() {
+    private void btnRepararVeiculoActionPerformed(ActionEvent e) {
         repararVeículoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -76,7 +73,7 @@ public class PaginaInicialVeiculos extends JFrame{
             }
         });
     }
-    private void btnConsultarVeiculoActionPerformed() {
+    private void btnConsultarVeiculoActionPerformed(ActionEvent e) {
         consultarVeículoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -86,7 +83,7 @@ public class PaginaInicialVeiculos extends JFrame{
         });
     }
 
-    private void btnVoltarActionPerformed() {
+    private void btnVoltarActionPerformed(ActionEvent e) {
         voltarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

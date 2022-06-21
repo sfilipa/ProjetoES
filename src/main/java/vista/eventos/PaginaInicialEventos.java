@@ -1,12 +1,14 @@
 package vista.eventos;
 
+import modelo.DadosAplicacao;
+import modelo.Evento;
 import vista.paginaPrincipal.PaginaPrincipal;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class PaginaInicialEventos extends JFrame{
+public class PaginaInicialEventos extends JFrame {
     private JButton adicionarEventoButton;
     private JButton removerEventoButton;
     private JButton consultarButton;
@@ -17,31 +19,28 @@ public class PaginaInicialEventos extends JFrame{
     private JButton removerLocalDeExposiçãoButton;
     private JButton consultarLocalDeExposiçãoButton;
 
-    public PaginaInicialEventos(){
+    public PaginaInicialEventos() {
         setContentPane(painelPrincipal);
         pack();
+        setVisible(true);
 
-        btnConsultarEventoActionPerformed();
-        btnVoltarActionPerformed();
-        btnAdicionarEventoActionPerformed();
-        btnRemoverEventoActionPerformed();
-        btnEditarEventoActionPerformed();
-        btnAdicionarLocalExposicaoActionPerfomed();
-        btnRemoverLocalExposicaoActionPerfomed();
-        btnConsultarLocalExposicaoActionPerfomed();
+        adicionarEventoButton.addActionListener(this::btnAdicionarEventoActionPerformed);
+        voltarButton.addActionListener(this::btnVoltarActionPerformed);
+        removerEventoButton.addActionListener(this::btnRemoverEventoActionPerformed);
+        editarEventoButton.addActionListener(this::btnEditarEventoActionPerformed);
+        consultarButton.addActionListener(this::btnConsultarEventoActionPerformed);
+
+
     }
 
-    private void btnAdicionarEventoActionPerformed() {
-        adicionarEventoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new AdicionarEvento().setVisible(true);
-            }
-        });
+    private void btnAdicionarEventoActionPerformed(ActionEvent evt) {
+        System.out.println("Click no btnAdicionarEvento");
+        Evento evento = AdicionarEvento.mostrarCriacaoEvento(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.adicionarEvento(evento);
     }
 
-    private void btnRemoverEventoActionPerformed() {
+    private void btnRemoverEventoActionPerformed(ActionEvent evt) {
         removerEventoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -51,7 +50,7 @@ public class PaginaInicialEventos extends JFrame{
         });
     }
 
-    private void btnEditarEventoActionPerformed() {
+    private void btnEditarEventoActionPerformed(ActionEvent evt) {
         editarEventoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -61,17 +60,15 @@ public class PaginaInicialEventos extends JFrame{
         });
     }
 
-    private void btnConsultarEventoActionPerformed() {
-        consultarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new ConsultarEvento().setVisible(true);
-            }
-        });
+    private void btnConsultarEventoActionPerformed(ActionEvent evt) {
+        System.out.println("Click no btnConsultarEvento");
+        ConsultarEvento.mostrarConsultarEvento(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getEventos();
+
     }
 
-    private void btnVoltarActionPerformed() {
+    private void btnVoltarActionPerformed(ActionEvent evt) {
         voltarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -81,7 +78,7 @@ public class PaginaInicialEventos extends JFrame{
         });
     }
 
-    private void btnAdicionarLocalExposicaoActionPerfomed(){
+    private void btnAdicionarLocalExposicaoActionPerfomed(ActionEvent evt) {
         adicionarLocalDeExposiçãoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -91,7 +88,7 @@ public class PaginaInicialEventos extends JFrame{
         });
     }
 
-   private void btnRemoverLocalExposicaoActionPerfomed(){
+    private void btnRemoverLocalExposicaoActionPerfomed(ActionEvent evt) {
         removerLocalDeExposiçãoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -101,7 +98,7 @@ public class PaginaInicialEventos extends JFrame{
         });
     }
 
-    private void btnConsultarLocalExposicaoActionPerfomed(){
+    private void btnConsultarLocalExposicaoActionPerfomed(ActionEvent evt) {
         consultarLocalDeExposiçãoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -110,7 +107,6 @@ public class PaginaInicialEventos extends JFrame{
             }
         });
     }
-
 
 
     public static void main(String[] args) {

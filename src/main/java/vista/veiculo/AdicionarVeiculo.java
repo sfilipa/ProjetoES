@@ -123,13 +123,10 @@ public class AdicionarVeiculo extends JDialog {
     }
 
     private void btnCancelarActionPerformed(ActionEvent evt) {
-        cancelarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new PaginaInicialVeiculos().setVisible(true);
-            }
-        });
+            this.setVisible(false);
+            PaginaInicialVeiculos pai = (PaginaInicialVeiculos) this.getParent();
+            pai.setEnabled(true);
+            pai.toFront();
     }
 
     private boolean foiPreenchido(String text) {

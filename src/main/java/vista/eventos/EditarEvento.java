@@ -35,9 +35,5 @@ public class EditarEvento extends JFrame{
         });
     }
 
-
-    public static void main(String[] args) {
-        new ConsultarEvento().setVisible(true);
-    }
 }
 
