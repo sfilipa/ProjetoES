@@ -26,6 +26,7 @@ public class DadosAplicacao {
     }
 
 
+
     public List<Veiculo> getVeiculos(){
         return veiculos;
     }
