@@ -53,11 +53,24 @@ public class AdicionarCliente extends JDialog {
             return;
         }
 
+
+        valido = isNumero(txtnif.getText());
+        if(!valido){
+            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
+            return;
+        }
+
+
     }
 
     private boolean NomeExiste(String nome) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         return dadosAplicacao.existeClienteNome(nome);
+    }
+
+    private boolean isNumero(String nif) {
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        return dadosAplicacao.isNumero(nif);
     }
 
     private boolean NumeroExiste(String num) {
