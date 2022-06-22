@@ -11,6 +11,7 @@ public class Erros {
     public static final int DATA_INVALIDA = 5;
     public static final int DATA_MAIOR = 6;
     public static final int NOME_JA_EXISTE = 7;
+    public static final int NIF_JA_EXISTE = 8;
 
     public static void mostrarErro(Window parent, int numero){
         //todo

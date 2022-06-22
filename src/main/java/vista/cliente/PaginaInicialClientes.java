@@ -1,5 +1,9 @@
 package vista.cliente;
 
+import modelo.Cliente;
+import modelo.DadosAplicacao;
+import modelo.Evento;
+import vista.eventos.AdicionarEvento;
 import vista.paginaPrincipal.PaginaPrincipal;
 
 import javax.swing.*;
@@ -19,12 +23,20 @@ public class PaginaInicialClientes extends JFrame {
         setContentPane(painelPrincipal);
         pack();
 
-        btnAdicionarActionPerfomed();
+        adicionarClienteButton.addActionListener(this::btnAdicionarClienteActionPerformed);
         btnRemoverActionPerfomed();
         btnConsultarClientePerfomed();
         btnVoltarActionPerformed();
         btnConsultarHistoricoTransacaoClientePerfomed();
     }
+
+    private void btnAdicionarClienteActionPerformed(ActionEvent evt) {
+        System.out.println("Click no btnAdicionarCliente");
+        Cliente cliente = AdicionarCliente.mostrarCriacaoCliente(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.adicionarCliente(cliente);
+    }
+
 
 
     private void btnVoltarActionPerformed() {
@@ -37,15 +49,6 @@ public class PaginaInicialClientes extends JFrame {
         });
     }
 
-    private void btnAdicionarActionPerfomed(){
-        adicionarClienteButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new AdicionarCliente().setVisible(true);
-            }
-        });
-    }
 
 
     private void btnRemoverActionPerfomed(){
