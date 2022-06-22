@@ -28,6 +28,10 @@ public class DadosAplicacao {
         System.out.println(eventos.size());
     }
 
+    public void removerEvento(Evento evento) {
+        eventos.remove(evento);
+    }
+
     public void adicionarCliente(Cliente cliente) {
         clientes.add(cliente);
     }
