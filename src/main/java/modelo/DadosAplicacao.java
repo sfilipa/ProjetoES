@@ -8,10 +8,11 @@ public class DadosAplicacao {
     private List<Veiculo> veiculos;
     private List<Evento> eventos;
     private String specialCharactersString = "!@#$%&*()'+,-./:;<=>?[]^_`{|}";
-
+    private List<Cliente> clientes;
     private DadosAplicacao(){
         veiculos = new ArrayList<>();
         eventos = new ArrayList<>();
+        clientes = new ArrayList<>();
     }
 
     public void adicionarVeiculo(Veiculo veiculo){
@@ -21,10 +22,13 @@ public class DadosAplicacao {
     public void adicionarEvento(Evento evento){
         eventos.add(evento);
         System.out.println("Evento adicionado");
-        System.out.println(evento.toString());
+        System.out.println( evento.toString());
         System.out.println(eventos.size());
     }
 
+    public void adicionarCliente(Cliente cliente){
+        clientes.add(cliente);
+    }
 
 
     public List<Veiculo> getVeiculos(){
@@ -45,6 +49,27 @@ public class DadosAplicacao {
                 if (evento.getNome().equals(nome)) {
                     return true;
                 }
+            }
+        }
+        return false;
+    }
+
+    public boolean existeClienteNome(String nome){
+        if(!clientes.isEmpty()) {
+            for (Cliente cliente : clientes) {
+                if (cliente.getNome().equals(nome)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+
+        public boolean existeClienteNif(String nif){
+        for (Cliente cliente : clientes) {
+            if (cliente.getNome().equals(nif)) {
+                return true;
             }
         }
         return false;
@@ -80,9 +105,12 @@ public class DadosAplicacao {
         //System.out.println("dia: " + dia + " mes: " + mes + " ano: " + ano);
         return (dia > 0 && dia < 32 && mes > 0 && mes < 13 && ano > 0);
     }
-    
 
-   public List<Evento> getEventos() {//devolve todos os eventos
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
+
+    public List<Evento> getEventos() {//devolve todos os eventos
         return eventos;
     }
 /*

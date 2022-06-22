@@ -1,12 +1,19 @@
 package vista.cliente;
 
+import modelo.Cliente;
+import modelo.DadosAplicacao;
+import modelo.Evento;
+import modelo.Veiculo;
+import vista.Erros;
+import vista.eventos.AdicionarEvento;
 import vista.veiculo.AdicionarVeiculo;
 
 import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AdicionarCliente extends JFrame {
+public class AdicionarCliente extends JDialog {
     private JPanel painelPrincipal;
     private JTextField textField1;
     private JButton cancelarButton;
@@ -14,15 +21,85 @@ public class AdicionarCliente extends JFrame {
     private JRadioButton simRadioButton;
     private JRadioButton nãoRadioButton;
     private JButton adicionarVeículoButton;
+    private JTextField txtnif;
+
+    private Cliente cliente;
 
 
-    public AdicionarCliente(){
+    public AdicionarCliente(Frame parent, boolean modal){
+        super(parent, modal);
         setContentPane(painelPrincipal);
         pack();
+        adicionarButton.addActionListener(this::btnAdicionarActionPerformed);
         btnCancelarActionPerformed();
         btnAdicionarVeiculoActionPerformed();
 
+
     }
+
+    private void btnAdicionarActionPerformed(ActionEvent actionEvent) {
+        System.out.println("Adicionar Cliente");
+        if(!verificarPreenchido()){
+            return;
+        }
+        boolean valido = NomeExiste(textField1.getText());
+        if(valido){
+            Erros.mostrarErro(this, Erros.NOME_JA_EXISTE);
+            return;
+        }
+        boolean valido1 = NumeroExiste(txtnif.getText());
+        if(valido1){
+            Erros.mostrarErro(this, Erros.NIF_JA_EXISTE);
+            return;
+        }
+
+    }
+
+    private boolean NomeExiste(String nome) {
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        return dadosAplicacao.existeClienteNome(nome);
+    }
+
+    private boolean NumeroExiste(String num) {
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        return dadosAplicacao.existeClienteNif(num);
+    }
+
+    private boolean foiPreenchido(String text) {
+        return text.isEmpty();
+    }
+
+    public boolean verificarPreenchido(){
+        if(foiPreenchido(textField1.getText())){
+            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
+            return false;
+        }
+        if(foiPreenchido(txtnif.getText())){
+            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
+            return false;
+        }
+        return true;
+    }
+
+
+    public static Cliente mostrarCriacaoCliente(Frame parent){
+        //todo
+        System.out.println("mostrarCriacaoCliente");
+        var detalhes = new AdicionarCliente(parent, true);
+        detalhes.setLocationRelativeTo(parent);
+        detalhes.setVisible(true);
+        //return detalhes.getCliente();
+        return detalhes.cliente;
+    }
+
+    private Cliente getCliente() {
+        return cliente;
+    }
+
+    private Cliente cliente() {
+        return cliente;
+    }
+
 
     private void btnCancelarActionPerformed() {
         cancelarButton.addActionListener(new ActionListener() {
@@ -33,6 +110,8 @@ public class AdicionarCliente extends JFrame {
             }
         });
     }
+
+
 
     private void btnAdicionarVeiculoActionPerformed() {
         adicionarVeículoButton.addActionListener(new ActionListener() {
@@ -45,9 +124,9 @@ public class AdicionarCliente extends JFrame {
     }
 
 
-    public static void main(String[] args) {
-        new AdicionarCliente().setVisible(true);
-    }
+    //public static void main(String[] args) {
+     //   new AdicionarCliente().setVisible(true);
+   // }
 
 
 }
