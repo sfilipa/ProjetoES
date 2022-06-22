@@ -32,6 +32,15 @@ public class DadosAplicacao {
         eventos.remove(evento);
     }
 
+    public void editarEvento(Evento evento, String nome, Data dataInicio, Data datafim, Integer nVeiculos, String distrito, String local){
+        evento.setNome(nome);
+        evento.setnVeiculos(nVeiculos);
+        evento.setDataInicio(dataInicio);
+        evento.setDataFim(datafim);
+        evento.setLocal(local);
+        evento.setDistrito(distrito);
+    }
+
     public void adicionarCliente(Cliente cliente) {
         clientes.add(cliente);
     }

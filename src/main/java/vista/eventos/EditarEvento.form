@@ -70,7 +70,7 @@
               <text value="Filtrar"/>
             </properties>
           </component>
-          <grid id="ab634" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="ab634" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="0" column="3" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -78,83 +78,17 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="457a4" class="javax.swing.JComboBox" default-binding="true">
+              <component id="247f6" class="javax.swing.JTextField" binding="txtDataFimFiltro">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
                 </constraints>
-                <properties>
-                  <model>
-                    <item value="1"/>
-                    <item value="2"/>
-                    <item value="3"/>
-                    <item value="4"/>
-                    <item value="5"/>
-                    <item value="6"/>
-                    <item value="7"/>
-                    <item value="8"/>
-                    <item value="9"/>
-                    <item value="10"/>
-                    <item value="11"/>
-                    <item value="12"/>
-                    <item value="13"/>
-                    <item value="14"/>
-                    <item value="15"/>
-                    <item value="16"/>
-                    <item value="17"/>
-                    <item value="18"/>
-                    <item value="19"/>
-                    <item value="20"/>
-                    <item value="21"/>
-                    <item value="22"/>
-                    <item value="23"/>
-                    <item value="24"/>
-                    <item value="25"/>
-                    <item value="26"/>
-                    <item value="27"/>
-                    <item value="28"/>
-                    <item value="29"/>
-                    <item value="30"/>
-                    <item value="31"/>
-                  </model>
-                </properties>
-              </component>
-              <component id="20a62" class="javax.swing.JComboBox" default-binding="true">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <model>
-                    <item value="Janeiro"/>
-                    <item value="Fevereiro"/>
-                    <item value="Março"/>
-                    <item value="Abril"/>
-                    <item value="Maio"/>
-                    <item value="Junho"/>
-                    <item value="Julho"/>
-                    <item value="Agosto"/>
-                    <item value="Setembro"/>
-                    <item value="Outubro"/>
-                    <item value="Novembro"/>
-                    <item value="Dezembro"/>
-                  </model>
-                </properties>
-              </component>
-              <component id="4c900" class="javax.swing.JComboBox" default-binding="true">
-                <constraints>
-                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <model>
-                    <item value="2022"/>
-                    <item value="2023"/>
-                    <item value="2024"/>
-                    <item value="2025"/>
-                  </model>
-                </properties>
+                <properties/>
               </component>
             </children>
           </grid>
-          <grid id="48905" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="48905" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -162,83 +96,17 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="b2017" class="javax.swing.JComboBox" binding="comboBox2" default-binding="true">
+              <component id="371b0" class="javax.swing.JTextField" binding="txtDataInicioFiltro">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
                 </constraints>
-                <properties>
-                  <model>
-                    <item value="1"/>
-                    <item value="2"/>
-                    <item value="3"/>
-                    <item value="4"/>
-                    <item value="5"/>
-                    <item value="6"/>
-                    <item value="7"/>
-                    <item value="8"/>
-                    <item value="9"/>
-                    <item value="10"/>
-                    <item value="11"/>
-                    <item value="12"/>
-                    <item value="13"/>
-                    <item value="14"/>
-                    <item value="15"/>
-                    <item value="16"/>
-                    <item value="17"/>
-                    <item value="18"/>
-                    <item value="19"/>
-                    <item value="20"/>
-                    <item value="21"/>
-                    <item value="22"/>
-                    <item value="23"/>
-                    <item value="24"/>
-                    <item value="25"/>
-                    <item value="26"/>
-                    <item value="27"/>
-                    <item value="28"/>
-                    <item value="29"/>
-                    <item value="30"/>
-                    <item value="31"/>
-                  </model>
-                </properties>
-              </component>
-              <component id="31994" class="javax.swing.JComboBox" default-binding="true">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <model>
-                    <item value="Janeiro"/>
-                    <item value="Fevereiro"/>
-                    <item value="Março"/>
-                    <item value="Abril"/>
-                    <item value="Maio"/>
-                    <item value="Junho"/>
-                    <item value="Julho"/>
-                    <item value="Agosto"/>
-                    <item value="Setembro"/>
-                    <item value="Outubro"/>
-                    <item value="Novembro"/>
-                    <item value="Dezembro"/>
-                  </model>
-                </properties>
-              </component>
-              <component id="7f485" class="javax.swing.JComboBox" default-binding="true">
-                <constraints>
-                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <model>
-                    <item value="2022"/>
-                    <item value="2023"/>
-                    <item value="2024"/>
-                    <item value="2025"/>
-                  </model>
-                </properties>
+                <properties/>
               </component>
             </children>
           </grid>
-          <component id="b8775" class="javax.swing.JComboBox" binding="comboBox5" default-binding="true">
+          <component id="b8775" class="javax.swing.JComboBox" binding="comboDistritoFiltro">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -269,7 +137,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="d370a" class="javax.swing.JList" binding="list1" default-binding="true">
+              <component id="d370a" class="javax.swing.JList" binding="listaEventos">
                 <constraints/>
                 <properties>
                   <model>
@@ -340,7 +208,7 @@
               <text value="Nome:"/>
             </properties>
           </component>
-          <component id="28b71" class="javax.swing.JTextField" binding="textField1" default-binding="true">
+          <component id="28b71" class="javax.swing.JTextField" binding="txtNome">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
@@ -380,7 +248,7 @@
               <text value="Local:"/>
             </properties>
           </component>
-          <grid id="56d2c" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="56d2c" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="2" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -388,83 +256,17 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="feda3" class="javax.swing.JComboBox" default-binding="true">
+              <component id="a0f03" class="javax.swing.JTextField" binding="txtDataInicio">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
                 </constraints>
-                <properties>
-                  <model>
-                    <item value="1"/>
-                    <item value="2"/>
-                    <item value="3"/>
-                    <item value="4"/>
-                    <item value="5"/>
-                    <item value="6"/>
-                    <item value="7"/>
-                    <item value="8"/>
-                    <item value="9"/>
-                    <item value="10"/>
-                    <item value="11"/>
-                    <item value="12"/>
-                    <item value="13"/>
-                    <item value="14"/>
-                    <item value="15"/>
-                    <item value="16"/>
-                    <item value="17"/>
-                    <item value="18"/>
-                    <item value="19"/>
-                    <item value="20"/>
-                    <item value="21"/>
-                    <item value="22"/>
-                    <item value="23"/>
-                    <item value="24"/>
-                    <item value="25"/>
-                    <item value="26"/>
-                    <item value="27"/>
-                    <item value="28"/>
-                    <item value="29"/>
-                    <item value="30"/>
-                    <item value="31"/>
-                  </model>
-                </properties>
-              </component>
-              <component id="873a2" class="javax.swing.JComboBox" default-binding="true">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <model>
-                    <item value="Janeiro"/>
-                    <item value="Fevereiro"/>
-                    <item value="Março"/>
-                    <item value="Abril"/>
-                    <item value="Maio"/>
-                    <item value="Junho"/>
-                    <item value="Julho"/>
-                    <item value="Agosto"/>
-                    <item value="Setembro"/>
-                    <item value="Outubro"/>
-                    <item value="Novembro"/>
-                    <item value="Dezembro"/>
-                  </model>
-                </properties>
-              </component>
-              <component id="465e3" class="javax.swing.JComboBox" default-binding="true">
-                <constraints>
-                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <model>
-                    <item value="2022"/>
-                    <item value="2023"/>
-                    <item value="2024"/>
-                    <item value="2025"/>
-                  </model>
-                </properties>
+                <properties/>
               </component>
             </children>
           </grid>
-          <grid id="5ab43" layout-manager="GridLayoutManager" row-count="1" column-count="3" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+          <grid id="5ab43" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
             <margin top="0" left="0" bottom="0" right="0"/>
             <constraints>
               <grid row="3" column="1" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -472,83 +274,17 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="a93dc" class="javax.swing.JComboBox" default-binding="true">
+              <component id="3c81d" class="javax.swing.JTextField" binding="txtDataFim">
                 <constraints>
-                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+                  <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+                    <preferred-size width="150" height="-1"/>
+                  </grid>
                 </constraints>
-                <properties>
-                  <model>
-                    <item value="1"/>
-                    <item value="2"/>
-                    <item value="3"/>
-                    <item value="4"/>
-                    <item value="5"/>
-                    <item value="6"/>
-                    <item value="7"/>
-                    <item value="8"/>
-                    <item value="9"/>
-                    <item value="10"/>
-                    <item value="11"/>
-                    <item value="12"/>
-                    <item value="13"/>
-                    <item value="14"/>
-                    <item value="15"/>
-                    <item value="16"/>
-                    <item value="17"/>
-                    <item value="18"/>
-                    <item value="19"/>
-                    <item value="20"/>
-                    <item value="21"/>
-                    <item value="22"/>
-                    <item value="23"/>
-                    <item value="24"/>
-                    <item value="25"/>
-                    <item value="26"/>
-                    <item value="27"/>
-                    <item value="28"/>
-                    <item value="29"/>
-                    <item value="30"/>
-                    <item value="31"/>
-                  </model>
-                </properties>
-              </component>
-              <component id="f4954" class="javax.swing.JComboBox" default-binding="true">
-                <constraints>
-                  <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <model>
-                    <item value="Janeiro"/>
-                    <item value="Fevereiro"/>
-                    <item value="Março"/>
-                    <item value="Abril"/>
-                    <item value="Maio"/>
-                    <item value="Junho"/>
-                    <item value="Julho"/>
-                    <item value="Agosto"/>
-                    <item value="Setembro"/>
-                    <item value="Outubro"/>
-                    <item value="Novembro"/>
-                    <item value="Dezembro"/>
-                  </model>
-                </properties>
-              </component>
-              <component id="96a41" class="javax.swing.JComboBox" default-binding="true">
-                <constraints>
-                  <grid row="0" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
-                </constraints>
-                <properties>
-                  <model>
-                    <item value="2022"/>
-                    <item value="2023"/>
-                    <item value="2024"/>
-                    <item value="2025"/>
-                  </model>
-                </properties>
+                <properties/>
               </component>
             </children>
           </grid>
-          <component id="6d84f" class="javax.swing.JComboBox" default-binding="true">
+          <component id="6d84f" class="javax.swing.JComboBox" binding="comboDistrito">
             <constraints>
               <grid row="4" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -562,7 +298,7 @@
               </model>
             </properties>
           </component>
-          <component id="b9405" class="javax.swing.JComboBox" binding="comboBox1" default-binding="true">
+          <component id="b9405" class="javax.swing.JComboBox" binding="comboLocal">
             <constraints>
               <grid row="5" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -598,7 +334,7 @@
               <text value="Nº de Veículos:"/>
             </properties>
           </component>
-          <component id="8c810" class="javax.swing.JTextField" binding="textField2" default-binding="true">
+          <component id="8c810" class="javax.swing.JTextField" binding="txtNVeiculos">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>

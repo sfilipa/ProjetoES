@@ -8,21 +8,40 @@ public class Evento {
     private Data dataInicio;
     private Data dataFim;
     private String distrito;
-    private LocalExposicao distritoExposicao;
-    private String filial;
-    private LocalExposicao localExposicao;
+    private String local;
 
-    public Evento(String nome, Integer nVeiculos, Data dataInicio, Data dataFim, String distrito, String filial) {
+    public Evento(String nome, Integer nVeiculos, Data dataInicio, Data dataFim, String distrito, String local) {
         this.nome = nome;
         this.nVeiculos = nVeiculos;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
         this.distrito = distrito;
-        this.filial = filial;
+        this.local = local;
     }
 
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
 
+    public void setnVeiculos(Integer nVeiculos) {
+        this.nVeiculos = nVeiculos;
+    }
 
+    public void setDataInicio(Data dataInicio) {
+        this.dataInicio = dataInicio;
+    }
+
+    public void setDataFim(Data dataFim) {
+        this.dataFim = dataFim;
+    }
+
+    public void setDistrito(String distrito) {
+        this.distrito = distrito;
+    }
+
+    public void setLocal(String local) {
+        this.local = local;
+    }
 
     public String getNome() {
         return nome;
@@ -45,7 +64,7 @@ public class Evento {
     }
 
     public String getLocal() {
-        return filial;
+        return local;
     }
 
     public int subtrair(){

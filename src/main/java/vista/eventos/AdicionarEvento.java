@@ -75,6 +75,7 @@ public class AdicionarEvento extends JDialog {
         valido = isDataValida(txtDataInicio.getText());
         if (!valido) {
             Erros.mostrarErro(this, Erros.DATA_INVALIDA);
+            return;
         }
 
         Data dataFim = Data.parseData(txtDataFim.getText());
@@ -82,10 +83,12 @@ public class AdicionarEvento extends JDialog {
         valido = isDataValida(txtDataFim.getText());
         if (!valido) {
             Erros.mostrarErro(this, Erros.DATA_INVALIDA);
+            return;
         }
 
         if (dataFim.getCalendar().before(dataInicio.getCalendar())) {
             Erros.mostrarErro(this, Erros.DATA_MAIOR);
+            return;
         }
 
 
