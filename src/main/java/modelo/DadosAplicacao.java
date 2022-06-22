@@ -30,6 +30,7 @@ public class DadosAplicacao {
         clientes.add(cliente);
     }
 
+
     public List<Veiculo> getVeiculos(){
         return veiculos;
     }
