@@ -19,6 +19,10 @@ public class DadosAplicacao {
 
     public void adicionarVeiculo(Veiculo veiculo) {
         veiculos.add(veiculo);
+
+        System.out.println("Veiculo adicionado");
+        System.out.println(veiculo.toString());
+        System.out.println(veiculos.size());
     }
 
     public void adicionarEvento(Evento evento) {
@@ -32,7 +36,7 @@ public class DadosAplicacao {
         eventos.remove(evento);
     }
 
-    public void editarEvento(Evento evento, String nome, Data dataInicio, Data datafim, Integer nVeiculos, String distrito, String local){
+    public void editarEvento(Evento evento, String nome, Data dataInicio, Data datafim, Integer nVeiculos, String distrito, String local) {
         evento.setNome(nome);
         evento.setnVeiculos(nVeiculos);
         evento.setDataInicio(dataInicio);
@@ -131,77 +135,77 @@ public class DadosAplicacao {
         return eventos;
     }
 
+
     public static List<Evento> getEventos(Data dataInicio, Data dataFim, String distrito) {
         List<Evento> eventos = new ArrayList<>();
         for (Evento evento : DadosAplicacao.INSTANCE.getEventos()) {
-            if (evento.getDataInicio().equals(evento.getDataInicio(),dataInicio) &&
-                    evento.getDataFim().equals(evento.getDataFim(), dataFim) &&
-                    evento.getDistrito().equals(distrito)) {
-                eventos.add(evento);
+            if (dataInicio != null) {
+                if (evento.getDataInicio().equals(evento.getDataInicio(), dataInicio)) {
+                    if (!eventos.contains(evento)) {
+                        eventos.add(evento);
+                    }
+                }
+
+            }
+            if (dataFim != null) {
+                if (evento.getDataFim().equals(evento.getDataFim(), dataFim)) {
+                    if (!eventos.contains(evento)) {
+                        eventos.add(evento);
+                    }
+                }
+            }
+            if (distrito != null) {
+                if (evento.getDistrito().equals(distrito)) {
+                    if (!eventos.contains(evento)) {
+                        eventos.add(evento);
+                    }
+                }
             }
         }
         return eventos;
     }
 
-    public static List<Evento> getEventosDataInicioEDistrito(Data dataInicio, String distrito) {
-        List<Evento> eventos = new ArrayList<>();
-        for (Evento evento : DadosAplicacao.INSTANCE.getEventos()) {
-            if (evento.getDataInicio().equals(evento.getDataInicio(),dataInicio) &&
-                    evento.getDistrito().equals(distrito)) {
-                eventos.add(evento);
+    public static List<Veiculo> getVeiculos(String marca, String combustivel, String tipoCaixa, String condicaoGeral, Integer quilometros) {
+        List<Veiculo> veiculos = new ArrayList<>();
+        for (Veiculo veiculo : DadosAplicacao.INSTANCE.getVeiculos()) {
+            if (marca != null) {
+                if (veiculo.getMarca().equals(marca))
+                    if (!veiculos.contains(veiculo)) {
+                        veiculos.add(veiculo);
+                    }
+            }
+            if (combustivel != null) {
+                if (veiculo.getCombustivel().equals(combustivel)) {
+                    if (!veiculos.contains(veiculo)) {
+                        veiculos.add(veiculo);
+                    }
+                }
+            }
+            if (tipoCaixa != null) {
+                if (veiculo.getTipoDeCaixa().equals(tipoCaixa)) {
+                    if (!veiculos.contains(veiculo)) {
+                        veiculos.add(veiculo);
+                    }
+                }
+            }
+            if (condicaoGeral != null) {
+                if (veiculo.getCondicaoGeral().equals(condicaoGeral)) {
+                    if (!veiculos.contains(veiculo)) {
+                        veiculos.add(veiculo);
+                    }
+                }
+            }
+            if (quilometros != null) {
+                if (veiculo.getQuilometros() == quilometros) {
+                    if (!veiculos.contains(veiculo)) {
+                        veiculos.add(veiculo);
+                    }
+                }
             }
         }
-        return eventos;
+        return veiculos;
+
     }
 
-    public static List<Evento> getEventosDataFimEDistrito(Data dataFim, String distrito) {
-        List<Evento> eventos = new ArrayList<>();
-        for (Evento evento : DadosAplicacao.INSTANCE.getEventos()) {
-            if (evento.getDataFim().equals(evento.getDataFim(), dataFim) && evento.getDistrito().equals(distrito)) {
-                eventos.add(evento);
-            }
-        }
-        return eventos;
-    }
 
-    public static List<Evento> getEventos(Data dataInicio, Data dataFim) {
-        List<Evento> eventos = new ArrayList<>();
-        for (Evento evento : DadosAplicacao.INSTANCE.getEventos()) {
-            if (evento.getDataInicio().getCalendar().getTimeInMillis() == dataInicio.getCalendar().getTimeInMillis() &&
-                    evento.getDataFim().getCalendar().getTimeInMillis() == dataFim.getCalendar().getTimeInMillis()) {
-                eventos.add(evento);
-            }
-        }
-        return eventos;
-    }
-
-    public static List<Evento> getEventosDataInicio(Data dataInicio) {
-        List<Evento> eventos = new ArrayList<>();
-        for (Evento evento : DadosAplicacao.INSTANCE.getEventos()) {
-            if (evento.getDataInicio().getCalendar().getTimeInMillis() == dataInicio.getCalendar().getTimeInMillis()) {
-                eventos.add(evento);
-            }
-        }
-        return eventos;
-    }
-
-    public static List<Evento> getEventosDataFim(Data dataFim) {
-        List<Evento> eventos = new ArrayList<>();
-        for (Evento evento : DadosAplicacao.INSTANCE.getEventos()) {
-            if (evento.getDataFim().getCalendar().getTimeInMillis() == dataFim.getCalendar().getTimeInMillis()) {
-                eventos.add(evento);
-            }
-        }
-        return eventos;
-    }
-
-    public static List<Evento> getEventos(String distrito) {
-        List<Evento> eventos = new ArrayList<>();
-        for (Evento evento : DadosAplicacao.INSTANCE.getEventos()) {
-            if (evento.getDistrito().equals(distrito)) {
-                eventos.add(evento);
-            }
-        }
-        return eventos;
-    }
 }

@@ -2,6 +2,7 @@ package vista.veiculo;
 
 import modelo.DadosAplicacao;
 import modelo.Veiculo;
+import vista.eventos.ConsultarEvento;
 import vista.paginaPrincipal.*;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -74,13 +75,10 @@ public class PaginaInicialVeiculos extends JFrame{
         });
     }
     private void btnConsultarVeiculoActionPerformed(ActionEvent e) {
-        consultarVeículoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new ConsultarVeiculo().setVisible(true);
-            }
-        });
+        System.out.println("Click no btnConsultarVeiculo");
+        ConsultarVeiculo.mostrarConsultarVeiculo(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getEventos();
     }
 
     private void btnVoltarActionPerformed(ActionEvent e) {

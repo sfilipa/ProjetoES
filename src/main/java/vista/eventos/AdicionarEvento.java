@@ -92,7 +92,7 @@ public class AdicionarEvento extends JDialog {
         }
 
 
-            evento = new Evento(txtNome.getText(), nVeiculos, dataInicio, dataFim,  comboDistrito.getSelectedItem().toString(), comboLocal.getSelectedItem().toString());
+        evento = new Evento(txtNome.getText(), nVeiculos, dataInicio, dataFim,  comboDistrito.getSelectedItem().toString(), comboLocal.getSelectedItem().toString());
 
 
         fechar();

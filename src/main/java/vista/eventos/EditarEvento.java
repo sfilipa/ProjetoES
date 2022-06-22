@@ -9,7 +9,7 @@ import java.awt.event.ActionEvent;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EditarEvento extends JDialog{
+public class EditarEvento extends JDialog {
     private JButton filtrarButton;
     private JList<Evento> listaEventos;
     private JButton editarButton;
@@ -28,7 +28,7 @@ public class EditarEvento extends JDialog{
 
     private Evento evento;
 
-    public EditarEvento(Frame parent, boolean modal){
+    public EditarEvento(Frame parent, boolean modal) {
         super(parent, modal);
         setContentPane(painelPrincipal);
         pack();
@@ -47,13 +47,14 @@ public class EditarEvento extends JDialog{
     private void comboDistritoActionPerformed(ActionEvent actionEvent) {
         atualizarCombBoxLocaisEFiliais();
     }
+
     public void btnEditarActionPerformed(ActionEvent evt) {
         System.out.println("EditarEvento.btnEditarActionPerformed");
         Evento eventoSelecionado = listaEventos.getSelectedValue();
-        if(eventoSelecionado == null) {
+        if (eventoSelecionado == null) {
             Erros.mostrarErro(this, Erros.EVENTO_NAO_SELECIONADO);
             return;
-        }else {
+        } else {
             DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
 
             System.out.println("Editar Evento");
@@ -103,7 +104,7 @@ public class EditarEvento extends JDialog{
                 return;
             }
 
-           dadosAplicacao.editarEvento(eventoSelecionado, txtNome.getText(), dataInicio, dataFim, nVeiculos, comboDistrito.getSelectedItem().toString(), comboLocal.getSelectedItem().toString());
+            dadosAplicacao.editarEvento(eventoSelecionado, txtNome.getText(), dataInicio, dataFim, nVeiculos, comboDistrito.getSelectedItem().toString(), comboLocal.getSelectedItem().toString());
 
             fechar();
         }
@@ -155,27 +156,12 @@ public class EditarEvento extends JDialog{
                 Erros.mostrarErro(this, Erros.DATA_MAIOR);
             }
         }
-        String distrito =  comboDistritoFiltro.getSelectedItem().toString();
+        String distrito = comboDistritoFiltro.getSelectedItem().toString();
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
 
         List<Evento> eventos = new ArrayList<>();
-        if (dataInicio != null && dataFim != null && distrito != null) {
-            eventos = dadosAplicacao.getEventos(dataInicio, dataFim, distrito);
-        } else if (dataInicio != null && dataFim != null) {
-            eventos = dadosAplicacao.getEventos(dataInicio, dataFim);
-        } else if (dataInicio != null && distrito != null) {
-            eventos = dadosAplicacao.getEventosDataInicioEDistrito(dataInicio, distrito);
-        } else if (dataFim != null && distrito != null) {
-            eventos = dadosAplicacao.getEventosDataFimEDistrito(dataFim, distrito);
-        } else if (distrito != null) {
-            eventos = dadosAplicacao.getEventos(distrito);
-        } else if (dataInicio != null) {
-            eventos = dadosAplicacao.getEventosDataInicio(dataInicio);
-        } else if (dataFim != null) {
-            eventos = dadosAplicacao.getEventosDataFim(dataFim);
-        } else {
-            eventos = dadosAplicacao.getEventos();
-        }
+        eventos = dadosAplicacao.getEventos(dataInicio, dataFim, distrito);
+
         DefaultListModel<Evento> model = new DefaultListModel<>();
         for (Evento evento : eventos) {
             model.addElement(evento);
@@ -207,7 +193,7 @@ public class EditarEvento extends JDialog{
         return text.isEmpty();
     }
 
-    public static Evento mostrarEditarEvento(Frame parent){
+    public static Evento mostrarEditarEvento(Frame parent) {
         System.out.println("mostrarRemoverEvento");
         EditarEvento dialog = new EditarEvento(parent, true);
         dialog.setVisible(true);
@@ -222,7 +208,7 @@ public class EditarEvento extends JDialog{
         this.setVisible(false);
     }
 
-    private void atualizarListaEvento(){
+    private void atualizarListaEvento() {
         List<Evento> eventos = new ArrayList<>();
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         eventos = dadosAplicacao.getEventos();
@@ -243,7 +229,7 @@ public class EditarEvento extends JDialog{
                 comboLocal.addItem(filial.displayName());
             }
         }
-        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+        for (LocalExposicao localExposicao : LocalExposicao.values()) {
             if (localExposicao.getDistrito().equals(distrito)) {
                 comboLocal.addItem(localExposicao.displayName());
             }
@@ -257,7 +243,7 @@ public class EditarEvento extends JDialog{
             distritos.add(filial.getDistrito());
             comboDistrito.addItem(filial.distrito());
         }
-        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+        for (LocalExposicao localExposicao : LocalExposicao.values()) {
             comboDistrito.addItem(localExposicao.distrito());
         }
     }

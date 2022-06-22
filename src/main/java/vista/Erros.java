@@ -13,8 +13,9 @@ public class Erros {
     public static final int NOME_JA_EXISTE = 7;
     public static final int EVENTO_NAO_SELECIONADO = 8;
     public static final int NIF_JA_EXISTE = 8;
+    public static final int VEICULO_NAO_SELECIONADO = 9;
 
-    public static void mostrarErro(Window parent, int numero){
+    public static void mostrarErro(Window parent, int numero) {
         //todo
         switch (numero) {
             case MATRICULA_JA_EXISTE:
@@ -40,6 +41,9 @@ public class Erros {
                 break;
             case EVENTO_NAO_SELECIONADO:
                 JOptionPane.showMessageDialog(parent, "Não existe nenhum evento selecionado.");
+                break;
+            case VEICULO_NAO_SELECIONADO:
+                JOptionPane.showMessageDialog(parent, "Não existe nenhum veículo selecionado.");
                 break;
             default:
         }
