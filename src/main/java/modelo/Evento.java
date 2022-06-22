@@ -1,21 +1,28 @@
 package modelo;
 
+import java.util.List;
+
 public class Evento {
     private String nome;
     private Integer nVeiculos;
     private Data dataInicio;
     private Data dataFim;
-    private Distrito distrito;
-    private Filial filial;
+    private String distrito;
+    private LocalExposicao distritoExposicao;
+    private String filial;
+    private LocalExposicao localExposicao;
 
-    public Evento(String nome, Integer nVeiculos, Data dataInicio, Data dataFim, Distrito distrito, Filial local) {
+    public Evento(String nome, Integer nVeiculos, Data dataInicio, Data dataFim, String distrito, String filial) {
         this.nome = nome;
         this.nVeiculos = nVeiculos;
         this.dataInicio = dataInicio;
         this.dataFim = dataFim;
         this.distrito = distrito;
-        this.filial = local;
+        this.filial = filial;
     }
+
+
+
 
     public String getNome() {
         return nome;
@@ -33,11 +40,11 @@ public class Evento {
         return dataFim;
     }
 
-    public Distrito getDistrito() {
+    public String getDistrito() {
         return distrito;
     }
 
-    public Filial getLocal() {
+    public String getLocal() {
         return filial;
     }
 

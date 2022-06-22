@@ -92,7 +92,32 @@ public class ConsultarEvento extends JDialog {
                 Erros.mostrarErro(this, Erros.DATA_MAIOR);
             }
         }
-        Distrito distrito = (Distrito) comboDistrito.getSelectedItem();
+        String distrito =  comboDistrito.getSelectedItem().toString();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+
+        List<Evento> eventos = new ArrayList<>();
+        if (dataInicio != null && dataFim != null && distrito != null) {
+            eventos = dadosAplicacao.getEventos(dataInicio, dataFim, distrito);
+        } else if (dataInicio != null && dataFim != null) {
+            eventos = dadosAplicacao.getEventos(dataInicio, dataFim);
+        } else if (dataInicio != null && distrito != null) {
+            eventos = dadosAplicacao.getEventosDataInicioEDistrito(dataInicio, distrito);
+        } else if (dataFim != null && distrito != null) {
+            eventos = dadosAplicacao.getEventosDataFimEDistrito(dataFim, distrito);
+        } else if (distrito != null) {
+            eventos = dadosAplicacao.getEventos(distrito);
+        } else if (dataInicio != null) {
+            eventos = dadosAplicacao.getEventosDataInicio(dataInicio);
+        } else if (dataFim != null) {
+            eventos = dadosAplicacao.getEventosDataFim(dataFim);
+        } else {
+            eventos = dadosAplicacao.getEventos();
+        }
+        DefaultListModel<Evento> model = new DefaultListModel<>();
+        for (Evento evento : eventos) {
+            model.addElement(evento);
+        }
+        listaEventos.setModel(model);
     }
     private void fechar(){
         this.setVisible(false);
@@ -116,9 +141,16 @@ public class ConsultarEvento extends JDialog {
         System.out.println("model: " + model);
     }
 
-    private void atualizarCombBoxDistrito(){
-        for(int i = 0; i< Distrito.values().length; i++){
-            comboDistrito.addItem(Distrito.values()[i]);
+    private void atualizarCombBoxDistrito() {
+        List<String> distritos = new ArrayList<>();
+        for (Filial filial : Filial.values()) {
+            distritos.add(filial.getDistrito());
+            comboDistrito.addItem(filial.distrito());
+        }
+        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+            if (!distritos.contains(localExposicao.getDistrito())) {
+                comboDistrito.addItem(localExposicao.distrito());
+            }
         }
     }
 
