@@ -1,43 +1,95 @@
 package vista.veiculo;
 
-import modelo.DadosAplicacao;
-import modelo.Veiculo;
+import modelo.*;
+import vista.Erros;
 
 import javax.swing.*;
+import javax.swing.event.ListSelectionEvent;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
-public class TransportarVeiculo extends JDialog{
+public class TransportarVeiculo extends JDialog {
     private JPanel painelPrincipal;
     private JButton transportarButton;
     private JButton cancelarButton;
     private JRadioButton sedeRadioButton;
     private JRadioButton filialLocalDeExposiçãoRadioButton;
-    private JComboBox comboBox2;
+    private JComboBox comboBoxFilial;
     private JRadioButton simRadioButton;
     private JRadioButton nãoRadioButton;
-    private JList listaVeiculos;
+    private JList<Veiculo> listaVeiculos;
     private JComboBox comboBoxCombustivel;
     private JComboBox comboBoxTipoCaixa;
     private JComboBox comboBoxMarca;
     private JComboBox comboBoxCondicaoGeral;
     private JButton filtrarButton;
-    private JComboBox comboBox9;
+    private JComboBox comboBoxLocal;
     private JTextField txtQuilometros;
 
-    public TransportarVeiculo(Frame parent, boolean modal){
+    private String ondeTrasportar;
+
+    public TransportarVeiculo(Frame parent, boolean modal) {
         super(parent, modal);
         setContentPane(painelPrincipal);
         pack();
 
+        sedeRadioButton.setEnabled(false);
+        filialLocalDeExposiçãoRadioButton.setEnabled(false);
+        comboBoxFilial.setEnabled(false);
+        comboBoxLocal.setEnabled(false);
+        simRadioButton.setEnabled(false);
+        nãoRadioButton.setEnabled(false);
+
         atualizarComboBoxMarca();
         atualizarListaVeiculo();
+        atualizarCombBoxFiliais();
+        atualizarCombBoxLocal();
 
         filtrarButton.addActionListener(this::btnFiltrarActionPerformed);
         cancelarButton.addActionListener(this::btnCancelarActionPerformed);
+        sedeRadioButton.addActionListener(this::OndeTransportarButtonActionPerformed);
+        filialLocalDeExposiçãoRadioButton.addActionListener(this::OndeTransportarButtonActionPerformed);
+        simRadioButton.addActionListener(this::TransportarparaLocalForaActionPerformed);
+        nãoRadioButton.addActionListener(this::TransportarparaLocalForaActionPerformed);
+        listaVeiculos.addListSelectionListener(this::veiculoSelecionadoActionPerformed);
+        transportarButton.addActionListener(this::btnTransportarActionPerformed);
+        comboBoxFilial.addActionListener(this::FilialSelecionadaActionPerformed);
+        comboBoxLocal.addActionListener(this::LocalSelecionadoActionPerformed);
+
+    }
+
+    private void LocalSelecionadoActionPerformed(ActionEvent actionEvent) {
+        if (comboBoxLocal.getSelectedItem() != null) {
+            ondeTrasportar = comboBoxLocal.getSelectedItem().toString();
+        }
+    }
+
+    private void FilialSelecionadaActionPerformed(ActionEvent actionEvent) {
+        if (filialLocalDeExposiçãoRadioButton.isSelected()) {
+            ondeTrasportar = comboBoxFilial.getSelectedItem().toString();
+        }
+    }
+
+    private void veiculoSelecionadoActionPerformed(ListSelectionEvent listSelectionEvent) {
+        if (listaVeiculos.getSelectedIndex() != -1) {
+            sedeRadioButton.setEnabled(true);
+            filialLocalDeExposiçãoRadioButton.setEnabled(true);
+        }
+    }
+
+    private void btnTransportarActionPerformed(ActionEvent evt) {
+        Veiculo veiculoSelecionado = listaVeiculos.getSelectedValue();
+        if (veiculoSelecionado == null) {
+            Erros.mostrarErro(this, Erros.VEICULO_NAO_SELECIONADO);
+            return;
+        } else {
+            DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+            dadosAplicacao.transportarVeiculo(veiculoSelecionado, ondeTrasportar);
+            fechar();
+        }
+
     }
 
     private void btnFiltrarActionPerformed(ActionEvent evt) {
@@ -77,6 +129,31 @@ public class TransportarVeiculo extends JDialog{
         return null;
     }
 
+
+    private void OndeTransportarButtonActionPerformed(ActionEvent actionEvent) {
+        if (filialLocalDeExposiçãoRadioButton.isSelected()) {
+            comboBoxFilial.setEnabled(true);
+            simRadioButton.setEnabled(true);
+            nãoRadioButton.setEnabled(true);
+            ondeTrasportar = comboBoxFilial.getSelectedItem().toString();
+        }else {
+            ondeTrasportar = "Sede";
+        }
+    }
+
+    private void TransportarparaLocalForaActionPerformed(ActionEvent actionEvent) {
+        if (simRadioButton.isSelected()) {
+            comboBoxLocal.setEnabled(true);
+            comboBoxFilial.setEnabled(false);
+            ondeTrasportar = comboBoxLocal.getSelectedItem().toString();
+        }
+        if (nãoRadioButton.isSelected()) {
+            comboBoxLocal.setEnabled(false);
+            comboBoxFilial.setEnabled(true);
+            ondeTrasportar = comboBoxFilial.getSelectedItem().toString();
+        }
+    }
+
     private void btnCancelarActionPerformed(ActionEvent evt) {
         fechar();
     }
@@ -107,4 +184,19 @@ public class TransportarVeiculo extends JDialog{
             comboBoxMarca.addItem(veiculo.getMarca());
         }
     }
+
+    private void atualizarCombBoxFiliais() {
+        comboBoxFilial.removeAllItems();
+        for (Filial filial : Filial.values()) {
+            comboBoxFilial.addItem(filial.displayName());
+        }
+    }
+
+    private void atualizarCombBoxLocal() {
+        comboBoxLocal.removeAllItems();
+        for (LocalExposicao localExposicao : LocalExposicao.values()) {
+            comboBoxLocal.addItem(localExposicao.displayName());
+        }
+    }
+
 }

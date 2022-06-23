@@ -1,8 +1,6 @@
 package vista.veiculo;
 
-import modelo.DadosAplicacao;
-import modelo.Evento;
-import modelo.Veiculo;
+import modelo.*;
 import vista.Erros;
 import vista.eventos.EditarEvento;
 
@@ -47,6 +45,7 @@ public class EditarVeiculo extends JDialog {
     private JButton filtrarButton;
     private JTextField txtquilometros;
     private JTextField txtQuilometrosFiltro;
+    private JComboBox comboBoxArmazenar;
 
     private String tipoCaixa;
     private String combustivel;
@@ -60,6 +59,7 @@ public class EditarVeiculo extends JDialog {
 
         atualizarListaVeiculo();
         atualizarComboBoxMarca();
+        atualizarCombBoxArmazenar();
 
         filtrarButton.addActionListener(this::btnFiltrarActionPerformed);
         cancelarButton.addActionListener(this::btnCancelarActionPerformed);
@@ -229,7 +229,7 @@ public class EditarVeiculo extends JDialog {
                 return;
             }
 
-            dadosAplicacao.editarVeiculo(veiculoSelecionado, txtmatricula.getText(), txtmarca.getText(), txtmodelo.getText(), nDonos, txtdonoAnterior.getText(), txtcategoria.getText(), classe, nPortas, potencia, quilometros, cilindrada, tipoCaixa, tracao, condicaoGeral, combustivel);
+            dadosAplicacao.editarVeiculo(veiculoSelecionado, txtmatricula.getText(), txtmarca.getText(), txtmodelo.getText(), nDonos, txtdonoAnterior.getText(), txtcategoria.getText(), classe, nPortas, potencia, quilometros, cilindrada, tipoCaixa, tracao, condicaoGeral, combustivel, comboBoxArmazenar.getSelectedItem().toString());
 
             atualizarListaVeiculo();
         }
@@ -341,6 +341,17 @@ public class EditarVeiculo extends JDialog {
         List<String> marcas = new ArrayList<>();
         for (Veiculo veiculo : veiculos) {
             comboBoxMarca.addItem(veiculo.getMarca());
+        }
+    }
+
+    private void atualizarCombBoxArmazenar() {
+        Sede sede = Sede.getSede();
+        comboBoxArmazenar.addItem(sede);
+        for (Filial filial : Filial.values()) {
+            comboBoxArmazenar.addItem(filial.displayName());
+        }
+        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+            comboBoxArmazenar.addItem(localExposicao.displayName());
         }
     }
 

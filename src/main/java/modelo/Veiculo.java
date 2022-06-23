@@ -16,8 +16,9 @@ public class Veiculo {
     private String tracao;
     private String condicaoGeral;
     private String donoAnterior;
+    private String localArmazenamento;
 
-    public Veiculo(String matricula, String marca, String modelo, Integer Ndonos, String donoAnterior, String categoria, Integer classe, Integer Nportas, Integer potencia, Integer quilometros, Integer cilindrada, String tipoDeCaixa, String tracao, String condicaoGeral, String combustivel) {
+    public Veiculo(String matricula, String marca, String modelo, Integer Ndonos, String donoAnterior, String categoria, Integer classe, Integer Nportas, Integer potencia, Integer quilometros, Integer cilindrada, String tipoDeCaixa, String tracao, String condicaoGeral, String combustivel, String localarmazenamento) {
         this.matricula = matricula;
         this.marca = marca;
         this.modelo = modelo;
@@ -33,6 +34,7 @@ public class Veiculo {
         this.condicaoGeral = condicaoGeral;
         this.combustivel = combustivel;
         this.donoAnterior = donoAnterior;
+        this.localArmazenamento = localarmazenamento;
     }
 
     public String getMatricula() {
@@ -153,6 +155,14 @@ public class Veiculo {
 
     public void setDonoAnterior(String donoAnterior) {
         this.donoAnterior = donoAnterior;
+    }
+
+    public String getLocalArmazenamento() {
+        return localArmazenamento;
+    }
+
+    public void setLocalArmazenamento(String localArmazenamento) {
+        this.localArmazenamento = localArmazenamento;
     }
 
     @Override

@@ -1,7 +1,6 @@
 package vista.veiculo;
 
-import modelo.DadosAplicacao;
-import modelo.Veiculo;
+import modelo.*;
 
 import javax.swing.*;
 import java.awt.*;
@@ -14,18 +13,18 @@ public class RepararVeiculo extends JDialog {
     private JButton repararButton;
     private JPanel painelPrincipal;
     private JButton cancelarButton;
-    private JComboBox comboBox1;
-    private JList list1;
+    private JComboBox comboBoxLocalReparacao;
+    private JList listaPecas;
     private JButton adicionarButton;
-    private JTextPane textPane1;
-    private JSpinner spinner1;
+    private JTextPane textPecasUsadas;
+    private JSpinner NPecasUsadas;
     private JList listaVeiculos;
     private JComboBox comboBoxCombustivel;
     private JComboBox comboBoxTipoCaixa;
     private JComboBox comboBoxMarca;
     private JComboBox comboBoxCondicaoGeral;
     private JButton fltrarButton;
-    private JTextField textField1;
+    private JTextField txtFiltragemPalavras;
     private JRadioButton consumívelRadioButton;
     private JRadioButton outroRadioButton;
     private JButton filtrarButton;
@@ -109,6 +108,14 @@ public class RepararVeiculo extends JDialog {
         List<String> marcas = new ArrayList<>();
         for (Veiculo veiculo : veiculos) {
             comboBoxMarca.addItem(veiculo.getMarca());
+        }
+    }
+
+    private void atualizarCombBoxLocalReparacao() {
+        Sede sede = Sede.getSede();
+        comboBoxLocalReparacao.addItem(sede);
+        for (Filial filial : Filial.values()) {
+            comboBoxLocalReparacao.addItem(filial.displayName());
         }
     }
 }

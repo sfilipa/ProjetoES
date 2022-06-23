@@ -1,7 +1,6 @@
 package vista.veiculo;
 
-import modelo.DadosAplicacao;
-import modelo.Veiculo;
+import modelo.*;
 import vista.Erros;
 
 import javax.swing.*;
@@ -35,6 +34,7 @@ public class AdicionarVeiculo extends JDialog {
     private JRadioButton médioRadioButton;
     private JRadioButton mauRadioButton;
     private JRadioButton muitoMauRadioButton;
+    private JComboBox comboBoxArmazenar;
 
     private Veiculo veiculo;
     private String tipoCaixa;
@@ -47,6 +47,9 @@ public class AdicionarVeiculo extends JDialog {
         super(parent, modal);
         setContentPane(painelPrincipal);
         pack();
+
+        atualizarCombBoxArmazenar();
+
         adicionarButton.addActionListener(this::btnAdicionarActionPerformed);
         cancelarButton.addActionListener(this::btnCancelarActionPerformed);
         automáticaRadioButton.addActionListener(this::tipoCaixaButtonActionPerformed);
@@ -178,7 +181,7 @@ public class AdicionarVeiculo extends JDialog {
             return;
         }
 
-        veiculo = new Veiculo(txtmatricula.getText(), txtmarca.getText(), txtmodelo.getText(),nDonos, txtdonoAnterior.getText(),txtcategoria.getText(), classe, nPortas, potencia, quilometros, cilindrada, tipoCaixa, tracao, condicaoGeral, combustivel);
+        veiculo = new Veiculo(txtmatricula.getText(), txtmarca.getText(), txtmodelo.getText(),nDonos, txtdonoAnterior.getText(),txtcategoria.getText(), classe, nPortas, potencia, quilometros, cilindrada, tipoCaixa, tracao, condicaoGeral, combustivel, comboBoxArmazenar.getSelectedItem().toString());
 
         fechar();
     }
@@ -273,6 +276,17 @@ public class AdicionarVeiculo extends JDialog {
 
     public Veiculo getVeiculo() {
         return veiculo;
+    }
+
+    private void atualizarCombBoxArmazenar() {
+        Sede sede = Sede.getSede();
+        comboBoxArmazenar.addItem(sede);
+        for (Filial filial : Filial.values()) {
+                comboBoxArmazenar.addItem(filial.displayName());
+        }
+        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+                comboBoxArmazenar.addItem(localExposicao.displayName());
+        }
     }
 }
 //ver

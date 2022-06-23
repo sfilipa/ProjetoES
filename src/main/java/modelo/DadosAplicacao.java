@@ -5,7 +5,7 @@ import java.util.List;
 
 public class DadosAplicacao {
     public static final DadosAplicacao INSTANCE = new DadosAplicacao();
-    ;
+
     private List<Veiculo> veiculos;
     private List<Evento> eventos;
     private String specialCharactersString = "!@#$%&*()'+,-./:;<=>?[]^_`{|}";
@@ -15,6 +15,9 @@ public class DadosAplicacao {
         veiculos = new ArrayList<>();
         eventos = new ArrayList<>();
         clientes = new ArrayList<>();
+
+        veiculos.add(new Veiculo("XJ-88-MM", "BMW", "K5", 5, "Laura", "jkdsfn", 5,500, 54553, 525,456, "manual","traseira", "Bom","Diesel", "Filial Leiria"));
+        veiculos.add(new Veiculo("XJ-99-MM", "BMW", "K5", 5, "Pedro", "jkdsfn", 5,500, 54553, 525,456, "manual","traseira", "Bom","Diesel", "Filial Porto"));
     }
 
     public void adicionarVeiculo(Veiculo veiculo) {
@@ -49,7 +52,11 @@ public class DadosAplicacao {
         evento.setDistrito(distrito);
     }
 
-    public void editarVeiculo(Veiculo veiculo, String matricula, String marca, String modelo, Integer Ndonos, String donoAnterior, String categoria, Integer classe, Integer Nportas, Integer potencia, Integer quilometros, Integer cilindrada, String tipoDeCaixa, String tracao, String condicaoGeral, String combustivel) {
+    public void transportarVeiculo(Veiculo veiculo, String localParaTransportar) {
+        veiculo.setLocalArmazenamento(localParaTransportar);
+    }
+
+    public void editarVeiculo(Veiculo veiculo, String matricula, String marca, String modelo, Integer Ndonos, String donoAnterior, String categoria, Integer classe, Integer Nportas, Integer potencia, Integer quilometros, Integer cilindrada, String tipoDeCaixa, String tracao, String condicaoGeral, String combustivel ,String localarmazenamento) {
         veiculo.setMarca(marca);
         veiculo.setModelo(modelo);
         veiculo.setMatricula(matricula);
@@ -65,6 +72,7 @@ public class DadosAplicacao {
         veiculo.setTracao(tracao);
         veiculo.setCondicaoGeral(condicaoGeral);
         veiculo.setCombustivel(combustivel);
+        veiculo.setLocalArmazenamento(localarmazenamento);
     }
 
     public void adicionarCliente(Cliente cliente) {

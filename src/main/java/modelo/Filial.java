@@ -13,7 +13,6 @@ public enum Filial{
     FILIALBRAGANÇA("Filial Bragança", "Bragança"),
     FILIALCASTELOBRANCO("Filial Castelo Branco", "Castelo Branco");
 
-
     private String displayName;
     private String distrito;
 

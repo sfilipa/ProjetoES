@@ -37,6 +37,7 @@ public class ConsultarVeiculo extends JDialog {
     private JLabel lblCondicaoGeral;
     private JLabel lblQuilometros;
     private JTextField txtQuilometros;
+    private JLabel lblLocalArmazenamento;
 
     public ConsultarVeiculo(Frame parent, boolean modal) {
         super(parent, modal);
@@ -118,6 +119,7 @@ public class ConsultarVeiculo extends JDialog {
             lblTracao.setText(veiculoSelecionado.getTracao());
             lblCondicaoGeral.setText(veiculoSelecionado.getCondicaoGeral());
             lblQuilometros.setText(String.valueOf(veiculoSelecionado.getQuilometros()));
+            lblLocalArmazenamento.setText(veiculoSelecionado.getLocalArmazenamento());
         }
 
     }

@@ -52,18 +52,16 @@ public class PaginaInicialVeiculos extends JFrame{
         dados.getVeiculos();
     }
     private void btnTransportarVeiculoActionPerformed(ActionEvent e) {
-        RepararVeiculo.mostrarRepararVeiculo(this);
+        TransportarVeiculo.mostrarTransportarVeiculo(this);
         DadosAplicacao dados = DadosAplicacao.INSTANCE;
         dados.getVeiculos();
     }
     private void btnRepararVeiculoActionPerformed(ActionEvent e) {
-        System.out.println("Click no btnEditarEvento");
-        EditarVeiculo.mostrarEditarVeiculo(this);
+        RepararVeiculo.mostrarRepararVeiculo(this);
         DadosAplicacao dados = DadosAplicacao.INSTANCE;
         dados.getVeiculos();
     }
     private void btnConsultarVeiculoActionPerformed(ActionEvent e) {
-        System.out.println("Click no btnConsultarVeiculo");
         ConsultarVeiculo.mostrarConsultarVeiculo(this);
         DadosAplicacao dados = DadosAplicacao.INSTANCE;
         dados.getEventos();
