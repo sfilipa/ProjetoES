@@ -106,7 +106,7 @@ public class EditarEvento extends JDialog {
 
             dadosAplicacao.editarEvento(eventoSelecionado, txtNome.getText(), dataInicio, dataFim, nVeiculos, comboDistrito.getSelectedItem().toString(), comboLocal.getSelectedItem().toString());
 
-            fechar();
+            atualizarListaEvento();
         }
 
     }

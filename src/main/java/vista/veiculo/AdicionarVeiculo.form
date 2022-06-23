@@ -310,7 +310,7 @@
               <text value="Mau"/>
             </properties>
           </component>
-          <component id="917a" class="javax.swing.JRadioButton" binding="mutioMauRadioButton" default-binding="true">
+          <component id="917a" class="javax.swing.JRadioButton" binding="muitoMauRadioButton" default-binding="true">
             <constraints>
               <grid row="14" column="5" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>

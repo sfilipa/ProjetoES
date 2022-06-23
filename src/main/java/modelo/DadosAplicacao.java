@@ -36,6 +36,10 @@ public class DadosAplicacao {
         eventos.remove(evento);
     }
 
+    public void removerVeiculo(Veiculo veiculo) {
+        veiculos.remove(veiculo);
+    }
+
     public void editarEvento(Evento evento, String nome, Data dataInicio, Data datafim, Integer nVeiculos, String distrito, String local) {
         evento.setNome(nome);
         evento.setnVeiculos(nVeiculos);
@@ -43,6 +47,24 @@ public class DadosAplicacao {
         evento.setDataFim(datafim);
         evento.setLocal(local);
         evento.setDistrito(distrito);
+    }
+
+    public void editarVeiculo(Veiculo veiculo, String matricula, String marca, String modelo, Integer Ndonos, String donoAnterior, String categoria, Integer classe, Integer Nportas, Integer potencia, Integer quilometros, Integer cilindrada, String tipoDeCaixa, String tracao, String condicaoGeral, String combustivel) {
+        veiculo.setMarca(marca);
+        veiculo.setModelo(modelo);
+        veiculo.setMatricula(matricula);
+        veiculo.setNdonos(Ndonos);
+        veiculo.setDonoAnterior(donoAnterior);
+        veiculo.setCategoria(categoria);
+        veiculo.setClasse(classe);
+        veiculo.setNportas(Nportas);
+        veiculo.setPotencia(potencia);
+        veiculo.setQuilometros(quilometros);
+        veiculo.setCilindrada(cilindrada);
+        veiculo.setTipoDeCaixa(tipoDeCaixa);
+        veiculo.setTracao(tracao);
+        veiculo.setCondicaoGeral(condicaoGeral);
+        veiculo.setCombustivel(combustivel);
     }
 
     public void adicionarCliente(Cliente cliente) {

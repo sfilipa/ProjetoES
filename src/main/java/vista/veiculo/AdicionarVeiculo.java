@@ -34,7 +34,7 @@ public class AdicionarVeiculo extends JDialog {
     private JRadioButton bomRadioButton;
     private JRadioButton médioRadioButton;
     private JRadioButton mauRadioButton;
-    private JRadioButton mutioMauRadioButton;
+    private JRadioButton muitoMauRadioButton;
 
     private Veiculo veiculo;
     private String tipoCaixa;
@@ -60,7 +60,7 @@ public class AdicionarVeiculo extends JDialog {
         bomRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
         médioRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
         mauRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
-        mutioMauRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
+        muitoMauRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
     }
 
     private void condicaoGeralButtonActionPerformed(ActionEvent actionEvent) {
@@ -72,8 +72,8 @@ public class AdicionarVeiculo extends JDialog {
             condicaoGeral = bomRadioButton.getText();
         } else if (muitoBomRadioButton.isSelected()) {
             condicaoGeral = muitoBomRadioButton.getText();
-        } else if (mutioMauRadioButton.isSelected()) {
-            condicaoGeral = mutioMauRadioButton.getText();
+        } else if (muitoMauRadioButton.isSelected()) {
+            condicaoGeral = muitoMauRadioButton.getText();
         }
     }
 

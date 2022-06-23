@@ -95,6 +95,66 @@ public class Veiculo {
         return donoAnterior;
     }
 
+    public void setMatricula(String matricula) {
+        this.matricula = matricula;
+    }
+
+    public void setMarca(String marca) {
+        this.marca = marca;
+    }
+
+    public void setModelo(String modelo) {
+        this.modelo = modelo;
+    }
+
+    public void setNdonos(Integer ndonos) {
+        Ndonos = ndonos;
+    }
+
+    public void setCombustivel(String combustivel) {
+        this.combustivel = combustivel;
+    }
+
+    public void setCategoria(String categoria) {
+        this.categoria = categoria;
+    }
+
+    public void setClasse(Integer classe) {
+        this.classe = classe;
+    }
+
+    public void setNportas(Integer nportas) {
+        Nportas = nportas;
+    }
+
+    public void setPotencia(Integer potencia) {
+        this.potencia = potencia;
+    }
+
+    public void setQuilometros(Integer quilometros) {
+        this.quilometros = quilometros;
+    }
+
+    public void setCilindrada(Integer cilindrada) {
+        this.cilindrada = cilindrada;
+    }
+
+    public void setTipoDeCaixa(String tipoDeCaixa) {
+        this.tipoDeCaixa = tipoDeCaixa;
+    }
+
+    public void setTracao(String tracao) {
+        this.tracao = tracao;
+    }
+
+    public void setCondicaoGeral(String condicaoGeral) {
+        this.condicaoGeral = condicaoGeral;
+    }
+
+    public void setDonoAnterior(String donoAnterior) {
+        this.donoAnterior = donoAnterior;
+    }
+
     @Override
     public String toString() {
         return matricula;
