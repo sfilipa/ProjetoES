@@ -6,7 +6,6 @@ import vista.Erros;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -27,7 +26,7 @@ public class ConsultarEvento extends JDialog {
     private JLabel lblDataFim;
     private JLabel lblDistrito;
 
-    public ConsultarEvento(Frame parent, boolean modal){
+    public ConsultarEvento(Frame parent, boolean modal) {
         setContentPane(painelPrincipal);
         pack();
 
@@ -39,7 +38,7 @@ public class ConsultarEvento extends JDialog {
         verEventoButton.addActionListener(this::btnVerEventoActionPerformed);
     }
 
-    public static Evento mostrarConsultarEvento(Frame parent){
+    public static Evento mostrarConsultarEvento(Frame parent) {
         System.out.println("mostrarConsultarEvento");
         ConsultarEvento dialog = new ConsultarEvento(parent, true);
         dialog.setVisible(true);
@@ -52,10 +51,10 @@ public class ConsultarEvento extends JDialog {
 
     private void btnVerEventoActionPerformed(ActionEvent evt) {
         Evento eventoSelecionado = listaEventos.getSelectedValue();
-        if(eventoSelecionado == null) {
-           Erros.mostrarErro(this, Erros.EVENTO_NAO_SELECIONADO);
-           return;
-        }else {
+        if (eventoSelecionado == null) {
+            Erros.mostrarErro(this, Erros.EVENTO_NAO_SELECIONADO);
+            return;
+        } else {
             lblNome.setText(eventoSelecionado.getNome());
             lblNVeiculos.setText(String.valueOf(eventoSelecionado.getnVeiculos()));
             lblLocal.setText(eventoSelecionado.getLocal().toString());
@@ -92,18 +91,30 @@ public class ConsultarEvento extends JDialog {
                 Erros.mostrarErro(this, Erros.DATA_MAIOR);
             }
         }
-        Distrito distrito = (Distrito) comboDistrito.getSelectedItem();
+        String distrito = comboDistrito.getSelectedItem().toString();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+
+        List<Evento> eventos = new ArrayList<>();
+
+        eventos = dadosAplicacao.getEventos(dataInicio, dataFim, distrito);
+
+        DefaultListModel<Evento> model = new DefaultListModel<>();
+        for (Evento evento : eventos) {
+            model.addElement(evento);
+        }
+        listaEventos.setModel(model);
     }
-    private void fechar(){
+
+    private void fechar() {
         this.setVisible(false);
     }
 
-    private boolean isDataValida(String data){
+    private boolean isDataValida(String data) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         return dadosAplicacao.isDataValida(data);
     }
 
-    private void atualizarListaEvento(){
+    private void atualizarListaEvento() {
         List<Evento> eventos = new ArrayList<>();
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         eventos = dadosAplicacao.getEventos();
@@ -116,9 +127,16 @@ public class ConsultarEvento extends JDialog {
         System.out.println("model: " + model);
     }
 
-    private void atualizarCombBoxDistrito(){
-        for(int i = 0; i< Distrito.values().length; i++){
-            comboDistrito.addItem(Distrito.values()[i]);
+    private void atualizarCombBoxDistrito() {
+        List<String> distritos = new ArrayList<>();
+        for (Filial filial : Filial.values()) {
+            distritos.add(filial.getDistrito());
+            comboDistrito.addItem(filial.distrito());
+        }
+        for (LocalExposicao localExposicao : LocalExposicao.values()) {
+            if (!distritos.contains(localExposicao.getDistrito())) {
+                comboDistrito.addItem(localExposicao.distrito());
+            }
         }
     }
 

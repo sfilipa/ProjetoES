@@ -4,6 +4,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
+import java.util.Objects;
 
 public class Data {
 
@@ -61,6 +62,9 @@ public class Data {
         return calendar.get(Calendar.YEAR);
     }
 
+    public boolean equals(Data data1, Data data2){
+        return data1.getDia() == data2.getDia() && data1.getMes() == data2.getMes() && data1.getAno() == data2.getAno();
+    }
 
 
     @Override

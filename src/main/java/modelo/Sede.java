@@ -1,5 +1,9 @@
 package modelo;
 
 public enum Sede {
-    Sede
+    Sede;
+
+    public static Sede getSede() {
+        return Sede;
+    }
 }

@@ -2,6 +2,9 @@ package vista.veiculo;
 
 import modelo.DadosAplicacao;
 import modelo.Veiculo;
+import vista.eventos.ConsultarEvento;
+import vista.eventos.EditarEvento;
+import vista.eventos.RemoverEvento;
 import vista.paginaPrincipal.*;
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -38,49 +41,30 @@ public class PaginaInicialVeiculos extends JFrame{
         dados.adicionarVeiculo(veiculo);
     }
     private void btnRemoverVeiculoActionPerformed(ActionEvent e) {
-        removerVeículoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new RemoverVeiculo().setVisible(true);
-            }
-        });
+        System.out.println("Click no btnRemoverVeiculo");
+        RemoverVeiculo.mostrarRemoverVeiculo(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getVeiculos();
     }
     private void btnEditarVeiculoActionPerformed(ActionEvent e) {
-        editarVeículoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new EditarVeiculo().setVisible(true);
-            }
-        });
+        EditarVeiculo.mostrarEditarVeiculo(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getVeiculos();
     }
     private void btnTransportarVeiculoActionPerformed(ActionEvent e) {
-        transportarVeículoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new TransportarVeiculo().setVisible(true);
-            }
-        });
+        TransportarVeiculo.mostrarTransportarVeiculo(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getVeiculos();
     }
     private void btnRepararVeiculoActionPerformed(ActionEvent e) {
-        repararVeículoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new RepararVeiculo().setVisible(true);
-            }
-        });
+        RepararVeiculo.mostrarRepararVeiculo(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getVeiculos();
     }
     private void btnConsultarVeiculoActionPerformed(ActionEvent e) {
-        consultarVeículoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new ConsultarVeiculo().setVisible(true);
-            }
-        });
+        ConsultarVeiculo.mostrarConsultarVeiculo(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getEventos();
     }
 
     private void btnVoltarActionPerformed(ActionEvent e) {

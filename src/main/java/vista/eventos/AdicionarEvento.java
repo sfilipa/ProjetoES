@@ -2,15 +2,14 @@ package vista.eventos;
 
 import modelo.*;
 import vista.Erros;
-import vista.veiculo.AdicionarVeiculo;
-import vista.veiculo.PaginaInicialVeiculos;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
+import java.util.ArrayList;
+import java.util.List;
 
-public class AdicionarEvento extends JDialog{
+public class AdicionarEvento extends JDialog {
     private JButton adicionarButton;
     private JButton cancelarButton;
     private JTextField txtNome;
@@ -25,7 +24,7 @@ public class AdicionarEvento extends JDialog{
     private Evento evento;
 
 
-    public AdicionarEvento(Frame parent, boolean modal){
+    public AdicionarEvento(Frame parent, boolean modal) {
         super(parent, modal);
 
         setContentPane(painelPrincipal);
@@ -36,32 +35,37 @@ public class AdicionarEvento extends JDialog{
 
         adicionarButton.addActionListener(this::btnAdicionarActionPerformed);
         cancelarButton.addActionListener(this::btnCancelarActionPerformed);
+        comboDistrito.addActionListener(this::comboDistritoActionPerformed);
 
+    }
+
+    private void comboDistritoActionPerformed(ActionEvent actionEvent) {
+        atualizarCombBoxLocaisEFiliais();
     }
 
     private void btnAdicionarActionPerformed(ActionEvent evt) {
         System.out.println("Adicionar Evento");
-        if(!verificarPreenchido()){
+        if (!verificarPreenchido()) {
             return;
         }
         boolean valido = NomeExiste(txtNome.getText());
-        if(valido){
+        if (valido) {
             Erros.mostrarErro(this, Erros.NOME_JA_EXISTE);
             return;
         }
         valido = NomeCaracteresEspeciais(txtNome.getText());
-        if(valido){
+        if (valido) {
             Erros.mostrarErro(this, Erros.CONTEM_CARACTERES_ESPECIAIS);
             return;
         }
         valido = isNumero(txtNVeiculos.getText());
-        if(!valido){
+        if (!valido) {
             Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
             return;
         }
 
         int nVeiculos = Integer.parseInt(txtNVeiculos.getText());
-        if (nVeiculos < 0){
+        if (nVeiculos < 0) {
             Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
             return;
         }
@@ -69,26 +73,32 @@ public class AdicionarEvento extends JDialog{
         Data dataInicio = Data.parseData(txtDataInicio.getText());
 
         valido = isDataValida(txtDataInicio.getText());
-        if(!valido){
+        if (!valido) {
             Erros.mostrarErro(this, Erros.DATA_INVALIDA);
+            return;
         }
 
         Data dataFim = Data.parseData(txtDataFim.getText());
 
         valido = isDataValida(txtDataFim.getText());
-        if(!valido){
+        if (!valido) {
             Erros.mostrarErro(this, Erros.DATA_INVALIDA);
+            return;
         }
 
-        if(dataFim.getCalendar().before(dataInicio.getCalendar())){
+        if (dataFim.getCalendar().before(dataInicio.getCalendar())) {
             Erros.mostrarErro(this, Erros.DATA_MAIOR);
+            return;
         }
 
-        evento = new Evento(txtNome.getText(), nVeiculos, dataInicio, dataFim, (Distrito) comboDistrito.getSelectedItem(), (Filial) comboLocal.getSelectedItem());
+
+        evento = new Evento(txtNome.getText(), nVeiculos, dataInicio, dataFim,  comboDistrito.getSelectedItem().toString(), comboLocal.getSelectedItem().toString());
+
+
         fechar();
     }
 
-    public static Evento mostrarCriacaoEvento(Frame parent){
+    public static Evento mostrarCriacaoEvento(Frame parent) {
         //todo
         System.out.println("mostrarCriacaoEvento");
         var detalhes = new AdicionarEvento(parent, true);
@@ -97,20 +107,20 @@ public class AdicionarEvento extends JDialog{
         return detalhes.getEvento();
     }
 
-    public boolean verificarPreenchido(){
-        if(foiPreenchido(txtNome.getText())){
+    public boolean verificarPreenchido() {
+        if (foiPreenchido(txtNome.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if(foiPreenchido(txtNVeiculos.getText())){
+        if (foiPreenchido(txtNVeiculos.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if(foiPreenchido(txtDataInicio.getText())){
+        if (foiPreenchido(txtDataInicio.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if(foiPreenchido(txtDataFim.getText())){
+        if (foiPreenchido(txtDataFim.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
@@ -118,10 +128,10 @@ public class AdicionarEvento extends JDialog{
     }
 
     private void btnCancelarActionPerformed(ActionEvent evt) {
-            fechar();
+        fechar();
     }
 
-    private void fechar(){
+    private void fechar() {
         this.setVisible(false);
     }
 
@@ -129,16 +139,18 @@ public class AdicionarEvento extends JDialog{
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         return dadosAplicacao.existeEventoNome(nome);
     }
+
     private boolean NomeCaracteresEspeciais(String nome) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         return dadosAplicacao.temCaracteresEspeciais(nome);
     }
+
     private boolean isNumero(String nVeiculos) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         return dadosAplicacao.isNumero(nVeiculos);
     }
 
-    private boolean isDataValida(String data){
+    private boolean isDataValida(String data) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         return dadosAplicacao.isDataValida(data);
     }
@@ -151,16 +163,31 @@ public class AdicionarEvento extends JDialog{
         return evento;
     }
 
-    private void atualizarCombBoxLocaisEFiliais(){
-        for(int i = 0; i< Filial.values().length; i++){
-            comboLocal.addItem(Filial.values()[i]);
+    private void atualizarCombBoxLocaisEFiliais() {
+        comboLocal.removeAllItems();
+        String distrito = comboDistrito.getSelectedItem().toString();
+        for (Filial filial : Filial.values()) {
+            if (filial.getDistrito().equals(distrito)) {
+                comboLocal.addItem(filial.displayName());
+            }
+        }
+        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+            if (localExposicao.getDistrito().equals(distrito)) {
+                comboLocal.addItem(localExposicao.displayName());
+            }
         }
     }
 
 
-    private void atualizarCombBoxDistrito(){
-        for(int i = 0; i< Distrito.values().length; i++){
-            comboDistrito.addItem(Distrito.values()[i]);
+    private void atualizarCombBoxDistrito() {
+        List<String> distritos = new ArrayList<>();
+        for (Filial filial : Filial.values()) {
+            distritos.add(filial.getDistrito());
+            comboDistrito.addItem(filial.distrito());
+        }
+        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+            comboDistrito.addItem(localExposicao.distrito());
         }
     }
+
 }

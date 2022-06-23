@@ -1,13 +1,11 @@
 package vista.veiculo;
 
-import modelo.DadosAplicacao;
-import modelo.Veiculo;
+import modelo.*;
 import vista.Erros;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class AdicionarVeiculo extends JDialog {
     private JPanel painelPrincipal;
@@ -35,85 +33,222 @@ public class AdicionarVeiculo extends JDialog {
     private JRadioButton bomRadioButton;
     private JRadioButton médioRadioButton;
     private JRadioButton mauRadioButton;
-    private JRadioButton mutioMauRadioButton;
+    private JRadioButton muitoMauRadioButton;
+    private JComboBox comboBoxArmazenar;
 
     private Veiculo veiculo;
+    private String tipoCaixa;
+    private String combustivel;
+    private String tracao;
+    private String condicaoGeral;
 
 
-    public AdicionarVeiculo(Frame parent, boolean modal){
+    public AdicionarVeiculo(Frame parent, boolean modal) {
         super(parent, modal);
         setContentPane(painelPrincipal);
         pack();
+
+        atualizarCombBoxArmazenar();
+
         adicionarButton.addActionListener(this::btnAdicionarActionPerformed);
         cancelarButton.addActionListener(this::btnCancelarActionPerformed);
+        automáticaRadioButton.addActionListener(this::tipoCaixaButtonActionPerformed);
+        manualRadioButton.addActionListener(this::tipoCaixaButtonActionPerformed);
+        gasolinaRadioButton.addActionListener(this::combustivelButtonActionPerformed);
+        dieselRadioButton.addActionListener(this::combustivelButtonActionPerformed);
+        elétricoRadioButton.addActionListener(this::combustivelButtonActionPerformed);
+        fronteiraRadioButton.addActionListener(this::tracaoButtonActionPerformed);
+        traseiraRadioButton.addActionListener(this::tracaoButtonActionPerformed);
+        muitoBomRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
+        bomRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
+        médioRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
+        mauRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
+        muitoMauRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
+    }
 
+    private void condicaoGeralButtonActionPerformed(ActionEvent actionEvent) {
+        if (mauRadioButton.isSelected()) {
+            condicaoGeral = manualRadioButton.getText();
+        } else if (médioRadioButton.isSelected()) {
+            condicaoGeral = médioRadioButton.getText();
+        } else if (bomRadioButton.isSelected()) {
+            condicaoGeral = bomRadioButton.getText();
+        } else if (muitoBomRadioButton.isSelected()) {
+            condicaoGeral = muitoBomRadioButton.getText();
+        } else if (muitoMauRadioButton.isSelected()) {
+            condicaoGeral = muitoMauRadioButton.getText();
+        }
+    }
+
+    private void tracaoButtonActionPerformed(ActionEvent actionEvent) {
+        if (fronteiraRadioButton.isSelected()) {
+            tracao = fronteiraRadioButton.getText();
+        } else {
+            tracao = traseiraRadioButton.getText();
+        }
+    }
+
+    private void combustivelButtonActionPerformed(ActionEvent actionEvent) {
+        if (gasolinaRadioButton.isSelected()) {
+            combustivel = gasolinaRadioButton.getText();
+        } else if (dieselRadioButton.isSelected()) {
+            combustivel = dieselRadioButton.getText();
+        } else if (elétricoRadioButton.isSelected()) {
+            combustivel = elétricoRadioButton.getText();
+        }
+    }
+
+    private void tipoCaixaButtonActionPerformed(ActionEvent actionEvent) {
+        if (automáticaRadioButton.isSelected()) {
+            tipoCaixa = automáticaRadioButton.getText();
+        } else {
+            tipoCaixa = manualRadioButton.getText();
+        }
     }
 
     private void btnAdicionarActionPerformed(ActionEvent evt) {
         System.out.println("Adicionar Veículo");
 
-        if(!verificarPreenchido()){
+        if (!verificarPreenchido()) {
             return;
         }
 
         boolean valido = MatriculaExiste(txtmatricula.getText());
-        if(!valido){
+        if (valido) {
             Erros.mostrarErro(this, Erros.MATRICULA_JA_EXISTE);
             return;
         }
-        valido = foiPreenchido(txtmarca.getText());
+        valido = NomeCaracteresEspeciais(txtmarca.getText());
+        if (valido) {
+            Erros.mostrarErro(this, Erros.CONTEM_CARACTERES_ESPECIAIS);
+            return;
+        }
+        valido = NomeCaracteresEspeciais(txtmodelo.getText());
+        if (valido) {
+            Erros.mostrarErro(this, Erros.CONTEM_CARACTERES_ESPECIAIS);
+            return;
+        }
+        valido = NomeCaracteresEspeciais(txtdonoAnterior.getText());
+        if (valido) {
+            Erros.mostrarErro(this, Erros.CONTEM_CARACTERES_ESPECIAIS);
+            return;
+        }
+        valido = NomeCaracteresEspeciais(txtcategoria.getText());
+        if (valido) {
+            Erros.mostrarErro(this, Erros.CONTEM_CARACTERES_ESPECIAIS);
+            return;
+        }
+        valido = isNumero(txtnDonos.getText());
+        if (!valido) {
+            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
+            return;
+        }
+        valido = isNumero(txtnPortas.getText());
+        if (!valido) {
+            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
+            return;
+        }
+        valido = isNumero(txtquilometros.getText());
+        if (!valido) {
+            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
+            return;
+        }
+        valido = isNumero(txtpotencia.getText());
+        if (!valido) {
+            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
+            return;
+        }
+        valido = isNumero(txtcilindrada.getText());
+        if (!valido) {
+            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
+            return;
+        }
+        valido = isNumero(txtclasse.getText());
+        if (!valido) {
+            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
+            return;
+        }
 
+        int nPortas = Integer.parseInt(txtnPortas.getText());
+        int nDonos = Integer.parseInt(txtnDonos.getText());
+        int quilometros = Integer.parseInt(txtquilometros.getText());
+        int potencia = Integer.parseInt(txtpotencia.getText());
+        int cilindrada = Integer.parseInt(txtcilindrada.getText());
+        int classe = Integer.parseInt(txtclasse.getText());
+
+        if (nDonos < 0 || quilometros < 0 || potencia < 0 || cilindrada < 0 || classe < 0) {
+            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
+            return;
+        }
+
+        veiculo = new Veiculo(txtmatricula.getText(), txtmarca.getText(), txtmodelo.getText(),nDonos, txtdonoAnterior.getText(),txtcategoria.getText(), classe, nPortas, potencia, quilometros, cilindrada, tipoCaixa, tracao, condicaoGeral, combustivel, comboBoxArmazenar.getSelectedItem().toString());
+
+        fechar();
     }
 
-    public boolean verificarPreenchido(){
-        if(foiPreenchido(txtmatricula.getText())){
+    public boolean verificarPreenchido() {
+        if (foiPreenchido(txtmatricula.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if(foiPreenchido(txtmarca.getText())){
+        if (foiPreenchido(txtmarca.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if(foiPreenchido(txtmodelo.getText())){
+        if (foiPreenchido(txtmodelo.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if(foiPreenchido(txtdonoAnterior.getText())){
+        if (foiPreenchido(txtdonoAnterior.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if(foiPreenchido(txtnDonos.getText())){
+        if (foiPreenchido(txtnDonos.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if(foiPreenchido(txtcategoria.getText())){
+        if (foiPreenchido(txtcategoria.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if(foiPreenchido(txtquilometros.getText())){
+        if (foiPreenchido(txtquilometros.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if(foiPreenchido(txtclasse.getText())){
+        if (foiPreenchido(txtclasse.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if(foiPreenchido(txtnPortas.getText())){
+        if (foiPreenchido(txtnPortas.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if(foiPreenchido(txtpotencia.getText())){
+        if (foiPreenchido(txtpotencia.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if(foiPreenchido(txtcilindrada.getText())){
+        if (foiPreenchido(txtcilindrada.getText())) {
+            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
+            return false;
+        }
+        if (!gasolinaRadioButton.isSelected() && !dieselRadioButton.isSelected() && !elétricoRadioButton.isSelected()) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
         return true;
     }
 
-    public static Veiculo mostrarCriacaoVeiculo(Frame parent){
+    private boolean NomeCaracteresEspeciais(String nome) {
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        return dadosAplicacao.temCaracteresEspeciais(nome);
+    }
+
+    private boolean isNumero(String nVeiculos) {
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        return dadosAplicacao.isNumero(nVeiculos);
+    }
+
+    public static Veiculo mostrarCriacaoVeiculo(Frame parent) {
         //todo
         System.out.println("mostrarCriacaoVeiculo");
         var detalhes = new AdicionarVeiculo(parent, true);
@@ -123,10 +258,11 @@ public class AdicionarVeiculo extends JDialog {
     }
 
     private void btnCancelarActionPerformed(ActionEvent evt) {
-            this.setVisible(false);
-            PaginaInicialVeiculos pai = (PaginaInicialVeiculos) this.getParent();
-            pai.setEnabled(true);
-            pai.toFront();
+        fechar();
+    }
+
+    private void fechar() {
+        this.setVisible(false);
     }
 
     private boolean foiPreenchido(String text) {
@@ -140,6 +276,17 @@ public class AdicionarVeiculo extends JDialog {
 
     public Veiculo getVeiculo() {
         return veiculo;
+    }
+
+    private void atualizarCombBoxArmazenar() {
+        Sede sede = Sede.getSede();
+        comboBoxArmazenar.addItem(sede);
+        for (Filial filial : Filial.values()) {
+                comboBoxArmazenar.addItem(filial.displayName());
+        }
+        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+                comboBoxArmazenar.addItem(localExposicao.displayName());
+        }
     }
 }
 //ver

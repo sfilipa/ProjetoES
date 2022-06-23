@@ -41,23 +41,17 @@ public class PaginaInicialEventos extends JFrame {
     }
 
     private void btnRemoverEventoActionPerformed(ActionEvent evt) {
-        removerEventoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new RemoverEvento().setVisible(true);
-            }
-        });
+        System.out.println("Click no btnRemoverEvento");
+        RemoverEvento.mostrarRemoverEvento(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getEventos();
     }
 
     private void btnEditarEventoActionPerformed(ActionEvent evt) {
-        editarEventoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new EditarEvento().setVisible(true);
-            }
-        });
+        System.out.println("Click no btnEditarEvento");
+        EditarEvento.mostrarEditarEvento(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getEventos();
     }
 
     private void btnConsultarEventoActionPerformed(ActionEvent evt) {
