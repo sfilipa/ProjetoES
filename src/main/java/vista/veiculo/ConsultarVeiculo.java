@@ -39,6 +39,7 @@ public class ConsultarVeiculo extends JDialog {
     private JTextField txtQuilometros;
 
     public ConsultarVeiculo(Frame parent, boolean modal) {
+        super(parent, modal);
         setContentPane(painelPrincipal);
         pack();
 
