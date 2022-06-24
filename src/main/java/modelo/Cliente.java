@@ -3,9 +3,9 @@ package modelo;
 public class Cliente {
 
     private String nome;
-    private long nif;
+    private Integer nif;
 
-    public Cliente(String nome, long nif){
+    public Cliente(String nome, Integer nif){
         this.nome = nome;
         this.nif = nif;
     }
@@ -14,7 +14,7 @@ public class Cliente {
         return nome;
     }
 
-    public long getNif() {
+    public Integer getNif() {
         return nif;
     }
 

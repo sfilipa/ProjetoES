@@ -5,6 +5,7 @@ import modelo.DadosAplicacao;
 import modelo.Evento;
 import vista.eventos.AdicionarEvento;
 import vista.paginaPrincipal.PaginaPrincipal;
+import vista.veiculo.ConsultarVeiculo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -24,8 +25,9 @@ public class PaginaInicialClientes extends JFrame {
         pack();
 
         adicionarClienteButton.addActionListener(this::btnAdicionarClienteActionPerformed);
+        consultarClienteButton.addActionListener(this::btnConsultarClienteActionPerformed);
         btnRemoverActionPerfomed();
-        btnConsultarClientePerfomed();
+        //btnConsultarClientePerfomed();
         btnVoltarActionPerformed();
         btnConsultarHistoricoTransacaoClientePerfomed();
     }
@@ -35,6 +37,12 @@ public class PaginaInicialClientes extends JFrame {
         Cliente cliente = AdicionarCliente.mostrarCriacaoCliente(this);
         DadosAplicacao dados = DadosAplicacao.INSTANCE;
         dados.adicionarCliente(cliente);
+    }
+
+    private void btnConsultarVeiculoActionPerformed(ActionEvent e) {
+        ConsultarVeiculo.mostrarConsultarVeiculo(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getEventos();
     }
 
 
@@ -61,7 +69,7 @@ public class PaginaInicialClientes extends JFrame {
         });
     }
 
-    private void btnConsultarClientePerfomed() {
+/*    private void btnConsultarClientePerfomed() {
         consultarClienteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -69,6 +77,12 @@ public class PaginaInicialClientes extends JFrame {
                 new ConsultarCliente().setVisible(true);
             }
         });
+    }*/
+
+    private void btnConsultarClienteActionPerformed(ActionEvent e) {
+        ConsultarCliente.mostrarConsultarCliente(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getEventos();
     }
 
 

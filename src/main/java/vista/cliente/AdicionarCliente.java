@@ -61,6 +61,19 @@ public class AdicionarCliente extends JDialog {
         }
 
 
+        int nif = Integer.parseInt(txtnif.getText());
+        //int nDonos = Integer.parseInt(textField1.getText());
+
+
+        if (nif < 0 ) {
+            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
+            return;
+        }
+
+        cliente = new Cliente(textField1.getText(), nif);
+
+        fechar();
+
     }
 
     private boolean NomeExiste(String nome) {
@@ -136,6 +149,9 @@ public class AdicionarCliente extends JDialog {
         });
     }
 
+    private void fechar() {
+        this.setVisible(false);
+    }
 
     //public static void main(String[] args) {
      //   new AdicionarCliente().setVisible(true);
