@@ -14,6 +14,9 @@ public class Erros {
     public static final int EVENTO_NAO_SELECIONADO = 8;
     public static final int NIF_JA_EXISTE = 8;
     public static final int VEICULO_NAO_SELECIONADO = 9;
+    public static final int NUMERO_VIATURAS_EXCEDIDO = 10;
+    public static final int CLASSE_INVALIDA = 11;
+    public static final int NUMERO_PORTAS_INVALIDAS = 12;
 
     public static void mostrarErro(Window parent, int numero) {
         //todo
@@ -44,6 +47,15 @@ public class Erros {
                 break;
             case VEICULO_NAO_SELECIONADO:
                 JOptionPane.showMessageDialog(parent, "Não existe nenhum veículo selecionado.");
+                break;
+            case NUMERO_VIATURAS_EXCEDIDO:
+                JOptionPane.showMessageDialog(parent, "O número de viaturas excede o número de lugares disponíveis.");
+                break;
+            case CLASSE_INVALIDA:
+                JOptionPane.showMessageDialog(parent, "A classe do veículo não é válida, classe entre 1 e 4.");
+                break;
+            case NUMERO_PORTAS_INVALIDAS:
+                JOptionPane.showMessageDialog(parent, "O número de portas do veículo não é válido, tem de ser 3 ou 5.");
                 break;
             default:
         }
