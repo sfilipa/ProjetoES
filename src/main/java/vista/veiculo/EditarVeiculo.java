@@ -216,6 +216,11 @@ public class EditarVeiculo extends JDialog {
                 Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
                 return;
             }
+            valido = checkNViaturasFilial(comboBoxArmazenar.getSelectedItem().toString());
+            if (valido) {
+                Erros.mostrarErro(this, Erros.NUMERO_VIATURAS_EXCEDIDO);
+                return;
+            }
 
             int nPortas = Integer.parseInt(txtnPortas.getText());
             int nDonos = Integer.parseInt(txtnDonos.getText());
@@ -224,10 +229,21 @@ public class EditarVeiculo extends JDialog {
             int cilindrada = Integer.parseInt(txtcilindrada.getText());
             int classe = Integer.parseInt(txtclasse.getText());
 
-            if (nDonos < 0 || quilometros < 0 || potencia < 0 || cilindrada < 0 || classe < 0) {
+            if (nDonos < 0 || quilometros < 0 || potencia < 0 || cilindrada < 0 || classe < 0 || nPortas < 0) {
                 Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
                 return;
             }
+
+            if (classe > 4 || classe < 1) {
+                Erros.mostrarErro(this, Erros.CLASSE_INVALIDA);
+                return;
+            }
+
+            if (nPortas != 3 || nPortas != 5) {
+                Erros.mostrarErro(this, Erros.NUMERO_PORTAS_INVALIDAS);
+                return;
+            }
+
 
             dadosAplicacao.editarVeiculo(veiculoSelecionado, txtmatricula.getText(), txtmarca.getText(), txtmodelo.getText(), nDonos, txtdonoAnterior.getText(), txtcategoria.getText(), classe, nPortas, potencia, quilometros, cilindrada, tipoCaixa, tracao, condicaoGeral, combustivel, comboBoxArmazenar.getSelectedItem().toString());
 
@@ -353,6 +369,31 @@ public class EditarVeiculo extends JDialog {
         for(LocalExposicao localExposicao : LocalExposicao.values()) {
             comboBoxArmazenar.addItem(localExposicao.displayName());
         }
+    }
+
+    private boolean checkNViaturasFilial(String localArmazenamento) {
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        int nViaturas = 0;
+        for (Veiculo veiculo : dadosAplicacao.getVeiculos()) {
+            if (veiculo.getLocalArmazenamento().equals(localArmazenamento)) {
+                nViaturas++;
+            }
+        }
+        if (localArmazenamento.equals("Sede")) {
+            Sede sede = Sede.getSede();
+            if (nViaturas >= Sede.Sede.getViaturasMax()) {
+                return true;
+            }
+        }else{
+            for (Filial filial : Filial.values()) {
+                if (localArmazenamento.equals(filial.displayName())) {
+                    if (nViaturas >= filial.ViaturasMax()) {
+                        return true;
+                    }
+                }
+            }
+        }
+        return false;
     }
 
 }
