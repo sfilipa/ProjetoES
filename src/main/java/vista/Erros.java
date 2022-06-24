@@ -19,6 +19,7 @@ public class Erros {
     public static final int NUMERO_PORTAS_INVALIDAS = 12;
     public static final int NOME_JA_EXISTE_CLIENTE = 13;
     public static final int CLIENTE_NAO_SELECIONADO = 15;
+    public static final int NOME_JA_EXISTE_PECA = 16;
 
     public static void mostrarErro(Window parent, int numero) {
         //todo
@@ -67,6 +68,9 @@ public class Erros {
                 break;
             case CLIENTE_NAO_SELECIONADO:_NAO_SELECIONADO:
                 JOptionPane.showMessageDialog(parent, "Não existe nenhum cliente selecionado.");
+                break;
+            case NOME_JA_EXISTE_PECA:
+                JOptionPane.showMessageDialog(parent, "Já existe uma peça com este nome.");
                 break;
             default:
 

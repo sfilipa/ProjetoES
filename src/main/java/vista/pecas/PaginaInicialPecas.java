@@ -1,5 +1,7 @@
 package vista.pecas;
 
+import modelo.DadosAplicacao;
+import modelo.Peca;
 import vista.paginaPrincipal.PaginaPrincipal;
 
 import javax.swing.*;
@@ -23,7 +25,7 @@ public class PaginaInicialPecas extends JFrame{
         setContentPane(painelPrincipal);
         pack();
 
-        btnAdicionarPecaActionPerformed();
+        adicionarPecaButton.addActionListener(this::btnAdicionarPecaActionPerformed);
         btnConsultarPecaButtonActionPerformed();
         btnEditarPecaButtonActionPerformed();
         btnPedirPecaButtonActionPerformed();
@@ -34,7 +36,12 @@ public class PaginaInicialPecas extends JFrame{
         btnConsultarStockPecaActionPerformed();
     }
 
-    private void btnAdicionarPecaActionPerformed() {
+    private void btnAdicionarPecaActionPerformed(ActionEvent evt) {
+        System.out.println("Clicou no btnAdicionarPeca!");
+        Peca peca = AdicionarPeca.mostrarCriacaoPeca(this);
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        dadosAplicacao.adicionarPeca(peca);
+        /*
         adicionarPecaButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -42,6 +49,7 @@ public class PaginaInicialPecas extends JFrame{
                 new AdicionarPeca().setVisible(true);
             }
         });
+         */
     }
 
     private void btnConsultarPecaButtonActionPerformed() {

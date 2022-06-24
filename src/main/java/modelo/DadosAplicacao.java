@@ -11,6 +11,8 @@ public class DadosAplicacao {
     private String specialCharactersString = "!@#$%&*()'+,-./:;<=>?[]^_`{|}";
     private List<Cliente> clientes;
 
+    private List<Peca> pecas;
+
     private DadosAplicacao() {
         veiculos = new ArrayList<>();
         eventos = new ArrayList<>();
@@ -81,6 +83,10 @@ public class DadosAplicacao {
 
     public void adicionarCliente(Cliente cliente) {
         clientes.add(cliente);
+    }
+
+    public void adicionarPeca(Peca peca){
+        pecas.add(peca);
     }
 
 
@@ -259,6 +265,18 @@ public class DadosAplicacao {
     }
 
 
+
+
+    public boolean existePecaNome(String nome) {
+        if (!pecas.isEmpty()) {
+            for (Peca peca : pecas) {
+                if (peca.getNome().equals(nome)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
 
 
 }
