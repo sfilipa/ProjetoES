@@ -3,6 +3,7 @@ package vista.cliente;
 import modelo.Cliente;
 import modelo.DadosAplicacao;
 import modelo.Veiculo;
+import vista.Erros;
 import vista.veiculo.ConsultarVeiculo;
 
 import javax.swing.*;
@@ -22,16 +23,20 @@ public class ConsultarCliente extends JDialog {
     private JTextField textField1;
     private JList list1;
     private JButton filtrarButton;
+    private JButton verClienteButton;
+    private JLabel lblVeiculo;
+    private JLabel lblNIF;
 
     public ConsultarCliente(Frame parent, boolean modal){
         super(parent, modal);
         setContentPane(painelPrincipal);
         pack();
 
-        //atualizarListaClientes();
+        atualizarListaCliente();
 
         voltarButton.addActionListener(this::btnVoltarActionPerformed);
         filtrarButton.addActionListener(this::btnFiltrarActionPerformed);
+        verClienteButton.addActionListener(this::btnVerClienteActionPerformed);
         btnCancelarActionPerformed();
 
     }
@@ -58,6 +63,19 @@ public class ConsultarCliente extends JDialog {
         fechar();
     }
 
+    private void btnVerClienteActionPerformed(ActionEvent evt) {
+        Cliente clienteSelecionado = (Cliente) list1.getSelectedValue();
+        if (clienteSelecionado == null) {
+            Erros.mostrarErro(this, Erros.CLIENTE_NAO_SELECIONADO);
+            return;
+        } else {
+            lblNIF.setText(String.valueOf(clienteSelecionado.getNif()));
+            lblNome.setText(clienteSelecionado.getNome());
+            //lblVeiculo.setText(clienteSelecionado.ge());
+
+        }
+
+    }
 
 
     private void btnFiltrarActionPerformed(ActionEvent evt) {
@@ -72,12 +90,13 @@ public class ConsultarCliente extends JDialog {
 
         List<Cliente> clientes = new ArrayList<>();
 
-        clientes = dadosAplicacao.getClientes();
+        clientes = dadosAplicacao.getClientes(nif);
 
-        DefaultListModel<Veiculo> model = new DefaultListModel<>();
-       ////   model.addElement(cliente);
-        //}
-        //list1.setModel(model);
+        DefaultListModel<Cliente> model = new DefaultListModel<>();
+        for (Cliente cliente : clientes) {
+            model.addElement(cliente);
+        }
+        list1.setModel(model);
     }
 
     private void atualizarListaCliente() {
@@ -89,9 +108,11 @@ public class ConsultarCliente extends JDialog {
             model.addElement(cliente);
         }
         list1.setModel(model);
-        System.out.println("eventos: " + clientes);
+        System.out.println("clientes: " + clientes);
         System.out.println("model: " + model);
     }
+
+
 
     private void fechar() {
         this.setVisible(false);

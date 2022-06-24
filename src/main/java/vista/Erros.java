@@ -12,11 +12,13 @@ public class Erros {
     public static final int DATA_MAIOR = 6;
     public static final int NOME_JA_EXISTE = 7;
     public static final int EVENTO_NAO_SELECIONADO = 8;
-    public static final int NIF_JA_EXISTE = 8;
+    public static final int NIF_JA_EXISTE = 14;
     public static final int VEICULO_NAO_SELECIONADO = 9;
     public static final int NUMERO_VIATURAS_EXCEDIDO = 10;
     public static final int CLASSE_INVALIDA = 11;
     public static final int NUMERO_PORTAS_INVALIDAS = 12;
+    public static final int NOME_JA_EXISTE_CLIENTE = 13;
+    public static final int CLIENTE_NAO_SELECIONADO = 15;
 
     public static void mostrarErro(Window parent, int numero) {
         //todo
@@ -42,8 +44,14 @@ public class Erros {
             case NOME_JA_EXISTE:
                 JOptionPane.showMessageDialog(parent, "Esse evento já existe.");
                 break;
+            case NOME_JA_EXISTE_CLIENTE:
+                JOptionPane.showMessageDialog(parent, "Esse nome de cliente já existe.");
+                break;
             case EVENTO_NAO_SELECIONADO:
                 JOptionPane.showMessageDialog(parent, "Não existe nenhum evento selecionado.");
+                break;
+            case NIF_JA_EXISTE:
+                JOptionPane.showMessageDialog(parent, "Já existe um cliente com o nif registado.");
                 break;
             case VEICULO_NAO_SELECIONADO:
                 JOptionPane.showMessageDialog(parent, "Não existe nenhum veículo selecionado.");
@@ -57,7 +65,11 @@ public class Erros {
             case NUMERO_PORTAS_INVALIDAS:
                 JOptionPane.showMessageDialog(parent, "O número de portas do veículo não é válido, tem de ser 3 ou 5.");
                 break;
+            case CLIENTE_NAO_SELECIONADO:_NAO_SELECIONADO:
+                JOptionPane.showMessageDialog(parent, "Não existe nenhum cliente selecionado.");
+                break;
             default:
+
         }
     }
 

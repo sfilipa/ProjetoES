@@ -6,6 +6,7 @@ import modelo.Evento;
 import vista.eventos.AdicionarEvento;
 import vista.paginaPrincipal.PaginaPrincipal;
 import vista.veiculo.ConsultarVeiculo;
+import vista.veiculo.RemoverVeiculo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -26,7 +27,8 @@ public class PaginaInicialClientes extends JFrame {
 
         adicionarClienteButton.addActionListener(this::btnAdicionarClienteActionPerformed);
         consultarClienteButton.addActionListener(this::btnConsultarClienteActionPerformed);
-        btnRemoverActionPerfomed();
+        removerClienteButton.addActionListener(this::btnRemoverClienteActionPerformed);
+        //btnRemoverActionPerfomed();
         //btnConsultarClientePerfomed();
         btnVoltarActionPerformed();
         btnConsultarHistoricoTransacaoClientePerfomed();
@@ -40,7 +42,7 @@ public class PaginaInicialClientes extends JFrame {
     }
 
     private void btnConsultarVeiculoActionPerformed(ActionEvent e) {
-        ConsultarVeiculo.mostrarConsultarVeiculo(this);
+        ConsultarCliente.mostrarConsultarCliente(this);
         DadosAplicacao dados = DadosAplicacao.INSTANCE;
         dados.getEventos();
     }
@@ -58,16 +60,19 @@ public class PaginaInicialClientes extends JFrame {
     }
 
 
-
-    private void btnRemoverActionPerfomed(){
-        removerClienteButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new RemoverCliente().setVisible(true);
-            }
-        });
+    private void btnRemoverClienteActionPerformed(ActionEvent e) {
+        System.out.println("Click no btnRemoverCliente");
+        RemoverCliente.mostrarRemoverCliente(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getClientes();
     }
+
+    /*private void btnRemoverActionPerfomed(){
+        System.out.println("Click no btnRemoverVeiculo");
+        RemoverVeiculo.mostrarRemoverVeiculo(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getClientes();
+    }*/
 
 /*    private void btnConsultarClientePerfomed() {
         consultarClienteButton.addActionListener(new ActionListener() {

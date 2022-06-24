@@ -44,10 +44,10 @@ public class AdicionarCliente extends JDialog {
         }
         boolean valido = NomeExiste(textField1.getText());
         if(valido){
-            Erros.mostrarErro(this, Erros.NOME_JA_EXISTE);
+            Erros.mostrarErro(this, Erros.NOME_JA_EXISTE_CLIENTE);
             return;
         }
-        boolean valido1 = NumeroExiste(txtnif.getText());
+        boolean valido1 = NumeroExiste(Integer.valueOf(txtnif.getText()));
         if(valido1){
             Erros.mostrarErro(this, Erros.NIF_JA_EXISTE);
             return;
@@ -62,7 +62,7 @@ public class AdicionarCliente extends JDialog {
 
 
         int nif = Integer.parseInt(txtnif.getText());
-        //int nDonos = Integer.parseInt(textField1.getText());
+
 
 
         if (nif < 0 ) {
@@ -86,9 +86,9 @@ public class AdicionarCliente extends JDialog {
         return dadosAplicacao.isNumero(nif);
     }
 
-    private boolean NumeroExiste(String num) {
+    private boolean NumeroExiste(Integer nif) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        return dadosAplicacao.existeClienteNif(num);
+        return dadosAplicacao.existeClienteNif(nif);
     }
 
     private boolean foiPreenchido(String text) {

@@ -43,6 +43,10 @@ public class DadosAplicacao {
         veiculos.remove(veiculo);
     }
 
+    public void removerCliente(Cliente cliente) {
+        clientes.remove(cliente);
+    }
+
     public void editarEvento(Evento evento, String nome, Data dataInicio, Data datafim, Integer nVeiculos, String distrito, String local) {
         evento.setNome(nome);
         evento.setnVeiculos(nVeiculos);
@@ -116,9 +120,9 @@ public class DadosAplicacao {
     }
 
 
-    public boolean existeClienteNif(String nif) {
+    public boolean existeClienteNif(Integer nif) {
         for (Cliente cliente : clientes) {
-            if (cliente.getNome().equals(nif)) {
+            if (cliente.getNif()==nif) {
                 return true;
             }
         }
@@ -236,6 +240,25 @@ public class DadosAplicacao {
         return veiculos;
 
     }
+
+
+    public static List<Cliente> getClientes(Integer nif) {
+        List<Cliente> clientes = new ArrayList<>();
+        for (Cliente cliente : DadosAplicacao.INSTANCE.getClientes()) {
+
+            if (nif != null) {
+                if (cliente.getNif() == nif) {
+                    if (!clientes.contains(cliente)) {
+                        clientes.add(cliente);
+                    }
+                }
+                }
+            }
+
+        return clientes;
+    }
+
+
 
 
 }

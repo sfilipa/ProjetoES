@@ -20,7 +20,7 @@ public class Cliente {
 
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        sb.append("N.: ").append(nif).append(" -> ").append(")");
+        sb.append("NIF: ").append(nif).append("  Nome ").append(nome);
         return sb.toString();
     }
 }
