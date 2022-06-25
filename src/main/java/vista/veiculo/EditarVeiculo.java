@@ -213,7 +213,7 @@ public class EditarVeiculo extends JDialog {
                 Erros.mostrarErro(this, Erros.CLASSE_INVALIDA);
                 return;
             }
-            if (nPortas != 3 || nPortas != 5) {
+            if (nPortas != 3 && nPortas != 5) {
                 Erros.mostrarErro(this, Erros.NUMERO_PORTAS_INVALIDAS);
                 return;
             }

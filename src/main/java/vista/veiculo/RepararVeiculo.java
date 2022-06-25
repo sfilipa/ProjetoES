@@ -1,6 +1,7 @@
 package vista.veiculo;
 
 import modelo.*;
+import vista.Erros;
 
 import javax.swing.*;
 import java.awt.*;

@@ -41,9 +41,14 @@ public class EditarEvento extends JDialog {
         filtrarButton.addActionListener(this::btnFiltrarActionPerformed);
         editarButton.addActionListener(this::btnEditarActionPerformed);
         comboDistrito.addActionListener(this::comboDistritoActionPerformed);
+        novoLocalDeExposiçãoButton.addActionListener(this::btnNovoLocalDeExposiçãoActionPerformed);
 
     }
 
+    private void btnNovoLocalDeExposiçãoActionPerformed(ActionEvent actionEvent) {
+        fechar();
+        new AdicionarLocalExposicao().setVisible(true);
+    }
     private void comboDistritoActionPerformed(ActionEvent actionEvent) {
         atualizarCombBoxLocaisEFiliais();
     }
