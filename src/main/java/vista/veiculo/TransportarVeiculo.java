@@ -123,10 +123,9 @@ public class TransportarVeiculo extends JDialog {
         listaVeiculos.setModel(model);
     }
 
-    public static Veiculo mostrarTransportarVeiculo(Frame parent) {
+    public static void mostrarTransportarVeiculo(Frame parent) {
         TransportarVeiculo dialog = new TransportarVeiculo(parent, true);
         dialog.setVisible(true);
-        return null;
     }
 
 

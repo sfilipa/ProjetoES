@@ -38,11 +38,10 @@ public class ConsultarEvento extends JDialog {
         verEventoButton.addActionListener(this::btnVerEventoActionPerformed);
     }
 
-    public static Evento mostrarConsultarEvento(Frame parent) {
+    public static void mostrarConsultarEvento(Frame parent) {
         System.out.println("mostrarConsultarEvento");
         ConsultarEvento dialog = new ConsultarEvento(parent, true);
         dialog.setVisible(true);
-        return null;
     }
 
     private void btnVoltarActionPerformed(ActionEvent evt) {
@@ -55,15 +54,19 @@ public class ConsultarEvento extends JDialog {
             Erros.mostrarErro(this, Erros.EVENTO_NAO_SELECIONADO);
             return;
         } else {
-            lblNome.setText(eventoSelecionado.getNome());
-            lblNVeiculos.setText(String.valueOf(eventoSelecionado.getnVeiculos()));
-            lblLocal.setText(eventoSelecionado.getLocal().toString());
-            lblDataInicio.setText(eventoSelecionado.getDataInicio().toString());
-            lblDataFim.setText(eventoSelecionado.getDataFim().toString());
-            lblDistrito.setText(eventoSelecionado.getDistrito().toString());
-            lblTempo.setText(String.valueOf(eventoSelecionado.subtrair()) + " dias");
+            mostrarEvento(eventoSelecionado);
         }
 
+    }
+
+    private void mostrarEvento(Evento eventoSelecionado) {
+        lblNome.setText(eventoSelecionado.getNome());
+        lblNVeiculos.setText(String.valueOf(eventoSelecionado.getnVeiculos()));
+        lblLocal.setText(eventoSelecionado.getLocal().toString());
+        lblDataInicio.setText(eventoSelecionado.getDataInicio().toString());
+        lblDataFim.setText(eventoSelecionado.getDataFim().toString());
+        lblDistrito.setText(eventoSelecionado.getDistrito().toString());
+        lblTempo.setText(String.valueOf(eventoSelecionado.subtrair()) + " dias");
     }
 
     private void btnFiltrarActionPerformed(ActionEvent evt) {

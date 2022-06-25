@@ -166,26 +166,6 @@ public class EditarVeiculo extends JDialog {
                 Erros.mostrarErro(this, Erros.MATRICULA_JA_EXISTE);
                 return;
             }
-            valido = NomeCaracteresEspeciais(txtmarca.getText());
-            if (valido) {
-                Erros.mostrarErro(this, Erros.CONTEM_CARACTERES_ESPECIAIS);
-                return;
-            }
-            valido = NomeCaracteresEspeciais(txtmodelo.getText());
-            if (valido) {
-                Erros.mostrarErro(this, Erros.CONTEM_CARACTERES_ESPECIAIS);
-                return;
-            }
-            valido = NomeCaracteresEspeciais(txtdonoAnterior.getText());
-            if (valido) {
-                Erros.mostrarErro(this, Erros.CONTEM_CARACTERES_ESPECIAIS);
-                return;
-            }
-            valido = NomeCaracteresEspeciais(txtcategoria.getText());
-            if (valido) {
-                Erros.mostrarErro(this, Erros.CONTEM_CARACTERES_ESPECIAIS);
-                return;
-            }
             valido = isNumero(txtnDonos.getText());
             if (!valido) {
                 Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
@@ -229,16 +209,10 @@ public class EditarVeiculo extends JDialog {
             int cilindrada = Integer.parseInt(txtcilindrada.getText());
             int classe = Integer.parseInt(txtclasse.getText());
 
-            if (nDonos < 0 || quilometros < 0 || potencia < 0 || cilindrada < 0 || classe < 0 || nPortas < 0) {
-                Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
-                return;
-            }
-
             if (classe > 4 || classe < 1) {
                 Erros.mostrarErro(this, Erros.CLASSE_INVALIDA);
                 return;
             }
-
             if (nPortas != 3 || nPortas != 5) {
                 Erros.mostrarErro(this, Erros.NUMERO_PORTAS_INVALIDAS);
                 return;
@@ -303,21 +277,15 @@ public class EditarVeiculo extends JDialog {
         return true;
     }
 
-    private boolean NomeCaracteresEspeciais(String nome) {
-        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        return dadosAplicacao.temCaracteresEspeciais(nome);
-    }
-
     private boolean isNumero(String nVeiculos) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         return dadosAplicacao.isNumero(nVeiculos);
     }
 
-    public static Evento mostrarEditarVeiculo(Frame parent) {
+    public static void mostrarEditarVeiculo(Frame parent) {
         System.out.println("mostrarRemoverVeiculo");
         EditarVeiculo dialog = new EditarVeiculo(parent, true);
         dialog.setVisible(true);
-        return null;
     }
 
     private void btnCancelarActionPerformed(ActionEvent evt) {

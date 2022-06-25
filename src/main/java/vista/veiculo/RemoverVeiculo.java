@@ -50,11 +50,10 @@ public class RemoverVeiculo extends JDialog {
         }
     }
 
-    public static Veiculo mostrarRemoverVeiculo(Frame parent) {
+    public static void mostrarRemoverVeiculo(Frame parent) {
         System.out.println("mostrarRemoverVeiculo");
         RemoverVeiculo dialog = new RemoverVeiculo(parent, true);
         dialog.setVisible(true);
-        return null;
     }
 
     private void btnFiltrarActionPerformed(ActionEvent evt) {
