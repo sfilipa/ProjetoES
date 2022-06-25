@@ -43,6 +43,7 @@ public class DadosAplicacao {
 
     public void removerCliente(Cliente cliente) {
         clientes.remove(cliente);
+        System.out.println("Cliente removido");
     }
 
     public void editarEvento(Evento evento, String nome, Data dataInicio, Data datafim, Integer nVeiculos, String distrito, String local) {
@@ -79,6 +80,7 @@ public class DadosAplicacao {
 
     public void adicionarCliente(Cliente cliente) {
         clientes.add(cliente);
+        System.out.println("Cliente adicionado");
     }
 
     public List<Veiculo> getVeiculos() {
