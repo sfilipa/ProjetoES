@@ -213,7 +213,7 @@ public class EditarVeiculo extends JDialog {
                 Erros.mostrarErro(this, Erros.CLASSE_INVALIDA);
                 return;
             }
-            if (nPortas != 3 || nPortas != 5) {
+            if (nPortas != 3 && nPortas != 5) {
                 Erros.mostrarErro(this, Erros.NUMERO_PORTAS_INVALIDAS);
                 return;
             }
@@ -334,7 +334,12 @@ public class EditarVeiculo extends JDialog {
         for (Filial filial : Filial.values()) {
             comboBoxArmazenar.addItem(filial.displayName());
         }
-        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+        List<LocalExposicao> localExposicaos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicaos = dadosAplicacao.getLocalExposicoes();
+
+
+        for(LocalExposicao localExposicao : localExposicaos) {
             comboBoxArmazenar.addItem(localExposicao.displayName());
         }
     }

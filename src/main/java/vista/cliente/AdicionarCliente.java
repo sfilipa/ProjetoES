@@ -24,13 +24,16 @@ public class AdicionarCliente extends JDialog {
     private JTextField txtnif;
 
     private Cliente cliente;
-
+    private String temveiculo;
 
     public AdicionarCliente(Frame parent, boolean modal){
+
         super(parent, modal);
+
         setContentPane(painelPrincipal);
         pack();
         adicionarButton.addActionListener(this::btnAdicionarActionPerformed);
+        //System.out.println("Cliente adicionado");
         btnCancelarActionPerformed();
         btnAdicionarVeiculoActionPerformed();
 
@@ -75,6 +78,7 @@ public class AdicionarCliente extends JDialog {
         fechar();
 
     }
+
 
     private boolean NomeExiste(String nome) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
@@ -147,6 +151,18 @@ public class AdicionarCliente extends JDialog {
                 //new AdicionarVeiculo().setVisible(true);
             }
         });
+    }
+
+    private void tipoClienteVeiculo(ActionEvent event) {
+        if (simRadioButton.isSelected()) {
+            temveiculo = "Sim";
+        } else {
+            if(nãoRadioButton.isSelected()) {
+                temveiculo = "Não";
+            } else {
+                Erros.mostrarErro(this, Erros.NAO_SELECIONADO);
+            }
+        }
     }
 
     private void fechar() {

@@ -45,7 +45,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="f26a2" class="javax.swing.JList" binding="list1" default-binding="true">
+              <component id="f26a2" class="javax.swing.JList" binding="listaMarcas">
                 <constraints/>
                 <properties>
                   <model>
@@ -81,7 +81,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="2682c" class="javax.swing.JList" default-binding="true">
+              <component id="2682c" class="javax.swing.JList" binding="list1">
                 <constraints/>
                 <properties>
                   <model>

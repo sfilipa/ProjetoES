@@ -33,10 +33,6 @@ public enum Filial{
         return viaturasMax;
     }
 
-    public String distrito() {
-        return distrito;
-    }
-
     public String getDistrito() {
         return distrito;
     }

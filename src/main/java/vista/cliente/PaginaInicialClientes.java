@@ -2,11 +2,7 @@ package vista.cliente;
 
 import modelo.Cliente;
 import modelo.DadosAplicacao;
-import modelo.Evento;
-import vista.eventos.AdicionarEvento;
 import vista.paginaPrincipal.PaginaPrincipal;
-import vista.veiculo.ConsultarVeiculo;
-import vista.veiculo.RemoverVeiculo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -31,7 +27,8 @@ public class PaginaInicialClientes extends JFrame {
         //btnRemoverActionPerfomed();
         //btnConsultarClientePerfomed();
         btnVoltarActionPerformed();
-        btnConsultarHistoricoTransacaoClientePerfomed();
+        consultarHistoricoTransacaoClienteButton.addActionListener((this::btnConsultarHistoricoTransacaoClientePerfomed));
+        //btnConsultarHistoricoTransacaoClientePerfomed();
     }
 
     private void btnAdicionarClienteActionPerformed(ActionEvent evt) {
@@ -41,11 +38,7 @@ public class PaginaInicialClientes extends JFrame {
         dados.adicionarCliente(cliente);
     }
 
-    private void btnConsultarVeiculoActionPerformed(ActionEvent e) {
-        ConsultarCliente.mostrarConsultarCliente(this);
-        DadosAplicacao dados = DadosAplicacao.INSTANCE;
-        dados.getEventos();
-    }
+
 
 
 
@@ -91,7 +84,7 @@ public class PaginaInicialClientes extends JFrame {
     }
 
 
-    public void btnConsultarHistoricoTransacaoClientePerfomed(){
+/*    public void btnConsultarHistoricoTransacaoClientePerfomed(){
         consultarHistoricoTransacaoClienteButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -99,6 +92,18 @@ public class PaginaInicialClientes extends JFrame {
                 new ConsultarHistoricoTransacaoCliente().setVisible(true);
             }
         });
+    }*/
+    public void btnConsultarHistoricoTransacaoClientePerfomed(ActionEvent e){
+        ConsultarHistoricoTransacaoCliente.mostrarConsultarCliente(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getEventos();
+        // consultarHistoricoTransacaoClienteButton.addActionListener(new ActionListener() {
+        //   @Override
+        // public void actionPerformed(ActionEvent e) {
+        //   setVisible(false);
+        // new ConsultarHistoricoTransacaoCliente().setVisible(true);
+        //}
+        //});
     }
 
     public static void main(String[] args) {

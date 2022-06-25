@@ -22,17 +22,6 @@ public class Data {
     public Calendar getCalendar(){ return this.calendar; }
 
     public static Data parseData(String data){
-
-        /*String[] dataSplit = data.split("/");
-        try{
-            int dia = Integer.parseInt(dataSplit[0]);
-            int mes = Integer.parseInt(dataSplit[1]);
-            int ano = Integer.parseInt(dataSplit[2]);
-
-            return new Data(dia,mes,ano);
-        }catch (NumberFormatException | ArrayIndexOutOfBoundsException e){
-            return null;
-        }*/
         var formato = new SimpleDateFormat("dd/MM/yyyy");
         formato.setLenient(false);
         try{

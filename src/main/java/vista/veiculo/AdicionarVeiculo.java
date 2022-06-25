@@ -6,6 +6,8 @@ import vista.Erros;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdicionarVeiculo extends JDialog {
     private JPanel painelPrincipal;
@@ -166,7 +168,7 @@ public class AdicionarVeiculo extends JDialog {
             Erros.mostrarErro(this, Erros.CLASSE_INVALIDA);
             return;
         }
-        if (nPortas != 3 || nPortas != 5) {
+        if (nPortas != 3 && nPortas != 5) {
             Erros.mostrarErro(this, Erros.NUMERO_PORTAS_INVALIDAS);
             return;
         }
@@ -177,47 +179,47 @@ public class AdicionarVeiculo extends JDialog {
     }
 
     public boolean verificarPreenchido() {
-        if (foiPreenchido(txtmatricula.getText())) {
+        if (naofoiPreenchido(txtmatricula.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtmarca.getText())) {
+        if (naofoiPreenchido(txtmarca.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtmodelo.getText())) {
+        if (naofoiPreenchido(txtmodelo.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtdonoAnterior.getText())) {
+        if (naofoiPreenchido(txtdonoAnterior.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtnDonos.getText())) {
+        if (naofoiPreenchido(txtnDonos.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtcategoria.getText())) {
+        if (naofoiPreenchido(txtcategoria.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtquilometros.getText())) {
+        if (naofoiPreenchido(txtquilometros.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtclasse.getText())) {
+        if (naofoiPreenchido(txtclasse.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtnPortas.getText())) {
+        if (naofoiPreenchido(txtnPortas.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtpotencia.getText())) {
+        if (naofoiPreenchido(txtpotencia.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtcilindrada.getText())) {
+        if (naofoiPreenchido(txtcilindrada.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
@@ -250,7 +252,7 @@ public class AdicionarVeiculo extends JDialog {
         this.setVisible(false);
     }
 
-    private boolean foiPreenchido(String text) {
+    private boolean naofoiPreenchido(String text) {
         return text.isEmpty();
     }
 
@@ -269,7 +271,12 @@ public class AdicionarVeiculo extends JDialog {
         for (Filial filial : Filial.values()) {
                 comboBoxArmazenar.addItem(filial.displayName());
         }
-        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+        List<LocalExposicao> localExposicaos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicaos = dadosAplicacao.getLocalExposicoes();
+
+
+        for(LocalExposicao localExposicao : localExposicaos) {
                 comboBoxArmazenar.addItem(localExposicao.displayName());
         }
     }

@@ -4,11 +4,11 @@ public class Veiculo {
     private String matricula;
     private String marca;
     private String modelo;
-    private Integer Ndonos;
+    private Integer nDonos;
     private String combustivel;
     private String categoria;
     private Integer classe;
-    private Integer Nportas;
+    private Integer nPortas;
     private Integer potencia;
     private Integer quilometros;
     private Integer cilindrada;
@@ -18,14 +18,14 @@ public class Veiculo {
     private String donoAnterior;
     private String localArmazenamento;
 
-    public Veiculo(String matricula, String marca, String modelo, Integer Ndonos, String donoAnterior, String categoria, Integer classe, Integer Nportas, Integer potencia, Integer quilometros, Integer cilindrada, String tipoDeCaixa, String tracao, String condicaoGeral, String combustivel, String localarmazenamento) {
+    public Veiculo(String matricula, String marca, String modelo, Integer nDonos, String donoAnterior, String categoria, Integer classe, Integer nPortas, Integer potencia, Integer quilometros, Integer cilindrada, String tipoDeCaixa, String tracao, String condicaoGeral, String combustivel, String localarmazenamento) {
         this.matricula = matricula;
         this.marca = marca;
         this.modelo = modelo;
-        this.Ndonos = Ndonos;
+        this.nDonos = nDonos;
         this.categoria = categoria;
         this.classe = classe;
-        this.Nportas = Nportas;
+        this.nPortas = nPortas;
         this.potencia = potencia;
         this.quilometros = quilometros;
         this.cilindrada = cilindrada;
@@ -49,8 +49,8 @@ public class Veiculo {
         return modelo;
     }
 
-    public Integer getNdonos() {
-        return Ndonos;
+    public Integer getnDonos() {
+        return nDonos;
     }
 
     public String getCombustivel() {
@@ -65,8 +65,8 @@ public class Veiculo {
         return classe;
     }
 
-    public Integer getNportas() {
-        return Nportas;
+    public Integer getnPortas() {
+        return nPortas;
     }
 
     public Integer getPotencia() {
@@ -109,8 +109,8 @@ public class Veiculo {
         this.modelo = modelo;
     }
 
-    public void setNdonos(Integer ndonos) {
-        Ndonos = ndonos;
+    public void setnDonos(Integer nDonos) {
+        this.nDonos = nDonos;
     }
 
     public void setCombustivel(String combustivel) {
@@ -125,8 +125,8 @@ public class Veiculo {
         this.classe = classe;
     }
 
-    public void setNportas(Integer nportas) {
-        Nportas = nportas;
+    public void setnPortas(Integer nPortas) {
+        this.nPortas = nPortas;
     }
 
     public void setPotencia(Integer potencia) {

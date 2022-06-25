@@ -41,9 +41,14 @@ public class EditarEvento extends JDialog {
         filtrarButton.addActionListener(this::btnFiltrarActionPerformed);
         editarButton.addActionListener(this::btnEditarActionPerformed);
         comboDistrito.addActionListener(this::comboDistritoActionPerformed);
+        novoLocalDeExposiçãoButton.addActionListener(this::btnNovoLocalDeExposiçãoActionPerformed);
 
     }
 
+    private void btnNovoLocalDeExposiçãoActionPerformed(ActionEvent actionEvent) {
+        fechar();
+        //new AdicionarLocalExposicao().setVisible(true);
+    }
     private void comboDistritoActionPerformed(ActionEvent actionEvent) {
         atualizarCombBoxLocaisEFiliais();
     }
@@ -219,7 +224,10 @@ public class EditarEvento extends JDialog {
                 comboLocal.addItem(filial.displayName());
             }
         }
-        for (LocalExposicao localExposicao : LocalExposicao.values()) {
+        List<LocalExposicao> localExposicaos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicaos = dadosAplicacao.getLocalExposicoes();
+        for (LocalExposicao localExposicao : localExposicaos) {
             if (localExposicao.getDistrito().equals(distrito)) {
                 comboLocal.addItem(localExposicao.displayName());
             }
@@ -231,10 +239,15 @@ public class EditarEvento extends JDialog {
         List<String> distritos = new ArrayList<>();
         for (Filial filial : Filial.values()) {
             distritos.add(filial.getDistrito());
-            comboDistrito.addItem(filial.distrito());
+            comboDistrito.addItem(filial.getDistrito());
         }
-        for (LocalExposicao localExposicao : LocalExposicao.values()) {
-            comboDistrito.addItem(localExposicao.distrito());
+        List<LocalExposicao> localExposicaos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicaos = dadosAplicacao.getLocalExposicoes();
+        for (LocalExposicao localExposicao : localExposicaos) {
+            if (!distritos.contains(localExposicao.getDistrito())) {
+                comboDistrito.addItem(localExposicao.getDistrito());
+            }
         }
     }
 

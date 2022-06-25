@@ -9,15 +9,18 @@ public class DadosAplicacao {
     private List<Veiculo> veiculos;
     private List<Evento> eventos;
     private List<Cliente> clientes;
-
-
-
+    private List<LocalExposicao> localExposicoes;
     private static List<Peca> pecas;
 
     private DadosAplicacao() {
         veiculos = new ArrayList<>();
         eventos = new ArrayList<>();
         clientes = new ArrayList<>();
+        localExposicoes = new ArrayList<>();
+
+        veiculos.add(new Veiculo("XJ-88-MM", "BMW", "K5", 5, "Laura", "A1", 1,
+                5, 54553, 525, 456, "manual",
+                "traseira", "Bom", "Diesel", "Filial Leiria"));
     }
 
     public void adicionarVeiculo(Veiculo veiculo) {
@@ -26,11 +29,34 @@ public class DadosAplicacao {
         System.out.println("Veiculo adicionado");
     }
 
+    public void repararVeiculo(Veiculo veiculo, String[] pecasUsadas, String localReparacao) {
+        for (int i = 0; i < pecasUsadas.length; i++) {
+            String[] pecaUsada = pecasUsadas[i].split(" - ");
+            int quantidade = Integer.parseInt(pecaUsada[0]);
+            String nomePeca = pecaUsada[1];
+            System.out.println(quantidade + " - " + nomePeca);
+            /*for (Peca peca : getPecas()) {
+                if (peca.getNome().equals(nomePeca)) {
+                    System.out.println(nomePeca);
+                    peca.setQuantidade(quantidade);
+                    removerStockPeca(nomepeca, quantidade, localReparacao);
+                }
+            }*/
+        }
+    }
+
     public void adicionarEvento(Evento evento) {
         eventos.add(evento);
         System.out.println("Evento adicionado");
         System.out.println(evento.toString());
         System.out.println(eventos.size());
+    }
+
+    public void adicionarLocalExposicao(LocalExposicao localExposicao) {
+        localExposicoes.add(localExposicao);
+        System.out.println("Local adicionado");
+        System.out.println(localExposicao.toString());
+        System.out.println(localExposicoes.size());
     }
 
     public void removerEvento(Evento evento) {
@@ -43,6 +69,7 @@ public class DadosAplicacao {
 
     public void removerCliente(Cliente cliente) {
         clientes.remove(cliente);
+        System.out.println("Cliente removido");
     }
 
     public void editarEvento(Evento evento, String nome, Data dataInicio, Data datafim, Integer nVeiculos, String distrito, String local) {
@@ -62,11 +89,11 @@ public class DadosAplicacao {
         veiculo.setMarca(marca);
         veiculo.setModelo(modelo);
         veiculo.setMatricula(matricula);
-        veiculo.setNdonos(Ndonos);
+        veiculo.setnDonos(Ndonos);
         veiculo.setDonoAnterior(donoAnterior);
         veiculo.setCategoria(categoria);
         veiculo.setClasse(classe);
-        veiculo.setNportas(Nportas);
+        veiculo.setnPortas(Nportas);
         veiculo.setPotencia(potencia);
         veiculo.setQuilometros(quilometros);
         veiculo.setCilindrada(cilindrada);
@@ -79,12 +106,16 @@ public class DadosAplicacao {
 
     public void adicionarCliente(Cliente cliente) {
         clientes.add(cliente);
+        System.out.println("Cliente adicionado");
     }
 
     public List<Veiculo> getVeiculos() {
         return veiculos;
     }
 
+    public List<LocalExposicao> getLocalExposicoes() {
+        return localExposicoes;
+    }
     public boolean existeVeiculoComMatricula(String matricula) {
         for (Veiculo veiculo : veiculos) {
             if (veiculo.getMatricula().equals(matricula)) {
