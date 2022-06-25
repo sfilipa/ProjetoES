@@ -236,10 +236,10 @@ public class EditarEvento extends JDialog {
         List<String> distritos = new ArrayList<>();
         for (Filial filial : Filial.values()) {
             distritos.add(filial.getDistrito());
-            comboDistrito.addItem(filial.distrito());
+            comboDistrito.addItem(filial.getDistrito());
         }
         for (LocalExposicao localExposicao : LocalExposicao.values()) {
-            comboDistrito.addItem(localExposicao.distrito());
+            comboDistrito.addItem(localExposicao.getDistrito());
         }
     }
 

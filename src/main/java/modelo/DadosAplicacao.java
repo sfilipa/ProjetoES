@@ -80,11 +80,11 @@ public class DadosAplicacao {
         veiculo.setMarca(marca);
         veiculo.setModelo(modelo);
         veiculo.setMatricula(matricula);
-        veiculo.setNdonos(Ndonos);
+        veiculo.setnDonos(Ndonos);
         veiculo.setDonoAnterior(donoAnterior);
         veiculo.setCategoria(categoria);
         veiculo.setClasse(classe);
-        veiculo.setNportas(Nportas);
+        veiculo.setnPortas(Nportas);
         veiculo.setPotencia(potencia);
         veiculo.setQuilometros(quilometros);
         veiculo.setCilindrada(cilindrada);

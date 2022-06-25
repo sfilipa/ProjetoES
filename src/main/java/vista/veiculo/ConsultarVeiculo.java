@@ -113,11 +113,11 @@ public class ConsultarVeiculo extends JDialog {
         lblMarca.setText(veiculoSelecionado.getMarca());
         lblModelo.setText(veiculoSelecionado.getModelo());
         lblDonoAnterior.setText(veiculoSelecionado.getDonoAnterior());
-        lblNDonos.setText(String.valueOf(veiculoSelecionado.getNdonos()));
+        lblNDonos.setText(String.valueOf(veiculoSelecionado.getnDonos()));
         lblCombustivel.setText(veiculoSelecionado.getCombustivel());
         lblCategoria.setText(veiculoSelecionado.getCategoria());
         lblClasse.setText(String.valueOf(veiculoSelecionado.getClasse()));
-        lblNPortas.setText(String.valueOf(veiculoSelecionado.getNportas()));
+        lblNPortas.setText(String.valueOf(veiculoSelecionado.getnPortas()));
         lblPotencia.setText(String.valueOf(veiculoSelecionado.getPotencia()));
         lblCilindrada.setText(String.valueOf(veiculoSelecionado.getCilindrada()));
         lblTipoCaixa.setText(veiculoSelecionado.getTipoDeCaixa());

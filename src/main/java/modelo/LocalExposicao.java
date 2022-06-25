@@ -22,10 +22,6 @@ public enum LocalExposicao {
         return displayName;
     }
 
-    public String distrito() {
-        return distrito;
-    }
-
     public String getDistrito() {
         return distrito;
     }
