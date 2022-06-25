@@ -9,12 +9,14 @@ public class DadosAplicacao {
     private List<Veiculo> veiculos;
     private List<Evento> eventos;
     private List<Cliente> clientes;
+    private List<LocalExposicao> localExposicoes;
     private static List<Peca> pecas;
 
     private DadosAplicacao() {
         veiculos = new ArrayList<>();
         eventos = new ArrayList<>();
         clientes = new ArrayList<>();
+        localExposicoes = new ArrayList<>();
 
         veiculos.add(new Veiculo("XJ-88-MM", "BMW", "K5", 5, "Laura", "A1", 1,
                 5, 54553, 525, 456, "manual",
@@ -48,6 +50,13 @@ public class DadosAplicacao {
         System.out.println("Evento adicionado");
         System.out.println(evento.toString());
         System.out.println(eventos.size());
+    }
+
+    public void adicionarLocalExposicao(LocalExposicao localExposicao) {
+        localExposicoes.add(localExposicao);
+        System.out.println("Local adicionado");
+        System.out.println(localExposicao.toString());
+        System.out.println(localExposicoes.size());
     }
 
     public void removerEvento(Evento evento) {
@@ -104,6 +113,9 @@ public class DadosAplicacao {
         return veiculos;
     }
 
+    public List<LocalExposicao> getLocalExposicoes() {
+        return localExposicoes;
+    }
     public boolean existeVeiculoComMatricula(String matricula) {
         for (Veiculo veiculo : veiculos) {
             if (veiculo.getMatricula().equals(matricula)) {

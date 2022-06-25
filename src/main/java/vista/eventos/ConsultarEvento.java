@@ -136,7 +136,11 @@ public class ConsultarEvento extends JDialog {
             distritos.add(filial.getDistrito());
             comboDistrito.addItem(filial.getDistrito());
         }
-        for (LocalExposicao localExposicao : LocalExposicao.values()) {
+        List<LocalExposicao> localExposicaos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicaos = dadosAplicacao.getLocalExposicoes();
+
+        for (LocalExposicao localExposicao : localExposicaos) {
             if (!distritos.contains(localExposicao.getDistrito())) {
                 comboDistrito.addItem(localExposicao.getDistrito());
             }

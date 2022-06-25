@@ -42,7 +42,7 @@ public class AdicionarEvento extends JDialog {
 
     private void btnNovoLocalDeExposiçãoActionPerformed(ActionEvent actionEvent) {
         fechar();
-        new AdicionarLocalExposicao().setVisible(true);
+       // new AdicionarLocalExposicao().setVisible(true);
     }
 
     private void comboDistritoActionPerformed(ActionEvent actionEvent) {
@@ -164,7 +164,10 @@ public class AdicionarEvento extends JDialog {
                 comboLocal.addItem(filial.displayName());
             }
         }
-        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+        List<LocalExposicao> localExposicaos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicaos = dadosAplicacao.getLocalExposicoes();
+        for(LocalExposicao localExposicao : localExposicaos) {
             if (localExposicao.getDistrito().equals(distrito)) {
                 comboLocal.addItem(localExposicao.displayName());
             }
@@ -178,7 +181,10 @@ public class AdicionarEvento extends JDialog {
             distritos.add(filial.getDistrito());
             comboDistrito.addItem(filial.getDistrito());
         }
-        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+        List<LocalExposicao> localExposicaos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicaos = dadosAplicacao.getLocalExposicoes();
+        for(LocalExposicao localExposicao : localExposicaos) {
             comboDistrito.addItem(localExposicao.getDistrito());
         }
     }
