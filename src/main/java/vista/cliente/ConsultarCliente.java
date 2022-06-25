@@ -71,6 +71,7 @@ public class ConsultarCliente extends JDialog {
         } else {
             lblNIF.setText(String.valueOf(clienteSelecionado.getNif()));
             lblNome.setText(clienteSelecionado.getNome());
+            lblVeiculo.setText("Por defenir");
             //lblVeiculo.setText(clienteSelecionado.ge());
 
         }

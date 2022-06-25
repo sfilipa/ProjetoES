@@ -8,11 +8,11 @@ public class VeiculoTestCase {
 
     @Test
     public void testAdicionarVeiculo() {
-        var veiculo = new Veiculo("XJ-88-MM", "BMW", "K5", 5, "Laura", "A1", 1,
+        var veiculo = new Veiculo("XJ-88-MM", "AUDI", "K5", 5, "Laura", "A1", 1,
                 5, 54553, 525, 456, "manual",
                 "traseira", "Bom", "Diesel", "Filial Leiria");
         assertEquals("XJ-88-MM", veiculo.getMatricula());
-        assertEquals("BMW", veiculo.getMarca());
+        assertEquals("AUDI", veiculo.getMarca());
         assertEquals("K5", veiculo.getModelo());
         assertEquals((Integer) 5, veiculo.getNdonos());
         assertEquals("Laura", veiculo.getDonoAnterior());
