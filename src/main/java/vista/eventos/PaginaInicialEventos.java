@@ -36,8 +36,10 @@ public class PaginaInicialEventos extends JFrame {
     private void btnAdicionarEventoActionPerformed(ActionEvent evt) {
         System.out.println("Click no btnAdicionarEvento");
         Evento evento = AdicionarEvento.mostrarCriacaoEvento(this);
-        DadosAplicacao dados = DadosAplicacao.INSTANCE;
-        dados.adicionarEvento(evento);
+        if (evento != null) {
+            DadosAplicacao dados = DadosAplicacao.INSTANCE;
+            dados.adicionarEvento(evento);
+        }
     }
 
     private void btnRemoverEventoActionPerformed(ActionEvent evt) {

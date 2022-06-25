@@ -36,7 +36,13 @@ public class AdicionarEvento extends JDialog {
         adicionarButton.addActionListener(this::btnAdicionarActionPerformed);
         cancelarButton.addActionListener(this::btnCancelarActionPerformed);
         comboDistrito.addActionListener(this::comboDistritoActionPerformed);
+        novoLocalDeExposiçãoButton.addActionListener(this::btnNovoLocalDeExposiçãoActionPerformed);
 
+    }
+
+    private void btnNovoLocalDeExposiçãoActionPerformed(ActionEvent actionEvent) {
+        fechar();
+        new AdicionarLocalExposicao().setVisible(true);
     }
 
     private void comboDistritoActionPerformed(ActionEvent actionEvent) {

@@ -1,4 +1,4 @@
-import modelo.DadosAplicacao;
+/*import modelo.DadosAplicacao;
 import modelo.Veiculo;
 import org.junit.Test;
 
@@ -82,3 +82,4 @@ public class VeiculoTestCase {
 
 
 }
+*/

@@ -1,4 +1,4 @@
-import modelo.DadosAplicacao;
+/*import modelo.DadosAplicacao;
 import modelo.Data;
 import modelo.Evento;
 import org.junit.Test;
@@ -19,4 +19,4 @@ public class EventoTestCase {
 
         System.out.println("Evento Editado:" + evento.getNome() + "\n" + evento.getnVeiculos() + "\n" + evento.getDataInicio() + "\n" + evento.getDataFim() + "\n" + evento.getDistrito() + "\n" + evento.getLocal());
     }
-}
+}*/
