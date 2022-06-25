@@ -4,7 +4,7 @@ import javax.swing.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AdicionarLocalExposicao extends JFrame {
+public class AdicionarLocalExposicao extends JDialog {
 
 
     private JTextField nomeExposiçãoTextField;

@@ -2,11 +2,7 @@ package vista.cliente;
 
 import modelo.Cliente;
 import modelo.DadosAplicacao;
-import modelo.Evento;
-import vista.eventos.AdicionarEvento;
 import vista.paginaPrincipal.PaginaPrincipal;
-import vista.veiculo.ConsultarVeiculo;
-import vista.veiculo.RemoverVeiculo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -41,11 +37,7 @@ public class PaginaInicialClientes extends JFrame {
         dados.adicionarCliente(cliente);
     }
 
-    private void btnConsultarVeiculoActionPerformed(ActionEvent e) {
-        ConsultarCliente.mostrarConsultarCliente(this);
-        DadosAplicacao dados = DadosAplicacao.INSTANCE;
-        dados.getEventos();
-    }
+
 
 
 
