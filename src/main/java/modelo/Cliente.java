@@ -4,12 +4,12 @@ public class Cliente {
 
     private String nome;
     private Integer nif;
-    private String terVeiculo;
+   //private String terVeiculo;
 
-    public Cliente(String nome, Integer nif, String terVeiculo){
+    public Cliente(String nome, Integer nif){
         this.nome = nome;
         this.nif = nif;
-        this.terVeiculo = terVeiculo;
+       // this.terVeiculo = terVeiculo;
     }
 
     public String getNome() {
@@ -20,9 +20,9 @@ public class Cliente {
         return nif;
     }
 
-    public String getTerVeiculo() {
-        return terVeiculo;
-    }
+   // public String getTerVeiculo() {
+     //   return terVeiculo;
+    //}
 
     public String toString() {
         StringBuilder sb = new StringBuilder();

@@ -27,10 +27,13 @@ public class AdicionarCliente extends JDialog {
     private String temveiculo;
 
     public AdicionarCliente(Frame parent, boolean modal){
+
         super(parent, modal);
+
         setContentPane(painelPrincipal);
         pack();
         adicionarButton.addActionListener(this::btnAdicionarActionPerformed);
+        //System.out.println("Cliente adicionado");
         btnCancelarActionPerformed();
         btnAdicionarVeiculoActionPerformed();
 
@@ -70,7 +73,7 @@ public class AdicionarCliente extends JDialog {
             return;
         }
 
-        cliente = new Cliente(textField1.getText(), nif, temveiculo);
+        cliente = new Cliente(textField1.getText(), nif);
 
         fechar();
 
