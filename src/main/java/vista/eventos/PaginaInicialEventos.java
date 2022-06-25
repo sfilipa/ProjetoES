@@ -2,6 +2,7 @@ package vista.eventos;
 
 import modelo.DadosAplicacao;
 import modelo.Evento;
+import modelo.LocalExposicao;
 import vista.paginaPrincipal.PaginaPrincipal;
 
 import javax.swing.*;
@@ -25,6 +26,7 @@ public class PaginaInicialEventos extends JFrame {
         setVisible(true);
 
         adicionarEventoButton.addActionListener(this::btnAdicionarEventoActionPerformed);
+        adicionarLocalDeExposiçãoButton.addActionListener(this::btnAdicionarLocalExposicaoActionPerfomed);
         voltarButton.addActionListener(this::btnVoltarActionPerformed);
         removerEventoButton.addActionListener(this::btnRemoverEventoActionPerformed);
         editarEventoButton.addActionListener(this::btnEditarEventoActionPerformed);
@@ -74,15 +76,25 @@ public class PaginaInicialEventos extends JFrame {
         });
     }
 
+
+
+
     private void btnAdicionarLocalExposicaoActionPerfomed(ActionEvent evt) {
-        adicionarLocalDeExposiçãoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new AdicionarLocalExposicao().setVisible(true);
-            }
-        });
+        System.out.println("Click no btnAdicionarEvento");
+        LocalExposicao localExposicao = AdicionarLocalExposicao.mostrarCriacaoLocal(this);
+        if (localExposicao != null) {
+            DadosAplicacao dados = DadosAplicacao.INSTANCE;
+            dados.adicionarLocalExposicao(localExposicao);
+        }
+        //adicionarLocalDeExposiçãoButton.addActionListener(new ActionListener() {
+          //  @Override
+            //public void actionPerformed(ActionEvent e) {
+              //  setVisible(false);
+               // new AdicionarLocalExposicao().setVisible(true);
     }
+    //    });
+
+
 
     private void btnRemoverLocalExposicaoActionPerfomed(ActionEvent evt) {
         removerLocalDeExposiçãoButton.addActionListener(new ActionListener() {

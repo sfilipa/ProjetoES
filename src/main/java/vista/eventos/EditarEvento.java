@@ -47,7 +47,7 @@ public class EditarEvento extends JDialog {
 
     private void btnNovoLocalDeExposiçãoActionPerformed(ActionEvent actionEvent) {
         fechar();
-        new AdicionarLocalExposicao().setVisible(true);
+        //new AdicionarLocalExposicao().setVisible(true);
     }
     private void comboDistritoActionPerformed(ActionEvent actionEvent) {
         atualizarCombBoxLocaisEFiliais();
@@ -224,7 +224,10 @@ public class EditarEvento extends JDialog {
                 comboLocal.addItem(filial.displayName());
             }
         }
-        for (LocalExposicao localExposicao : LocalExposicao.values()) {
+        List<LocalExposicao> localExposicaos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicaos = dadosAplicacao.getLocalExposicoes();
+        for (LocalExposicao localExposicao : localExposicaos) {
             if (localExposicao.getDistrito().equals(distrito)) {
                 comboLocal.addItem(localExposicao.displayName());
             }
@@ -238,8 +241,13 @@ public class EditarEvento extends JDialog {
             distritos.add(filial.getDistrito());
             comboDistrito.addItem(filial.distrito());
         }
-        for (LocalExposicao localExposicao : LocalExposicao.values()) {
-            comboDistrito.addItem(localExposicao.distrito());
+        List<LocalExposicao> localExposicaos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicaos = dadosAplicacao.getLocalExposicoes();
+        for (LocalExposicao localExposicao : localExposicaos) {
+            if (!distritos.contains(localExposicao.getDistrito())) {
+                comboDistrito.addItem(localExposicao.distrito());
+            }
         }
     }
 

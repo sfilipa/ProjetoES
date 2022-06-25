@@ -6,6 +6,8 @@ import vista.Erros;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AdicionarVeiculo extends JDialog {
     private JPanel painelPrincipal;
@@ -269,7 +271,12 @@ public class AdicionarVeiculo extends JDialog {
         for (Filial filial : Filial.values()) {
                 comboBoxArmazenar.addItem(filial.displayName());
         }
-        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+        List<LocalExposicao> localExposicaos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicaos = dadosAplicacao.getLocalExposicoes();
+
+
+        for(LocalExposicao localExposicao : localExposicaos) {
                 comboBoxArmazenar.addItem(localExposicao.displayName());
         }
     }

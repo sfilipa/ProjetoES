@@ -334,7 +334,12 @@ public class EditarVeiculo extends JDialog {
         for (Filial filial : Filial.values()) {
             comboBoxArmazenar.addItem(filial.displayName());
         }
-        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+        List<LocalExposicao> localExposicaos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicaos = dadosAplicacao.getLocalExposicoes();
+
+
+        for(LocalExposicao localExposicao : localExposicaos) {
             comboBoxArmazenar.addItem(localExposicao.displayName());
         }
     }

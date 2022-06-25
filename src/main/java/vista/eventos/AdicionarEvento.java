@@ -24,6 +24,7 @@ public class AdicionarEvento extends JDialog {
     private Evento evento;
 
 
+
     public AdicionarEvento(Frame parent, boolean modal) {
         super(parent, modal);
 
@@ -42,7 +43,7 @@ public class AdicionarEvento extends JDialog {
 
     private void btnNovoLocalDeExposiçãoActionPerformed(ActionEvent actionEvent) {
         fechar();
-        new AdicionarLocalExposicao().setVisible(true);
+       // new AdicionarLocalExposicao().setVisible(true);
     }
 
     private void comboDistritoActionPerformed(ActionEvent actionEvent) {
@@ -105,6 +106,8 @@ public class AdicionarEvento extends JDialog {
         return detalhes.getEvento();
     }
 
+
+
     public boolean verificarPreenchido() {
         if (foiPreenchido(txtNome.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
@@ -156,6 +159,8 @@ public class AdicionarEvento extends JDialog {
         return evento;
     }
 
+
+
     private void atualizarCombBoxLocaisEFiliais() {
         comboLocal.removeAllItems();
         String distrito = comboDistrito.getSelectedItem().toString();
@@ -164,7 +169,10 @@ public class AdicionarEvento extends JDialog {
                 comboLocal.addItem(filial.displayName());
             }
         }
-        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+        List<LocalExposicao> localExposicaos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicaos = dadosAplicacao.getLocalExposicoes();
+        for(LocalExposicao localExposicao : localExposicaos) {
             if (localExposicao.getDistrito().equals(distrito)) {
                 comboLocal.addItem(localExposicao.displayName());
             }
@@ -178,7 +186,10 @@ public class AdicionarEvento extends JDialog {
             distritos.add(filial.getDistrito());
             comboDistrito.addItem(filial.distrito());
         }
-        for(LocalExposicao localExposicao : LocalExposicao.values()) {
+        List<LocalExposicao> localExposicaos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicaos = dadosAplicacao.getLocalExposicoes();
+        for(LocalExposicao localExposicao : localExposicaos) {
             comboDistrito.addItem(localExposicao.distrito());
         }
     }

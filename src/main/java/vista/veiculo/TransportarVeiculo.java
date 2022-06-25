@@ -193,7 +193,12 @@ public class TransportarVeiculo extends JDialog {
 
     private void atualizarCombBoxLocal() {
         comboBoxLocal.removeAllItems();
-        for (LocalExposicao localExposicao : LocalExposicao.values()) {
+        List<LocalExposicao> localExposicaos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicaos = dadosAplicacao.getLocalExposicoes();
+
+
+        for (LocalExposicao localExposicao : localExposicaos) {
             comboBoxLocal.addItem(localExposicao.displayName());
         }
     }
