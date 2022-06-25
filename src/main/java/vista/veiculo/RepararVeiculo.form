@@ -315,7 +315,7 @@
               <model/>
             </properties>
           </component>
-          <component id="630cf" class="javax.swing.JButton" binding="fltrarButton" default-binding="true">
+          <component id="630cf" class="javax.swing.JButton" binding="filtrarVeiculoButton">
             <constraints>
               <grid row="2" column="3" row-span="1" col-span="2" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -422,7 +422,7 @@
               <text value="Outro"/>
             </properties>
           </component>
-          <component id="2cad1" class="javax.swing.JButton" binding="filtrarButton" default-binding="true">
+          <component id="2cad1" class="javax.swing.JButton" binding="filtrarPecasButton">
             <constraints>
               <grid row="2" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>

@@ -38,11 +38,10 @@ public class RemoverEvento extends JDialog {
         return dadosAplicacao.isDataValida(data);
     }
 
-    public static Evento mostrarRemoverEvento(Frame parent) {
+    public static void mostrarRemoverEvento(Frame parent) {
         System.out.println("mostrarRemoverEvento");
         RemoverEvento dialog = new RemoverEvento(parent, true);
         dialog.setVisible(true);
-        return null;
     }
 
     private void btnRemoverActionPerformed(ActionEvent evt) {

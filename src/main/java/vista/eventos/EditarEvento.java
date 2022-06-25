@@ -66,11 +66,6 @@ public class EditarEvento extends JDialog {
                 Erros.mostrarErro(this, Erros.NOME_JA_EXISTE);
                 return;
             }
-            valido = NomeCaracteresEspeciais(txtNome.getText());
-            if (valido) {
-                Erros.mostrarErro(this, Erros.CONTEM_CARACTERES_ESPECIAIS);
-                return;
-            }
             valido = isNumero(txtNVeiculos.getText());
             if (!valido) {
                 Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
@@ -172,11 +167,6 @@ public class EditarEvento extends JDialog {
     private boolean NomeExiste(String nome) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         return dadosAplicacao.existeEventoNome(nome);
-    }
-
-    private boolean NomeCaracteresEspeciais(String nome) {
-        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        return dadosAplicacao.temCaracteresEspeciais(nome);
     }
 
     private boolean isNumero(String nVeiculos) {

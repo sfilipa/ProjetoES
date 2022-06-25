@@ -8,7 +8,6 @@ public class DadosAplicacao {
 
     private List<Veiculo> veiculos;
     private List<Evento> eventos;
-    private String specialCharactersString = "!@#$%&*()'+,-./:;<=>?[]^_`{|}";
     private List<Cliente> clientes;
 
 
@@ -19,17 +18,12 @@ public class DadosAplicacao {
         veiculos = new ArrayList<>();
         eventos = new ArrayList<>();
         clientes = new ArrayList<>();
-
-        veiculos.add(new Veiculo("XJ-88-MM", "BMW", "K5", 5, "Laura", "jkdsfn", 5,500, 54553, 525,456, "manual","traseira", "Bom","Diesel", "Filial Leiria"));
-        veiculos.add(new Veiculo("XJ-99-MM", "BMW", "K5", 5, "Pedro", "jkdsfn", 5,500, 54553, 525,456, "manual","traseira", "Bom","Diesel", "Filial Porto"));
     }
 
     public void adicionarVeiculo(Veiculo veiculo) {
         veiculos.add(veiculo);
 
         System.out.println("Veiculo adicionado");
-        System.out.println(veiculo.toString());
-        System.out.println(veiculos.size());
     }
 
     public void adicionarEvento(Evento evento) {
@@ -126,15 +120,6 @@ public class DadosAplicacao {
     public boolean existeClienteNif(Integer nif) {
         for (Cliente cliente : clientes) {
             if (cliente.getNif()==nif) {
-                return true;
-            }
-        }
-        return false;
-    }
-
-    public boolean temCaracteresEspeciais(String string) {
-        for (int i = 0; i < string.length(); i++) {
-            if (specialCharactersString.contains(Character.toString(string.charAt(i)))) {
                 return true;
             }
         }

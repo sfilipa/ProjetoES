@@ -118,26 +118,7 @@ public class AdicionarVeiculo extends JDialog {
             Erros.mostrarErro(this, Erros.MATRICULA_JA_EXISTE);
             return;
         }
-        valido = NomeCaracteresEspeciais(txtmarca.getText());
-        if (valido) {
-            Erros.mostrarErro(this, Erros.CONTEM_CARACTERES_ESPECIAIS);
-            return;
-        }
-        valido = NomeCaracteresEspeciais(txtmodelo.getText());
-        if (valido) {
-            Erros.mostrarErro(this, Erros.CONTEM_CARACTERES_ESPECIAIS);
-            return;
-        }
-        valido = NomeCaracteresEspeciais(txtdonoAnterior.getText());
-        if (valido) {
-            Erros.mostrarErro(this, Erros.CONTEM_CARACTERES_ESPECIAIS);
-            return;
-        }
-        valido = NomeCaracteresEspeciais(txtcategoria.getText());
-        if (valido) {
-            Erros.mostrarErro(this, Erros.CONTEM_CARACTERES_ESPECIAIS);
-            return;
-        }
+
         valido = isNumero(txtnDonos.getText());
         if (!valido) {
             Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
@@ -168,7 +149,7 @@ public class AdicionarVeiculo extends JDialog {
             Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
             return;
         }
-        valido = checkNViaturasFilial(comboBoxArmazenar.getSelectedItem().toString());
+        valido = checkNViaturasLocal(comboBoxArmazenar.getSelectedItem().toString());
         if (valido) {
             Erros.mostrarErro(this, Erros.NUMERO_VIATURAS_EXCEDIDO);
             return;
@@ -181,10 +162,6 @@ public class AdicionarVeiculo extends JDialog {
         int cilindrada = Integer.parseInt(txtcilindrada.getText());
         int classe = Integer.parseInt(txtclasse.getText());
 
-        if (nDonos < 0 || quilometros < 0 || potencia < 0 || cilindrada < 0 || classe < 0) {
-            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
-            return;
-        }
         if (classe > 4 || classe < 1) {
             Erros.mostrarErro(this, Erros.CLASSE_INVALIDA);
             return;
@@ -251,11 +228,6 @@ public class AdicionarVeiculo extends JDialog {
         return true;
     }
 
-    private boolean NomeCaracteresEspeciais(String nome) {
-        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        return dadosAplicacao.temCaracteresEspeciais(nome);
-    }
-
     private boolean isNumero(String nVeiculos) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         return dadosAplicacao.isNumero(nVeiculos);
@@ -302,7 +274,7 @@ public class AdicionarVeiculo extends JDialog {
         }
     }
 
-    private boolean checkNViaturasFilial(String localArmazenamento) {
+    private boolean checkNViaturasLocal(String localArmazenamento) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         int nViaturas = 0;
         for (Veiculo veiculo : dadosAplicacao.getVeiculos()) {

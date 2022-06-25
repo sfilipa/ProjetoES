@@ -83,11 +83,10 @@ public class ConsultarVeiculo extends JDialog {
         listaVeiculos.setModel(model);
     }
 
-    public static Veiculo mostrarConsultarVeiculo(Frame parent) {
+    public static void mostrarConsultarVeiculo(Frame parent) {
         System.out.println("mostrarConsultarVeiculo");
         ConsultarVeiculo dialog = new ConsultarVeiculo(parent, true);
         dialog.setVisible(true);
-        return null;
     }
 
     private void btnVoltarActionPerformed(ActionEvent evt) {
@@ -104,24 +103,28 @@ public class ConsultarVeiculo extends JDialog {
             Erros.mostrarErro(this, Erros.VEICULO_NAO_SELECIONADO);
             return;
         } else {
-            lblMatricula.setText(veiculoSelecionado.getMatricula());
-            lblMarca.setText(veiculoSelecionado.getMarca());
-            lblModelo.setText(veiculoSelecionado.getModelo());
-            lblDonoAnterior.setText(veiculoSelecionado.getDonoAnterior());
-            lblNDonos.setText(String.valueOf(veiculoSelecionado.getNdonos()));
-            lblCombustivel.setText(veiculoSelecionado.getCombustivel());
-            lblCategoria.setText(veiculoSelecionado.getCategoria());
-            lblClasse.setText(String.valueOf(veiculoSelecionado.getClasse()));
-            lblNPortas.setText(String.valueOf(veiculoSelecionado.getNportas()));
-            lblPotencia.setText(String.valueOf(veiculoSelecionado.getPotencia()));
-            lblCilindrada.setText(String.valueOf(veiculoSelecionado.getCilindrada()));
-            lblTipoCaixa.setText(veiculoSelecionado.getTipoDeCaixa());
-            lblTracao.setText(veiculoSelecionado.getTracao());
-            lblCondicaoGeral.setText(veiculoSelecionado.getCondicaoGeral());
-            lblQuilometros.setText(String.valueOf(veiculoSelecionado.getQuilometros()));
-            lblLocalArmazenamento.setText(veiculoSelecionado.getLocalArmazenamento());
+            mostrarVeiculo(veiculoSelecionado);
         }
 
+    }
+
+    private void mostrarVeiculo(Veiculo veiculoSelecionado) {
+        lblMatricula.setText(veiculoSelecionado.getMatricula());
+        lblMarca.setText(veiculoSelecionado.getMarca());
+        lblModelo.setText(veiculoSelecionado.getModelo());
+        lblDonoAnterior.setText(veiculoSelecionado.getDonoAnterior());
+        lblNDonos.setText(String.valueOf(veiculoSelecionado.getNdonos()));
+        lblCombustivel.setText(veiculoSelecionado.getCombustivel());
+        lblCategoria.setText(veiculoSelecionado.getCategoria());
+        lblClasse.setText(String.valueOf(veiculoSelecionado.getClasse()));
+        lblNPortas.setText(String.valueOf(veiculoSelecionado.getNportas()));
+        lblPotencia.setText(String.valueOf(veiculoSelecionado.getPotencia()));
+        lblCilindrada.setText(String.valueOf(veiculoSelecionado.getCilindrada()));
+        lblTipoCaixa.setText(veiculoSelecionado.getTipoDeCaixa());
+        lblTracao.setText(veiculoSelecionado.getTracao());
+        lblCondicaoGeral.setText(veiculoSelecionado.getCondicaoGeral());
+        lblQuilometros.setText(String.valueOf(veiculoSelecionado.getQuilometros()));
+        lblLocalArmazenamento.setText(veiculoSelecionado.getLocalArmazenamento());
     }
 
     private void atualizarListaVeiculo() {

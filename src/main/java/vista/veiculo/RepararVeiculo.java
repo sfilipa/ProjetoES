@@ -5,7 +5,6 @@ import modelo.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,7 +13,7 @@ public class RepararVeiculo extends JDialog {
     private JPanel painelPrincipal;
     private JButton cancelarButton;
     private JComboBox comboBoxLocalReparacao;
-    private JList listaPecas;
+    private JList<Peca> listaPecas;
     private JButton adicionarButton;
     private JTextPane textPecasUsadas;
     private JSpinner NPecasUsadas;
@@ -23,11 +22,11 @@ public class RepararVeiculo extends JDialog {
     private JComboBox comboBoxTipoCaixa;
     private JComboBox comboBoxMarca;
     private JComboBox comboBoxCondicaoGeral;
-    private JButton fltrarButton;
+    private JButton filtrarVeiculoButton;
     private JTextField txtFiltragemPalavras;
     private JRadioButton consumívelRadioButton;
     private JRadioButton outroRadioButton;
-    private JButton filtrarButton;
+    private JButton filtrarPecasButton;
     private JTextField txtQuilometros;
 
     public RepararVeiculo(Frame parent, boolean modal){
@@ -37,13 +36,28 @@ public class RepararVeiculo extends JDialog {
 
         atualizarComboBoxMarca();
         atualizarListaVeiculo();
+        //atualizarListaPecas();
 
-        filtrarButton.addActionListener(this::btnFiltrarActionPerformed);
+        filtrarVeiculoButton.addActionListener(this::btnFiltrarVeiculoActionPerformed);
+        filtrarPecasButton.addActionListener(this::btnFiltrarPecasActionPerformed);
         cancelarButton.addActionListener(this::btnCancelarActionPerformed);
+        adicionarButton.addActionListener(this::btnAdicionarActionPerformed);
+        repararButton.addActionListener(this::btnRepararActionPerformed);
 
     }
 
-    private void btnFiltrarActionPerformed(ActionEvent evt) {
+    private void btnFiltrarPecasActionPerformed(ActionEvent actionEvent) {
+
+    }
+
+    private void btnAdicionarActionPerformed(ActionEvent actionEvent) {
+    }
+
+    private void btnRepararActionPerformed(ActionEvent actionEvent) {
+
+    }
+
+    private void btnFiltrarVeiculoActionPerformed(ActionEvent evt) {
         System.out.println("Filtrar");
 
         String marca = comboBoxMarca.getSelectedItem().toString();
@@ -74,10 +88,9 @@ public class RepararVeiculo extends JDialog {
         listaVeiculos.setModel(model);
     }
 
-    public static Veiculo mostrarRepararVeiculo(Frame parent) {
+    public static void mostrarRepararVeiculo(Frame parent) {
         RepararVeiculo dialog = new RepararVeiculo(parent, true);
         dialog.setVisible(true);
-        return null;
     }
 
     private void btnCancelarActionPerformed(ActionEvent evt) {
@@ -100,6 +113,19 @@ public class RepararVeiculo extends JDialog {
         System.out.println("eventos: " + veiculos);
         System.out.println("model: " + model);
     }
+
+    /*private void atualizarListaPecas() {
+        List<Peca> pecas = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        pecas = dadosAplicacao.getPecas();
+        DefaultListModel<Peca> model = new DefaultListModel<>();
+        for (Peca peca : pecas) {
+            model.addElement(peca);
+        }
+        listaPecas.setModel(model);
+        System.out.println("pecas: " + pecas);
+        System.out.println("model: " + model);
+    }*/
 
     private void atualizarComboBoxMarca() {
         List<Veiculo> veiculos = new ArrayList<>();
