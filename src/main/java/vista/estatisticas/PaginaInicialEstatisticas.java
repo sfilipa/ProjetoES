@@ -1,5 +1,6 @@
 package vista.estatisticas;
 
+import modelo.DadosAplicacao;
 import vista.paginaPrincipal.PaginaPrincipal;
 
 import javax.swing.*;
@@ -19,7 +20,10 @@ public class PaginaInicialEstatisticas extends JFrame{
 
 
         btnVoltarActionPerformed();
-        btnEstatisticasPagina1ActionPerformed();
+
+        consultarEstatisticasDeClientesButton.addActionListener(this::btnConsultarClienteActionPerformed);
+
+       // btnEstatisticasPagina1ActionPerformed();
         btnEstatisticasPagina2ActionPerformed();
         btnEstatisticasPagina3ActionPerformed();
 
@@ -27,7 +31,13 @@ public class PaginaInicialEstatisticas extends JFrame{
 
     }
 
-    private void btnEstatisticasPagina1ActionPerformed() {
+    private void btnConsultarClienteActionPerformed(ActionEvent e) {
+        EstatisticasPagina1.mostrarConsultarCliente(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getEventos();
+    }
+
+/*    private void btnEstatisticasPagina1ActionPerformed() {
         consultarEstatisticasDeClientesButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -35,7 +45,7 @@ public class PaginaInicialEstatisticas extends JFrame{
                 new EstatisticasPagina1().setVisible(true);
             }
         });
-    }
+    }*/
 
     private void btnEstatisticasPagina2ActionPerformed() {
         consultarEstatisticasDeMarcasButton.addActionListener(new ActionListener() {
