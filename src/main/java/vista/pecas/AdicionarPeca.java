@@ -27,6 +27,8 @@ public class AdicionarPeca extends JFrame {
     private JLabel quantidadeMinimaSede;
     private JLabel quantidadeMinimaFileal;
 
+    private String radioAnswer;
+
     private Peca peca;
 
     public AdicionarPeca(Frame parent, boolean modal) {
@@ -73,7 +75,7 @@ public class AdicionarPeca extends JFrame {
         if (valido2) {
             Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
         }
-        peca = new Peca(nomePecaTextField.getText(), quantidadeMinimaFilealText.getText(), quantidadeMinimaSedeText.getText());
+        peca = new Peca(nomePecaTextField.getText(), tipoPeca.getText(), quantidadeMinimaFilealText.getText(), quantidadeMinimaSedeText.getText());
 
         fechar();
 
@@ -91,6 +93,18 @@ public class AdicionarPeca extends JFrame {
 
     private boolean foiPreenchido(String text) {
         return text.isEmpty();
+    }
+
+    private void tipoPeca(ActionEvent event) {
+        if (consumivelRadioButton.isSelected()) {
+            radioAnswer = "Consumível";
+        } else {
+            if(outroRadioButton.isSelected()) {
+                radioAnswer = "Outro";
+            } else {
+                Erros.mostrarErro(this, Erros.NAO_SELECIONADO);
+            }
+        }
     }
 
     public boolean verificarPreenchido() {

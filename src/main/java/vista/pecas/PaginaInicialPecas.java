@@ -26,14 +26,14 @@ public class PaginaInicialPecas extends JFrame{
         pack();
 
         adicionarPecaButton.addActionListener(this::btnAdicionarPecaActionPerformed);
-        btnConsultarPecaButtonActionPerformed();
-        btnEditarPecaButtonActionPerformed();
+        consultarPecaButton.addActionListener(this::btnConsultarPecaButtonActionPerformed);
+        editarPecaButton.addActionListener(this::btnEditarPecaButtonActionPerformed);
         btnPedirPecaButtonActionPerformed();
         btnRemoverPecaButtonActionPerformed();
         btnVoltarButtonActionPerformed();
-        btnAdicionarStockActionPerformed();
+        adicionarStockButton.addActionListener(this::btnAdicionarStockActionPerformed);
         btnRemoverStockActionPerformed();
-        btnConsultarStockPecaActionPerformed();
+        consultarStockPeca.addActionListener(this::btnConsultarStockPecaActionPerformed);
     }
 
     private void btnAdicionarPecaActionPerformed(ActionEvent evt) {
@@ -41,35 +41,21 @@ public class PaginaInicialPecas extends JFrame{
         Peca peca = AdicionarPeca.mostrarCriacaoPeca(this);
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         dadosAplicacao.adicionarPeca(peca);
-        /*
-        adicionarPecaButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new AdicionarPeca().setVisible(true);
-            }
-        });
-         */
     }
 
-    private void btnConsultarPecaButtonActionPerformed() {
-        consultarPecaButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new ConsultarPeca().setVisible(true);
-            }
-        });
+    private void btnConsultarPecaButtonActionPerformed(ActionEvent evt) {
+        System.out.println("Clicou no btnConsultarPeca!");
+        Peca peca = ConsultarPeca.mostrarConsultarPeca(this);
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        dadosAplicacao.consultarPeca(String.valueOf(peca));
+        // n sei pq n consigo usar só peca ent faço string.valueof(peca)
     }
 
-    private void btnEditarPecaButtonActionPerformed() {
-        editarPecaButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new EditarPeca().setVisible(true);
-            }
-        });
+    private void btnEditarPecaButtonActionPerformed(ActionEvent evt) {
+        System.out.println("Clicou no btnEditarPeca!");
+        Peca peca = EditarPeca.mostrarEditarPeca(this);
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        dadosAplicacao.editarPeca(peca);
     }
 
     private void btnPedirPecaButtonActionPerformed() {
@@ -102,15 +88,13 @@ public class PaginaInicialPecas extends JFrame{
         });
     }
 
-    private void btnAdicionarStockActionPerformed(){
-        adicionarStockButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new AdicionarStockPeca().setVisible(true);
-            }
-        });
+    private void btnAdicionarStockActionPerformed(ActionEvent evt){
+        System.out.println("Clicou no btnAdicionarStockPeca!");
+        Peca peca = AdicionarStockPeca.mostrarStockPeca(this);
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        dadosAplicacao.adicionarPeca(peca);
     }
+
 
     private void btnRemoverStockActionPerformed(){
         removerStockButton.addActionListener(new ActionListener() {
@@ -122,7 +106,7 @@ public class PaginaInicialPecas extends JFrame{
         });
     }
 
-    private void btnConsultarStockPecaActionPerformed(){
+    private void btnConsultarStockPecaActionPerformed(ActionEvent evt){
         consultarStockPeca.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {

@@ -11,7 +11,9 @@ public class DadosAplicacao {
     private String specialCharactersString = "!@#$%&*()'+,-./:;<=>?[]^_`{|}";
     private List<Cliente> clientes;
 
-    private List<Peca> pecas;
+
+
+    private static List<Peca> pecas;
 
     private DadosAplicacao() {
         veiculos = new ArrayList<>();
@@ -84,11 +86,6 @@ public class DadosAplicacao {
     public void adicionarCliente(Cliente cliente) {
         clientes.add(cliente);
     }
-
-    public void adicionarPeca(Peca peca){
-        pecas.add(peca);
-    }
-
 
     public List<Veiculo> getVeiculos() {
         return veiculos;
@@ -276,6 +273,57 @@ public class DadosAplicacao {
             }
         }
         return false;
+    }
+
+    public List<Peca> getPecas() {
+        return pecas;
+    }
+
+    public void adicionarPeca(Peca peca){
+        pecas.add(peca);
+    }
+
+    public void editarPeca(Peca peca){
+        for(Peca peca_aux : pecas){
+            if(peca_aux.getNome().equals(peca.getNome())){
+                peca_aux.setNome(peca.getNome());
+                peca_aux.setTipo(peca.getTipo());
+                peca_aux.setQuantidadeMinimaFileal(peca.getQuantidadeMinimaFileal());
+                peca_aux.setQuantidadeMinimaSede(peca.getQuantidadeMinimaSede());
+            }
+        }
+    }
+
+    public void consultarPeca(String nome){
+        for (Peca peca : pecas) {
+            if (peca.getNome().equals(nome)) {
+                System.out.println(peca.toString());
+            }
+        }
+    }
+
+    public static void adicionarStockPeca(Peca peca, Integer quantidade){
+        for(Peca pecas : pecas){
+            if(pecas.getNome().equals(peca.getNome())){
+                pecas.setQuantidade(pecas.getQuantidade() + quantidade);
+            }
+        }
+    }
+
+    public void atualizarPeca(Peca peca){
+        for(Peca pecas : pecas){
+            if(pecas.getNome().equals(peca.getNome())){
+                pecas.setQuantidade(pecas.getQuantidade() + peca.getQuantidade());
+            }
+        }
+    }
+
+    public void removerPeca(Peca peca){
+        pecas.remove(peca);
+    }
+
+
+    public void setPecas(List<Peca> pecas) {
     }
 
 

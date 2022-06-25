@@ -235,6 +235,8 @@
     <group name="buttonGroup1">
       <member id="cf5ea"/>
       <member id="97306"/>
+      <member id="7c8a"/>
+      <member id="4f728"/>
     </group>
   </buttonGroups>
 </form>
