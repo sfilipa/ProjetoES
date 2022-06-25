@@ -9,21 +9,38 @@ public class DadosAplicacao {
     private List<Veiculo> veiculos;
     private List<Evento> eventos;
     private List<Cliente> clientes;
-
-
-
     private static List<Peca> pecas;
 
     private DadosAplicacao() {
         veiculos = new ArrayList<>();
         eventos = new ArrayList<>();
         clientes = new ArrayList<>();
+
+        veiculos.add(new Veiculo("XJ-88-MM", "BMW", "K5", 5, "Laura", "A1", 1,
+                5, 54553, 525, 456, "manual",
+                "traseira", "Bom", "Diesel", "Filial Leiria"));
     }
 
     public void adicionarVeiculo(Veiculo veiculo) {
         veiculos.add(veiculo);
 
         System.out.println("Veiculo adicionado");
+    }
+
+    public void repararVeiculo(Veiculo veiculo, String[] pecasUsadas, String localReparacao) {
+        for (int i = 0; i < pecasUsadas.length; i++) {
+            String[] pecaUsada = pecasUsadas[i].split(" - ");
+            int quantidade = Integer.parseInt(pecaUsada[0]);
+            String nomePeca = pecaUsada[1];
+            System.out.println(quantidade + " - " + nomePeca);
+            /*for (Peca peca : getPecas()) {
+                if (peca.getNome().equals(nomePeca)) {
+                    System.out.println(nomePeca);
+                    peca.setQuantidade(quantidade);
+                    removerStockPeca(nomepeca, quantidade, localReparacao);
+                }
+            }*/
+        }
     }
 
     public void adicionarEvento(Evento evento) {

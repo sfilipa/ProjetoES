@@ -80,7 +80,11 @@
               <component id="7e6cd" class="javax.swing.JList" binding="listaPecas">
                 <constraints/>
                 <properties>
-                  <model/>
+                  <model>
+                    <item value="peca1"/>
+                    <item value="peca2"/>
+                    <item value="peca3"/>
+                  </model>
                   <selectionMode value="0"/>
                 </properties>
               </component>
