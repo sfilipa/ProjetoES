@@ -1,7 +1,6 @@
 package vista.veiculo;
 
 import modelo.DadosAplicacao;
-import modelo.Evento;
 import modelo.Veiculo;
 import vista.Erros;
 
@@ -50,10 +49,11 @@ public class RemoverVeiculo extends JDialog {
         }
     }
 
-    public static void mostrarRemoverVeiculo(Frame parent) {
+    public static Veiculo mostrarRemoverVeiculo(Frame parent) {
         System.out.println("mostrarRemoverVeiculo");
         RemoverVeiculo dialog = new RemoverVeiculo(parent, true);
         dialog.setVisible(true);
+        return null;
     }
 
     private void btnFiltrarActionPerformed(ActionEvent evt) {

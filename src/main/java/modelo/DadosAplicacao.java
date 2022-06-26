@@ -11,8 +11,8 @@ public class DadosAplicacao {
     private List<Cliente> clientes;
     private List<LocalExposicao> localExposicoes;
     private static List<Peca> pecas;
-
     private List<Transacao> transacoes;
+    private Float saldo;
 
     private DadosAplicacao() {
         veiculos = new ArrayList<>();
@@ -434,4 +434,25 @@ public class DadosAplicacao {
 
     }
 
+    public void comprarVeiculo(Transacao transacao){
+    transacoes.add(transacao);
+    }
+
+    public void trocarVeiculo(Veiculo veiculoEntregar, Veiculo veiculoReceber){
+        removerVeiculo(veiculoEntregar);
+        adicionarVeiculo(veiculoReceber);
+    }
+
+    public void removerTransacao(Transacao transacao){
+        transacoes.remove(transacao);
+    }
+
+    public void adicionarSaldo(Float saldo){
+        this.saldo += saldo;
+    }
+
+    public void removerSaldo(Float saldo){
+        this.saldo -= saldo;
+    }
 }
+

@@ -2,9 +2,12 @@ package vista.transacoes;
 
 import modelo.DadosAplicacao;
 import modelo.Peca;
+import modelo.Transacao;
 import modelo.Veiculo;
 import vista.paginaPrincipal.PaginaPrincipal;
 import vista.pecas.AdicionarStockPeca;
+import vista.pecas.RemoverPeca;
+import vista.veiculo.RemoverVeiculo;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -23,52 +26,45 @@ public class PaginaInicialTransacoes extends JFrame {
         setContentPane(painelPrincipal);
         pack();
 
-        btnComprarVeiculoActionPerformed();
-        btnRemoverTransacaoButtonnActionPerformed();
-        btnTrocarVeiculoButtonActionPerformed();
-        btnVenderVeiculoButtonActionPerformed();
-        btnVoltarButtonActionPerformed();
+
+        comprarVeiculoButton.addActionListener(this::btnComprarVeiculoActionPerformed);
+        removerTransacaoButton.addActionListener(this::btnRemoverTransacaoButtonnActionPerformed);
+        trocarVeiculoButton.addActionListener(this::btnTrocarVeiculoButtonActionPerformed);
+        venderVeiculoButton.addActionListener(this::btnVenderVeiculoButtonActionPerformed);
+        voltarButton.addActionListener(this::btnVoltarButtonActionPerformed);
 
     }
 
-    private void btnComprarVeiculoActionPerformed() {
+    private void btnComprarVeiculoActionPerformed(ActionEvent evt) {
         System.out.println("Clicou no btnComprarVeiculo!");
-        Veiculo veiculo = ComprarVeiculo.mostrarComprarVeiculo(this);
+        Transacao transacao = ComprarVeiculo.mostrarComprarVeiculo(this);
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        dadosAplicacao.adicionarVeiculo(veiculo);
+        dadosAplicacao.comprarVeiculo(transacao);
     }
 
-    private void btnRemoverTransacaoButtonnActionPerformed() {
-        removerTransacaoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new RemoverTransacao().setVisible(true);
-            }
-        });
+    private void btnRemoverTransacaoButtonnActionPerformed(ActionEvent evt) {
+        System.out.println("Clicou no btnRemoverTransacaoButton!");
+        Veiculo veiculo = RemoverVeiculo.mostrarRemoverVeiculo(this);
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        dadosAplicacao.removerVeiculo(veiculo);
     }
 
-    private void btnTrocarVeiculoButtonActionPerformed() {
-        trocarVeiculoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new TrocarVeiculo().setVisible(true);
-            }
-        });
+    private void btnTrocarVeiculoButtonActionPerformed(ActionEvent evt) {
+        System.out.println("Clicou no btnTrocarVeiculoButton!");
+        Veiculo veiculo = TrocarVeiculo.mostrarTrocarVeiculo(this);
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        dadosAplicacao.trocarVeiculo(veiculo, veiculo);
     }
 
-    private void btnVenderVeiculoButtonActionPerformed() {
-        venderVeiculoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new VenderVeiculo().setVisible(true);
-            }
-        });
+    private void btnVenderVeiculoButtonActionPerformed(ActionEvent evt) {
+        System.out.println("Clicou no btnVenderVeiculo!");
+        Veiculo veiculo = VenderVeiculo.mostrarVenderVeiculo(this);
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        dadosAplicacao.removerVeiculo(veiculo);
     }
 
-    private void btnVoltarButtonActionPerformed() {
+
+    private void btnVoltarButtonActionPerformed(ActionEvent evt) {
         voltarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
