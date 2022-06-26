@@ -22,6 +22,7 @@ public class ConsultarLocalExposicao extends JDialog{
     private JLabel lblFilial;
     private JButton verLocal;
     private JLabel lblDist;
+    private JLabel lbl;
 
 
     public ConsultarLocalExposicao(Frame parent, boolean modal){
@@ -78,7 +79,7 @@ public class ConsultarLocalExposicao extends JDialog{
 
         lblFilial.setText(localselecionado.getDistrito().toString());
 
-        lblDist.setText(localselecionado.getFilial().toString());
+        lbl.setText(localselecionado.getFilial().toString());
 
     }
 
