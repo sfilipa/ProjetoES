@@ -341,6 +341,15 @@ public class DadosAplicacao {
 
     public void setPecas(List<Peca> pecas) {
     }
+    public static Peca getPeca(String nome){
+        for(Peca peca : pecas){
+            if(peca.getNome().equals(nome)){
+                return peca;
+            }
+        }
+        return null;
+    }
+
 
 
 }
