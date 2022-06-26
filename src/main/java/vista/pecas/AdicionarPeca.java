@@ -140,7 +140,6 @@ public class AdicionarPeca extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                new PaginaInicialPecas().setVisible(true);
             }
         });
     }

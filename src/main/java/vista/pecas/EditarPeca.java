@@ -59,7 +59,6 @@ public class EditarPeca extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                new PaginaInicialPecas().setVisible(true);
             }
         });
     }
@@ -77,10 +76,7 @@ public class EditarPeca extends JFrame {
         System.out.println("Tipo de peça: " + tipoPeca);
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
 
-        // dar a lista de peças com nomes parecidos a palavras
         List<Peca> pecas = dadosAplicacao.getPecas();
-        List<Peca> pecasFiltradas = new ArrayList<>();
-        // ????????????????
 
         pecas = dadosAplicacao.getPecas();
 

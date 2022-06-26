@@ -28,12 +28,13 @@ public class PaginaInicialPecas extends JFrame{
         adicionarPecaButton.addActionListener(this::btnAdicionarPecaActionPerformed);
         consultarPecaButton.addActionListener(this::btnConsultarPecaButtonActionPerformed);
         editarPecaButton.addActionListener(this::btnEditarPecaButtonActionPerformed);
-        btnPedirPecaButtonActionPerformed();
-        btnRemoverPecaButtonActionPerformed();
-        btnVoltarButtonActionPerformed();
+        pedirPecaButton.addActionListener(this::btnPedirPecaButtonActionPerformed);
+        removerPecaButton.addActionListener(this::btnRemoverPecaButtonActionPerformed);
         adicionarStockButton.addActionListener(this::btnAdicionarStockActionPerformed);
-        btnRemoverStockActionPerformed();
+        removerStockButton.addActionListener(this::btnRemoverStockActionPerformed);
         consultarStockPeca.addActionListener(this::btnConsultarStockPecaActionPerformed);
+
+        btnVoltarButtonActionPerformed();
     }
 
     private void btnAdicionarPecaActionPerformed(ActionEvent evt) {
@@ -48,7 +49,6 @@ public class PaginaInicialPecas extends JFrame{
         Peca peca = ConsultarPeca.mostrarConsultarPeca(this);
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         dadosAplicacao.consultarPeca(String.valueOf(peca));
-        // n sei pq n consigo usar só peca ent faço string.valueof(peca)
     }
 
     private void btnEditarPecaButtonActionPerformed(ActionEvent evt) {
@@ -58,24 +58,18 @@ public class PaginaInicialPecas extends JFrame{
         dadosAplicacao.editarPeca(peca);
     }
 
-    private void btnPedirPecaButtonActionPerformed() {
-        pedirPecaButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new PedirPeca().setVisible(true);
-            }
-        });
+    private void btnPedirPecaButtonActionPerformed(ActionEvent evt) {
+        System.out.println("Clicou no btnPedirPeca!");
+        Peca peca = PedirPeca.mostrarPedirPeca(this);
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        dadosAplicacao.pedirPeca(peca);
     }
 
-    private void btnRemoverPecaButtonActionPerformed() {
-        removerPecaButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new RemoverPeca().setVisible(true);
-            }
-        });
+    private void btnRemoverPecaButtonActionPerformed(ActionEvent evt) {
+        System.out.println("Clicou no btnRemoverPeca!");
+        Peca peca = RemoverPeca.mostrarRemoverPeca(this);
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        dadosAplicacao.removerPeca(peca);
     }
 
     private void btnVoltarButtonActionPerformed() {
@@ -96,14 +90,11 @@ public class PaginaInicialPecas extends JFrame{
     }
 
 
-    private void btnRemoverStockActionPerformed(){
-        removerStockButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new RemoverStockPeca().setVisible(true);
-            }
-        });
+    private void btnRemoverStockActionPerformed(ActionEvent evt){
+        System.out.println("Clicou no btnRemoverStockPeca!");
+        Peca peca = RemoverStockPeca.mostrarRemoverStockPeca(this);
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        dadosAplicacao.removerPeca(peca);
     }
 
     private void btnConsultarStockPecaActionPerformed(ActionEvent evt){
@@ -118,9 +109,5 @@ public class PaginaInicialPecas extends JFrame{
 
     public static void main(String[] args) {
         new PaginaInicialPecas().setVisible(true);
-    }
-
-    private void createUIComponents() {
-        // TODO: place custom component creation code here
     }
 }

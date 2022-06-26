@@ -311,6 +311,8 @@ public class DadosAplicacao {
         pecas.add(peca);
     }
 
+
+
     public void editarPeca(Peca peca){
         for(Peca peca_aux : pecas){
             if(peca_aux.getNome().equals(peca.getNome())){
@@ -362,6 +364,12 @@ public class DadosAplicacao {
         return null;
     }
 
-
+    public void pedirPeca(Peca peca){
+        for(Peca pecas : pecas){
+            if(pecas.getNome().equals(peca.getNome())){
+                pecas.setQuantidade(pecas.getQuantidade());
+            }
+        }
+    }
 
 }
