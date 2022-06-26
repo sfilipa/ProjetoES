@@ -17,27 +17,30 @@ public class ConsultarLocalExposicao extends JDialog{
     private JButton voltarButton;
     private JComboBox comboBox1;
     private JButton filtrarButton;
-    private JList list1;
+    private JList<LocalExposicao> list1;
     private JLabel lblNome;
     private JLabel lblFilial;
     private JButton verLocal;
     private JLabel lblDist;
+    private JLabel lbl;
 
 
     public ConsultarLocalExposicao(Frame parent, boolean modal){
-        //super(parent,modal);
+        super(parent,modal);
         setContentPane(painelPrincipal);
         pack();
 
         filtrarButton.addActionListener(this::btnFiltrarActionPerformed);
+        voltarButton.addActionListener(this::btnVoltarActionPerformed);
         verLocal.addActionListener(this::btnVerLocalActionPerformed);
         atualizarListaLocal();
+        atualizarComboBoxLocal();
         btnCancelarActionPerformed();
 
     }
 
     private void btnVerLocalActionPerformed(ActionEvent evt) {
-        LocalExposicao localExposicao = (LocalExposicao) list1.getSelectedValue();
+        LocalExposicao localExposicao = list1.getSelectedValue();
         if (localExposicao == null) {
             Erros.mostrarErro(this, Erros.LOCAL_NAO_SELECIONADO);
             return;
@@ -64,6 +67,7 @@ public class ConsultarLocalExposicao extends JDialog{
 
         localExposicoes = dadosAplicacao.getLocalExposicoes(filial);
 
+
         DefaultListModel<LocalExposicao> model = new DefaultListModel<>();
         for (LocalExposicao localExposicao : localExposicoes) {
             model.addElement(localExposicao);
@@ -76,7 +80,7 @@ public class ConsultarLocalExposicao extends JDialog{
 
         lblFilial.setText(localselecionado.getDistrito().toString());
 
-       lblDist.setText(localselecionado.getFilial().toString());
+        lbl.setText(String.valueOf(localselecionado.getFilial()));
 
     }
 
@@ -88,6 +92,10 @@ public class ConsultarLocalExposicao extends JDialog{
                 new PaginaInicialEventos().setVisible(true);
             }
         });
+    }
+
+    private void btnVoltarActionPerformed(ActionEvent evt) {
+        fechar();
     }
 
     private void atualizarListaLocal() {
@@ -106,6 +114,16 @@ public class ConsultarLocalExposicao extends JDialog{
 
     private void fechar() {
         this.setVisible(false);
+    }
+
+    private void atualizarComboBoxLocal() {
+        List<LocalExposicao> localExposicoes = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicoes = dadosAplicacao.getLocalExposicoes();
+        List<String> filiais = new ArrayList<>();
+        for (LocalExposicao localExposicao : localExposicoes) {
+            comboBox1.addItem(localExposicao.getFilial());
+        }
     }
     //public static void main(String[] args) {
       //  new ConsultarLocalExposicao().setVisible(true);

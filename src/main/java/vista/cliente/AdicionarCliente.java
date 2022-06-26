@@ -33,12 +33,14 @@ public class AdicionarCliente extends JDialog {
         setContentPane(painelPrincipal);
         pack();
         adicionarButton.addActionListener(this::btnAdicionarActionPerformed);
+        //adicionarVeículoButton.addActionListener(this::btnAdicionarVeiculoActionPerformed);
         //System.out.println("Cliente adicionado");
         btnCancelarActionPerformed();
         btnAdicionarVeiculoActionPerformed();
 
 
     }
+
 
     private void btnAdicionarActionPerformed(ActionEvent actionEvent) {
         System.out.println("Adicionar Cliente");

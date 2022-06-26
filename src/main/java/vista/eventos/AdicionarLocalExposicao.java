@@ -41,18 +41,18 @@ public class AdicionarLocalExposicao extends JDialog {
     }
 
     private void btnAdicionarActionPerformed(ActionEvent evt) {
-        System.out.println("Adicionar Evento");
+        System.out.println("Adicionar Local");
         if (!verificarPreenchido()) {
             return;
         }
         boolean valido = NomeExiste(nomeExposiçãoTextField.getText());
-        if (!valido) {
+        if (valido) {
             Erros.mostrarErro(this, Erros.NOME_JA_EXISTE);
             return;
         }
 
 
-        localExposicao = new LocalExposicao(nomeExposiçãoTextField.getText(),comboBox1.getSelectedItem().toString(), comboBox2.getSelectedItem().toString());
+        localExposicao = new LocalExposicao(nomeExposiçãoTextField.getText(),comboBox1.getSelectedItem().toString(),comboBox2.getSelectedItem().toString());
 
 
         fechar();
@@ -77,7 +77,7 @@ public class AdicionarLocalExposicao extends JDialog {
 
     private boolean NomeExiste(String nome) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        return dadosAplicacao.NaoExisteEventoNome(nome);
+        return dadosAplicacao.existeLocalNome(nome);
     }
 
     private void btnCancelarActionPerformed() {

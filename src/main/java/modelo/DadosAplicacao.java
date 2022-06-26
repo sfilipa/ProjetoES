@@ -10,6 +10,7 @@ public class DadosAplicacao {
     private List<Evento> eventos;
     private List<Cliente> clientes;
     private List<LocalExposicao> localExposicoes;
+    private List<Filial> filiais;
     private static List<Peca> pecas;
     private List<Transacao> transacoes;
     private Float saldo;
@@ -19,6 +20,7 @@ public class DadosAplicacao {
         eventos = new ArrayList<>();
         clientes = new ArrayList<>();
         localExposicoes = new ArrayList<>();
+        filiais = new ArrayList<>();
         pecas = new ArrayList<>();
 
         veiculos.add(new Veiculo("XJ-88-MM", "BMW", "K5", 5, "Laura", "A1", 1,
@@ -34,6 +36,10 @@ public class DadosAplicacao {
 
     public void removerVeiculo(Veiculo veiculo) {
         veiculos.remove(veiculo);
+    }
+
+    public void removerLocal(LocalExposicao localExposicao) {
+        localExposicoes.remove(localExposicao);
     }
 
     public void repararVeiculo(Veiculo veiculo, String[] pecasUsadas, String localReparacao) {
@@ -133,6 +139,17 @@ public class DadosAplicacao {
         if (!clientes.isEmpty()) {
             for (Cliente cliente : clientes) {
                 if (cliente.getNome().equals(nome)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean existeLocalNome(String nome) {
+        if (!localExposicoes.isEmpty()) {
+            for (LocalExposicao localExposicao : localExposicoes) {
+                if (localExposicao.displayName().equals(nome)) {
                     return true;
                 }
             }
@@ -279,6 +296,24 @@ public class DadosAplicacao {
 
     public List<LocalExposicao> getLocalExposicoes() {
         return localExposicoes;
+    }
+
+    public List<Filial> getFilial() {
+        return filiais;
+    }
+
+    public static List<Filial> getFilial(String nome) {
+        List<Filial> filials = new ArrayList<>();
+        for (Filial filial : DadosAplicacao.INSTANCE.getFilial()) {
+            if (nome != null) {
+                if (filial.displayName().equals(nome)) {
+                    if (!filials.contains(filials)) {
+                        filials.add(filial);
+                    }
+                }
+            }
+        }
+        return filials;
     }
 
 

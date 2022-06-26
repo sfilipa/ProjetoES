@@ -22,6 +22,7 @@ public class Erros {
     public static final int NAO_SELECIONADO = 17;
     public static final int LOCAL_NAO_SELECIONADO = 18;
     public static final int SALDO_INSUFICIENTE = 19;
+    public static final int LOCAL_JA_EXISTE = 19;
 
     public static void mostrarErro(Window parent, int numero) {
         //todo
@@ -79,6 +80,9 @@ public class Erros {
                 break;
             case SALDO_INSUFICIENTE:
                 JOptionPane.showMessageDialog(parent, "Sem fundos suficientes para a compra do veiculo.");
+                break;
+            case LOCAL_JA_EXISTE:
+                JOptionPane.showMessageDialog(parent, "Nome registado em outro local");
                 break;
             default:
 

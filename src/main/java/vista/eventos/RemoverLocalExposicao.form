@@ -77,18 +77,7 @@
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <model>
-                <item value="Local1"/>
-                <item value="Local2"/>
-                <item value="Local3"/>
-                <item value="Local4"/>
-                <item value="Local5"/>
-                <item value="Local6"/>
-                <item value="Local7"/>
-                <item value="Local8"/>
-                <item value="Local9"/>
-                <item value="Local10"/>
-              </model>
+              <model/>
             </properties>
           </component>
           <component id="cb70a" class="javax.swing.JLabel">
@@ -143,18 +132,7 @@
               <component id="599aa" class="javax.swing.JList" binding="list1" default-binding="true">
                 <constraints/>
                 <properties>
-                  <model>
-                    <item value="Local1"/>
-                    <item value="Local2"/>
-                    <item value="Local3"/>
-                    <item value="Local4"/>
-                    <item value="Local5"/>
-                    <item value="Local6"/>
-                    <item value="Local7"/>
-                    <item value="Local8"/>
-                    <item value="Local9"/>
-                    <item value="Local10"/>
-                  </model>
+                  <model/>
                 </properties>
               </component>
             </children>
