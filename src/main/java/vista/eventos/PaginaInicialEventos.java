@@ -29,6 +29,7 @@ public class PaginaInicialEventos extends JFrame {
         adicionarLocalDeExposiçãoButton.addActionListener(this::btnAdicionarLocalExposicaoActionPerfomed);
         voltarButton.addActionListener(this::btnVoltarActionPerformed);
         removerEventoButton.addActionListener(this::btnRemoverEventoActionPerformed);
+        removerLocalDeExposiçãoButton.addActionListener(this::btnRemoverLocalExposicaoActionPerfomed);
         editarEventoButton.addActionListener(this::btnEditarEventoActionPerformed);
         consultarButton.addActionListener(this::btnConsultarEventoActionPerformed);
         consultarLocalDeExposiçãoButton.addActionListener(this::btnConsultarLocalExposicaoActionPerfomed);
@@ -95,13 +96,14 @@ public class PaginaInicialEventos extends JFrame {
 
 
     private void btnRemoverLocalExposicaoActionPerfomed(ActionEvent evt) {
-        removerLocalDeExposiçãoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new RemoverLocalExposicao().setVisible(true);
-            }
-        });
+        System.out.println("Click no btnRemoverEvento");
+        RemoverLocalExposicao.mostrarRemoverLocal(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getEventos();
+        //removerLocalDeExposiçãoButton.addActionListener(new ActionListener() {
+          ////////new RemoverLocalExposicao().setVisible(true);
+            //}
+        //});
     }
 
     private void btnConsultarLocalExposicaoActionPerfomed(ActionEvent evt) {

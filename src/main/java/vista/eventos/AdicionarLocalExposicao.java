@@ -52,7 +52,7 @@ public class AdicionarLocalExposicao extends JDialog {
         }
 
 
-        localExposicao = new LocalExposicao(nomeExposiçãoTextField.getText(),comboBox1.getSelectedItem().toString(), comboBox2.getSelectedItem().toString());
+        localExposicao = new LocalExposicao(nomeExposiçãoTextField.getText(),comboBox1.getSelectedItem().toString(),comboBox2.getSelectedItem().toString());
 
 
         fechar();

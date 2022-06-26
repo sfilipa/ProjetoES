@@ -67,6 +67,7 @@ public class ConsultarLocalExposicao extends JDialog{
 
         localExposicoes = dadosAplicacao.getLocalExposicoes(filial);
 
+
         DefaultListModel<LocalExposicao> model = new DefaultListModel<>();
         for (LocalExposicao localExposicao : localExposicoes) {
             model.addElement(localExposicao);
@@ -79,7 +80,7 @@ public class ConsultarLocalExposicao extends JDialog{
 
         lblFilial.setText(localselecionado.getDistrito().toString());
 
-        lbl.setText(localselecionado.getFilial().toString());
+        lbl.setText(String.valueOf(localselecionado.getFilial()));
 
     }
 

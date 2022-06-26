@@ -2,7 +2,8 @@ package vista.estatisticas;
 
 import modelo.Cliente;
 import modelo.DadosAplicacao;
-import modelo.Evento;
+import modelo.Filial;
+import modelo.LocalExposicao;
 
 import javax.swing.*;
 import java.awt.*;
@@ -23,8 +24,9 @@ public class EstatisticasPagina1 extends  JDialog{
         setContentPane(painelPrincipal);
         pack();
 
+        atualizarListaLocal();
         atualizarListaCliente();
-        atualizarListaEvento();
+        atualizarListaFilial();
         btnVoltarActionPerformed();
     }
 
@@ -60,20 +62,51 @@ public class EstatisticasPagina1 extends  JDialog{
     }
 
 
-    private void atualizarListaEvento() {
-        List<Evento> eventos = new ArrayList<>();
+
+
+    private void atualizarListaLocal() {
+        List<LocalExposicao> localExposicoes = new ArrayList<>();
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        eventos = dadosAplicacao.getEventos();
-        DefaultListModel<Evento> model = new DefaultListModel<>();
-        for (Evento evento : eventos) {
-            model.addElement(evento);
+        localExposicoes = dadosAplicacao.getLocalExposicoes();
+        DefaultListModel<LocalExposicao> model = new DefaultListModel<>();
+        for (LocalExposicao localExposicao : localExposicoes) {
+            model.addElement(localExposicao);
         }
-        list2.setModel(model);
-        System.out.println("eventos: " + eventos);
+        list3.setModel(model);
+        System.out.println("Locais: " + localExposicoes);
         System.out.println("model: " + model);
     }
 
-   ////   new EstatisticasPagina1().setVisible(true);
+    private void atualizarListaFilial() {
+        List<LocalExposicao> localExposicoes = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        localExposicoes = dadosAplicacao.getLocalExposicoes();
+        DefaultListModel<String> model = new DefaultListModel<>();
+        for (LocalExposicao localExposicao : localExposicoes) {
+            model.addElement(localExposicao.getLocalFilial());
+        }
+        list2.setModel(model);
+        System.out.println("Locais: " + localExposicoes);
+        System.out.println("model: " + model);
+    }
+
+/*    private void atualizarListaFilial1() {
+        List<Filial> filiais = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        filiais = dadosAplicacao.getFilial();
+        DefaultListModel<Filial> model = new DefaultListModel<>();
+        for (Filial filial : filiais) {
+            model.addElement(filial);
+        }
+        list2.setModel(model);
+        System.out.println("Locais: " + filiais);
+        System.out.println("model: " + model);
+    }*/
+
+
+
+
+    ////   new EstatisticasPagina1().setVisible(true);
     //}
 
 }

@@ -1,8 +1,5 @@
 package modelo;
 
-import java.util.ArrayList;
-import java.util.List;
-
 public class LocalExposicao {
     //FEIRA_DO_PORTO("Feira do Porto", "Porto"),
     //FEIRA_DE_LISBOA("Feira de Lisboa", "Lisboa"),
@@ -24,6 +21,9 @@ public class LocalExposicao {
         return filial;
     }
 
+    public String getLocalFilial() {
+        return filial;
+    }
     public String getLocal() {
         return local;
     }
