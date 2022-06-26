@@ -66,10 +66,9 @@ public class Peca {
         return 0;
     }
 
+    @Override
     public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Nome: ").append(nome).append("  Quantidade minima filial: ").append(minimaFilial).append("   Quantidade minima por sede: ").append(minimaSede);
-        return sb.toString();
+        return nome;
     }
 
 

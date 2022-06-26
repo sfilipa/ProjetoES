@@ -1,9 +1,6 @@
 package vista.veiculo;
 
-import modelo.DadosAplicacao;
-import modelo.Filial;
-import modelo.Sede;
-import modelo.Veiculo;
+import modelo.*;
 import vista.Erros;
 
 import javax.swing.*;
@@ -17,7 +14,7 @@ public class RepararVeiculo extends JDialog {
     private JPanel painelPrincipal;
     private JButton cancelarButton;
     private JComboBox comboBoxLocalReparacao;
-    private JList<String> listaPecas;
+    private JList<Peca> listaPecas;
     private JButton adicionarButton;
     private JTextPane textPecasUsadas;
     private JSpinner NPecasUsadas;
@@ -43,10 +40,10 @@ public class RepararVeiculo extends JDialog {
         atualizarComboBoxMarca();
         atualizarListaVeiculo();
         atualizarComboBoxLocalReparacao();
-        // atualizarListaPecas();
+        atualizarListaPecas();
 
         filtrarVeiculoButton.addActionListener(this::btnFiltrarVeiculoActionPerformed);
-        //filtrarPecasButton.addActionListener(this::btnFiltrarPecasActionPerformed);
+        filtrarPecasButton.addActionListener(this::btnFiltrarPecasActionPerformed);
         cancelarButton.addActionListener(this::btnCancelarActionPerformed);
         adicionarButton.addActionListener(this::btnAdicionarActionPerformed);
         repararButton.addActionListener(this::btnRepararActionPerformed);
@@ -77,7 +74,7 @@ public class RepararVeiculo extends JDialog {
 
     }
 
-    /*private void btnFiltrarPecasActionPerformed(ActionEvent actionEvent) {
+    private void btnFiltrarPecasActionPerformed(ActionEvent actionEvent) {
         System.out.println("Filtrar");
 
         String palavras = txtFiltragemPalavras.getText();
@@ -102,7 +99,7 @@ public class RepararVeiculo extends JDialog {
             model.addElement(peca);
         }
         listaPecas.setModel(model);
-    }*/
+    }
 
     private void btnAdicionarActionPerformed(ActionEvent actionEvent) {
         System.out.println("Adicionar");
@@ -181,11 +178,11 @@ public class RepararVeiculo extends JDialog {
             model.addElement(veiculo);
         }
         listaVeiculos.setModel(model);
-        System.out.println("eventos: " + veiculos);
+        System.out.println("veiculos: " + veiculos);
         System.out.println("model: " + model);
     }
 
-  /* private void atualizarListaPecas() {
+   private void atualizarListaPecas() {
         List<Peca> pecas = new ArrayList<>();
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         pecas = dadosAplicacao.getPecas();
@@ -196,7 +193,7 @@ public class RepararVeiculo extends JDialog {
         listaPecas.setModel(model);
         System.out.println("pecas: " + pecas);
         System.out.println("model: " + model);
-    }*/
+    }
 
     private void atualizarComboBoxMarca() {
         List<Veiculo> veiculos = new ArrayList<>();

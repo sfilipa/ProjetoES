@@ -19,6 +19,9 @@ public class DadosAplicacao {
         localExposicoes = new ArrayList<>();
         pecas = new ArrayList<>();
 
+        pecas.add(new Peca("PNEU", "Outro", "10", "10"));
+        pecas.add(new Peca("MOTOR", "Outro", "10", "10"));
+
         veiculos.add(new Veiculo("XJ-88-MM", "BMW", "K5", 5, "Laura", "A1", 1,
                 5, 54553, 525, 456, "manual",
                 "traseira", "Bom", "Diesel", "Filial Leiria"));
@@ -39,14 +42,11 @@ public class DadosAplicacao {
             String[] pecaUsada = pecasUsadas[i].split(" - ");
             int quantidade = Integer.parseInt(pecaUsada[0]);
             String nomePeca = pecaUsada[1];
-            System.out.println(quantidade + " - " + nomePeca);
-            /*for (Peca peca : getPecas()) {
+            for (Peca peca : getPecas()) {
                 if (peca.getNome().equals(nomePeca)) {
-                    System.out.println(nomePeca);
-                    peca.setQuantidade(quantidade);
-                    removerStockPeca(nomepeca, quantidade, localReparacao);
+                    removerStockPeca(getPeca(nomePeca), quantidade, localReparacao);
                 }
-            }*/
+            }
         }
     }
 
@@ -353,9 +353,10 @@ public class DadosAplicacao {
         pecas.remove(peca);
     }
 
-    public void removerStockPeca(Peca peca, Integer quantidade, String filial){
+    public void removerStockPeca(Peca peca, Integer quantidade, String localReparacao){
         for(Peca pecas : pecas){
             if(pecas.getNome().equals(peca.getNome())){
+                //fazer verificacao se a quantidade a ser removida é possivel na filial/sede por causa da quantidade minima
                 pecas.setQuantidade(peca.getQuantidade() - quantidade);
                 //falta o local de armazenamento
             }
