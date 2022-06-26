@@ -44,6 +44,7 @@ public class ConsultarEvento extends JDialog {
         dialog.setVisible(true);
     }
 
+
     private void btnVoltarActionPerformed(ActionEvent evt) {
         fechar();
     }

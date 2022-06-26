@@ -118,8 +118,8 @@ public class AdicionarCliente extends JDialog {
         var detalhes = new AdicionarCliente(parent, true);
         detalhes.setLocationRelativeTo(parent);
         detalhes.setVisible(true);
-        //return detalhes.getCliente();
-        return detalhes.cliente;
+        return detalhes.getCliente();
+        //return detalhes.cliente;
     }
 
     private Cliente getCliente() {

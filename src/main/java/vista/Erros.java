@@ -20,6 +20,7 @@ public class Erros {
     public static final int CLIENTE_NAO_SELECIONADO = 15;
     public static final int NOME_JA_EXISTE_PECA = 16;
     public static final int NAO_SELECIONADO = 17;
+    public static final int LOCAL_NAO_SELECIONADO = 18;
 
     public static void mostrarErro(Window parent, int numero) {
         //todo
@@ -63,7 +64,7 @@ public class Erros {
             case NUMERO_PORTAS_INVALIDAS:
                 JOptionPane.showMessageDialog(parent, "O número de portas do veículo não é válido, tem de ser 3 ou 5.");
                 break;
-            case CLIENTE_NAO_SELECIONADO:_NAO_SELECIONADO:
+            case CLIENTE_NAO_SELECIONADO:
                 JOptionPane.showMessageDialog(parent, "Não existe nenhum cliente selecionado.");
                 break;
             case NOME_JA_EXISTE_PECA:
@@ -71,6 +72,9 @@ public class Erros {
                 break;
             case NAO_SELECIONADO:
                 JOptionPane.showMessageDialog(parent, "Não existe nenhuma opção selecionada.");
+                break;
+            case LOCAL_NAO_SELECIONADO:
+                JOptionPane.showMessageDialog(parent, "Nenhum local selecionado.");
                 break;
             default:
 

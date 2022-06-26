@@ -263,6 +263,20 @@ public class DadosAplicacao {
         return eventos;
     }
 
+    public static List<LocalExposicao> getLocalExposicoes(String filial) {
+        List<LocalExposicao> localExposicoes = new ArrayList<>();
+        for (LocalExposicao localExposicao : DadosAplicacao.INSTANCE.getLocalExposicoes()) {
+            if (filial != null) {
+                if (localExposicao.getFilial().equals(filial)) {
+                    if (!localExposicoes.contains(localExposicao)) {
+                        localExposicoes.add(localExposicao);
+                    }
+                }
+            }
+        }
+        return localExposicoes;
+    }
+
     public List<LocalExposicao> getLocalExposicoes() {
         return localExposicoes;
     }

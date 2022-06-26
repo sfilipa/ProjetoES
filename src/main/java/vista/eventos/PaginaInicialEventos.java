@@ -31,6 +31,7 @@ public class PaginaInicialEventos extends JFrame {
         removerEventoButton.addActionListener(this::btnRemoverEventoActionPerformed);
         editarEventoButton.addActionListener(this::btnEditarEventoActionPerformed);
         consultarButton.addActionListener(this::btnConsultarEventoActionPerformed);
+        consultarLocalDeExposiçãoButton.addActionListener(this::btnConsultarLocalExposicaoActionPerfomed);
 
 
     }
@@ -104,13 +105,17 @@ public class PaginaInicialEventos extends JFrame {
     }
 
     private void btnConsultarLocalExposicaoActionPerfomed(ActionEvent evt) {
-        consultarLocalDeExposiçãoButton.addActionListener(new ActionListener() {
+        System.out.println("Click no btnConsultarLocal");
+        ConsultarLocalExposicao.mostrarConsultarLocal(this);
+        DadosAplicacao dados = DadosAplicacao.INSTANCE;
+        dados.getLocalExposicoes();
+/*        consultarLocalDeExposiçãoButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
                 new ConsultarLocalExposicao().setVisible(true);
             }
-        });
+        });*/
     }
 
 

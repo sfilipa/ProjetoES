@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <form xmlns="http://www.intellij.com/uidesigner/form/" version="1" bind-to-class="vista.eventos.ConsultarLocalExposicao">
-  <grid id="27dc6" binding="painelPrincipal" layout-manager="GridLayoutManager" row-count="7" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+  <grid id="27dc6" binding="painelPrincipal" layout-manager="GridLayoutManager" row-count="8" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
       <xy x="20" y="20" width="521" height="421"/>
@@ -52,16 +52,8 @@
             </constraints>
             <properties>
               <model>
-                <item value="Local1"/>
-                <item value="Local2"/>
-                <item value="Local3"/>
-                <item value="Local4"/>
-                <item value="Local5"/>
-                <item value="Local6"/>
-                <item value="Local7"/>
-                <item value="Local8"/>
-                <item value="Local9"/>
-                <item value="Local10"/>
+                <item value="Filial1"/>
+                <item value="Filial2"/>
               </model>
             </properties>
           </component>
@@ -86,7 +78,7 @@
       <grid id="49d9a" layout-manager="GridLayoutManager" row-count="1" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
         <border type="none"/>
@@ -127,18 +119,7 @@
               <component id="89054" class="javax.swing.JList" binding="list1" default-binding="true">
                 <constraints/>
                 <properties>
-                  <model>
-                    <item value="Local1"/>
-                    <item value="Local2"/>
-                    <item value="Local3"/>
-                    <item value="Local4"/>
-                    <item value="Local5"/>
-                    <item value="Local6"/>
-                    <item value="Local7"/>
-                    <item value="Local8"/>
-                    <item value="Local9"/>
-                    <item value="Local10"/>
-                  </model>
+                  <model/>
                 </properties>
               </component>
             </children>
@@ -156,7 +137,7 @@
       <grid id="5ef67" layout-manager="GridLayoutManager" row-count="3" column-count="2" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
-          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
+          <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
         </constraints>
         <properties/>
         <border type="etched"/>
@@ -169,7 +150,7 @@
               <text value="Nome:"/>
             </properties>
           </component>
-          <component id="7a544" class="javax.swing.JLabel">
+          <component id="7a544" class="javax.swing.JLabel" binding="lblNome">
             <constraints>
               <grid row="0" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -185,7 +166,7 @@
               <text value="Filial:"/>
             </properties>
           </component>
-          <component id="97e41" class="javax.swing.JLabel">
+          <component id="97e41" class="javax.swing.JLabel" binding="lblFilial">
             <constraints>
               <grid row="1" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -193,7 +174,7 @@
               <text value="-"/>
             </properties>
           </component>
-          <component id="2dece" class="javax.swing.JLabel">
+          <component id="2dece" class="javax.swing.JLabel" binding="lblDist">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -211,6 +192,14 @@
           </component>
         </children>
       </grid>
+      <component id="ec81c" class="javax.swing.JButton" binding="verLocal">
+        <constraints>
+          <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="0" fill="1" indent="0" use-parent-layout="false"/>
+        </constraints>
+        <properties>
+          <text value="Ver"/>
+        </properties>
+      </component>
     </children>
   </grid>
 </form>
