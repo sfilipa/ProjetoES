@@ -129,7 +129,7 @@ public class EditarPeca extends JFrame {
         peca.setQuantidadeMinimaSede(Integer.parseInt(alterarQuantidadeMinimaSedeText.getText()));
         peca.setQuantidadeMinimaFileal(Integer.parseInt(alterarQuantidadeMinimaFilealText.getText()));
         pecas.set(pecas.indexOf(peca), peca);
-        //dadosAplicacao.setPecas(pecas);
+        dadosAplicacao.setPecas(pecas);
         setVisible(false);
     }
 

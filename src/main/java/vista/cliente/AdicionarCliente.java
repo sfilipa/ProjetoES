@@ -46,7 +46,7 @@ public class AdicionarCliente extends JDialog {
             return;
         }
         boolean valido = NomeExiste(textField1.getText());
-        if(!valido){
+        if(valido){
             Erros.mostrarErro(this, Erros.NOME_JA_EXISTE_CLIENTE);
             return;
         }
