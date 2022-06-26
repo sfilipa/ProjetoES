@@ -17,6 +17,7 @@ public class DadosAplicacao {
         eventos = new ArrayList<>();
         clientes = new ArrayList<>();
         localExposicoes = new ArrayList<>();
+        pecas = new ArrayList<>();
 
         veiculos.add(new Veiculo("XJ-88-MM", "BMW", "K5", 5, "Laura", "A1", 1,
                 5, 54553, 525, 456, "manual",
@@ -352,6 +353,14 @@ public class DadosAplicacao {
         pecas.remove(peca);
     }
 
+    public void removerStockPeca(Peca peca, Integer quantidade, String filial){
+        for(Peca pecas : pecas){
+            if(pecas.getNome().equals(peca.getNome())){
+                pecas.setQuantidade(peca.getQuantidade() - quantidade);
+                //falta o local de armazenamento
+            }
+        }
+    }
 
     public void setPecas(List<Peca> pecas) {
     }

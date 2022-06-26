@@ -113,9 +113,9 @@ public class ComprarVeiculo extends JFrame{
     private void btnAdicionarActionPerformed(ActionEvent evt) {
         System.out.println("Adicionar Veículo");
 
-        if (!verificarPreenchido()) {
+        /*if (!verificarPreenchido()) {
             return;
-        }
+        }*/
 
         boolean valido = MatriculaExiste(matriculaText.getText());
         if (!valido) {
@@ -182,7 +182,7 @@ public class ComprarVeiculo extends JFrame{
 
     }
 
-    public boolean verificarPreenchido() {
+    /*public boolean verificarPreenchido() {
         if (naofoiPreenchido(txtmatricula.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
@@ -232,7 +232,7 @@ public class ComprarVeiculo extends JFrame{
             return false;
         }
         return true;
-    }
+    }*/
 
     private boolean isNumero(String nVeiculos) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
@@ -269,7 +269,7 @@ public class ComprarVeiculo extends JFrame{
         return veiculo;
     }
 
-    private void atualizarCombBoxArmazenar() {
+   /* private void atualizarCombBoxArmazenar() {
         Sede sede = Sede.getSede();
         comboBoxArmazenar.addItem(sede);
         for (Filial filial : Filial.values()) {
@@ -283,7 +283,7 @@ public class ComprarVeiculo extends JFrame{
         for(LocalExposicao localExposicao : localExposicaos) {
             comboBoxArmazenar.addItem(localExposicao.displayName());
         }
-    }
+    }*/
 
     private boolean checkNViaturasLocal(String localArmazenamento) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
@@ -298,7 +298,7 @@ public class ComprarVeiculo extends JFrame{
             if (nViaturas >= Sede.Sede.getViaturasMax()) {
                 return false;
             }
-        }else{
+        } else {
             for (Filial filial : Filial.values()) {
                 if (localArmazenamento.equals(filial.displayName())) {
                     if (nViaturas >= filial.ViaturasMax()) {
@@ -308,3 +308,6 @@ public class ComprarVeiculo extends JFrame{
             }
         }
         return true;
+
+    }
+}
