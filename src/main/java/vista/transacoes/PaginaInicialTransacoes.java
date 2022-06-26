@@ -1,6 +1,10 @@
 package vista.transacoes;
 
+import modelo.DadosAplicacao;
+import modelo.Peca;
+import modelo.Veiculo;
 import vista.paginaPrincipal.PaginaPrincipal;
+import vista.pecas.AdicionarStockPeca;
 
 import javax.swing.*;
 import java.awt.event.ActionEvent;
@@ -28,13 +32,10 @@ public class PaginaInicialTransacoes extends JFrame {
     }
 
     private void btnComprarVeiculoActionPerformed() {
-        comprarVeiculoButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-                new ComprarVeiculo().setVisible(true);
-            }
-        });
+        System.out.println("Clicou no btnComprarVeiculo!");
+        Veiculo veiculo = ComprarVeiculo.mostrarComprarVeiculo(this);
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        dadosAplicacao.adicionarVeiculo(veiculo);
     }
 
     private void btnRemoverTransacaoButtonnActionPerformed() {
