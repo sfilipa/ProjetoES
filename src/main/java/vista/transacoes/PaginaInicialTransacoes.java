@@ -33,9 +33,9 @@ public class PaginaInicialTransacoes extends JFrame {
 
     private void btnComprarVeiculoActionPerformed() {
         System.out.println("Clicou no btnComprarVeiculo!");
-        Veiculo veiculo = ComprarVeiculo.mostrarComprarVeiculo(this);
+        //Veiculo veiculo = ComprarVeiculo.mostrarComprarVeiculo(this);
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        dadosAplicacao.adicionarVeiculo(veiculo);
+        //dadosAplicacao.adicionarVeiculo(veiculo);
     }
 
     private void btnRemoverTransacaoButtonnActionPerformed() {
