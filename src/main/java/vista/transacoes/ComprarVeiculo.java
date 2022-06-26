@@ -2,16 +2,14 @@ package vista.transacoes;
 
 import modelo.*;
 import vista.Erros;
-import vista.veiculo.AdicionarVeiculo;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
-public class ComprarVeiculo extends JFrame{
+
+public class ComprarVeiculo extends JFrame {
     private JPanel painelPrincipal;
     private String combustivel;
     private String tipoCaixa;
@@ -48,14 +46,31 @@ public class ComprarVeiculo extends JFrame{
     private JTextField nifText;
     private JButton filtrarButton1;
 
-    private Veiculo veiculo;
+    private Transacao transacao;
 
     private String tracao;
     private String condicaoGeral;
 
-    public ComprarVeiculo(){
+    public ComprarVeiculo(Frame parent, boolean modal) {
         setContentPane(painelPrincipal);
         pack();
+
+        gasolinaRadioButton.addActionListener(this::combustivelButtonActionPerformed);
+        dieselRadioButton.addActionListener(this::combustivelButtonActionPerformed);
+        eletricoRadioButton.addActionListener(this::combustivelButtonActionPerformed);
+        automaticaRadioButton.addActionListener(this::tipoCaixaButtonActionPerformed);
+        manualRadioButton.addActionListener(this::tipoCaixaButtonActionPerformed);
+        fronteiraRadioButton.addActionListener(this::tracaoButtonActionPerformed);
+        traseiraRadioButton.addActionListener(this::tracaoButtonActionPerformed);
+        muitoMauRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
+        mauRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
+        bomRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
+        muitoBomRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
+        médioRadioButton.addActionListener(this::condicaoGeralButtonActionPerformed);
+        comprarButton.addActionListener(this::btnComprarActionPerformed);
+        cancelarButton.addActionListener(this::btnCancelarActionPerformed);
+
+
 
         btnCancelarActionPerformed();
     }
@@ -110,12 +125,9 @@ public class ComprarVeiculo extends JFrame{
         }
     }
 
-    private void btnAdicionarActionPerformed(ActionEvent evt) {
-        System.out.println("Adicionar Veículo");
+    private void btnComprarActionPerformed(ActionEvent evt) {
+        System.out.println("Comprar Veículo");
 
-        /*if (!verificarPreenchido()) {
-            return;
-        }*/
 
         boolean valido = MatriculaExiste(matriculaText.getText());
         if (!valido) {
@@ -175,81 +187,82 @@ public class ComprarVeiculo extends JFrame{
             Erros.mostrarErro(this, Erros.NUMERO_PORTAS_INVALIDAS);
             return;
         }
-/*
-        Veiculo veiculo = new Veiculo(matriculaText.getText(), marcaText.getText(), modeloText.getText(), combustivel, tipoCaixa, nPortas, nDonos, potencia, cilindrada, classe, preco, nif, tracao, condicaoGeral);
-        fechar();
-        */
 
+
+        Transacao transacao = new Transacao(matriculaText.getText(), marcaText.getText(), modeloText.getText(), donoAnteriorText.getText(), nDonosText.getText(), combustivel, classesText.getText(), nPortasText.getText(), potenciaText.getText(), cilindradaText.getText(), tipoCaixa, tracao, condicaoGeral, precoText.getText(), nifText.getText());
+
+        fechar();
     }
 
-    /*public boolean verificarPreenchido() {
-        if (naofoiPreenchido(txtmatricula.getText())) {
+    public boolean verificarPreenchido() {
+        if (naofoiPreenchido(matriculaText.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (naofoiPreenchido(txtmarca.getText())) {
+        if (naofoiPreenchido(marcaText.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (naofoiPreenchido(txtmodelo.getText())) {
+        if (naofoiPreenchido(modeloText.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (naofoiPreenchido(txtdonoAnterior.getText())) {
+        if (naofoiPreenchido(donoAnteriorText.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (naofoiPreenchido(txtnDonos.getText())) {
+        if (naofoiPreenchido(nDonosText.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (naofoiPreenchido(txtcategoria.getText())) {
+        if (naofoiPreenchido(categoriaText.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (naofoiPreenchido(txtquilometros.getText())) {
+        if (naofoiPreenchido(classesText.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (naofoiPreenchido(txtclasse.getText())) {
+        if (naofoiPreenchido(nPortasText.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (naofoiPreenchido(txtnPortas.getText())) {
+        if (naofoiPreenchido(potenciaText.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (naofoiPreenchido(txtpotencia.getText())) {
+        if (naofoiPreenchido(cilindradaText.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (naofoiPreenchido(txtcilindrada.getText())) {
-            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
-            return false;
-        }
-        if (!gasolinaRadioButton.isSelected() && !dieselRadioButton.isSelected() && !elétricoRadioButton.isSelected()) {
+        if (!gasolinaRadioButton.isSelected() && !dieselRadioButton.isSelected() && !eletricoRadioButton.isSelected()) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
         return true;
-    }*/
+    }
 
     private boolean isNumero(String nVeiculos) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         return dadosAplicacao.isNumero(nVeiculos);
     }
 
-    public static Veiculo mostrarCriacaoVeiculo(Frame parent) {
+    public static Transacao mostrarComprarVeiculo(Frame parent) {
         //todo
         System.out.println("mostrarCriacaoVeiculo");
-        var detalhes = new AdicionarVeiculo(parent, true);
+        var detalhes = new ComprarVeiculo(parent, true);
         detalhes.setLocationRelativeTo(parent);
         detalhes.setVisible(true);
-        return detalhes.getVeiculo();
+        return detalhes.getTransacao();
     }
 
     private void btnCancelarActionPerformed(ActionEvent evt) {
-        fechar();
+        cancelarButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                setVisible(false);
+            }
+        });
     }
 
     private void fechar() {
@@ -265,49 +278,8 @@ public class ComprarVeiculo extends JFrame{
         return dadosAplicacao.naoExisteVeiculoComMatricula(matricula);
     }
 
-    public Veiculo getVeiculo() {
-        return veiculo;
+    public Transacao getTransacao() {
+        return transacao;
     }
 
-   /* private void atualizarCombBoxArmazenar() {
-        Sede sede = Sede.getSede();
-        comboBoxArmazenar.addItem(sede);
-        for (Filial filial : Filial.values()) {
-            comboBoxArmazenar.addItem(filial.displayName());
-        }
-        List<LocalExposicao> localExposicaos = new ArrayList<>();
-        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        localExposicaos = dadosAplicacao.getLocalExposicoes();
-
-
-        for(LocalExposicao localExposicao : localExposicaos) {
-            comboBoxArmazenar.addItem(localExposicao.displayName());
-        }
-    }*/
-
-    private boolean checkNViaturasLocal(String localArmazenamento) {
-        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        int nViaturas = 0;
-        for (Veiculo veiculo : dadosAplicacao.getVeiculos()) {
-            if (veiculo.getLocalArmazenamento().equals(localArmazenamento)) {
-                nViaturas++;
-            }
-        }
-        if (localArmazenamento.equals("Sede")) {
-            Sede sede = Sede.getSede();
-            if (nViaturas >= Sede.Sede.getViaturasMax()) {
-                return false;
-            }
-        } else {
-            for (Filial filial : Filial.values()) {
-                if (localArmazenamento.equals(filial.displayName())) {
-                    if (nViaturas >= filial.ViaturasMax()) {
-                        return false;
-                    }
-                }
-            }
-        }
-        return true;
-
-    }
 }

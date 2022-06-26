@@ -12,6 +12,8 @@ public class DadosAplicacao {
     private List<LocalExposicao> localExposicoes;
     private static List<Peca> pecas;
 
+    private List<Transacao> transacoes;
+
     private DadosAplicacao() {
         veiculos = new ArrayList<>();
         eventos = new ArrayList<>();
@@ -377,6 +379,59 @@ public class DadosAplicacao {
                 pecas.setQuantidade(pecas.getQuantidade());
             }
         }
+    }
+
+    public List<Transacao> getTransacao() {
+        return transacoes;
+    }
+
+    public static List<Transacao> getTransacao(String combustivel, String condicaoGeral, String marca, String tipoCaixa, String quilometros, String preco) {
+        List<Transacao> transacoes = new ArrayList<>();
+        for (Transacao transacao : DadosAplicacao.INSTANCE.getTransacao()) {
+            if (combustivel != null) {
+                if (transacao.getCombustivel().equals(combustivel))
+                    if (!transacoes.contains(transacao)) {
+                        transacoes.add(transacao);
+                    }
+            }
+            if (combustivel != null) {
+                if (transacao.getCondicaoGeral().equals(condicaoGeral)) {
+                    if (!transacoes.contains(transacao)) {
+                        transacoes.add(transacao);
+                    }
+                }
+            }
+            if (tipoCaixa != null) {
+                if (transacao.getMarca().equals(marca)) {
+                    if (!transacoes.contains(transacao)) {
+                        transacoes.add(transacao);
+                    }
+                }
+            }
+            if (condicaoGeral != null) {
+                if (transacao.getTipoDeCaixa().equals(tipoCaixa)) {
+                    if (!transacoes.contains(transacao)) {
+                        transacoes.add(transacao);
+                    }
+                }
+            }
+            if (quilometros != null) {
+                if (transacao.getQuilometros().equals(quilometros)) {
+                    if (!transacoes.contains(transacao)) {
+                        transacoes.add(transacao);
+                    }
+                }
+            }
+            if (preco != null) {
+                if (transacao.getPreco().equals(preco)) {
+                    if (!transacoes.contains(transacao)) {
+                        transacoes.add(transacao);
+                    }
+                }
+            }
+        }
+        return transacoes;
+
     }
 
 }
