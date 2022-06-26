@@ -19,7 +19,6 @@ public class ConsultarVeiculo extends JDialog {
     private JComboBox comboBoxTipoCaixa;
     private JComboBox comboBoxMarca;
     private JComboBox comboBoxCondicaoGeral;
-    private JComboBox comboBoxQuilometros;
     private JButton filtrarButton;
     private JList<Veiculo> listaVeiculos;
     private JButton verVeiculoButton;

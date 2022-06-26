@@ -38,12 +38,6 @@ public class Peca {
         return quantidade;
     }
 
-    public String toString() {
-        StringBuilder sb = new StringBuilder();
-        sb.append("Nome: ").append(nome).append("  Quantidade minima filial: ").append(minimaFilial).append("   Quantidade minima por sede: ").append(minimaSede);
-        return sb.toString();
-    }
-
     public void setTipo(String tipoPeca) {
         this.tipoPeca = tipoPeca;
     }
@@ -70,6 +64,12 @@ public class Peca {
 
     public int getQuantidadeMinimaSede() {
         return 0;
+    }
+
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("Nome: ").append(nome).append("  Quantidade minima filial: ").append(minimaFilial).append("   Quantidade minima por sede: ").append(minimaSede);
+        return sb.toString();
     }
 
 

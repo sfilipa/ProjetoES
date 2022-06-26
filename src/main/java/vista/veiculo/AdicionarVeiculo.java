@@ -116,7 +116,7 @@ public class AdicionarVeiculo extends JDialog {
         }
 
         boolean valido = MatriculaExiste(txtmatricula.getText());
-        if (valido) {
+        if (!valido) {
             Erros.mostrarErro(this, Erros.MATRICULA_JA_EXISTE);
             return;
         }
@@ -152,7 +152,7 @@ public class AdicionarVeiculo extends JDialog {
             return;
         }
         valido = checkNViaturasLocal(comboBoxArmazenar.getSelectedItem().toString());
-        if (valido) {
+        if (!valido) {
             Erros.mostrarErro(this, Erros.NUMERO_VIATURAS_EXCEDIDO);
             return;
         }
@@ -258,7 +258,7 @@ public class AdicionarVeiculo extends JDialog {
 
     private boolean MatriculaExiste(String matricula) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        return dadosAplicacao.existeVeiculoComMatricula(matricula);
+        return dadosAplicacao.naoExisteVeiculoComMatricula(matricula);
     }
 
     public Veiculo getVeiculo() {
@@ -292,18 +292,18 @@ public class AdicionarVeiculo extends JDialog {
         if (localArmazenamento.equals("Sede")) {
             Sede sede = Sede.getSede();
             if (nViaturas >= Sede.Sede.getViaturasMax()) {
-                return true;
+                return false;
             }
         }else{
             for (Filial filial : Filial.values()) {
                if (localArmazenamento.equals(filial.displayName())) {
                    if (nViaturas >= filial.ViaturasMax()) {
-                       return true;
+                       return false;
                    }
                }
             }
         }
-        return false;
+        return true;
     }
 
 

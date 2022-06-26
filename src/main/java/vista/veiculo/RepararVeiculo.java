@@ -1,6 +1,9 @@
 package vista.veiculo;
 
-import modelo.*;
+import modelo.DadosAplicacao;
+import modelo.Filial;
+import modelo.Sede;
+import modelo.Veiculo;
 import vista.Erros;
 
 import javax.swing.*;
@@ -120,67 +123,67 @@ public class RepararVeiculo extends JDialog {
         Veiculo veiculoSelecionado = listaVeiculos.getSelectedValue();
         String[] pecasUsadasArray = pecasUsadas.split("\n");
 
-       dadosAplicacao.repararVeiculo(veiculoSelecionado, pecasUsadasArray, localReparacao);
+        dadosAplicacao.repararVeiculo(veiculoSelecionado, pecasUsadasArray, localReparacao);
 
-       fechar();
+        fechar();
     }
 
-        private void btnFiltrarVeiculoActionPerformed (ActionEvent evt){
-            System.out.println("Filtrar");
+    private void btnFiltrarVeiculoActionPerformed(ActionEvent evt) {
+        System.out.println("Filtrar");
 
-            String marca = comboBoxMarca.getSelectedItem().toString();
-            String combustivel = comboBoxCombustivel.getSelectedItem().toString();
-            String tipoCaixa = comboBoxTipoCaixa.getSelectedItem().toString();
-            String condicaoGeral = comboBoxCondicaoGeral.getSelectedItem().toString();
-            if (txtQuilometros.getText().isEmpty()) {
-                txtQuilometros.setText("0");
-            }
-            Integer quilometros = Integer.parseInt(txtQuilometros.getText());
-
-            System.out.println("quilometros: " + quilometros);
-            System.out.println("marca: " + marca);
-            System.out.println("combustivel: " + combustivel);
-            System.out.println("tipoCaixa: " + tipoCaixa);
-            System.out.println("condicaoGeral: " + condicaoGeral);
-
-            DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-
-            List<Veiculo> veiculos = new ArrayList<>();
-
-            veiculos = dadosAplicacao.getVeiculos(marca, combustivel, tipoCaixa, condicaoGeral, quilometros);
-
-            DefaultListModel<Veiculo> model = new DefaultListModel<>();
-            for (Veiculo veiculo : veiculos) {
-                model.addElement(veiculo);
-            }
-            listaVeiculos.setModel(model);
+        String marca = comboBoxMarca.getSelectedItem().toString();
+        String combustivel = comboBoxCombustivel.getSelectedItem().toString();
+        String tipoCaixa = comboBoxTipoCaixa.getSelectedItem().toString();
+        String condicaoGeral = comboBoxCondicaoGeral.getSelectedItem().toString();
+        if (txtQuilometros.getText().isEmpty()) {
+            txtQuilometros.setText("0");
         }
+        Integer quilometros = Integer.parseInt(txtQuilometros.getText());
 
-        public static void mostrarRepararVeiculo (Frame parent){
-            RepararVeiculo dialog = new RepararVeiculo(parent, true);
-            dialog.setVisible(true);
-        }
+        System.out.println("quilometros: " + quilometros);
+        System.out.println("marca: " + marca);
+        System.out.println("combustivel: " + combustivel);
+        System.out.println("tipoCaixa: " + tipoCaixa);
+        System.out.println("condicaoGeral: " + condicaoGeral);
 
-        private void btnCancelarActionPerformed (ActionEvent evt){
-            fechar();
-        }
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
 
-        private void fechar () {
-            this.setVisible(false);
-        }
+        List<Veiculo> veiculos = new ArrayList<>();
 
-        private void atualizarListaVeiculo () {
-            List<Veiculo> veiculos = new ArrayList<>();
-            DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-            veiculos = dadosAplicacao.getVeiculos();
-            DefaultListModel<Veiculo> model = new DefaultListModel<>();
-            for (Veiculo veiculo : veiculos) {
-                model.addElement(veiculo);
-            }
-            listaVeiculos.setModel(model);
-            System.out.println("eventos: " + veiculos);
-            System.out.println("model: " + model);
+        veiculos = dadosAplicacao.getVeiculos(marca, combustivel, tipoCaixa, condicaoGeral, quilometros);
+
+        DefaultListModel<Veiculo> model = new DefaultListModel<>();
+        for (Veiculo veiculo : veiculos) {
+            model.addElement(veiculo);
         }
+        listaVeiculos.setModel(model);
+    }
+
+    public static void mostrarRepararVeiculo(Frame parent) {
+        RepararVeiculo dialog = new RepararVeiculo(parent, true);
+        dialog.setVisible(true);
+    }
+
+    private void btnCancelarActionPerformed(ActionEvent evt) {
+        fechar();
+    }
+
+    private void fechar() {
+        this.setVisible(false);
+    }
+
+    private void atualizarListaVeiculo() {
+        List<Veiculo> veiculos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        veiculos = dadosAplicacao.getVeiculos();
+        DefaultListModel<Veiculo> model = new DefaultListModel<>();
+        for (Veiculo veiculo : veiculos) {
+            model.addElement(veiculo);
+        }
+        listaVeiculos.setModel(model);
+        System.out.println("eventos: " + veiculos);
+        System.out.println("model: " + model);
+    }
 
   /* private void atualizarListaPecas() {
         List<Peca> pecas = new ArrayList<>();
@@ -195,14 +198,14 @@ public class RepararVeiculo extends JDialog {
         System.out.println("model: " + model);
     }*/
 
-        private void atualizarComboBoxMarca () {
-            List<Veiculo> veiculos = new ArrayList<>();
-            DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-            veiculos = dadosAplicacao.getVeiculos();
-            List<String> marcas = new ArrayList<>();
-            for (Veiculo veiculo : veiculos) {
-                comboBoxMarca.addItem(veiculo.getMarca());
-            }
+    private void atualizarComboBoxMarca() {
+        List<Veiculo> veiculos = new ArrayList<>();
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+        veiculos = dadosAplicacao.getVeiculos();
+        List<String> marcas = new ArrayList<>();
+        for (Veiculo veiculo : veiculos) {
+            comboBoxMarca.addItem(veiculo.getMarca());
         }
-
     }
+
+}

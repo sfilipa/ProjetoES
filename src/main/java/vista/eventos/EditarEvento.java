@@ -53,7 +53,7 @@ public class EditarEvento extends JDialog {
         atualizarCombBoxLocaisEFiliais();
     }
 
-    public void btnEditarActionPerformed(ActionEvent evt) {
+    private void btnEditarActionPerformed(ActionEvent evt) {
         System.out.println("EditarEvento.btnEditarActionPerformed");
         Evento eventoSelecionado = listaEventos.getSelectedValue();
         if (eventoSelecionado == null) {
@@ -67,7 +67,7 @@ public class EditarEvento extends JDialog {
                 return;
             }
             boolean valido = NomeExiste(txtNome.getText());
-            if (valido) {
+            if (!valido) {
                 Erros.mostrarErro(this, Erros.NOME_JA_EXISTE);
                 return;
             }
@@ -171,7 +171,7 @@ public class EditarEvento extends JDialog {
 
     private boolean NomeExiste(String nome) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        return dadosAplicacao.existeEventoNome(nome);
+        return dadosAplicacao.NaoExisteEventoNome(nome);
     }
 
     private boolean isNumero(String nVeiculos) {

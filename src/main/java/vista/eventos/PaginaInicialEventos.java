@@ -76,9 +76,6 @@ public class PaginaInicialEventos extends JFrame {
         });
     }
 
-
-
-
     private void btnAdicionarLocalExposicaoActionPerfomed(ActionEvent evt) {
         System.out.println("Click no btnAdicionarEvento");
         LocalExposicao localExposicao = AdicionarLocalExposicao.mostrarCriacaoLocal(this);

@@ -103,6 +103,7 @@ public class RemoverVeiculo extends JDialog {
     private void btnCancelarActionPerformed(ActionEvent evt) {
         fechar();
     }
+
     private void atualizarComboBoxMarca() {
         List<Veiculo> veiculos = new ArrayList<>();
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;

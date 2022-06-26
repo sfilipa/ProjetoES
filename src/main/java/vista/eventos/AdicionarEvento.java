@@ -55,7 +55,7 @@ public class AdicionarEvento extends JDialog {
             return;
         }
         boolean valido = NomeExiste(txtNome.getText());
-        if (valido) {
+        if (!valido) {
             Erros.mostrarErro(this, Erros.NOME_JA_EXISTE);
             return;
         }
@@ -135,7 +135,7 @@ public class AdicionarEvento extends JDialog {
 
     private boolean NomeExiste(String nome) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        return dadosAplicacao.existeEventoNome(nome);
+        return dadosAplicacao.NaoExisteEventoNome(nome);
     }
 
     private boolean isNumero(String nVeiculos) {

@@ -20,8 +20,6 @@ public class LocalExposicao {
         this.filial = filial;
     }
 
-
-
     public String getFilial() {
         return filial;
     }
@@ -32,11 +30,6 @@ public class LocalExposicao {
 
     public String displayName() {
         return displayName;
-    }
-
-
-    public String distrito() {
-        return distrito;
     }
 
     public String getDistrito() {

@@ -1,8 +1,6 @@
 package vista.eventos;
 
 import modelo.DadosAplicacao;
-import modelo.Data;
-import modelo.Evento;
 import modelo.LocalExposicao;
 import vista.Erros;
 
@@ -48,7 +46,7 @@ public class AdicionarLocalExposicao extends JDialog {
             return;
         }
         boolean valido = NomeExiste(nomeExposiçãoTextField.getText());
-        if (valido) {
+        if (!valido) {
             Erros.mostrarErro(this, Erros.NOME_JA_EXISTE);
             return;
         }
@@ -79,7 +77,7 @@ public class AdicionarLocalExposicao extends JDialog {
 
     private boolean NomeExiste(String nome) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        return dadosAplicacao.existeEventoNome(nome);
+        return dadosAplicacao.NaoExisteEventoNome(nome);
     }
 
     private void btnCancelarActionPerformed() {

@@ -2,12 +2,10 @@ package vista.veiculo;
 
 import modelo.*;
 import vista.Erros;
-import vista.eventos.EditarEvento;
 
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -162,7 +160,7 @@ public class EditarVeiculo extends JDialog {
             }
 
             boolean valido = MatriculaExiste(txtmatricula.getText());
-            if (valido) {
+            if (!valido) {
                 Erros.mostrarErro(this, Erros.MATRICULA_JA_EXISTE);
                 return;
             }
@@ -197,7 +195,7 @@ public class EditarVeiculo extends JDialog {
                 return;
             }
             valido = checkNViaturasFilial(comboBoxArmazenar.getSelectedItem().toString());
-            if (valido) {
+            if (!valido) {
                 Erros.mostrarErro(this, Erros.NUMERO_VIATURAS_EXCEDIDO);
                 return;
             }
@@ -302,7 +300,7 @@ public class EditarVeiculo extends JDialog {
 
     private boolean MatriculaExiste(String matricula) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        return dadosAplicacao.existeVeiculoComMatricula(matricula);
+        return dadosAplicacao.naoExisteVeiculoComMatricula(matricula);
     }
 
     private void atualizarListaVeiculo() {

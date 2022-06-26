@@ -29,6 +29,10 @@ public class DadosAplicacao {
         System.out.println("Veiculo adicionado");
     }
 
+    public void removerVeiculo(Veiculo veiculo) {
+        veiculos.remove(veiculo);
+    }
+
     public void repararVeiculo(Veiculo veiculo, String[] pecasUsadas, String localReparacao) {
         for (int i = 0; i < pecasUsadas.length; i++) {
             String[] pecaUsada = pecasUsadas[i].split(" - ");
@@ -45,6 +49,29 @@ public class DadosAplicacao {
         }
     }
 
+    public void editarVeiculo(Veiculo veiculo, String matricula, String marca, String modelo, Integer nDonos, String donoAnterior, String categoria, Integer classe, Integer nPortas, Integer potencia, Integer quilometros, Integer cilindrada, String tipoDeCaixa, String tracao, String condicaoGeral, String combustivel ,String localarmazenamento) {
+        veiculo.setMarca(marca);
+        veiculo.setModelo(modelo);
+        veiculo.setMatricula(matricula);
+        veiculo.setnDonos(nDonos);
+        veiculo.setDonoAnterior(donoAnterior);
+        veiculo.setCategoria(categoria);
+        veiculo.setClasse(classe);
+        veiculo.setnPortas(nPortas);
+        veiculo.setPotencia(potencia);
+        veiculo.setQuilometros(quilometros);
+        veiculo.setCilindrada(cilindrada);
+        veiculo.setTipoDeCaixa(tipoDeCaixa);
+        veiculo.setTracao(tracao);
+        veiculo.setCondicaoGeral(condicaoGeral);
+        veiculo.setCombustivel(combustivel);
+        veiculo.setLocalArmazenamento(localarmazenamento);
+    }
+
+    public void transportarVeiculo(Veiculo veiculo, String localParaTransportar) {
+        veiculo.setLocalArmazenamento(localParaTransportar);
+    }
+
     public void adicionarEvento(Evento evento) {
         eventos.add(evento);
         System.out.println("Evento adicionado");
@@ -52,24 +79,8 @@ public class DadosAplicacao {
         System.out.println(eventos.size());
     }
 
-    public void adicionarLocalExposicao(LocalExposicao localExposicao) {
-        localExposicoes.add(localExposicao);
-        System.out.println("Local adicionado");
-        System.out.println(localExposicao.toString());
-        System.out.println(localExposicoes.size());
-    }
-
     public void removerEvento(Evento evento) {
         eventos.remove(evento);
-    }
-
-    public void removerVeiculo(Veiculo veiculo) {
-        veiculos.remove(veiculo);
-    }
-
-    public void removerCliente(Cliente cliente) {
-        clientes.remove(cliente);
-        System.out.println("Cliente removido");
     }
 
     public void editarEvento(Evento evento, String nome, Data dataInicio, Data datafim, Integer nVeiculos, String distrito, String local) {
@@ -81,59 +92,41 @@ public class DadosAplicacao {
         evento.setDistrito(distrito);
     }
 
-    public void transportarVeiculo(Veiculo veiculo, String localParaTransportar) {
-        veiculo.setLocalArmazenamento(localParaTransportar);
-    }
-
-    public void editarVeiculo(Veiculo veiculo, String matricula, String marca, String modelo, Integer Ndonos, String donoAnterior, String categoria, Integer classe, Integer Nportas, Integer potencia, Integer quilometros, Integer cilindrada, String tipoDeCaixa, String tracao, String condicaoGeral, String combustivel ,String localarmazenamento) {
-        veiculo.setMarca(marca);
-        veiculo.setModelo(modelo);
-        veiculo.setMatricula(matricula);
-        veiculo.setnDonos(Ndonos);
-        veiculo.setDonoAnterior(donoAnterior);
-        veiculo.setCategoria(categoria);
-        veiculo.setClasse(classe);
-        veiculo.setnPortas(Nportas);
-        veiculo.setPotencia(potencia);
-        veiculo.setQuilometros(quilometros);
-        veiculo.setCilindrada(cilindrada);
-        veiculo.setTipoDeCaixa(tipoDeCaixa);
-        veiculo.setTracao(tracao);
-        veiculo.setCondicaoGeral(condicaoGeral);
-        veiculo.setCombustivel(combustivel);
-        veiculo.setLocalArmazenamento(localarmazenamento);
-    }
-
     public void adicionarCliente(Cliente cliente) {
         clientes.add(cliente);
         System.out.println("Cliente adicionado");
     }
 
-    public List<Veiculo> getVeiculos() {
-        return veiculos;
+    public void removerCliente(Cliente cliente) {
+        clientes.remove(cliente);
+        System.out.println("Cliente removido");
     }
 
-    public List<LocalExposicao> getLocalExposicoes() {
-        return localExposicoes;
+    public void adicionarLocalExposicao(LocalExposicao localExposicao) {
+        localExposicoes.add(localExposicao);
+        System.out.println("Local adicionado");
+        System.out.println(localExposicao.toString());
+        System.out.println(localExposicoes.size());
     }
-    public boolean existeVeiculoComMatricula(String matricula) {
+
+    public boolean naoExisteVeiculoComMatricula(String matricula) {
         for (Veiculo veiculo : veiculos) {
             if (veiculo.getMatricula().equals(matricula)) {
-                return true;
+                return false;
             }
         }
-        return false;
+        return true;
     }
 
-    public boolean existeEventoNome(String nome) {
+    public boolean NaoExisteEventoNome(String nome) {
         if (!eventos.isEmpty()) {
             for (Evento evento : eventos) {
                 if (evento.getNome().equals(nome)) {
-                    return true;
+                    return false;
                 }
             }
         }
-        return false;
+        return true;
     }
 
     public boolean existeClienteNome(String nome) {
@@ -147,11 +140,21 @@ public class DadosAplicacao {
         return false;
     }
 
-
     public boolean existeClienteNif(Integer nif) {
         for (Cliente cliente : clientes) {
             if (cliente.getNif()==nif) {
                 return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean existePecaNome(String nome) {
+        if (!pecas.isEmpty()) {
+            for (Peca peca : pecas) {
+                if (peca.getNome().equals(nome)) {
+                    return true;
+                }
             }
         }
         return false;
@@ -180,42 +183,8 @@ public class DadosAplicacao {
         return (dia > 0 && dia < 32 && mes > 0 && mes < 13 && ano > 0);
     }
 
-    public List<Cliente> getClientes() {
-        return clientes;
-    }
-
-    public List<Evento> getEventos() {//devolve todos os eventos
-        return eventos;
-    }
-
-
-    public static List<Evento> getEventos(Data dataInicio, Data dataFim, String distrito) {
-        List<Evento> eventos = new ArrayList<>();
-        for (Evento evento : DadosAplicacao.INSTANCE.getEventos()) {
-            if (dataInicio != null) {
-                if (evento.getDataInicio().equals(evento.getDataInicio(), dataInicio)) {
-                    if (!eventos.contains(evento)) {
-                        eventos.add(evento);
-                    }
-                }
-
-            }
-            if (dataFim != null) {
-                if (evento.getDataFim().equals(evento.getDataFim(), dataFim)) {
-                    if (!eventos.contains(evento)) {
-                        eventos.add(evento);
-                    }
-                }
-            }
-            if (distrito != null) {
-                if (evento.getDistrito().equals(distrito)) {
-                    if (!eventos.contains(evento)) {
-                        eventos.add(evento);
-                    }
-                }
-            }
-        }
-        return eventos;
+    public List<Veiculo> getVeiculos() {
+        return veiculos;
     }
 
     public static List<Veiculo> getVeiculos(String marca, String combustivel, String tipoCaixa, String condicaoGeral, Integer quilometros) {
@@ -260,6 +229,48 @@ public class DadosAplicacao {
 
     }
 
+    public List<Evento> getEventos() {//devolve todos os eventos
+        return eventos;
+    }
+
+    public static List<Evento> getEventos(Data dataInicio, Data dataFim, String distrito) {
+        List<Evento> eventos = new ArrayList<>();
+        for (Evento evento : DadosAplicacao.INSTANCE.getEventos()) {
+            if (dataInicio != null) {
+                if (evento.getDataInicio().equals(evento.getDataInicio(), dataInicio)) {
+                    if (!eventos.contains(evento)) {
+                        eventos.add(evento);
+                    }
+                }
+
+            }
+            if (dataFim != null) {
+                if (evento.getDataFim().equals(evento.getDataFim(), dataFim)) {
+                    if (!eventos.contains(evento)) {
+                        eventos.add(evento);
+                    }
+                }
+            }
+            if (distrito != null) {
+                if (evento.getDistrito().equals(distrito)) {
+                    if (!eventos.contains(evento)) {
+                        eventos.add(evento);
+                    }
+                }
+            }
+        }
+        return eventos;
+    }
+
+    public List<LocalExposicao> getLocalExposicoes() {
+        return localExposicoes;
+    }
+
+
+
+    public List<Cliente> getClientes() {
+        return clientes;
+    }
 
     public static List<Cliente> getClientes(Integer nif) {
         List<Cliente> clientes = new ArrayList<>();
@@ -275,20 +286,6 @@ public class DadosAplicacao {
             }
 
         return clientes;
-    }
-
-
-
-
-    public boolean existePecaNome(String nome) {
-        if (!pecas.isEmpty()) {
-            for (Peca peca : pecas) {
-                if (peca.getNome().equals(nome)) {
-                    return true;
-                }
-            }
-        }
-        return false;
     }
 
     public List<Peca> getPecas() {
@@ -337,10 +334,5 @@ public class DadosAplicacao {
     public void removerPeca(Peca peca){
         pecas.remove(peca);
     }
-
-
-    public void setPecas(List<Peca> pecas) {
-    }
-
 
 }
