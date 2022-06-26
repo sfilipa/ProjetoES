@@ -3,6 +3,7 @@ package vista.pecas;
 import modelo.DadosAplicacao;
 import modelo.Filial;
 import modelo.Peca;
+import modelo.Sede;
 import vista.Erros;
 
 import javax.swing.*;
@@ -56,7 +57,6 @@ public class ConsultarStockPeca extends JFrame {
             @Override
             public void actionPerformed(ActionEvent e) {
                 setVisible(false);
-                new PaginaInicialPecas().setVisible(true);
             }
         });
     }
@@ -75,10 +75,7 @@ public class ConsultarStockPeca extends JFrame {
         System.out.println("Tipo de peça: " + tipoPeca);
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
 
-        // dar a lista de peças com nomes parecidos a palavras
         List<Peca> pecas = dadosAplicacao.getPecas();
-        List<Peca> pecasFiltradas = new ArrayList<>();
-        // ????????????????
 
         pecas = dadosAplicacao.getPecas();
 
@@ -107,26 +104,18 @@ public class ConsultarStockPeca extends JFrame {
         Peca peca = (Peca) list1.getSelectedValue();
         System.out.println(peca.toString());
 
-        // isto 99% que esta mal
         System.out.println("Local de armazenamento: ");
-        Filial filial = (Filial) list2.getSelectedValue();
-        System.out.println(filial.toString());
-        /*
-        for (Filial filial : DadosAplicacao.INSTANCE.getFiliais()) {
-            System.out.println(local.toString());
-        }
-        */
+        Sede sede = (Sede) list2.getSelectedValue();
+        System.out.println(sede.toString());
 
         tipoPecaText.setText(peca.getTipo());
         System.out.println(peca.getTipo());
         quantidadeMinimaSedeText.setText(peca.getMinimaSede());
         System.out.println(peca.getMinimaSede());
-        quantidadeMinimaFileal.setText(peca.getMinimaFilial());
-        System.out.println(peca.getMinimaFilial());
+
     }
 
     public static Peca mostrarConsultarStockPeca(Frame parent) {
-        //tive de tirar o frame,parent do new consultarstockpeca nsei pq
         ConsultarStockPeca dialog = new ConsultarStockPeca();
         dialog.setVisible(true);
         return null;

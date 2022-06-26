@@ -1,9 +1,6 @@
 package vista.veiculo;
 
-import modelo.DadosAplicacao;
-import modelo.Filial;
-import modelo.Sede;
-import modelo.Veiculo;
+import modelo.*;
 import vista.Erros;
 
 import javax.swing.*;
@@ -17,7 +14,7 @@ public class RepararVeiculo extends JDialog {
     private JPanel painelPrincipal;
     private JButton cancelarButton;
     private JComboBox comboBoxLocalReparacao;
-    private JList<String> listaPecas;
+    private JList<Peca> listaPecas;
     private JButton adicionarButton;
     private JTextPane textPecasUsadas;
     private JSpinner NPecasUsadas;
@@ -43,10 +40,10 @@ public class RepararVeiculo extends JDialog {
         atualizarComboBoxMarca();
         atualizarListaVeiculo();
         atualizarComboBoxLocalReparacao();
-        // atualizarListaPecas();
+        atualizarListaPecas();
 
         filtrarVeiculoButton.addActionListener(this::btnFiltrarVeiculoActionPerformed);
-        //filtrarPecasButton.addActionListener(this::btnFiltrarPecasActionPerformed);
+        filtrarPecasButton.addActionListener(this::btnFiltrarPecasActionPerformed);
         cancelarButton.addActionListener(this::btnCancelarActionPerformed);
         adicionarButton.addActionListener(this::btnAdicionarActionPerformed);
         repararButton.addActionListener(this::btnRepararActionPerformed);
@@ -77,135 +74,144 @@ public class RepararVeiculo extends JDialog {
 
     }
 
-    /*private void btnFiltrarPecasActionPerformed(ActionEvent actionEvent) {
+    private void btnFiltrarPecasActionPerformed(ActionEvent actionEvent) {
         System.out.println("Filtrar");
 
         String palavras = txtFiltragemPalavras.getText();
         String tipoPeca = radioAnswer;
-        if(radioAnswer == null){
+        if (radioAnswer == null) {
             Erros.mostrarErro(this, Erros.NAO_SELECIONADO);
         }
 
-        System.out.println("Palavra: " + palavras);
-        System.out.println("Tipo de peça: " + tipoPeca);
+        String[] palavrasArray = palavras.split(" ");
+
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
 
-        // dar a lista de peças com nomes parecidos a palavras
         List<Peca> pecas = dadosAplicacao.getPecas();
-        List<Peca> pecasFiltradas = new ArrayList<>();
-        // ????????????????
-
-        pecas = dadosAplicacao.getPecas();
 
         DefaultListModel<Peca> model = new DefaultListModel<>();
         for (Peca peca : pecas) {
-            model.addElement(peca);
+            if (palavras.isEmpty()) {
+                if (tipoPeca.equals(peca.getTipo())) {
+                    model.addElement(peca);
+                }
+            }else {
+                    for (String palavra : palavrasArray) {
+                        if (peca.getNome().contains(palavra) && peca.getTipo().equals(tipoPeca)) {
+                            model.addElement(peca);
+                    }
+                }
+            }
         }
         listaPecas.setModel(model);
-    }*/
+    }
 
-    private void btnAdicionarActionPerformed(ActionEvent actionEvent) {
-        System.out.println("Adicionar");
-        String peca = listaPecas.getSelectedValue().toString();
-        if (peca == null) {
-            Erros.mostrarErro(this, Erros.NAO_SELECIONADO);
-        } else {
+        private void btnAdicionarActionPerformed (ActionEvent actionEvent){
+            System.out.println("Adicionar");
+            String peca = listaPecas.getSelectedValue().toString();
+            if (peca == null) {
+                Erros.mostrarErro(this, Erros.NAO_SELECIONADO);
+            } else {
 
-            textPecasUsadas.setText(textPecasUsadas.getText() + NPecasUsadas.getValue().toString() + " - " + peca/*.getNome()*/ + "\n");
+                textPecasUsadas.setText(textPecasUsadas.getText() + NPecasUsadas.getValue().toString() + " - " + peca + "\n");
+            }
         }
-    }
 
-    private void btnRepararActionPerformed(ActionEvent actionEvent) {
-        System.out.println("Reparar");
-        String localReparacao = comboBoxLocalReparacao.getSelectedItem().toString();
-        String pecasUsadas = textPecasUsadas.getText();
-        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        Veiculo veiculoSelecionado = listaVeiculos.getSelectedValue();
-        String[] pecasUsadasArray = pecasUsadas.split("\n");
+        private void btnRepararActionPerformed (ActionEvent actionEvent){
+            System.out.println("Reparar");
+            String localReparacao = comboBoxLocalReparacao.getSelectedItem().toString();
+            String pecasUsadas = textPecasUsadas.getText();
+            DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+            Veiculo veiculoSelecionado = listaVeiculos.getSelectedValue();
+            if (veiculoSelecionado == null) {
+                Erros.mostrarErro(this, Erros.NAO_SELECIONADO);
+            } else {
+                String[] pecasUsadasArray = pecasUsadas.split("\n");
 
-        dadosAplicacao.repararVeiculo(veiculoSelecionado, pecasUsadasArray, localReparacao);
+                dadosAplicacao.repararVeiculo(veiculoSelecionado, pecasUsadasArray, localReparacao);
 
-        fechar();
-    }
-
-    private void btnFiltrarVeiculoActionPerformed(ActionEvent evt) {
-        System.out.println("Filtrar");
-
-        String marca = comboBoxMarca.getSelectedItem().toString();
-        String combustivel = comboBoxCombustivel.getSelectedItem().toString();
-        String tipoCaixa = comboBoxTipoCaixa.getSelectedItem().toString();
-        String condicaoGeral = comboBoxCondicaoGeral.getSelectedItem().toString();
-        if (txtQuilometros.getText().isEmpty()) {
-            txtQuilometros.setText("0");
+                fechar();
+            }
         }
-        Integer quilometros = Integer.parseInt(txtQuilometros.getText());
 
-        System.out.println("quilometros: " + quilometros);
-        System.out.println("marca: " + marca);
-        System.out.println("combustivel: " + combustivel);
-        System.out.println("tipoCaixa: " + tipoCaixa);
-        System.out.println("condicaoGeral: " + condicaoGeral);
+        private void btnFiltrarVeiculoActionPerformed (ActionEvent evt){
+            System.out.println("Filtrar");
 
-        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+            String marca = comboBoxMarca.getSelectedItem().toString();
+            String combustivel = comboBoxCombustivel.getSelectedItem().toString();
+            String tipoCaixa = comboBoxTipoCaixa.getSelectedItem().toString();
+            String condicaoGeral = comboBoxCondicaoGeral.getSelectedItem().toString();
+            if (txtQuilometros.getText().isEmpty()) {
+                txtQuilometros.setText("0");
+            }
+            Integer quilometros = Integer.parseInt(txtQuilometros.getText());
 
-        List<Veiculo> veiculos = new ArrayList<>();
+            System.out.println("quilometros: " + quilometros);
+            System.out.println("marca: " + marca);
+            System.out.println("combustivel: " + combustivel);
+            System.out.println("tipoCaixa: " + tipoCaixa);
+            System.out.println("condicaoGeral: " + condicaoGeral);
 
-        veiculos = dadosAplicacao.getVeiculos(marca, combustivel, tipoCaixa, condicaoGeral, quilometros);
+            DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
 
-        DefaultListModel<Veiculo> model = new DefaultListModel<>();
-        for (Veiculo veiculo : veiculos) {
-            model.addElement(veiculo);
+            List<Veiculo> veiculos = new ArrayList<>();
+
+            veiculos = dadosAplicacao.getVeiculos(marca, combustivel, tipoCaixa, condicaoGeral, quilometros);
+
+            DefaultListModel<Veiculo> model = new DefaultListModel<>();
+            for (Veiculo veiculo : veiculos) {
+                model.addElement(veiculo);
+            }
+            listaVeiculos.setModel(model);
         }
-        listaVeiculos.setModel(model);
-    }
 
-    public static void mostrarRepararVeiculo(Frame parent) {
-        RepararVeiculo dialog = new RepararVeiculo(parent, true);
-        dialog.setVisible(true);
-    }
-
-    private void btnCancelarActionPerformed(ActionEvent evt) {
-        fechar();
-    }
-
-    private void fechar() {
-        this.setVisible(false);
-    }
-
-    private void atualizarListaVeiculo() {
-        List<Veiculo> veiculos = new ArrayList<>();
-        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        veiculos = dadosAplicacao.getVeiculos();
-        DefaultListModel<Veiculo> model = new DefaultListModel<>();
-        for (Veiculo veiculo : veiculos) {
-            model.addElement(veiculo);
+        public static void mostrarRepararVeiculo (Frame parent){
+            RepararVeiculo dialog = new RepararVeiculo(parent, true);
+            dialog.setVisible(true);
         }
-        listaVeiculos.setModel(model);
-        System.out.println("eventos: " + veiculos);
-        System.out.println("model: " + model);
-    }
 
-  /* private void atualizarListaPecas() {
-        List<Peca> pecas = new ArrayList<>();
-        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        pecas = dadosAplicacao.getPecas();
-        DefaultListModel<Peca> model = new DefaultListModel<>();
-        for (Peca peca : pecas) {
-            model.addElement(peca);
+        private void btnCancelarActionPerformed (ActionEvent evt){
+            fechar();
         }
-        listaPecas.setModel(model);
-        System.out.println("pecas: " + pecas);
-        System.out.println("model: " + model);
-    }*/
 
-    private void atualizarComboBoxMarca() {
-        List<Veiculo> veiculos = new ArrayList<>();
-        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        veiculos = dadosAplicacao.getVeiculos();
-        List<String> marcas = new ArrayList<>();
-        for (Veiculo veiculo : veiculos) {
-            comboBoxMarca.addItem(veiculo.getMarca());
+        private void fechar () {
+            this.setVisible(false);
         }
-    }
 
-}
+        private void atualizarListaVeiculo () {
+            List<Veiculo> veiculos = new ArrayList<>();
+            DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+            veiculos = dadosAplicacao.getVeiculos();
+            DefaultListModel<Veiculo> model = new DefaultListModel<>();
+            for (Veiculo veiculo : veiculos) {
+                model.addElement(veiculo);
+            }
+            listaVeiculos.setModel(model);
+            System.out.println("veiculos: " + veiculos);
+            System.out.println("model: " + model);
+        }
+
+        private void atualizarListaPecas () {
+            List<Peca> pecas = new ArrayList<>();
+            DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+            pecas = dadosAplicacao.getPecas();
+            DefaultListModel<Peca> model = new DefaultListModel<>();
+            for (Peca peca : pecas) {
+                model.addElement(peca);
+            }
+            listaPecas.setModel(model);
+            System.out.println("pecas: " + pecas);
+            System.out.println("model: " + model);
+        }
+
+        private void atualizarComboBoxMarca () {
+            List<Veiculo> veiculos = new ArrayList<>();
+            DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+            veiculos = dadosAplicacao.getVeiculos();
+            List<String> marcas = new ArrayList<>();
+            for (Veiculo veiculo : veiculos) {
+                comboBoxMarca.addItem(veiculo.getMarca());
+            }
+        }
+
+    }

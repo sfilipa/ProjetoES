@@ -3,7 +3,7 @@
   <grid id="27dc6" binding="painelPrincipal" layout-manager="GridLayoutManager" row-count="3" column-count="1" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
     <margin top="0" left="0" bottom="0" right="0"/>
     <constraints>
-      <xy x="20" y="20" width="500" height="695"/>
+      <xy x="20" y="20" width="500" height="766"/>
     </constraints>
     <properties>
       <minimumSize width="500" height="500"/>
@@ -11,7 +11,7 @@
     </properties>
     <border type="none"/>
     <children>
-      <grid id="6789c" layout-manager="GridLayoutManager" row-count="16" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
+      <grid id="6789c" layout-manager="GridLayoutManager" row-count="17" column-count="4" same-size-horizontally="false" same-size-vertically="false" hgap="-1" vgap="-1">
         <margin top="0" left="0" bottom="0" right="0"/>
         <constraints>
           <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="3" hsize-policy="3" anchor="0" fill="3" indent="0" use-parent-layout="false"/>
@@ -19,7 +19,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="c1fcb" class="javax.swing.JLabel" binding="matricula">
+          <component id="c1fcb" class="javax.swing.JLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -27,7 +27,7 @@
               <text value="Matricula:"/>
             </properties>
           </component>
-          <component id="3638b" class="javax.swing.JLabel" binding="marca">
+          <component id="3638b" class="javax.swing.JLabel">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -35,7 +35,7 @@
               <text value="Marca:"/>
             </properties>
           </component>
-          <component id="ea0b3" class="javax.swing.JLabel" binding="modelo">
+          <component id="ea0b3" class="javax.swing.JLabel">
             <constraints>
               <grid row="2" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -43,7 +43,7 @@
               <text value="Modelo:"/>
             </properties>
           </component>
-          <component id="b0ee5" class="javax.swing.JLabel" binding="donoAnterior">
+          <component id="b0ee5" class="javax.swing.JLabel">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -51,7 +51,7 @@
               <text value="Dono anterior:"/>
             </properties>
           </component>
-          <component id="1eed9" class="javax.swing.JLabel" binding="nDonos">
+          <component id="1eed9" class="javax.swing.JLabel">
             <constraints>
               <grid row="4" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -59,7 +59,7 @@
               <text value="Nº de Donos:"/>
             </properties>
           </component>
-          <component id="145f0" class="javax.swing.JLabel" binding="combustivel">
+          <component id="145f0" class="javax.swing.JLabel">
             <constraints>
               <grid row="5" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -67,7 +67,7 @@
               <text value="Combustivel:"/>
             </properties>
           </component>
-          <component id="863ef" class="javax.swing.JLabel" binding="categoria">
+          <component id="863ef" class="javax.swing.JLabel">
             <constraints>
               <grid row="6" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -75,7 +75,7 @@
               <text value="Categoria:"/>
             </properties>
           </component>
-          <component id="19bea" class="javax.swing.JLabel" binding="classe">
+          <component id="19bea" class="javax.swing.JLabel">
             <constraints>
               <grid row="7" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -83,7 +83,7 @@
               <text value="Classe:"/>
             </properties>
           </component>
-          <component id="e2ccf" class="javax.swing.JLabel" binding="nPortas">
+          <component id="e2ccf" class="javax.swing.JLabel">
             <constraints>
               <grid row="8" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -91,7 +91,7 @@
               <text value="Nº de Portas:"/>
             </properties>
           </component>
-          <component id="695ea" class="javax.swing.JLabel" binding="potencia">
+          <component id="695ea" class="javax.swing.JLabel">
             <constraints>
               <grid row="9" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -99,7 +99,7 @@
               <text value="Potência:"/>
             </properties>
           </component>
-          <component id="3fbea" class="javax.swing.JLabel" binding="cilindrada">
+          <component id="3fbea" class="javax.swing.JLabel">
             <constraints>
               <grid row="10" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -107,7 +107,7 @@
               <text value="Cilindrada:"/>
             </properties>
           </component>
-          <component id="84e4d" class="javax.swing.JLabel" binding="tipoCaixa">
+          <component id="84e4d" class="javax.swing.JLabel">
             <constraints>
               <grid row="11" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -115,7 +115,7 @@
               <text value="Tipo de caixa:"/>
             </properties>
           </component>
-          <component id="6d43b" class="javax.swing.JLabel" binding="tracao">
+          <component id="6d43b" class="javax.swing.JLabel">
             <constraints>
               <grid row="12" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -123,9 +123,9 @@
               <text value="Tração:"/>
             </properties>
           </component>
-          <component id="8ac90" class="javax.swing.JLabel" binding="preco">
+          <component id="8ac90" class="javax.swing.JLabel">
             <constraints>
-              <grid row="14" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <text value="Preço:"/>
@@ -215,7 +215,7 @@
           </component>
           <component id="37fb3" class="javax.swing.JTextField" binding="precoText">
             <constraints>
-              <grid row="14" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+              <grid row="15" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
@@ -269,17 +269,17 @@
               <text value="Fronteira"/>
             </properties>
           </component>
-          <component id="c96" class="javax.swing.JLabel" binding="cliente">
+          <component id="c96" class="javax.swing.JLabel">
             <constraints>
-              <grid row="15" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+              <grid row="16" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <text value="NIF do vista.cliente:"/>
+              <text value="NIF do cliente:"/>
             </properties>
           </component>
           <component id="696e4" class="javax.swing.JTextField" binding="clientText">
             <constraints>
-              <grid row="15" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
+              <grid row="16" column="1" row-span="1" col-span="3" vsize-policy="0" hsize-policy="6" anchor="8" fill="1" indent="0" use-parent-layout="false">
                 <preferred-size width="150" height="-1"/>
               </grid>
             </constraints>
@@ -301,18 +301,44 @@
               <text value="Condição geral:"/>
             </properties>
           </component>
-          <component id="7a567" class="javax.swing.JComboBox" binding="comboBox4" default-binding="true">
+          <component id="f4b7e" class="javax.swing.JRadioButton" binding="muitoMauRadioButton">
             <constraints>
-              <grid row="13" column="1" row-span="1" col-span="2" vsize-policy="0" hsize-policy="2" anchor="8" fill="1" indent="0" use-parent-layout="false"/>
+              <grid row="13" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
-              <model>
-                <item value="Muito Bom"/>
-                <item value="Bom"/>
-                <item value="Médio"/>
-                <item value="Mau"/>
-                <item value="Muito Mau"/>
-              </model>
+              <text value="Muito mau"/>
+            </properties>
+          </component>
+          <component id="d071b" class="javax.swing.JRadioButton" binding="mauRadioButton">
+            <constraints>
+              <grid row="13" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Mau"/>
+            </properties>
+          </component>
+          <component id="4a9fd" class="javax.swing.JRadioButton" binding="bomRadioButton" default-binding="true">
+            <constraints>
+              <grid row="14" column="1" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Bom"/>
+            </properties>
+          </component>
+          <component id="db8f5" class="javax.swing.JRadioButton" binding="muitoBomRadioButton" default-binding="true">
+            <constraints>
+              <grid row="14" column="2" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Muito Bom"/>
+            </properties>
+          </component>
+          <component id="f4170" class="javax.swing.JRadioButton" binding="médioRadioButton" default-binding="true">
+            <constraints>
+              <grid row="13" column="3" row-span="1" col-span="1" vsize-policy="0" hsize-policy="3" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
+            </constraints>
+            <properties>
+              <text value="Médio"/>
             </properties>
           </component>
         </children>
@@ -351,13 +377,13 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="b9396" class="javax.swing.JLabel" binding="comprarVeiculo">
+          <component id="b9396" class="javax.swing.JLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
             <properties>
               <font name="Franklin Gothic Heavy" size="26"/>
-              <text value="Comprar vista.veiculo"/>
+              <text value="Comprar veiculo"/>
             </properties>
           </component>
         </children>
@@ -377,6 +403,13 @@
       <member id="b8aa4"/>
       <member id="af3e1"/>
       <member id="1671"/>
+    </group>
+    <group name="buttonGroup4">
+      <member id="f4b7e"/>
+      <member id="d071b"/>
+      <member id="4a9fd"/>
+      <member id="db8f5"/>
+      <member id="f4170"/>
     </group>
   </buttonGroups>
 </form>
