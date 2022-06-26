@@ -140,6 +140,7 @@ public class DadosAplicacao {
         return false;
     }
 
+
     public boolean existeClienteNif(Integer nif) {
         for (Cliente cliente : clientes) {
             if (cliente.getNif()==nif) {
@@ -334,5 +335,19 @@ public class DadosAplicacao {
     public void removerPeca(Peca peca){
         pecas.remove(peca);
     }
+
+
+    public void setPecas(List<Peca> pecas) {
+    }
+    public static Peca getPeca(String nome){
+        for(Peca peca : pecas){
+            if(peca.getNome().equals(nome)){
+                return peca;
+            }
+        }
+        return null;
+    }
+
+
 
 }

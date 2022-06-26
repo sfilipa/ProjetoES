@@ -99,8 +99,6 @@ public class AdicionarStockPeca extends JFrame {
 
     }
 
-
-
     private Integer quantidadeAdicionar() {
         quantidadeAdicionarSpiner.setValue(0);
         return (Integer) quantidadeAdicionarSpiner.getValue();
@@ -119,7 +117,7 @@ public class AdicionarStockPeca extends JFrame {
             setVisible(false);
             new PaginaInicialPecas().setVisible(true);
         } else {
-            Erros.mostrarErro(this, Erros.NAO_SELECIONADO);
+                Erros.mostrarErro(this, Erros.NAO_SELECIONADO);
         }
     }
 
