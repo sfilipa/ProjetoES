@@ -100,9 +100,11 @@ public class RemoverTransacao extends JFrame{
         dadosAplicacao.removerTransacao(transacao);
     }
 
-    public static Transacao RemoverTransacao (Frame parent) {
+    public static Transacao mostrarRemoverTransacao (Frame parent) {
         RemoverTransacao dialog = new RemoverTransacao(parent, true);
         dialog.setVisible(true);
         return null;
+
+
     }
 }

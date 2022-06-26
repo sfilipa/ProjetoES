@@ -44,9 +44,9 @@ public class PaginaInicialTransacoes extends JFrame {
 
     private void btnRemoverTransacaoButtonnActionPerformed(ActionEvent evt) {
         System.out.println("Clicou no btnRemoverTransacaoButton!");
-        Veiculo veiculo = RemoverVeiculo.mostrarRemoverVeiculo(this);
+        Transacao transacao = RemoverTransacao.mostrarRemoverTransacao(this);
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        dadosAplicacao.removerVeiculo(veiculo);
+        dadosAplicacao.removerTransacao(transacao);
     }
 
     private void btnTrocarVeiculoButtonActionPerformed(ActionEvent evt) {
