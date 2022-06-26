@@ -27,6 +27,8 @@ public class Erros {
     public static final int LOCAL_JA_EXISTE = 20;
     public static final int NIF_INVALIDO = 21;
 
+    public static final int FILTRAGEM_INVALIDA = 22;
+
     public static void mostrarErro(Window parent, int numero) {
         //todo
         switch (numero) {
@@ -89,6 +91,9 @@ public class Erros {
                 break;
             case NIF_INVALIDO:
                 JOptionPane.showMessageDialog(parent, "NIF é inválido.");
+                break;
+            case FILTRAGEM_INVALIDA:
+                JOptionPane.showMessageDialog(parent, "Não foi encontrado nenhum resultado com a palavra usada.");
                 break;
             default:
 
