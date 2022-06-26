@@ -69,7 +69,7 @@ public class RemoverCliente extends JDialog{
         list1.setModel(model);
     }
 
-    public static Veiculo mostrarRemoverCliente(Frame parent) {
+    public static Cliente mostrarRemoverCliente(Frame parent) {
         System.out.println("mostrarRemoverCliente");
         RemoverCliente dialog = new RemoverCliente(parent, true);
         dialog.setVisible(true);
