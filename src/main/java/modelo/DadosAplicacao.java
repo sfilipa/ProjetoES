@@ -23,23 +23,17 @@ public class DadosAplicacao {
         filiais = new ArrayList<>();
         pecas = new ArrayList<>();
 
-        veiculos.add(new Veiculo("XJ-88-MM", "BMW", "K5", 5, "Laura", "A1", 1,
+       /* veiculos.add(new Veiculo("XJ-88-MM", "BMW", "K5", 5, "Laura", "A1", 1,
                 5, 54553, 525, 456, "manual",
-                "traseira", "Bom", "Diesel", "Filial Leiria"));
+                "traseira", "Bom", "Diesel", "Filial Leiria"));*/
     }
 
     public void adicionarVeiculo(Veiculo veiculo) {
         veiculos.add(veiculo);
-
-        System.out.println("Veiculo adicionado");
     }
 
     public void removerVeiculo(Veiculo veiculo) {
         veiculos.remove(veiculo);
-    }
-
-    public void removerLocal(LocalExposicao localExposicao) {
-        localExposicoes.remove(localExposicao);
     }
 
     public void repararVeiculo(Veiculo veiculo, String[] pecasUsadas, String localReparacao) {
@@ -115,6 +109,10 @@ public class DadosAplicacao {
         System.out.println(localExposicoes.size());
     }
 
+    public void removerLocal(LocalExposicao localExposicao) {
+        localExposicoes.remove(localExposicao);
+    }
+
     public boolean naoExisteVeiculoComMatricula(String matricula) {
         for (Veiculo veiculo : veiculos) {
             if (veiculo.getMatricula().equals(matricula)) {
@@ -124,7 +122,7 @@ public class DadosAplicacao {
         return true;
     }
 
-    public boolean NaoExisteEventoNome(String nome) {
+    public boolean naoExisteEventoNome(String nome) {
         if (!eventos.isEmpty()) {
             for (Evento evento : eventos) {
                 if (evento.getNome().equals(nome)) {
@@ -302,21 +300,6 @@ public class DadosAplicacao {
         return filiais;
     }
 
-    public static List<Filial> getFilial(String nome) {
-        List<Filial> filials = new ArrayList<>();
-        for (Filial filial : DadosAplicacao.INSTANCE.getFilial()) {
-            if (nome != null) {
-                if (filial.displayName().equals(nome)) {
-                    if (!filials.contains(filials)) {
-                        filials.add(filial);
-                    }
-                }
-            }
-        }
-        return filials;
-    }
-
-
 
     public List<Cliente> getClientes() {
         return clientes;
@@ -345,8 +328,6 @@ public class DadosAplicacao {
     public void adicionarPeca(Peca peca){
         pecas.add(peca);
     }
-
-
 
     public void editarPeca(Peca peca){
         for(Peca peca_aux : pecas){

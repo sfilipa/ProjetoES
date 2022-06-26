@@ -22,7 +22,7 @@ public class Erros {
     public static final int NAO_SELECIONADO = 17;
     public static final int LOCAL_NAO_SELECIONADO = 18;
     public static final int SALDO_INSUFICIENTE = 19;
-    public static final int LOCAL_JA_EXISTE = 19;
+    public static final int LOCAL_JA_EXISTE = 20;
 
     public static void mostrarErro(Window parent, int numero) {
         //todo

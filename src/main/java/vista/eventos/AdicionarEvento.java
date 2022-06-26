@@ -42,7 +42,7 @@ public class AdicionarEvento extends JDialog {
 
     private void btnNovoLocalDeExposiçãoActionPerformed(ActionEvent actionEvent) {
         fechar();
-       // new AdicionarLocalExposicao().setVisible(true);
+        new AdicionarLocalExposicao().setVisible(true);
     }
 
     private void comboDistritoActionPerformed(ActionEvent actionEvent) {
@@ -135,7 +135,7 @@ public class AdicionarEvento extends JDialog {
 
     private boolean NomeExiste(String nome) {
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        return dadosAplicacao.NaoExisteEventoNome(nome);
+        return dadosAplicacao.naoExisteEventoNome(nome);
     }
 
     private boolean isNumero(String nVeiculos) {

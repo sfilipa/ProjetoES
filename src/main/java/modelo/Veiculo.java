@@ -97,6 +97,10 @@ public class Veiculo {
         return donoAnterior;
     }
 
+    public String getLocalArmazenamento() {
+        return localArmazenamento;
+    }
+
     public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
@@ -155,10 +159,6 @@ public class Veiculo {
 
     public void setDonoAnterior(String donoAnterior) {
         this.donoAnterior = donoAnterior;
-    }
-
-    public String getLocalArmazenamento() {
-        return localArmazenamento;
     }
 
     public void setLocalArmazenamento(String localArmazenamento) {

@@ -109,8 +109,6 @@ public class AdicionarVeiculo extends JDialog {
     }
 
     private void btnAdicionarActionPerformed(ActionEvent evt) {
-        System.out.println("Adicionar Veículo");
-
         if (!verificarPreenchido()) {
             return;
         }
@@ -236,8 +234,6 @@ public class AdicionarVeiculo extends JDialog {
     }
 
     public static Veiculo mostrarCriacaoVeiculo(Frame parent) {
-        //todo
-        System.out.println("mostrarCriacaoVeiculo");
         var detalhes = new AdicionarVeiculo(parent, true);
         detalhes.setLocationRelativeTo(parent);
         detalhes.setVisible(true);

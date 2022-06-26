@@ -38,10 +38,6 @@ public class PaginaInicialClientes extends JFrame {
         dados.adicionarCliente(cliente);
     }
 
-
-
-
-
     private void btnVoltarActionPerformed() {
         voltarButton.addActionListener(new ActionListener() {
             @Override

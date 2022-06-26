@@ -37,7 +37,6 @@ public class RemoverVeiculo extends JDialog {
     }
 
     private void btnRemoverActionPerformed(ActionEvent evt) {
-        System.out.println("RemoverVeiculo.btnRemoverActionPerformed");
         Veiculo veiculoSelecionado = listaVeiculos.getSelectedValue();
         if (veiculoSelecionado == null) {
             Erros.mostrarErro(this, Erros.VEICULO_NAO_SELECIONADO);
@@ -50,15 +49,12 @@ public class RemoverVeiculo extends JDialog {
     }
 
     public static Veiculo mostrarRemoverVeiculo(Frame parent) {
-        System.out.println("mostrarRemoverVeiculo");
         RemoverVeiculo dialog = new RemoverVeiculo(parent, true);
         dialog.setVisible(true);
         return null;
     }
 
     private void btnFiltrarActionPerformed(ActionEvent evt) {
-        System.out.println("Filtrar");
-
         String marca = comboBoxMarca.getSelectedItem().toString();
         String combustivel = comboBoxCombustivel.getSelectedItem().toString();
         String tipoCaixa = comboBoxTipoCaixa.getSelectedItem().toString();
@@ -67,12 +63,6 @@ public class RemoverVeiculo extends JDialog {
             txtQuilometros.setText("0");
         }
         Integer quilometros = Integer.parseInt(txtQuilometros.getText());
-
-        System.out.println("quilometros: " + quilometros);
-        System.out.println("marca: " + marca);
-        System.out.println("combustivel: " + combustivel);
-        System.out.println("tipoCaixa: " + tipoCaixa);
-        System.out.println("condicaoGeral: " + condicaoGeral);
 
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
 
@@ -96,8 +86,6 @@ public class RemoverVeiculo extends JDialog {
             model.addElement(veiculo);
         }
         listaVeiculos.setModel(model);
-        System.out.println("eventos: " + veiculos);
-        System.out.println("model: " + model);
     }
 
     private void btnCancelarActionPerformed(ActionEvent evt) {

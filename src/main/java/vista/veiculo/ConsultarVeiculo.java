@@ -52,8 +52,6 @@ public class ConsultarVeiculo extends JDialog {
     }
 
     private void btnFiltrarActionPerformed(ActionEvent evt) {
-        System.out.println("Filtrar");
-
         String marca = comboBoxMarca.getSelectedItem().toString();
         String combustivel = comboBoxCombustivel.getSelectedItem().toString();
         String tipoCaixa = comboBoxTipoCaixa.getSelectedItem().toString();
@@ -62,12 +60,6 @@ public class ConsultarVeiculo extends JDialog {
             txtQuilometros.setText("0");
         }
             Integer quilometros = Integer.parseInt(txtQuilometros.getText());
-
-        System.out.println("quilometros: " + quilometros);
-        System.out.println("marca: " + marca);
-        System.out.println("combustivel: " + combustivel);
-        System.out.println("tipoCaixa: " + tipoCaixa);
-        System.out.println("condicaoGeral: " + condicaoGeral);
 
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
 
@@ -83,7 +75,6 @@ public class ConsultarVeiculo extends JDialog {
     }
 
     public static void mostrarConsultarVeiculo(Frame parent) {
-        System.out.println("mostrarConsultarVeiculo");
         ConsultarVeiculo dialog = new ConsultarVeiculo(parent, true);
         dialog.setVisible(true);
     }
@@ -135,8 +126,6 @@ public class ConsultarVeiculo extends JDialog {
             model.addElement(veiculo);
         }
         listaVeiculos.setModel(model);
-        System.out.println("eventos: " + veiculos);
-        System.out.println("model: " + model);
     }
 
     private void atualizarComboBoxMarca() {

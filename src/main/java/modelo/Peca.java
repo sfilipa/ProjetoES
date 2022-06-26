@@ -71,7 +71,4 @@ public class Peca {
         return nome;
     }
 
-
-    // TODO:
-    // ver a cena do radiobutton como se faz
 }

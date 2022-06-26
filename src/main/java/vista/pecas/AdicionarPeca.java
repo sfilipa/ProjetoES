@@ -131,10 +131,6 @@ public class AdicionarPeca extends JFrame {
         return peca;
     }
 
-    private Peca peca() {
-        return peca;
-    }
-
     private void btnCancelarActionPerformed() {
         cancelarButton.addActionListener(new ActionListener() {
             @Override
