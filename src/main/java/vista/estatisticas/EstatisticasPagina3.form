@@ -81,7 +81,7 @@
             <properties/>
             <border type="none"/>
             <children>
-              <component id="baad" class="javax.swing.JList" default-binding="true">
+              <component id="baad" class="javax.swing.JList" binding="listaModelo">
                 <constraints/>
                 <properties>
                   <model>
