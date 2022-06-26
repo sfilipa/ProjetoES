@@ -29,6 +29,7 @@ public class AdicionarCliente extends JDialog {
         setContentPane(painelPrincipal);
         pack();
         adicionarButton.addActionListener(this::btnAdicionarActionPerformed);
+        cancelarButton.addActionListener(this::btnVoltarActionPerformed);
         //adicionarVeículoButton.addActionListener(this::btnAdicionarVeiculoActionPerformed);
         //System.out.println("Cliente adicionado");
         btnCancelarActionPerformed();
@@ -109,6 +110,10 @@ public class AdicionarCliente extends JDialog {
         return true;
     }
 
+
+    private void btnVoltarActionPerformed(ActionEvent evt) {
+        fechar();
+    }
 
     public static Cliente mostrarCriacaoCliente(Frame parent){
         //todo
