@@ -138,6 +138,17 @@ public class DadosAplicacao {
         return false;
     }
 
+    public boolean existeLocalNome(String nome) {
+        if (!localExposicoes.isEmpty()) {
+            for (LocalExposicao localExposicao : localExposicoes) {
+                if (localExposicao.displayName().equals(nome)) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
 
     public boolean existeClienteNif(Integer nif) {
         for (Cliente cliente : clientes) {
