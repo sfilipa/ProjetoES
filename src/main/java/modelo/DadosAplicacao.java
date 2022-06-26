@@ -19,9 +19,6 @@ public class DadosAplicacao {
         localExposicoes = new ArrayList<>();
         pecas = new ArrayList<>();
 
-        pecas.add(new Peca("PNEU", "Outro", "10", "10"));
-        pecas.add(new Peca("MOTOR", "Outro", "10", "10"));
-
         veiculos.add(new Veiculo("XJ-88-MM", "BMW", "K5", 5, "Laura", "A1", 1,
                 5, 54553, 525, 456, "manual",
                 "traseira", "Bom", "Diesel", "Filial Leiria"));
