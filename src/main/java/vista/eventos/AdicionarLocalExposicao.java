@@ -9,7 +9,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class AdicionarLocalExposicao extends JDialog {
+public class AdicionarLocalExposicao extends JFrame {
 
 
     private JTextField nomeExposiçãoTextField;
@@ -21,8 +21,7 @@ public class AdicionarLocalExposicao extends JDialog {
 
     private LocalExposicao localExposicao;
 
-    public AdicionarLocalExposicao(Frame parent, boolean modal){
-        super(parent, modal);
+    public AdicionarLocalExposicao(){
         setContentPane(painelPrincipal);
         pack();
 
@@ -34,7 +33,7 @@ public class AdicionarLocalExposicao extends JDialog {
     public static LocalExposicao mostrarCriacaoLocal(Frame parent) {
         //todo
         System.out.println("mostrarCriacaoEvento");
-        var detalhes = new AdicionarLocalExposicao(parent, true);
+        var detalhes = new AdicionarLocalExposicao();
         detalhes.setLocationRelativeTo(parent);
         detalhes.setVisible(true);
         return detalhes.getLocalExposicao();

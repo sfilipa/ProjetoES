@@ -24,6 +24,7 @@ public class LocalExposicao {
     public String getLocalFilial() {
         return filial;
     }
+
     public String getLocal() {
         return local;
     }

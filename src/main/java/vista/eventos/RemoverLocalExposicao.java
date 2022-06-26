@@ -40,8 +40,6 @@ public class RemoverLocalExposicao extends JDialog {
 
     }
 
-
-
     private void btnFiltrarActionPerformed(ActionEvent evt) {
         System.out.println("Filtrar");
 
@@ -114,6 +112,7 @@ public class RemoverLocalExposicao extends JDialog {
     private void btnVoltarActionPerformed(ActionEvent evt) {
         fechar();
     }
+
     private void fechar() {
         this.setVisible(false);
     }

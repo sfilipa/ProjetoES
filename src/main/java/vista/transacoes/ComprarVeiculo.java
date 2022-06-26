@@ -48,6 +48,7 @@ public class ComprarVeiculo extends JFrame {
 
     private Transacao transacao;
 
+    private Saldo saldo;
     private String tracao;
     private String condicaoGeral;
 
@@ -187,6 +188,16 @@ public class ComprarVeiculo extends JFrame {
             Erros.mostrarErro(this, Erros.NUMERO_PORTAS_INVALIDAS);
             return;
         }
+
+        //verificar se temos saldo para a compra
+        if (preco > Saldo.getSaldo()) {
+            Erros.mostrarErro(this, Erros.SALDO_INSUFICIENTE);
+            return;
+        } else {
+            Saldo.set(Saldo.getSaldo() - preco);
+        }
+
+
 
 
         Transacao transacao = new Transacao(matriculaText.getText(), marcaText.getText(), modeloText.getText(), donoAnteriorText.getText(), nDonosText.getText(), combustivel, classesText.getText(), nPortasText.getText(), potenciaText.getText(), cilindradaText.getText(), tipoCaixa, tracao, condicaoGeral, precoText.getText(), nifText.getText());

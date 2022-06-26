@@ -56,9 +56,6 @@ public class ConsultarHistoricoTransacaoCliente extends JDialog {
         fechar();
     }
 
-
-
-
     private void btnFiltrarActionPerformed(ActionEvent evt) {
         System.out.println("Filtrar");
 

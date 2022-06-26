@@ -117,8 +117,6 @@ public class EditarVeiculo extends JDialog {
     }
 
     private void btnFiltrarActionPerformed(ActionEvent evt) {
-        System.out.println("Filtrar");
-
         String marca = comboBoxMarca.getSelectedItem().toString();
         String combustivel = comboBoxCombustivel.getSelectedItem().toString();
         String tipoCaixa = comboBoxTipoCaixa.getSelectedItem().toString();
@@ -127,12 +125,6 @@ public class EditarVeiculo extends JDialog {
             txtQuilometrosFiltro.setText("0");
         }
         Integer quilometros = Integer.parseInt(txtQuilometrosFiltro.getText());
-
-        System.out.println("quilometros: " + quilometros);
-        System.out.println("marca: " + marca);
-        System.out.println("combustivel: " + combustivel);
-        System.out.println("tipoCaixa: " + tipoCaixa);
-        System.out.println("condicaoGeral: " + condicaoGeral);
 
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
 
@@ -148,7 +140,6 @@ public class EditarVeiculo extends JDialog {
     }
 
     private void btnEditarActionPerformed(ActionEvent evt) {
-        System.out.println("EditarEvento.btnEditarActionPerformed");
         Veiculo veiculoSelecionado = listaVeiculos.getSelectedValue();
         if (veiculoSelecionado == null) {
             Erros.mostrarErro(this, Erros.VEICULO_NAO_SELECIONADO);
@@ -281,7 +272,6 @@ public class EditarVeiculo extends JDialog {
     }
 
     public static void mostrarEditarVeiculo(Frame parent) {
-        System.out.println("mostrarRemoverVeiculo");
         EditarVeiculo dialog = new EditarVeiculo(parent, true);
         dialog.setVisible(true);
     }
@@ -312,8 +302,6 @@ public class EditarVeiculo extends JDialog {
             model.addElement(veiculo);
         }
         listaVeiculos.setModel(model);
-        System.out.println("eventos: " + veiculos);
-        System.out.println("model: " + model);
     }
 
     private void atualizarComboBoxMarca() {
@@ -353,18 +341,18 @@ public class EditarVeiculo extends JDialog {
         if (localArmazenamento.equals("Sede")) {
             Sede sede = Sede.getSede();
             if (nViaturas >= Sede.Sede.getViaturasMax()) {
-                return true;
+                return false;
             }
         }else{
             for (Filial filial : Filial.values()) {
                 if (localArmazenamento.equals(filial.displayName())) {
                     if (nViaturas >= filial.ViaturasMax()) {
-                        return true;
+                        return false;
                     }
                 }
             }
         }
-        return false;
+        return true;
     }
 
 }

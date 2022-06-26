@@ -35,7 +35,6 @@ public class PaginaInicialVeiculos extends JFrame{
     }
 
     private void btnAdicionarVeiculoActionPerformed(ActionEvent evt) {
-        System.out.println("Click no btnAdicionarVeiculo");
         Veiculo veiculo = AdicionarVeiculo.mostrarCriacaoVeiculo(this);
         if (veiculo != null) {
             DadosAplicacao dados = DadosAplicacao.INSTANCE;
@@ -43,7 +42,6 @@ public class PaginaInicialVeiculos extends JFrame{
         }
     }
     private void btnRemoverVeiculoActionPerformed(ActionEvent e) {
-        System.out.println("Click no btnRemoverVeiculo");
         RemoverVeiculo.mostrarRemoverVeiculo(this);
         DadosAplicacao dados = DadosAplicacao.INSTANCE;
         dados.getVeiculos();

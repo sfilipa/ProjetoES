@@ -58,16 +58,11 @@ public class AdicionarStockPeca extends JFrame {
 
 
     private void btnFiltrarActionPerformed(ActionEvent event) {
-        System.out.println("Filtrar");
-
         String palavras = palavrasFiltragemText.getText();
         String tipoPeca = radioAnswer;
         if(radioAnswer == null){
             Erros.mostrarErro(this, Erros.NAO_SELECIONADO);
         }
-
-        System.out.println("Palavra: " + palavras);
-        System.out.println("Tipo de peça: " + tipoPeca);
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
 
         List<Peca> pecas = dadosAplicacao.getPecas();
@@ -101,8 +96,6 @@ public class AdicionarStockPeca extends JFrame {
     }
 
     private void btnAdicionarActionPerformed(ActionEvent evt) {
-        System.out.println("Adicionar");
-
         DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
         List<Peca> pecas = dadosAplicacao.getPecas();
         Peca peca = (Peca) filealSedeAdicionarList.getSelectedValue();

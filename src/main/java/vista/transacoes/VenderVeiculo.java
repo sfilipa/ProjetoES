@@ -1,9 +1,8 @@
 package vista.transacoes;
 
-import modelo.DadosAplicacao;
-import modelo.Veiculo;
-import modelo.Transacao;
+import modelo.*;
 import vista.Erros;
+import vista.pecas.RemoverPeca;
 
 import javax.swing.*;
 import java.awt.*;
@@ -12,11 +11,12 @@ import java.awt.event.ActionListener;
 import java.util.ArrayList;
 import java.util.List;
 
+import static modelo.Saldo.getSaldo;
+
 public class VenderVeiculo extends JFrame {
-    private JLabel veiculo;
     private JLabel venderVeiculo;
     private JTextField precoText;
-    private JLabel preco;
+    private String preco;
     private JButton venderVeiculoButton;
     private JButton cancelarButton;
     private JPanel painelPrincipal;
@@ -30,20 +30,22 @@ public class VenderVeiculo extends JFrame {
     private JList clienteList;
     private JList list1;
     private JLabel cliente;
-    private JLabel nome;
-    private JLabel nif;
     private JTextField nomeText;
     private JTextField nifText;
     private JButton filtrarButton1;
 
-    public VenderVeiculo(){
+    public VenderVeiculo(Frame parent, boolean modal) {
         setContentPane(painelPrincipal);
         pack();
+        venderVeiculoButton.addActionListener(this::btnVenderActionPerformed);
+        cancelarButton.addActionListener(this::btnCancelarActionPerformed);
+        filtrarButton.addActionListener(this::btnFiltrarActionPerformed);
+        filtrarButton1.addActionListener(this::btnFiltrarClientesActionPerformed);
 
-        btnCancelarActionPerformed();
+
     }
 
-    private void btnCancelarActionPerformed() {
+    private void btnCancelarActionPerformed(ActionEvent evt) {
         cancelarButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
@@ -51,10 +53,6 @@ public class VenderVeiculo extends JFrame {
             }
         });
     }
-
-
-
-
 
     private void btnFiltrarActionPerformed(ActionEvent evt) {
         System.out.println("Filtrar");
@@ -86,192 +84,52 @@ public class VenderVeiculo extends JFrame {
         list1.setModel(model);
     }
 
-    /*
-    private void tracaoButtonActionPerformed(ActionEvent actionEvent) {
-        if (fronteiraRadioButton.isSelected()) {
-            tracao = fronteiraRadioButton.getText();
+    private void btnFiltrarClientesActionPerformed(ActionEvent actionEvent){
+        System.out.println("Filtrar");
+
+        String nome = nomeText.getText();
+        String nif = nifText.getText();
+
+        System.out.println("nome: " + nome);
+        System.out.println("nif: " + nif);
+
+        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+
+        List<Cliente> clientes = new ArrayList<>();
+
+        DefaultListModel<Cliente> model = new DefaultListModel<>();
+        for (Cliente cliente : clientes) {
+            model.addElement(cliente);
+        }
+        clienteList.setModel(model);
+    }
+
+    private void btnVenderActionPerformed(ActionEvent evt) {
+        System.out.println("Vender Veículo");
+
+        preco = precoText.getText();
+        Veiculo veiculoSelecionado = (Veiculo) list1.getSelectedValue();
+        if(veiculoSelecionado == null){
+            Erros.mostrarErro(this, Erros.VEICULO_NAO_SELECIONADO);
+            return;
         } else {
-            tracao = traseiraRadioButton.getText();
-        }
-    }
+            DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
+            dadosAplicacao.removerVeiculo(veiculoSelecionado);
 
-    private void combustivelButtonActionPerformed(ActionEvent actionEvent) {
-        if (gasolinaRadioButton.isSelected()) {
-            combustivel = gasolinaRadioButton.getText();
-        } else if (dieselRadioButton.isSelected()) {
-            combustivel = dieselRadioButton.getText();
-        } else if (eletricoRadioButton.isSelected()) {
-            combustivel = eletricoRadioButton.getText();
+            double saldo = getSaldo() + Double.parseDouble(preco);
         }
-    }
-
-    private void tipoCaixaButtonActionPerformed(ActionEvent actionEvent) {
-        if (automaticaRadioButton.isSelected()) {
-            tipoCaixa = automaticaRadioButton.getText();
-        } else {
-            tipoCaixa = manualRadioButton.getText();
-        }
-    }
-
-    private void btnComprarActionPerformed(ActionEvent evt) {
-        System.out.println("Comprar Veículo");
-
-        if (!verificarPreenchido()) {
-            return;
-        }
-
-        boolean valido = MatriculaExiste(matriculaText.getText());
-        if (!valido) {
-            Erros.mostrarErro(this, Erros.MATRICULA_JA_EXISTE);
-            return;
-        }
-
-        valido = isNumero(nDonosText.getText());
-        if (!valido) {
-            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
-            return;
-        }
-        valido = isNumero(nPortasText.getText());
-        if (!valido) {
-            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
-            return;
-        }
-        valido = isNumero(potenciaText.getText());
-        if (!valido) {
-            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
-            return;
-        }
-        valido = isNumero(cilindradaText.getText());
-        if (!valido) {
-            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
-            return;
-        }
-        valido = isNumero(classesText.getText());
-        if (!valido) {
-            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
-            return;
-        }
-        valido = isNumero(precoText.getText());
-        if (!valido) {
-            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
-            return;
-        }
-        valido = isNumero(nifText.getText());
-        if (!valido) {
-            Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
-            return;
-        }
-
-        int nPortas = Integer.parseInt(nPortasText.getText());
-        int nDonos = Integer.parseInt(nDonosText.getText());
-        int potencia = Integer.parseInt(potenciaText.getText());
-        int cilindrada = Integer.parseInt(cilindradaText.getText());
-        int classe = Integer.parseInt(classesText.getText());
-        int preco = Integer.parseInt(precoText.getText());
-        int nif = Integer.parseInt(nifText.getText());
-
-        if (classe > 4 || classe < 1) {
-            Erros.mostrarErro(this, Erros.CLASSE_INVALIDA);
-            return;
-        }
-        if (nPortas != 3 && nPortas != 5) {
-            Erros.mostrarErro(this, Erros.NUMERO_PORTAS_INVALIDAS);
-            return;
-        }
-
-
-        Veiculo veiculo = new Veiculo(matriculaText.getText(), marcaText.getText(), modeloText.getText(), combustivel, tipoCaixa, nPortas, nDonos, potencia, cilindrada, classe, preco, nif, tracao, condicaoGeral);
-
         fechar();
     }
 
-    public boolean verificarPreenchido() {
-        if (naofoiPreenchido(matriculaText.getText())) {
-            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
-            return false;
-        }
-        if (naofoiPreenchido(marcaText.getText())) {
-            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
-            return false;
-        }
-        if (naofoiPreenchido(modeloText.getText())) {
-            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
-            return false;
-        }
-        if (naofoiPreenchido(donoAnteriorText.getText())) {
-            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
-            return false;
-        }
-        if (naofoiPreenchido(nDonosText.getText())) {
-            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
-            return false;
-        }
-        if (naofoiPreenchido(categoriaText.getText())) {
-            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
-            return false;
-        }
-        if (naofoiPreenchido(classesText.getText())) {
-            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
-            return false;
-        }
-        if (naofoiPreenchido(nPortasText.getText())) {
-            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
-            return false;
-        }
-        if (naofoiPreenchido(potenciaText.getText())) {
-            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
-            return false;
-        }
-        if (naofoiPreenchido(cilindradaText.getText())) {
-            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
-            return false;
-        }
-        if (!gasolinaRadioButton.isSelected() && !dieselRadioButton.isSelected() && !eletricoRadioButton.isSelected()) {
-            Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
-            return false;
-        }
-        return true;
+    public static Veiculo mostrarVenderVeiculo(Frame parent) {
+        VenderVeiculo dialog = new VenderVeiculo(parent, true);
+        dialog.setVisible(true);
+        return null;
     }
 
-    private boolean isNumero(String nVeiculos) {
-        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        return dadosAplicacao.isNumero(nVeiculos);
-    }
-
-    public static Veiculo mostrarComprarVeiculo(Frame parent) {
-        //todo
-        System.out.println("mostrarCriacaoVeiculo");
-        var detalhes = new ComprarVeiculo(parent, true);
-        detalhes.setLocationRelativeTo(parent);
-        detalhes.setVisible(true);
-        return detalhes.getVeiculo();
-    }
-
-    private void btnCancelarActionPerformed(ActionEvent evt) {
-        cancelarButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                setVisible(false);
-            }
-        });
-    }
 
     private void fechar() {
         this.setVisible(false);
     }
 
-    private boolean naofoiPreenchido(String text) {
-        return text.isEmpty();
-    }
-
-    private boolean MatriculaExiste(String matricula) {
-        DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
-        return dadosAplicacao.naoExisteVeiculoComMatricula(matricula);
-    }
-
-    public Veiculo getVeiculo() {
-        return veiculo;
-    }
-
-     */
 }

@@ -37,14 +37,5 @@ public enum Filial{
         return distrito;
     }
 
-    public String toStringFilial() {
-        return " " + displayName + " ";
-    }
-
-    public String toStringDistrito() {
-        return " " + distrito + " ";
-    }
-
-
 }
 

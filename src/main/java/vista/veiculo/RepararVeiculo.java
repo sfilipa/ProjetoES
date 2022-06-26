@@ -75,8 +75,6 @@ public class RepararVeiculo extends JDialog {
     }
 
     private void btnFiltrarPecasActionPerformed(ActionEvent actionEvent) {
-        System.out.println("Filtrar");
-
         String palavras = txtFiltragemPalavras.getText();
         String tipoPeca = radioAnswer;
         if (radioAnswer == null) {
@@ -107,7 +105,6 @@ public class RepararVeiculo extends JDialog {
     }
 
         private void btnAdicionarActionPerformed (ActionEvent actionEvent){
-            System.out.println("Adicionar");
             String peca = listaPecas.getSelectedValue().toString();
             if (peca == null) {
                 Erros.mostrarErro(this, Erros.NAO_SELECIONADO);
@@ -118,7 +115,6 @@ public class RepararVeiculo extends JDialog {
         }
 
         private void btnRepararActionPerformed (ActionEvent actionEvent){
-            System.out.println("Reparar");
             String localReparacao = comboBoxLocalReparacao.getSelectedItem().toString();
             String pecasUsadas = textPecasUsadas.getText();
             DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
@@ -135,8 +131,6 @@ public class RepararVeiculo extends JDialog {
         }
 
         private void btnFiltrarVeiculoActionPerformed (ActionEvent evt){
-            System.out.println("Filtrar");
-
             String marca = comboBoxMarca.getSelectedItem().toString();
             String combustivel = comboBoxCombustivel.getSelectedItem().toString();
             String tipoCaixa = comboBoxTipoCaixa.getSelectedItem().toString();
@@ -145,12 +139,6 @@ public class RepararVeiculo extends JDialog {
                 txtQuilometros.setText("0");
             }
             Integer quilometros = Integer.parseInt(txtQuilometros.getText());
-
-            System.out.println("quilometros: " + quilometros);
-            System.out.println("marca: " + marca);
-            System.out.println("combustivel: " + combustivel);
-            System.out.println("tipoCaixa: " + tipoCaixa);
-            System.out.println("condicaoGeral: " + condicaoGeral);
 
             DadosAplicacao dadosAplicacao = DadosAplicacao.INSTANCE;
 
@@ -187,8 +175,6 @@ public class RepararVeiculo extends JDialog {
                 model.addElement(veiculo);
             }
             listaVeiculos.setModel(model);
-            System.out.println("veiculos: " + veiculos);
-            System.out.println("model: " + model);
         }
 
         private void atualizarListaPecas () {
@@ -200,8 +186,6 @@ public class RepararVeiculo extends JDialog {
                 model.addElement(peca);
             }
             listaPecas.setModel(model);
-            System.out.println("pecas: " + pecas);
-            System.out.println("model: " + model);
         }
 
         private void atualizarComboBoxMarca () {

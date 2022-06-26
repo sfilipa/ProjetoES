@@ -2,11 +2,7 @@ package vista.cliente;
 
 import modelo.Cliente;
 import modelo.DadosAplicacao;
-import modelo.Evento;
-import modelo.Veiculo;
 import vista.Erros;
-import vista.eventos.AdicionarEvento;
-import vista.veiculo.AdicionarVeiculo;
 
 import javax.swing.*;
 import java.awt.*;
@@ -133,11 +129,6 @@ public class AdicionarCliente extends JDialog {
         return cliente;
     }
 
-    private Cliente cliente() {
-        return cliente;
-    }
-
-
     private void btnCancelarActionPerformed() {
         cancelarButton.addActionListener(new ActionListener() {
             @Override
@@ -147,8 +138,6 @@ public class AdicionarCliente extends JDialog {
             }
         });
     }
-
-
 
     private void btnAdicionarVeiculoActionPerformed() {
         adicionarVeículoButton.addActionListener(new ActionListener() {
