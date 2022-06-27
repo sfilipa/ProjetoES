@@ -16,7 +16,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="c2700" class="javax.swing.JLabel" binding="pedirPecaText">
+          <component id="c2700" class="javax.swing.JLabel">
             <constraints>
               <grid row="0" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="0" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -35,7 +35,7 @@
         <properties/>
         <border type="none"/>
         <children>
-          <component id="7937e" class="javax.swing.JLabel" binding="sedeFilealRequisita">
+          <component id="7937e" class="javax.swing.JLabel">
             <constraints>
               <grid row="1" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>
@@ -43,7 +43,7 @@
               <text value="Sede / Filial que requisita:"/>
             </properties>
           </component>
-          <component id="4738a" class="javax.swing.JLabel" binding="sedeFilealEntrega">
+          <component id="4738a" class="javax.swing.JLabel">
             <constraints>
               <grid row="3" column="0" row-span="1" col-span="1" vsize-policy="0" hsize-policy="0" anchor="8" fill="0" indent="0" use-parent-layout="false"/>
             </constraints>

@@ -26,8 +26,13 @@ public class Erros {
     public static final int SALDO_INSUFICIENTE = 19;
     public static final int LOCAL_JA_EXISTE = 20;
     public static final int NIF_INVALIDO = 21;
-
     public static final int FILTRAGEM_INVALIDA = 22;
+
+    public static final int MATRICULA_INVALIDA = 23;
+
+    public static final int CARACTERES_ESPECIAIS = 24;
+
+    public static final int LOCAL_NAO_TEM_PECAS = 25;
 
     public static void mostrarErro(Window parent, int numero) {
         //todo
@@ -94,6 +99,15 @@ public class Erros {
                 break;
             case FILTRAGEM_INVALIDA:
                 JOptionPane.showMessageDialog(parent, "Não foi encontrado nenhum resultado com a palavra usada.");
+                break;
+            case MATRICULA_INVALIDA:
+                JOptionPane.showMessageDialog(parent, "Não foi encontrado nenhum veículo com a matrícula introduzida.");
+                break;
+            case CARACTERES_ESPECIAIS:
+                JOptionPane.showMessageDialog(parent, "Caracteres especiais não são permitidos.");
+                break;
+            case LOCAL_NAO_TEM_PECAS:
+                JOptionPane.showMessageDialog(parent, "A sede/filial que selecionou não tem disponível a(s) peça(s) selecionada(s) para entrega.");
                 break;
             default:
 

@@ -125,7 +125,7 @@ public class RemoverStockPeca extends JFrame {
         if (list1.getSelectedIndex() != -1) {
             String pecaSelecionada = list1.getSelectedValue().toString();
             remove(Integer.parseInt(pecaSelecionada));
-            quantidadeRemover.setText("uantidade removida: " + spinner1.getValue());
+            quantidadeRemover.setText("quantidade removida: " + spinner1.getValue());
         }
     }
 

@@ -13,7 +13,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PedirPeca extends JFrame {
-    private JLabel pedirPecaText;
     private JLabel sedeFilealRequisita;
     private JLabel sedeFilealEntrega;
     private JComboBox sedeFilealEntregaBox;
