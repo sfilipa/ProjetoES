@@ -79,10 +79,6 @@ public class EditarEvento extends JDialog {
             }
 
             int nVeiculos = Integer.parseInt(txtNVeiculos.getText());
-            if (nVeiculos < 0) {
-                Erros.mostrarErro(this, Erros.NAO_E_NUMERO);
-                return;
-            }
 
             Data dataInicio = Data.parseData(txtDataInicio.getText());
 
