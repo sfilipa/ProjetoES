@@ -215,47 +215,47 @@ public class EditarVeiculo extends JDialog {
     }
 
     public boolean verificarPreenchido() {
-        if (foiPreenchido(txtmatricula.getText())) {
+        if (naoFoiPreenchido(txtmatricula.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtmarca.getText())) {
+        if (naoFoiPreenchido(txtmarca.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtmodelo.getText())) {
+        if (naoFoiPreenchido(txtmodelo.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtdonoAnterior.getText())) {
+        if (naoFoiPreenchido(txtdonoAnterior.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtnDonos.getText())) {
+        if (naoFoiPreenchido(txtnDonos.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtcategoria.getText())) {
+        if (naoFoiPreenchido(txtcategoria.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtquilometros.getText())) {
+        if (naoFoiPreenchido(txtquilometros.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtclasse.getText())) {
+        if (naoFoiPreenchido(txtclasse.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtnPortas.getText())) {
+        if (naoFoiPreenchido(txtnPortas.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtpotencia.getText())) {
+        if (naoFoiPreenchido(txtpotencia.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtcilindrada.getText())) {
+        if (naoFoiPreenchido(txtcilindrada.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
@@ -284,7 +284,7 @@ public class EditarVeiculo extends JDialog {
         this.setVisible(false);
     }
 
-    private boolean foiPreenchido(String text) {
+    private boolean naoFoiPreenchido(String text) {
         return text.isEmpty();
     }
 
