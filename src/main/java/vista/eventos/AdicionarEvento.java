@@ -106,19 +106,19 @@ public class AdicionarEvento extends JDialog {
     }
 
     public boolean verificarPreenchido() {
-        if (foiPreenchido(txtNome.getText())) {
+        if (naoFoiPreenchido(txtNome.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtNVeiculos.getText())) {
+        if (naoFoiPreenchido(txtNVeiculos.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtDataInicio.getText())) {
+        if (naoFoiPreenchido(txtDataInicio.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
-        if (foiPreenchido(txtDataFim.getText())) {
+        if (naoFoiPreenchido(txtDataFim.getText())) {
             Erros.mostrarErro(this, Erros.NAO_PREEENCHIDO);
             return false;
         }
@@ -148,7 +148,7 @@ public class AdicionarEvento extends JDialog {
         return dadosAplicacao.isDataValida(data);
     }
 
-    private boolean foiPreenchido(String text) {
+    private boolean naoFoiPreenchido(String text) {
         return text.isEmpty();
     }
 

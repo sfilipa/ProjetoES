@@ -61,19 +61,6 @@ public class RepararVeiculo extends JDialog {
         }
     }
 
-    private void tipoPeca(ActionEvent event) {
-        if (consumívelRadioButton.isSelected()) {
-            radioAnswer = "Consumível";
-        } else {
-            if (outroRadioButton.isSelected()) {
-                radioAnswer = "Outro";
-            } else {
-                Erros.mostrarErro(this, Erros.NAO_SELECIONADO);
-            }
-        }
-
-    }
-
     private void btnFiltrarPecasActionPerformed(ActionEvent actionEvent) {
         String palavras = txtFiltragemPalavras.getText();
         String tipoPeca = radioAnswer;
