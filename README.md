@@ -15,6 +15,10 @@
 
 <p>Although the project was primarily focused on following a software design process, the resulting implementation provides a functional system. The system was developed using Java.</p>
 
+<ul>
+<li><strong>Note:</strong> We've noticed that the commits in our project are lacking clear and descriptive names. It would be helpful if we could improve the naming convention for our commits going forward to make it easier to understand what changes were made.</li>
+</ul>
+
 <p>&#8702; <a href="https://github.com/sfilipa/ProjetoES/blob/main/ESoft%202122%20-%20Projeto.pdf">Project Statement</a></p>
 <h1>Tools Used</h1>
 <ul>
@@ -25,6 +29,7 @@
 
 <h1>Other Information</h1>
 <ul>
+  <li><strong>Our project received a grade of 18.7 out of 20.</strong></li>
   <li>This project was developed for the Computer Engineering degree at <a href="https://www.ipleiria.pt/curso/licenciatura-em-engenharia-informatica/" rel="nofollow">Polytechnic of Leiria</a></li>
 </ul>
 <p><a href="https://www.ipleiria.pt/estg/" rel="nofollow"><img src="https://camo.githubusercontent.com/f11c2f47a7221ed3eb4c80f84fe7c67414e23377aff6c6af3182c88624fbbbea/68747470733a2f2f7777772e69706c65697269612e70742f6e6f726d617367726166696361732f77702d636f6e74656e742f75706c6f6164732f73697465732f38302f323031372f30392f657374675f682d30312e6a7067" width="300" alt="Escola Superior de Tecnologia e Gestão" title="Escola Superior de Tecnologia e Gestão" data-canonical-src="https://www.ipleiria.pt/normasgraficas/wp-content/uploads/sites/80/2017/09/estg_h-01.jpg" style="max-width: 100%;"></a></p>
