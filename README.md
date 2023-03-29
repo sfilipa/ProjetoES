@@ -13,7 +13,14 @@
 
 <p>Although the project was primarily focused on following a software design process, the resulting implementation provides a functional system. The system was developed using Java.</p>
 
-<p>&#8702; Enunciado</p>
+<p>&#8702; <a href="https://github.com/sfilipa/ProjetoES/blob/main/ESoft%202122%20-%20Projeto.pdf">Enunciado</a></p>
+<h1>Tools Used</h1>
+<ul>
+<li>Visual Paradigm for creating use case diagrams, sequence diagrams, and other diagrams.</li>
+<li>IntelliJ IDEA: Used as the development environment for writing and testing the code.</li>
+<li>JUnit: Used for writing and running unit tests.</li>
+</ul>
+
 <h1>Other Information</h1>
 <ul>
   <li>This project was developed for the Computer Engineering degree at <a href="https://www.ipleiria.pt/curso/licenciatura-em-engenharia-informatica/" rel="nofollow">Polytechnic of Leiria</a></li>
