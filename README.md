@@ -1,4 +1,6 @@
-![image](https://user-images.githubusercontent.com/100767697/228393648-3a003458-2f98-48da-8cad-29c650cb96ef.png)
+<p align="center">
+  <img src="https://user-images.githubusercontent.com/100767697/228393648-3a003458-2f98-48da-8cad-29c650cb96ef.png" alt="image">
+</p>
 
 <div style="border: 1px solid black; padding: 10px;">
 <p>This project was developed as part of the <strong>Software Engineering (Engenharia de Software)</strong> course in the Computer Science and Engineering degree during the academic year 2021/2022.
