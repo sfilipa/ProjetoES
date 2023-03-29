@@ -1,0 +1,40 @@
+Sara Martins - 2201757
+
+Adicionar Veiculo
+Remover Veiculo
+Editar Veiculo
+Consultar Veiculo
+Reparar Veiculo
+Transportar Veiculo
+Adicionar Evento
+Remover Evento
+Consultar Evento
+Editar Evento
+
+Micael Marques 2201743
+
+AdicionarPeca
+AdicionarStockPeca
+ConsultarPeca
+ConsultarStockPeca
+EditarPeca
+PedirPeca
+RemoverPeca
+RemoverStockPeca
+ComprarVeiculo
+RemoverTransacao
+TrocarVeiculo
+VenderVeiculo
+
+Casos de Uso Ricardo - 2192353
+
+Adicionar Cliente
+Remover Cliente
+Consultar Cliente
+Consultar Historico de Transaçao de Cliente
+Adicionar Local de Exposiçao
+Remover Local de Exposiçao
+Consultar Local de Exposiçao
+Estatisticas
+Estatisticas Marcas
+Estatisticas Modelos
