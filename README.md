@@ -11,7 +11,7 @@
 <li><a href="https://github.com/RicardoFilipe00">Ricardo</a></li>
 </ul>
 <h1>Project Description:</h1>
-<p>The main goal of the project was to develop a system that includes various components such as vehicle management, parts management, events management, transactions management, clients management, and statistics management.  The main goal of the project was to apply software engineering concepts and practices, such as requirements gathering, modeling, and implementation, to a real-world problem. The project was divided into two phases, each with specific deliverables, including prototypes, requirements, use case diagrams and scenarios, sequence diagrams, class diagrams, and implementation with unit testing.</p>
+<p>The primary objective of the project was to develop a system that includes various components such as vehicle management, parts management, events management, transactions management, clients management, and statistics management.  The main goal of the project was to apply software engineering concepts and practices, such as requirements gathering, modeling, and implementation, to a real-world problem. The project was divided into two phases, each with specific deliverables, including prototypes, requirements, use case diagrams and scenarios, sequence diagrams, class diagrams, and implementation with unit testing.</p>
 
 <p>Although the project was primarily focused on following a software design process, the resulting implementation provides a functional system. The system was developed using Java.</p>
 
