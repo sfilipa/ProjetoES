@@ -15,7 +15,7 @@
 
 <p>Although the project was primarily focused on following a software design process, the resulting implementation provides a functional system. The system was developed using Java.</p>
 
-<p>&#8702; <a href="https://github.com/sfilipa/ProjetoES/blob/main/ESoft%202122%20-%20Projeto.pdf">Enunciado</a></p>
+<p>&#8702; <a href="https://github.com/sfilipa/ProjetoES/blob/main/ESoft%202122%20-%20Projeto.pdf">Project Statement</a></p>
 <h1>Tools Used</h1>
 <ul>
 <li>Visual Paradigm for creating use case diagrams, sequence diagrams, and other diagrams.</li>
